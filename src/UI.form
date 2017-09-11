@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="UI">
+  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="476" height="640"/>
+    </constraints>
+    <properties>
+      <maximumSize width="480" height="480"/>
+      <minimumSize width="360" height="360"/>
+      <name value=""/>
+      <opaque value="true"/>
+      <preferredSize width="400" height="400"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="f813e" class="javax.swing.JLabel" binding="durationDisplay">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="75"/>
+            <preferred-size width="200" height="100"/>
+            <maximum-size width="250" height="125"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="22ba3" class="javax.swing.JButton" binding="clockButton">
+        <constraints>
+          <grid row="0" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="80" height="80"/>
+            <preferred-size width="120" height="120"/>
+            <maximum-size width="160" height="160"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Clock IN"/>
+        </properties>
+      </component>
+      <component id="7f514" class="javax.swing.JComboBox" binding="selectTask">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="120" height="30"/>
+            <preferred-size width="160" height="40"/>
+            <maximum-size width="200" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="ea98e" class="javax.swing.JButton" binding="addTask">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="30" height="30"/>
+            <preferred-size width="40" height="40"/>
+            <maximum-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="+"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

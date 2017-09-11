@@ -69,6 +69,15 @@ public class Task {
     timings.add(d);
   }
 
+  public Boolean getStatus() {
+    return active;
+  }
+
+  public String getName() {
+
+    return name;
+  }
+
   // returns 'active' clock time: time it has currently been running
   // for
   public String getActiveRunTimeString() {
