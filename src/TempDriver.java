@@ -20,8 +20,5 @@ public class TempDriver {
 	System.out.println(t.getActiveRunTimeString());
       }
     }
-    
-
   }
-
 }
