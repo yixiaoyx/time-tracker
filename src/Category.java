@@ -27,6 +27,23 @@ public class Category {
   public List<Task> getTasks() {
     return childTasks;
   }
+
+  public List<String> getTaskNames() {
+    List<String> names = new ArrayList<String>();
+    for(Task t : childTasks) {
+      names.add(t.getName());
+    }
+    return names;
+
+  }
+
+  public List<String> getSubCategoryNames() {
+    List<String> names = new ArrayList<String>();
+    for(Category c : subCategories) {
+      names.add(c.getName());
+    }
+    return names;
+  }
   
   public void addSubCategory(Category c) {
     subCategories.add(c);

@@ -110,29 +110,55 @@ public class InterfaceDriver {
     for(Category c : topLevelCategories) {
       c.displaySelf("");
     }
-      
   }
-    
+
+
+  public List<String> getTopLevelCategoryNames() {
+    List<String> names = new ArrayList<String>();
+    for(Category c : topLevelCategories) {
+      names.add(c.getName());
+    }
+    return names;
+  }
+
+  public List<String> getSubCategoryNames(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    if(c == null) {
+      System.out.println("InterfaceDriver: getSubCategoryNames error");
+      return null;
+    }
+    else {
+      return c.getSubCategoryNames();
+    }
+  }
+
+  public List<String> getTaskNames(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    if(c == null) {
+      System.out.println("InterfaceDriver: getTaskNames error");
+      return null;
+    }
+    else {
+      return c.getTaskNames();
+    }
+  }
 
   public static void main(String[] args) {
-    // Basic workflow: 
+    // Basic workflow:
+    
     // Initialise:
     InterfaceDriver I = new InterfaceDriver();
 
     // Create some categories and tasks:
     I.addCategory("Uni");
     I.addCategory("Work");
+
     I.addSubCategory("Uni", "Ethics");
     I.addSubCategory("Ethics", "Project");
-
 
     I.addTask("Project", "Standup diary");
     I.addTask("Work", "Siphoning funds");
     
-
-
-
-
 
     // Clock in and out of tasks
     I.clockIn("Standup diary");
@@ -142,8 +168,16 @@ public class InterfaceDriver {
     I.clockOut("Siphoning funds");
 
 
+    // Get names of categories, sub-categories and tasks for displaying
+    I.getSubCategoryNames("Uni");
+    I.getTopLevelCategoryNames();
+    I.getTaskNames("Project");
+
     // See debugging printout of category/subcategory/task structure
     I.displayStructure();
+
+
+    // TODO: get time clocked in, analysis info from tasks as required
 
   }
 }
