@@ -15,12 +15,15 @@ public class Task {
   // list of start and end times
   private List<Duration> timings;
 
+  private Category parentCategory;
+  
   public Task(String name) {
     this.name = name;
     active = false;
     timings = new ArrayList<Duration>();
   }
 
+  
   public void clockIn() {
     // we can't clock in to an already active task
     if(active) {
@@ -56,6 +59,12 @@ public class Task {
     }
   }
 
+  // if you call Category.addTask, this will be called automatically
+  public void setCategory(Category c) {
+    parentCategory = c;
+  }
+
+  
   public List<Duration> getTimings() {
     return timings;
   }
