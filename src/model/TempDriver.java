@@ -1,8 +1,10 @@
+package model;
+
 import java.util.Scanner;
 
 public class TempDriver {
   public static void main(String[] args) {
-    System.out.println("This is the TRACKATTACK Test Driver\n");
+    System.out.println("This is the TRACKATTACK Test Controller\n");
     System.out.println("i: clock in, o: clock out, r: see current runtime:  ");
 
     

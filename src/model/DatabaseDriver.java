@@ -1,3 +1,5 @@
+package model;
+
 import java.util.*;
 import java.sql.*;
 /**
@@ -19,7 +21,7 @@ public class DatabaseDriver {
         pw = "4920"; // to set password in mysql, run msql then run the query: SET PASSWORD FOR 'root'@'localhost' = PASSWORD('4920');
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Controller");
             System.out.println("Connecting..");
             c = DriverManager.getConnection(db, user,pw);
             System.out.println("connected");

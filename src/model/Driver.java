@@ -1,5 +1,7 @@
+package model;
+
 /**
- * App Driver
+ * App Controller
  * Created by Yi on 11/9/17.
  */
 public class Driver {
