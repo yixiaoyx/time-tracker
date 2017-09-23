@@ -6,6 +6,12 @@ import java.sql.*;
  download the mysql-connector zip file (i've placed it in the src folder) + download mysql if you don't have it already  https://dev.mysql.com/downloads/mysql/
  run with with jar file -> java -cp .:mysql-connector-java-5.1.44-bin.jar DatabaseDriver on the commandline
  or add the jar file to the classpath in your IDE
+
+
+
+ - store clock in/clock out details
+ - calculate the totalTime
+
  **/
 public class DatabaseDriver {
 
@@ -21,7 +27,7 @@ public class DatabaseDriver {
         pw = "4920"; // to set password in mysql, run msql then run the query: SET PASSWORD FOR 'root'@'localhost' = PASSWORD('4920');
 
         try {
-            Class.forName("com.mysql.jdbc.Controller");
+            Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Connecting..");
             c = DriverManager.getConnection(db, user,pw);
             System.out.println("connected");
@@ -53,14 +59,18 @@ public class DatabaseDriver {
                     +"category_name VARCHAR(15) not NULL,"
                     +"primary key (ID));";
             s.executeUpdate(createCategory);
+
             System.out.println("Created category table ");
             String createTask = "CREATE TABLE IF NOT EXISTS Tasks"+
                     "(ID int NOT NULL AUTO_INCREMENT," +
                     "task_name VARCHAR(15) not NULL," +
                     "category_ID INT references category(ID)," +
+                    "duration_string VARCHAR(8) not NULL," +
+                    "duration INT not NULL," +
                     "primary key (ID));";
             s.executeUpdate(createTask);
             System.out.println("Created task table ");
+            s.executeUpdate(createCategory);
 
 
         }
@@ -90,7 +100,7 @@ public class DatabaseDriver {
         return false;
     }
 
-    public void saveTasks(String task, String category) {
+    public void saveTasks(String task, String category, String durationString, long duration) {
         try {
             //create DB if it doesn't exist
             if(databaseExists()== false) {
@@ -104,7 +114,8 @@ public class DatabaseDriver {
 
             }
             int categoryID = getCategoryID(category);
-            String sql = "INSERT INTO Tasks VALUES (NULL, '"+task+"', '"+categoryID+"')";
+            String sql = "INSERT INTO Tasks VALUES (NULL, '"+task+"', '"+categoryID+"', '"+durationString+"', '"+duration+"')";
+
             ResultSet record = s.executeQuery("select * from Tasks");
             boolean check = false;
             //check if record exists
@@ -225,9 +236,54 @@ public class DatabaseDriver {
         }
         return tasks;
     }
-/*
+
+    public void changeCategory(String newCategoryName, String oldCategoryName) {
+
+        try {
+            s = c.createStatement();
+            String query = "UPDATE Category SET category_name ='" + newCategoryName + "' WHERE category_name = '"+oldCategoryName+"' ";
+            s.executeUpdate(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void changeTaskname (String newTaskName, String oldTaskName) {
+        try {
+            s = c.createStatement();
+            String query = "UPDATE Tasks SET task_name ='" + newTaskName + "' WHERE task_name ='"+oldTaskName+"' ";
+            s.executeUpdate(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    public void deleteCategory(String categoryname) {
+
+        try {
+            s = c.createStatement();
+            String query = "DELETE FROM Category WHERE category_name ='" + categoryname + "'";
+            s.executeUpdate(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void deleteTask (String taskname) {
+        try {
+            s = c.createStatement();
+            String query = "DELETE FROM Tasks WHERE category_name ='" +taskname+ "'";
+            s.executeUpdate(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
     //testing database
-    public static void main (String [] args) throws Exception{
+    public static void main (String [] args) throws Exception {
         Connection c = null;
         Statement s = null;
 
@@ -240,13 +296,18 @@ public class DatabaseDriver {
 
         List<Task> getCategories = db.restoreCategories();
         //insert tasks and the category corresponding
-        db.saveTasks("Assignment 1", "Assignments");
-        db.saveTasks("Assignment 2", "Projects");
+        db.saveTasks("Assignment 1", "Assignments", "00:00:2", 2);
+        db.saveTasks("Assignment 2", "Projects", "00:00:9", 2);
+
         //db.saveTasks("Assignment 3");
         //get saved tasks
         List<Task> getTasks = db.restoreTasks();
 
 
+
+
     }
-    */
+
+
+
 }
