@@ -3,123 +3,139 @@ package model;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.text.SimpleDateFormat;
 
 public class Task {
-  private String name;
+    private String name;
 
-  // are we currently tracking time for this task?
-  private Boolean active;
+    // are we currently tracking time for this task?
+    private Boolean active;
 
-  // what time did we start the current active clock?
-  private Date activeStartTime;
+    // what time did we start the current active clock?
+    private Date activeStartTime;
 
-  
-  // list of start and end times
-  private List<Duration> timings;
+    //what time did we clock out f?
+    private  Date activeEndTime;
 
-  private Category parentCategory;
-  
-  public Task(String name) {
-    this.name = name;
-    active = false;
-    timings = new ArrayList<Duration>();
-  }
+    // list of start and end times
+    private List<Duration> timings;
 
-  
-  public void clockIn() {
-    // we can't clock in to an already active task
-    if(active) {
-      System.out.println("Tried to clock in active task " + name);
+    //duration of task in seconds - used to store in the database & to measure with for the analysis later on
+    private long duration;
+
+    public Task(String name) {
+        this.name = name;
+        active = false;
+        timings = new ArrayList<Duration>();
     }
 
-    else {
-      System.out.println("Clocked in task " + name);
+    public void clockIn() {
+        // we can't clock in to an already active task
+        if(active) {
+            System.out.println("Tried to clock in active task " + name);
+        }
 
-      activeStartTime = new Date();
-      System.out.println("Clock-in got start time: " + activeStartTime.toString());
+        else {
+            System.out.println("Clocked in task " + name);
 
-      active = true;
+            activeStartTime = new Date();
+            System.out.println("Clock-in got start time: " + activeStartTime.toString());
+
+            active = true;
+        }
     }
-  }
 
-  public void clockOut() {
-    // we can't clock out of an inactive task
-    if(!active) {
-      System.out.println("Tried to clock out of an inactive task " + name);
+    public void clockOut() {
+        // we can't clock out of an inactive task
+        if(!active) {
+            System.out.println("Tried to clock out of an inactive task " + name);
+        }
+        else {
+            System.out.println("Clocked out task " + name);
+
+            activeEndTime = new Date();
+            System.out.println("Clock-out got end time: " + activeEndTime.toString());
+
+            addTiming(activeStartTime, activeEndTime);
+
+            // clear the active variables
+            active = false;
+
+        }
     }
-    else {
-      System.out.println("Clocked out task " + name);
 
-      Date activeEndTime = new Date();
-      System.out.println("Clock-out got end time: " + activeEndTime.toString());
-
-      addTiming(activeStartTime, activeEndTime);
-      
-      // clear the active variables
-      active = false;
-      activeStartTime = null;
+    public List<Duration> getTimings() {
+        return timings;
     }
-  }
 
-  // if you call Category.addTask, this will be called automatically
-  public void setCategory(Category c) {
-    parentCategory = c;
-  }
-
-  
-  public List<Duration> getTimings() {
-    return timings;
-  }
-
-  public void addTiming(Duration d) {
-    timings.add(d);
-  }
-
-  public void addTiming(Date start, Date end) {
-    Duration d = new Duration(start, end);
-    timings.add(d);
-  }
-
-  public Boolean getStatus() {
-    return active;
-  }
-
-  public String getName() {
-
-    return name;
-  }
-
-  // returns 'active' clock time: time it has currently been running
-  // for
-  public String getActiveRunTimeString() {
-    if(!active) {
-      System.out.println("Tried to getActiveRunTimeString for non-active task " + name);
-      return "00:00:00";
+    public void addTiming(Duration d) {
+        timings.add(d);
     }
-    else {
-      Date rightNow = new Date();
 
-      // current run time in milliseconds
-      // will break at daylight savings time crossover but who cares
-      long milliSecondDelta = rightNow.getTime() - activeStartTime.getTime();
-
-      // now we want to convert this to hh:mm:ss
-      // this snippet taken from https://stackoverflow.com/questions/43892644
-      long secondsInMilli = 1000;
-      long minutesInMilli = secondsInMilli * 60;
-      long hoursInMilli = minutesInMilli * 60;
-
-      long elapsedHours = milliSecondDelta / hoursInMilli;
-      milliSecondDelta = milliSecondDelta % hoursInMilli;
-
-      long elapsedMinutes = milliSecondDelta / minutesInMilli;
-      milliSecondDelta = milliSecondDelta % minutesInMilli;
-
-      long elapsedSeconds = milliSecondDelta / secondsInMilli;
-      
-      return String.format("%02d", elapsedHours) + ":" +
-	String.format("%02d", elapsedMinutes) + ":" +
-	String.format("%02d", elapsedSeconds);
+    public void addTiming(Date start, Date end) {
+        Duration d = new Duration(start, end);
+        timings.add(d);
     }
-  }
+
+    public Boolean getStatus() {
+        return active;
+    }
+
+    public String getName() {
+
+        return name;
+    }
+
+    // returns 'active' clock time: time it has currently been running
+    // for
+    public String getActiveRunTimeString() {
+        if (!active) {
+            System.out.println("Tried to getActiveRunTimeString for non-active task " + name);
+            return "00:00:00";
+        } else {
+            Date rightNow = new Date();
+
+            // current run time in milliseconds
+            // will break at daylight savings time crossover but who cares
+           long milliSecondDelta = rightNow.getTime() - activeStartTime.getTime();
+
+            // now we want to convert this to hh:mm:ss
+            // this snippet taken from https://stackoverflow.com/questions/43892644
+           String timeConverted = convertTime(milliSecondDelta);
+
+            return timeConverted;
+        }
+    }
+    //get total duration of task
+    public String totalDuration() {
+       long difference = activeEndTime.getTime()-activeStartTime.getTime();
+       duration = difference/1000;
+        String timeConverted = convertTime(difference);
+
+        activeStartTime = null;
+
+
+        return timeConverted;
+    }
+    public long durationInSeconds() {
+        return duration;
+    }
+
+
+    public String convertTime(long milliSecondDelta) {
+        long secondsInMilli = 1000;
+        long minutesInMilli = secondsInMilli * 60;
+        long hoursInMilli = minutesInMilli * 60;
+
+        long elapsedHours = milliSecondDelta / hoursInMilli;
+        milliSecondDelta = milliSecondDelta % hoursInMilli;
+
+        long elapsedMinutes = milliSecondDelta / minutesInMilli;
+        milliSecondDelta = milliSecondDelta % minutesInMilli;
+
+        long elapsedSeconds = milliSecondDelta / secondsInMilli;
+        return String.format("%02d", elapsedHours) + ":" +
+                String.format("%02d", elapsedMinutes) + ":" +
+                String.format("%02d", elapsedSeconds);
+    }
 }
