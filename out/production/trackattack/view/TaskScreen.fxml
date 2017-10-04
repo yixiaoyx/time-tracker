@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="CENTER" hgap="10.0" prefHeight="500.0" prefWidth="500.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.TaskController">
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="500.0" prefWidth="500.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
     <GridPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #f8f7f2" GridPane.columnIndex="0" GridPane.rowIndex="0">
       <children>
@@ -18,13 +18,13 @@
             <Font name="DejaVu Sans Bold" size="20.0" />
           </font>
         </Button>
-        <Label alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="200.0" text="TASK" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+        <Label fx:id="taskName" alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="200.0" text="TASK" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
           <font>
             <Font name="Lucida Sans Regular" size="30.0" fx:id="x1" />
           </font>
         </Label>
-        <Label fx:id="duration" alignment="TOP_CENTER" font="$x1" prefHeight="70.0" prefWidth="200.0" text="00:00" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="⇦" underline="false" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
+        <Label fx:id="duration" alignment="TOP_CENTER" font="$x1" prefHeight="70.0" prefWidth="200.0" text="00:00:00" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+        <Button fx:id="backButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="⇦" underline="false" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
           <font>
             <Font size="30.0" />
           </font>
