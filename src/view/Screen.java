@@ -23,15 +23,15 @@ public abstract class Screen {
     }
 
     public void start() throws Exception {
-        Parent root = fxmlLoader.load();
         stage.setTitle(title);
 
-        setUpController();
+        fxmlLoader.setController(setUpController());
+        Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root, 500, 500);
         stage.setScene(scene);
         stage.show();
     }
 
-    abstract void setUpController();
+    abstract Controller setUpController();
 }

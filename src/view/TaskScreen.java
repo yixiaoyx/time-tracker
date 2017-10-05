@@ -17,9 +17,8 @@ public class TaskScreen extends Screen {
     }
 
     @Override
-    void setUpController() {
-        TaskController controller = fxmlLoader.<TaskController>getController();
-        controller.setDriver(driver);
-        controller.setCurrTask(task);
+    Controller setUpController() {
+        TaskController controller = new TaskController(driver, task);
+        return controller;
     }
 }

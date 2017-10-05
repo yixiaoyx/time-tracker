@@ -20,10 +20,14 @@ public class Main extends Application {
         */
 
         InterfaceDriver driver = new InterfaceDriver();
-        driver.addCategory("All");
-        String task = "Dummy Task";
-        driver.addTask("All", task);
-        Screen currScreen = new TaskScreen(primaryStage, driver, task);
+        driver.addCategory("ALL");
+        driver.addTask("ALL", "Dummy Task 0");
+        driver.addTask("ALL", "Dummy Task 1");
+        driver.addSubCategory("ALL", "Uni");
+        driver.addSubCategory("ALL", "Work");
+        driver.addSubCategory("ALL", "Procrastination");
+        //Screen currScreen = new CategoryScreen(primaryStage, driver, "ALL");
+        Screen currScreen = new TaskScreen(primaryStage, driver, "Dummy Task 0");
         currScreen.start();
     }
 
@@ -32,6 +36,4 @@ public class Main extends Application {
         launch(args);
     }
 
-    //t = new TaskPage(driver, taskname);
-    //t.start()
 }

@@ -7,29 +7,27 @@ import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
-import java.util.concurrent.*;
 
-public class TaskController {
+public class TaskController extends Controller {
 
-    private InterfaceDriver driver;
-    //private ScheduledExecutorService display;
     private String currTask;
-    private String currCat;
     private boolean active;
-    final Timeline activeTime;
+    private final Timeline activeTime;
 
     @FXML
     private Button clockButton;
     @FXML
     private Label duration;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Label taskName;
 
-    public TaskController() {
+    public TaskController(InterfaceDriver driver, String task) {
+        super(driver);
+        currTask = task;
 
-        // just for testing, need to change
         active = false;
-
-        //runTaskPage();
-
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -45,11 +43,6 @@ public class TaskController {
 
         activeTime.setCycleCount(Animation.INDEFINITE);
 
-        //activeTask = driver./*get active task*/;
-    }
-
-    public void setDriver(InterfaceDriver driver) {
-        this.driver = driver;
     }
 
     public void setCurrTask(String currTask) {
@@ -66,8 +59,6 @@ public class TaskController {
             activeTime.play();
             active = true;
 
-            //display = Executors.newSingleThreadScheduledExecutor();
-            //display.scheduleAtFixedRate(this::displayDuration, 0, 1, TimeUnit.SECONDS);
         } else {
             driver.clockOut(currTask);
             clockButton.setText("CLOCK IN");
@@ -77,11 +68,18 @@ public class TaskController {
 
     }
 
-    //private void runTaskPage()
+    @FXML
+    protected void initialize() {
+        //TODO: currTask is not set
+        taskName.setText(currTask);
 
-    /*
-    private void displayDuration() {
-       duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
     }
-    */
+
+/*
+    @FXML
+    void goBack() {
+
+    }
+*/
+
 }
