@@ -9,13 +9,15 @@ import model.InterfaceDriver;
 
 public class CategoryController extends Controller {
 
+    private CategoryScreen currScreen;
     private String currCategory;
 
     @FXML
     private TilePane categoryTable;
 
-    public CategoryController(InterfaceDriver driver, Screen currScreen, String category) {
-        super(driver, currScreen);
+    public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
+        super(driver);
+        this.currScreen = currScreen;
         currCategory = category;
     }
 
@@ -24,9 +26,11 @@ public class CategoryController extends Controller {
         for (String cur: driver.getSubCategoryNames(currCategory)) {
             System.out.println(cur);
         }
+
         Node rect = new Rectangle(80,60);
         categoryTable.getChildren().add(rect);
         categoryTable.setMargin(rect, new Insets(22, 20, 20, 20));
+
     }
 
     public void setCurrCategory(String category) {

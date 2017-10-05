@@ -24,7 +24,7 @@
           </font>
         </Label>
         <Label fx:id="duration" alignment="TOP_CENTER" font="$x1" prefHeight="70.0" prefWidth="200.0" text="00:00:00" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-        <Button fx:id="backButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="⇦" underline="false" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
+        <Button fx:id="taskBackButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="⇦" onMouseClicked="#handleBackClick" underline="false" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
           <font>
             <Font size="30.0" />
           </font>

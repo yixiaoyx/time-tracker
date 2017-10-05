@@ -22,12 +22,14 @@ public class TaskScreen extends Screen {
         return controller;
     }
 
-    public void goToCategoryScreen() throws Exception {
+    public void goToCategoryScreen() {
         Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), "ALL");
+        System.out.println("I am going to the category screen");
         try {
             currScreen.start();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    
     }
 }

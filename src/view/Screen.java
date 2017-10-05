@@ -50,4 +50,5 @@ public abstract class Screen {
     }
 
     abstract Controller setUpController();
+
 }

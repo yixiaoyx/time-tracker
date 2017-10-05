@@ -10,6 +10,7 @@ import model.InterfaceDriver;
 
 public class TaskController extends Controller {
 
+    private TaskScreen currScreen;
     private String currTask;
     private boolean active;
     private final Timeline activeTime;
@@ -23,8 +24,9 @@ public class TaskController extends Controller {
     @FXML
     private Label taskName;
 
-    public TaskController(InterfaceDriver driver, Screen currScreen, String task) {
-        super(driver, currScreen);
+    public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
+        super(driver);
+        this.currScreen = currScreen;
         currTask = task;
 
         active = false;
@@ -71,8 +73,8 @@ public class TaskController extends Controller {
     @FXML
     private void handleBackClick() {
 
-        if (!active){
-
+        if (!active) {
+            currScreen.goToCategoryScreen();
         }
     }
 
