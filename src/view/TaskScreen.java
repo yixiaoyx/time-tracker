@@ -18,7 +18,16 @@ public class TaskScreen extends Screen {
 
     @Override
     Controller setUpController() {
-        TaskController controller = new TaskController(driver, task);
+        TaskController controller = new TaskController(driver, this, task);
         return controller;
+    }
+
+    public void goToCategoryScreen() throws Exception {
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), "ALL");
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

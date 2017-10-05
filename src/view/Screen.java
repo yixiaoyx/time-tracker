@@ -33,5 +33,21 @@ public abstract class Screen {
         stage.show();
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
+    public String getFxmlFile() {
+        return fxmlFile;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public InterfaceDriver getDriver() {
+        return driver;
+    }
+
     abstract Controller setUpController();
 }

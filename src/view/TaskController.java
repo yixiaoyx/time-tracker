@@ -19,12 +19,12 @@ public class TaskController extends Controller {
     @FXML
     private Label duration;
     @FXML
-    private Button backButton;
+    private Button taskBackButton;
     @FXML
     private Label taskName;
 
-    public TaskController(InterfaceDriver driver, String task) {
-        super(driver);
+    public TaskController(InterfaceDriver driver, Screen currScreen, String task) {
+        super(driver, currScreen);
         currTask = task;
 
         active = false;
@@ -66,6 +66,14 @@ public class TaskController extends Controller {
             active = false;
         }
 
+    }
+
+    @FXML
+    private void handleBackClick() {
+
+        if (!active){
+
+        }
     }
 
     @FXML

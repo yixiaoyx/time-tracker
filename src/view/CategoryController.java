@@ -14,8 +14,8 @@ public class CategoryController extends Controller {
     @FXML
     private TilePane categoryTable;
 
-    public CategoryController(InterfaceDriver driver, String category) {
-        super(driver);
+    public CategoryController(InterfaceDriver driver, Screen currScreen, String category) {
+        super(driver, currScreen);
         currCategory = category;
     }
 

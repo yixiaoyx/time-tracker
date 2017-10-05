@@ -19,7 +19,7 @@ public class CategoryScreen extends Screen {
 
     @Override
     Controller setUpController() {
-        CategoryController controller = new CategoryController(driver, category);
+        CategoryController controller = new CategoryController(driver, this, category);
         return controller;
                 //fxmlLoader.<CategoryController>getController();
         //controller.setDriver(driver);
