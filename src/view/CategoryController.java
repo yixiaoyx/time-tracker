@@ -31,6 +31,12 @@ public class CategoryController extends Controller {
     @FXML
     protected void initialize() {
         for (String cur: driver.getSubCategoryNames(currCategory)) {
+            addCategoryToTable(cur);
+            System.out.println(cur);
+        }
+
+        for (String cur: driver.getTaskNames(currCategory)) {
+            addTaskToTable(cur);
             System.out.println(cur);
         }
 
@@ -38,8 +44,6 @@ public class CategoryController extends Controller {
 
 
 
-        addTaskToTable("TASK");
-        addCategoryToTable("CATEGORY");
 
     }
 
