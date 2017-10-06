@@ -3,6 +3,7 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -18,10 +19,9 @@ public class CategoryController extends Controller {
     @FXML
     private TilePane categoryTable;
 
-    /* // TO-DO: I DON'T KNOW WHY THE CODE BELOW BREAKS
     @FXML
-    private Button categoryName;
-    */
+    private Label categoryName;
+
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
         this.currScreen = currScreen;
@@ -34,7 +34,7 @@ public class CategoryController extends Controller {
             System.out.println(cur);
         }
 
-        //categoryName.setText(currCategory);
+        categoryName.setText(currCategory);
 
 
 
