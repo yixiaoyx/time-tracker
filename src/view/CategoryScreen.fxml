@@ -18,12 +18,16 @@
    <bottom>
       <TilePane fx:id="categoryTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="481.0" BorderPane.alignment="CENTER">
          <children>
+            <!--- Hard coded CATEGORY button. Remove when Controller produces Buttons correctly.
             <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" style="-fx-background-color: #3f3f3f;" text="CATEGORY" textFill="WHITE">
                <TilePane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="22.0" />
                </TilePane.margin>
             </Button>
+            -->
+            <!--- Hard coded TASK button. Remove when Controller produces Buttons correctly.
             <Button layoutX="30.0" layoutY="32.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" style="-fx-background-color: #939393;" text="TASK" textFill="WHITE" />
+            -->
          </children>
          <BorderPane.margin>
             <Insets />
@@ -31,7 +35,7 @@
       </TilePane>
    </bottom>
    <top>
-      <Label alignment="CENTER" prefHeight="62.0" prefWidth="277.0" text="Label" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+      <Label fx:id="categoryName" alignment="CENTER" prefHeight="62.0" prefWidth="277.0" text="CATEGORYNAME" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
          <font>
             <Font name="Calibri" size="42.0" />
          </font>
