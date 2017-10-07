@@ -1,4 +1,36 @@
 package view;
 
-public class FormScreen {
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import model.InterfaceDriver;
+
+public class FormScreen extends Screen {
+    private String prevCategory; // This is the name of the category in which the Add button was clicked. Important for Back Button.
+
+    public FormScreen(Stage s, InterfaceDriver driver, String prevCategory){
+        super(s, "FormScreen.FXML", "Form", driver);
+        this.prevCategory = prevCategory;
+
+
+    }
+
+    @Override
+    Controller setUpController(){
+        FormController controller = new FormController(driver, this);
+        return controller;
+    }
+
+    public void goToCategoryScreen() {
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), "ALL");
+        System.out.println("I am going to the category screen");
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

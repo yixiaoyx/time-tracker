@@ -26,4 +26,14 @@ public class CategoryScreen extends Screen {
         //controller.setCurrCategory(category);
     }
 
+    public void goToFormScreen() {
+        Screen currScreen = new FormScreen(this.getStage(), this.getDriver(), category);
+        System.out.println("I am going to the Form Screen");
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

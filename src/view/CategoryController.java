@@ -15,6 +15,7 @@ public class CategoryController extends Controller {
 
     private CategoryScreen currScreen;
     private String currCategory;
+    private boolean active;
 
     @FXML
     private TilePane categoryTable;
@@ -26,6 +27,8 @@ public class CategoryController extends Controller {
         super(driver);
         this.currScreen = currScreen;
         currCategory = category;
+
+        active = false;
     }
 
     @FXML
@@ -52,6 +55,9 @@ public class CategoryController extends Controller {
 
     }
 
+    /* ---------------------------------------
+        METHODS FOR DISPLAYING TASKS AND CATEGORIES IN A TABLE
+     */
     private Button addTaskToTable(String taskName) {
         Button taskButton = new Button(taskName);
         taskButton.setStyle("-fx-background-color: #939393");
@@ -79,5 +85,12 @@ public class CategoryController extends Controller {
         javafx.scene.layout.TilePane.setMargin(categoryButton, new Insets(22, 20, 20, 20));
 
         return categoryButton;
+    }
+
+    @FXML
+    private void handleAddClick(){
+        if (!active) {
+            currScreen.goToFormScreen();
+        }
     }
 }
