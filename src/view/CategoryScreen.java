@@ -9,26 +9,44 @@ import model.InterfaceDriver;
 
 public class CategoryScreen extends Screen {
 
-    private String category;
+    private String currCategory;
 
     public CategoryScreen(Stage s, InterfaceDriver driver, String category) {
         super(s, "CategoryScreen.fxml", "Category", driver);
-        this.category = category;
+        currCategory = category;
 
     }
 
     @Override
     Controller setUpController() {
-        CategoryController controller = new CategoryController(driver, this, category);
+        CategoryController controller = new CategoryController(driver, this, currCategory);
         return controller;
                 //fxmlLoader.<CategoryController>getController();
         //controller.setDriver(driver);
-        //controller.setCurrCategory(category);
+        //controller.setCurrCategory(currCategory);
     }
 
     public void goToFormScreen() {
-        Screen currScreen = new FormScreen(this.getStage(), this.getDriver(), category);
+        Screen currScreen = new FormScreen(this.getStage(), this.getDriver(), currCategory);
         System.out.println("I am going to the Form Screen");
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToCategoryScreen(String category) {
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToTaskScreen(String task) {
+        Screen currScreen = new TaskScreen(this.getStage(), this.getDriver(), task);
         try {
             currScreen.start();
         } catch (Exception e) {

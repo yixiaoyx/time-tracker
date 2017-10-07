@@ -1,9 +1,11 @@
 package view;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -66,6 +68,13 @@ public class CategoryController extends Controller {
         taskButton.setLayoutY(32.0);
         taskButton.setPrefHeight(60.0);
         taskButton.setPrefWidth(80.0);
+        taskButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                handleTaskClick(taskName);
+            }
+        });
+
         categoryTable.getChildren().add(taskButton);
         javafx.scene.layout.TilePane.setMargin(taskButton, new Insets(22, 20, 20, 20));
 
@@ -81,8 +90,16 @@ public class CategoryController extends Controller {
         categoryButton.setLayoutY(32.0);
         categoryButton.setPrefHeight(60.0);
         categoryButton.setPrefWidth(80.0);
+        categoryButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                handleCategoryClick(categoryName);
+            }
+        });
+
         categoryTable.getChildren().add(categoryButton);
         javafx.scene.layout.TilePane.setMargin(categoryButton, new Insets(22, 20, 20, 20));
+
 
         return categoryButton;
     }
@@ -91,6 +108,18 @@ public class CategoryController extends Controller {
     private void handleAddClick(){
         if (!active) {
             currScreen.goToFormScreen();
+        }
+    }
+
+    private void handleCategoryClick(String category){
+        if (!active) {
+            currScreen.goToCategoryScreen(category);
+        }
+    }
+
+    private void handleTaskClick(String task) {
+        if (!active) {
+            currScreen.goToTaskScreen(task);
         }
     }
 }
