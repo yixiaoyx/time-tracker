@@ -35,7 +35,10 @@
       </TilePane>
    </bottom>
    <top>
-      <Label fx:id="categoryName" alignment="CENTER" prefHeight="62.0" prefWidth="277.0" text="CATEGORYNAME" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+      <Label fx:id="categoryName" alignment="CENTER"
+             prefHeight="62.0" prefWidth="277.0"
+             text="CATEGORYNAME" textAlignment="CENTER" wrapText="true"
+             BorderPane.alignment="CENTER">
          <font>
             <Font name="Calibri" size="42.0" />
          </font>
