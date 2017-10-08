@@ -22,8 +22,12 @@ public class FormScreen extends Screen {
         return controller;
     }
 
-    public void goToCategoryScreen() {
-        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), "ALL");
+    public void goBack(){
+        goToCategoryScreen(prevCategory);
+    }
+
+    public void goToCategoryScreen(String category) {
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
         System.out.println("I am going to the category screen");
         try {
             currScreen.start();
@@ -33,4 +37,12 @@ public class FormScreen extends Screen {
 
     }
 
+    public void goToTaskScreen(String task) {
+        Screen currScreen = new TaskScreen(this.getStage(), this.getDriver(), task);
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

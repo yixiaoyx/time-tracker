@@ -71,7 +71,7 @@
                 <!-- =========== ROW 1 =========== -->
                 <Label prefHeight="35.0" prefWidth="121.0" text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="1">
                 </Label>
-                <TextField maxHeight="-Infinity" maxWidth="250" minHeight="-Infinity" minWidth="-Infinity"
+                <TextField fx:id="nameField" maxHeight="-Infinity" maxWidth="250" minHeight="-Infinity" minWidth="-Infinity"
                            prefHeight="51.0" prefWidth="127.0" scaleX="0.95"
                            GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <!---              <VBox.margin>
@@ -88,7 +88,7 @@
                                  mnemonicParsing="false"
                                  prefHeight="65.0" prefWidth="400.0"
                                  scaleX="0.50" scaleY="0.97"
-                                 style="-fx-background-color: #FFFFFF;" text="CATEGORY"
+                                 style="-fx-background-color: #FFFFFF;" text="Please select a category..."
                                  GridPane.columnIndex="1" GridPane.rowIndex="2">
                 </MenuButton>
 
@@ -108,7 +108,13 @@
       </VBox>
    </center>
    <bottom>
-      <Button layoutX="10.0" layoutY="345.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="OK" BorderPane.alignment="CENTER">
+      <Button layoutX="10.0" layoutY="345.0"
+              maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+              mnemonicParsing="false"
+              prefHeight="50.0" prefWidth="120.0"
+              text="OK"
+              BorderPane.alignment="CENTER"
+              onMouseClicked="#handleOkClick">
           <BorderPane.margin>
               <Insets bottom="10" left="0" right="0" top="0" />
           </BorderPane.margin>
