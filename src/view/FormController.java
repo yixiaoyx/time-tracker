@@ -1,9 +1,6 @@
 package view;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
@@ -26,6 +23,7 @@ public class FormController extends Controller{
 
     @FXML
     protected void initialize(){
+        categoryMenu.getItems().add(new Menu("ALL"));
         for (String c: driver.getSubCategoryNames("ALL")) {
             categoryMenu.getItems().add(new MenuItem(c));
         }
