@@ -10,7 +10,8 @@ public class FormScreen extends Screen {
     private String prevCategory; // This is the name of the category in which the Add button was clicked. Important for Back Button.
 
     public FormScreen(Stage s, InterfaceDriver driver, String prevCategory){
-        super(s, "FormScreen.FXML", "Form", driver);
+        super(s, "FormScreen.fxml", "Form", driver);
+
         this.prevCategory = prevCategory;
 
 

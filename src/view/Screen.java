@@ -25,6 +25,8 @@ public abstract class Screen {
     public void start() throws Exception {
         stage.setTitle(title);
 
+        System.out.println(getClass().getResource(this.fxmlFile));
+
         fxmlLoader.setController(setUpController());
         Parent root = fxmlLoader.load();
 
