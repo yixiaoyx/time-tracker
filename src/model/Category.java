@@ -56,6 +56,10 @@ public class Category {
     parentCategory = c;
   }
 
+  public Category getParentCategory() {
+    return this.parentCategory;
+  }
+
   public Category getSubCategoryByName(String uniqueName) {
     for(Category c : subCategories) {
       // check if it's one of our categories

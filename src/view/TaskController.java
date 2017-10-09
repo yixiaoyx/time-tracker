@@ -64,6 +64,8 @@ public class TaskController extends Controller {
         } else {
             driver.clockOut(currTask);
             clockButton.setText("CLOCK IN");
+
+
             activeTime.stop();
             active = false;
         }

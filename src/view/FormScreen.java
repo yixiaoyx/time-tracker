@@ -13,8 +13,6 @@ public class FormScreen extends Screen {
         super(s, "FormScreen.fxml", "Form", driver);
 
         this.prevCategory = prevCategory;
-
-
     }
 
     @Override

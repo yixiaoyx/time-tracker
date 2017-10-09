@@ -123,6 +123,8 @@ public class InterfaceDriver {
     return names;
   }
 
+
+
   public List<String> getSubCategoryNames(String categoryName) {
     Category c = getCategoryByName(categoryName);
     if(c == null) {
@@ -142,6 +144,16 @@ public class InterfaceDriver {
     }
     else {
       return c.getTaskNames();
+    }
+  }
+
+  public String getParentCategoryName(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    if(c.getParentCategory() != null) {
+      return c.getName();
+    }
+    else {
+      return "";
     }
   }
 
