@@ -25,6 +25,9 @@ public class CategoryController extends Controller {
     @FXML
     private Label categoryName;
 
+    @FXML
+    private Button categoryBackButton;
+
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
         this.currScreen = currScreen;
@@ -47,6 +50,10 @@ public class CategoryController extends Controller {
 
         categoryName.setText(currCategory);
 
+        String parentCategory = driver.getParentCategoryName(currCategory);
+        if (parentCategory.equals("")) {
+            categoryBackButton.setVisible(false);
+        }
 
 
 
@@ -111,10 +118,14 @@ public class CategoryController extends Controller {
         }
     }
 
+    @FXML
+    private void handleBackClick() {
+        String parentCategory = driver.getParentCategoryName(currCategory);
+        System.out.println(parentCategory);
+        handleCategoryClick(parentCategory);
+    }
     private void handleCategoryClick(String category){
-        if (!active) {
-            currScreen.goToCategoryScreen(category);
-        }
+        currScreen.goToCategoryScreen(category);
     }
 
     private void handleTaskClick(String task) {

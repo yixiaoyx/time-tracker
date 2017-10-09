@@ -44,6 +44,13 @@
          </font>
       </Label>
    </top>
+   <left>
+      <Button fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleBackClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="&lt;" textAlignment="CENTER" translateX="-0.5" translateY="-38.5" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Arial" size="32.0" />
+         </font>
+      </Button>
+   </left>
    <right>
       <Button fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleAddClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="+" textAlignment="CENTER" translateX="-0.5" translateY="-38.5" BorderPane.alignment="CENTER">
          <font>
