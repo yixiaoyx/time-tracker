@@ -44,7 +44,6 @@ public class TaskController extends Controller {
         );
 
         activeTime.setCycleCount(Animation.INDEFINITE);
-
     }
 
     public void setCurrTask(String currTask) {
