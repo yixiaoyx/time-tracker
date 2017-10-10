@@ -123,8 +123,9 @@ public class Task {
             return timeConverted;
         }
     }
+
     //get total duration of task
-    public String totalDuration() {
+    public String getLengthOfLastClockInOut() {
         long difference = activeEndTime.getTime()-activeStartTime.getTime();
         duration = difference/1000;
         String timeConverted = convertTime(difference);
@@ -133,6 +134,14 @@ public class Task {
 
 
         return timeConverted;
+    }
+
+    public String getTotalTimeString() {
+        long totaltime = 0;
+        for(Duration d : timings) {
+            totaltime += d.time();
+        }
+        return convertTime(totaltime);
     }
 
     public long durationInSeconds() {

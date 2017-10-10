@@ -18,4 +18,8 @@ public class Duration {
   public Date getEnd() {
     return end;
   }
+
+  public long time() {
+    return end.getTime() - start.getTime();
+  }
 }

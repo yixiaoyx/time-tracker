@@ -58,6 +58,7 @@ public class TaskController extends Controller {
             driver.clockIn(currTask);
             clockButton.setText("CLOCK OUT");
 
+
             activeTime.play();
             active = true;
 
@@ -65,6 +66,8 @@ public class TaskController extends Controller {
             driver.clockOut(currTask);
             clockButton.setText("CLOCK IN");
 
+            System.out.println("ANALYSIS BOIIII");
+            System.out.println("Total Task Time: " + driver.getTaskTimeString(currTask));
 
             activeTime.stop();
             active = false;

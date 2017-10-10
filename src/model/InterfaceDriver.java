@@ -168,6 +168,12 @@ public class InterfaceDriver {
     t.addTiming(d);
   }
 
+  // use for analysis
+  public String getTaskTimeString(String taskName) {
+    Task t = getTaskByName(taskName);
+    return t.getTotalTimeString();
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
     
