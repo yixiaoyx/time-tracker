@@ -21,7 +21,7 @@ public class FormController extends Controller{
     public FormController(InterfaceDriver driver, FormScreen currScreen){
         super(driver);
         this.currScreen = currScreen;
-        setSelectedCategory("ALL");
+        setSelectedCategory(currScreen.getPrevCategory());
         active = false;
 
     }
@@ -41,6 +41,7 @@ public class FormController extends Controller{
                 categoryMenu.setText(topLevelCategory);
             }
         });
+        categoryMenu.setText(selectedCategory);
         categoryMenu.getItems().add(menuItem);
         for (String c: driver.getSubCategoryNames(topLevelCategory)) {
             MenuItem item = new MenuItem(c);

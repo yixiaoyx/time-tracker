@@ -21,6 +21,10 @@ public class FormScreen extends Screen {
         return controller;
     }
 
+    public String getPrevCategory(){
+        return prevCategory;
+    }
+
     public void goBack(){
         goToCategoryScreen(prevCategory);
     }
