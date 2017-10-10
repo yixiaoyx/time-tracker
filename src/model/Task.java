@@ -134,6 +134,7 @@ public class Task {
 
         return timeConverted;
     }
+
     public long durationInSeconds() {
         return duration;
     }
