@@ -23,6 +23,13 @@ public class Task {
     //duration of task in seconds - used to store in the database & to measure with for the analysis later on
     private long duration;
 
+    //duration in format hours:minutes:seconds
+    private String durationString;
+
+    private Date startTime;
+
+    private Date finishTime;
+
     public Category parentCategory;
 
     public Category getParentCategory() {
@@ -107,19 +114,19 @@ public class Task {
 
             // current run time in milliseconds
             // will break at daylight savings time crossover but who cares
-           long milliSecondDelta = rightNow.getTime() - activeStartTime.getTime();
+            long milliSecondDelta = rightNow.getTime() - activeStartTime.getTime();
 
             // now we want to convert this to hh:mm:ss
             // this snippet taken from https://stackoverflow.com/questions/43892644
-           String timeConverted = convertTime(milliSecondDelta);
+            String timeConverted = convertTime(milliSecondDelta);
 
             return timeConverted;
         }
     }
     //get total duration of task
     public String totalDuration() {
-       long difference = activeEndTime.getTime()-activeStartTime.getTime();
-       duration = difference/1000;
+        long difference = activeEndTime.getTime()-activeStartTime.getTime();
+        duration = difference/1000;
         String timeConverted = convertTime(difference);
 
         activeStartTime = null;
@@ -148,4 +155,26 @@ public class Task {
                 String.format("%02d", elapsedMinutes) + ":" +
                 String.format("%02d", elapsedSeconds);
     }
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+    public void setFinishTime(Date finishTime) {
+        this.finishTime = finishTime;
+    }
+    public void setDurationString(String duration) {
+        this.durationString = duration;
+    }
+    public Date getStartTime() {
+        return this.startTime;
+    }
+    public Date getFinishTime() {
+        return this.finishTime;
+    }
+    public String getDurationString() {
+        return this.durationString;
+    }
+    public long getDurationInSeconds() {
+        return duration;
+    }
+
 }
