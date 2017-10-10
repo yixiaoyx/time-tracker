@@ -21,14 +21,14 @@ public class Task {
     private List<Duration> timings;
 
     //duration of task in seconds - used to store in the database & to measure with for the analysis later on
-    private long duration;
+    private long durationSecs;
 
     //duration in format hours:minutes:seconds
     private String durationString;
 
-    private Date startTime;
+    //duration object containing start + end of duration.
+    private Duration duration;
 
-    private Date finishTime;
 
     public Category parentCategory;
 
@@ -126,7 +126,7 @@ public class Task {
     //get total duration of task
     public String totalDuration() {
         long difference = activeEndTime.getTime()-activeStartTime.getTime();
-        duration = difference/1000;
+        durationSecs = difference/1000;
         String timeConverted = convertTime(difference);
 
         activeStartTime = null;
@@ -136,7 +136,7 @@ public class Task {
     }
 
     public long durationInSeconds() {
-        return duration;
+        return durationSecs;
     }
 
 
@@ -156,26 +156,19 @@ public class Task {
                 String.format("%02d", elapsedMinutes) + ":" +
                 String.format("%02d", elapsedSeconds);
     }
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-    public void setFinishTime(Date finishTime) {
-        this.finishTime = finishTime;
-    }
+
+
     public void setDurationString(String duration) {
         this.durationString = duration;
     }
-    public Date getStartTime() {
-        return this.startTime;
-    }
-    public Date getFinishTime() {
-        return this.finishTime;
-    }
+
     public String getDurationString() {
         return this.durationString;
     }
     public long getDurationInSeconds() {
-        return duration;
+        return durationSecs;
     }
-
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
 }
