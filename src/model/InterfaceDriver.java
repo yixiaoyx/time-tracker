@@ -163,6 +163,11 @@ public class InterfaceDriver {
     return t.getParentCategory().getName();
   }
 
+  public void addTimingToTask(String taskName, Duration d) {
+    Task t = getTaskByName(taskName);
+    t.addTiming(d);
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
     

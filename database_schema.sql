@@ -14,7 +14,7 @@ duration_string VARCHAR(8) not NULL,
 duration LONG not NULL,
 date_of_task_start datetime NULL,
 date_of_task_finish datetime NULL,
-PRIMARY KEY (ID),
-FOREIGN KEY (category_ID) REFERENCES category(ID)
+PRIMARY KEY (ID)
+/*FOREIGN KEY (category_ID) REFERENCES category(ID)*/
 );
 

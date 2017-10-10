@@ -19,9 +19,14 @@ public class Main extends Application {
         primaryStage.show();
         */
 
+        // load from database
+
         InterfaceDriver driver = new InterfaceDriver();
         driver.addCategory("ALL");
         driver.addTask("ALL", "Dummy Task 0");
+        //driver.addTimingToTask("Dummy Task 0", new Duration(start, end));
+
+
         driver.addTask("ALL", "Dummy Task 1");
         driver.addSubCategory("ALL", "Uni");
         driver.addSubCategory("ALL", "Work");
