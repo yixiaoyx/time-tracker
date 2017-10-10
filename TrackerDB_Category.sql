@@ -1,0 +1,16 @@
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('All', 1, 32, 0);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('Projects', 2, 9, 0);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP4920_Proj1', 3, 4, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP4920_Proj2', 5, 6, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP9999_Proj1', 7, 8, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('Tutorial', 10, 31, 0);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W1', 13, 14, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W2', 15, 16, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W3', 17, 18, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W4', 19, 20, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W5', 21, 22, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W6', 23, 24, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W8', 27, 30, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W8Lab', 28, 29, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W7', 25, 26, 1);
+INSERT INTO TrackerDB.Category (category_name, lft, rght, subCategory) VALUES ('COMP1917_W9', 11, 12, 1);
