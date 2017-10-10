@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS Category;
 CREATE TABLE Category (
 ID int NOT NULL AUTO_INCREMENT,
 category_name VARCHAR(50) not NULL,
+lft int not NULL,
+rght int not NULL,
 PRIMARY KEY (ID)
 );
 
@@ -15,6 +17,6 @@ duration LONG not NULL,
 date_of_task_start datetime NULL,
 date_of_task_finish datetime NULL,
 PRIMARY KEY (ID)
-/*FOREIGN KEY (category_ID) REFERENCES category(ID)*/
+FOREIGN KEY (category_ID) REFERENCES Category(ID)
 );
 
