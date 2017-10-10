@@ -71,13 +71,18 @@ public class DatabaseDriver {
         try {
             //grab all the tasks from table
             s = c.createStatement();
+
             ResultSet results = s.executeQuery("select * from Tasks");
             System.out.println("All tasks stored: ");
             //print saved tasks
             while (results.next()) {
                 Task t = new Task(results.getString("task_name"));
+                int cat_id = Integer.parseInt(results.getString("category_ID"));
+                Category c = new Category(getCategoryName(cat_id));
+                t.setParentCategory(c);
                 tasks.add(t);
-                System.out.println(results.getString("task_name"));
+                System.out.println("added task: " + t.getName() + " and set its parent category to = " + t.getParentCategory().getName());
+
             }
 
         } catch (SQLException e) {
@@ -87,6 +92,23 @@ public class DatabaseDriver {
         return tasks;
     }
 
+    //given a categoryID return the categoryName
+    public String getCategoryName(int category) {
+      String categoryName = "";
+        try {
+            s = c.createStatement();
+            String getID = "SELECT category_name FROM Category WHERE ID = '" + category + "'";
+            ResultSet r = s.executeQuery(getID);
+            if (r.next()) {
+
+                categoryName = r.getString("category_name");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+        return categoryName;
+    }
     //given a categoryName, return the categoryID
     public int getCategoryID(String category) {
         int ID = 0;
@@ -217,23 +239,28 @@ public class DatabaseDriver {
 
     }
 
-    public List<Task> restoreCategories() {
-        List<Task> tasks = new ArrayList<Task>();
+    public List<Category> restoreCategories() {
+        List<Category> Categories = new ArrayList<Category>();
         try {
             //grab all the tasks from table
-            ResultSet results2 = s.executeQuery("select * from Category");
+            s = c.createStatement();
+            ResultSet results = s.executeQuery("select * from Category");
             System.out.println("All Categories stored: ");
             //print saved tasks
-            while (results2.next()) {
-                Task t = new Task(results2.getString("category_name"));
-                System.out.println(results2.getString("category_name"));
+            while (results.next()) {
+                if (!results.getString("category_name").equals("All")) {
+                    Category c = new Category(results.getString("category_name"));
+                    Category parent = new Category(results.getString("parent_category"));
+                    c.setParentCategory(parent);
+                    Categories.add(c);
+                    System.out.println("added category: " + c.getName() + " and set its parent category to = " + c.getParentCategory().getName());
+                }
             }
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
 
         }
-        return tasks;
+        return Categories;
     }
 
 
@@ -379,10 +406,9 @@ public class DatabaseDriver {
                 Task newTask = new Task(r.getString("task_name"));
                 newTask.setDurationString(     r.getString("duration_string"));
                 Date start = sdf.parse(r.getString("date_of_task_start"));
-                newTask.setStartTime(start);
                 Date finish = sdf.parse(r.getString("date_of_task_finish"));
-                newTask.setStartTime(finish);
-
+                Duration d = new Duration(start, finish);
+                newTask.setDuration(d);
               //  System.out.println("added task => " + newTask.getName());
                 tasks.add(newTask);
             }
@@ -412,9 +438,9 @@ public class DatabaseDriver {
                 Task newTask = new Task(getTasks.getString("task_name"));
                 newTask.setDurationString(getTasks.getString("duration_string"));
                 Date start = sdf.parse(getTasks.getString("date_of_task_start"));
-                newTask.setStartTime(start);
                 Date finish = sdf.parse(getTasks.getString("date_of_task_finish"));
-                newTask.setStartTime(finish);
+                Duration d = new Duration(start, finish);
+                newTask.setDuration(d);
                 tasks.add(newTask);
 
             }
@@ -432,36 +458,25 @@ public class DatabaseDriver {
 
         //add tasks
         DatabaseDriver db = new DatabaseDriver();
-      /*  db.saveCategory("Assignments", "main");
-        db.saveCategory("Projects", "main");
-        db.saveCategory("Homework", "main");
-        //get saved categories
 
-        List<Task> getCategories = db.restoreCategories();
-        //insert tasks and the category corresponding
-        //insert tasks and the category corresponding
-        db.saveTasks("Assignment 1", "Assignments", "00:00:2", 2);
-        db.saveTasks("Assignment 2", "Projects", "00:00:9", 2);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        //db.saveTasks("Assignment 3");
-        //get saved tasks
-        */
+        Date start = sdf.parse("2017-08-10 12:02:05");
+        Date finish = sdf.parse("2017-08-10 12:32:05");
+/*
 
+
+        db.saveTasks("COMP1917_Proj1", "Projects", "00:30:00", 1000,
+                start, finish);
+        db.saveCategory("Assignments", "main");
+
+        //restore all tasks saved on database;
         List<Task> getTasks = db.restoreTasks();
-        List<String> getPath = db.restoreCategoryPath("Question3");
-      //  db.saveSubCategory("COMP1917_W9", "Tutorial");
-     //   db.saveCategory("Labs", "All");
-        db.deleteCategory("Labs");
 
-        //add a sub category
-        /*
-        db.saveSubCategory("COMP1917_W7", "Tutorial");
-        //add a parent category
-        db.saveCategory("Seminars ", "All");
-        db.saveSubCategory("COMP1917_W8", "Tutorial");
-        db.saveSubCategory("COMP1917_W8Lab", "COMP1917_W8");
-        */
+        //restore category path of a task
+        List<String> getPath = db.restoreCategoryPath("Question1-3");
 
-
+        db.saveSubCategory("COMP1917_W10", "Tutorial");
+*/
     }
 }

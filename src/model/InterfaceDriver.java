@@ -12,9 +12,11 @@ public class InterfaceDriver {
 
   // each of these can have sub-categories, and sub-tasks
   private List<Category> topLevelCategories;
+    DatabaseDriver db;
 
   public InterfaceDriver() {
     topLevelCategories = new ArrayList<Category>();
+    db = new DatabaseDriver();
   }
 
   // make sure this name is unique, otherwise will cause
@@ -51,6 +53,33 @@ public class InterfaceDriver {
       System.out.println("Couldn't find category " + categoryName);
     }
   }
+  //retrieve all categories from the database and add into topLevelCategories if it doesn't exist already
+  public void retrieveAllCategories() {
+     List<Category> categories = db.restoreCategories();
+     for(Category c: categories) {
+         if(!topLevelCategories.contains(c)) {
+           System.out.println("adding category => " + c.getName() + " under its parent -> " + c.getParentCategory().getName());
+             addSubCategory(c.getParentCategory().getName(), c.getName());
+         }
+     }
+
+
+  }
+
+  public void retrieveAllTasks() {
+    List<Task> getTasks = db.restoreTasks();
+
+    for(Task t: getTasks) {
+       Category c = t.getParentCategory();
+       if(c.getTaskByName(t.getName()) == null) { //find if task already exists.
+           addTask(c.getName(), t.getName());
+       }
+
+    }
+
+  }
+
+
 
   public void clockIn(String taskName) {
     Task t = getTaskByName(taskName);
