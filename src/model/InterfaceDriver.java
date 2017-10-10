@@ -149,12 +149,18 @@ public class InterfaceDriver {
 
   public String getParentCategoryName(String categoryName) {
     Category c = getCategoryByName(categoryName);
-    if(c.getParentCategory() != null) {
-      return c.getName();
+    Category p = c.getParentCategory();
+    if(p != null) {
+      return p.getName();
     }
     else {
       return "";
     }
+  }
+
+  public String getParentCategoryOfTask(String taskName) {
+    Task t = getTaskByName(taskName);
+    return t.getParentCategory().getName();
   }
 
   public static void main(String[] args) {

@@ -23,6 +23,16 @@ public class Task {
     //duration of task in seconds - used to store in the database & to measure with for the analysis later on
     private long duration;
 
+    public Category parentCategory;
+
+    public Category getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(Category p) {
+        this.parentCategory = p;
+    }
+
     public Task(String name) {
         this.name = name;
         active = false;

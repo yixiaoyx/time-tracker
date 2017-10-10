@@ -23,7 +23,7 @@ public class Category {
   
   public void addTask(Task t) {
     childTasks.add(t);
-    //t.setCategory(this);
+    t.setParentCategory(this);
   }
 
   public List<Task> getTasks() {
