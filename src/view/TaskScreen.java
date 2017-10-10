@@ -23,7 +23,8 @@ public class TaskScreen extends Screen {
     }
 
     public void goToCategoryScreen() {
-        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), "ALL");
+        String category = driver.getParentCategoryOfTask(task);
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
         System.out.println("I am going to the category screen");
         try {
             currScreen.start();
