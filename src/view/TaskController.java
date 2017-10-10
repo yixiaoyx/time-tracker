@@ -68,7 +68,7 @@ public class TaskController extends Controller {
 
             System.out.println("ANALYSIS BOIIII");
             System.out.println("Total Task Time: " + driver.getTaskTimeString(currTask));
-            System.out.println("ALL Category Time: " + driver.getCategoryTimeString("ALL"));
+            System.out.println("ALL Category Time: " + driver.getCategoryTimeString("All"));
 
             activeTime.stop();
             active = false;
