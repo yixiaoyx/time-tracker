@@ -136,12 +136,16 @@ public class Task {
         return timeConverted;
     }
 
-    public String getTotalTimeString() {
+    public long getTotalTime() {
         long totaltime = 0;
         for(Duration d : timings) {
             totaltime += d.time();
         }
-        return convertTime(totaltime);
+        return totaltime;
+    }
+
+    public String getTotalTimeString() {
+        return convertTime(getTotalTime());
     }
 
     public long durationInSeconds() {

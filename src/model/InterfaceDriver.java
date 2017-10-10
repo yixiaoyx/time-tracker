@@ -203,6 +203,11 @@ public class InterfaceDriver {
     return t.getTotalTimeString();
   }
 
+  public String getCategoryTimeString(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    return c.getTotalTimeString();
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
     
