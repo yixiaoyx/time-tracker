@@ -19,7 +19,7 @@ duration LONG not NULL,
 date_of_task_start datetime NULL,
 date_of_task_finish datetime NULL,
 
-PRIMARY KEY (ID)
+PRIMARY KEY (ID),
 FOREIGN KEY (category_ID) REFERENCES Category(ID)
 );
 
