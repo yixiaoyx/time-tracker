@@ -22,16 +22,20 @@ public class Main extends Application {
         // load from database
 
         InterfaceDriver driver = new InterfaceDriver();
-        driver.addCategory("ALL");
-        driver.addTask("ALL", "Dummy Task 0");
+        driver.addCategory("All");
+
+            driver.addTask("All", "Dummy Task 0");
         //driver.addTimingToTask("Dummy Task 0", new Duration(start, end));
 
-
+        driver.retrieveAllCategories();
+        driver.retrieveAllTasks();
+/*
         driver.addTask("ALL", "Dummy Task 1");
         driver.addSubCategory("ALL", "Uni");
         driver.addSubCategory("ALL", "Work");
         driver.addSubCategory("ALL", "Procrastination");
         //Screen currScreen = new CategoryScreen(primaryStage, driver, "ALL");
+        */
         Screen currScreen = new TaskScreen(primaryStage, driver, "Dummy Task 0");
         currScreen.start();
     }
