@@ -1,9 +1,6 @@
-package view;
+package controller;
 
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Category;
 import model.InterfaceDriver;
 
 

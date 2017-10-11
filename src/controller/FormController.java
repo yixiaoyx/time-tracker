@@ -1,8 +1,6 @@
-package view;
+package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.util.*;
-import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
 

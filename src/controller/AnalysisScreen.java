@@ -1,4 +1,4 @@
-package view;
+package controller;
 
 import javafx.stage.Stage;
 import model.InterfaceDriver;
