@@ -117,13 +117,14 @@ public class CategoryController extends Controller {
     @FXML
     private void handleAddClick(){
         if (!active) {
-            currScreen.goToFormScreen();
+            currScreen.goToFormScreen(this.currCategory);
         }
     }
 
     @FXML
     private void handleAnalysisClick() {
         System.out.println("Go to analysis screen now");
+        currScreen.goToAnalysisScreen(this.currCategory);
     }
 
     @FXML
