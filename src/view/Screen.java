@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Category;
 import model.InterfaceDriver;
 
 public abstract class Screen {
@@ -53,4 +54,43 @@ public abstract class Screen {
 
     abstract Controller setUpController();
 
+    public void goToAnalysisScreen(String currCategory) {
+        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver());
+        System.out.println("Going to the analysis screen");
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void goToFormScreen(String currCategory) {
+        Screen currScreen = new FormScreen(this.getStage(), this.getDriver(), currCategory);
+        System.out.println("I am going to the Form Screen");
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void goToCategoryScreen(String category) {
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToTaskScreen(String task) {
+        Screen currScreen = new TaskScreen(this.getStage(), this.getDriver(), task);
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -28,6 +28,9 @@ public class CategoryController extends Controller {
     @FXML
     private Button categoryBackButton;
 
+    @FXML
+    private Button analysisButton;
+
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
         this.currScreen = currScreen;
@@ -114,8 +117,14 @@ public class CategoryController extends Controller {
     @FXML
     private void handleAddClick(){
         if (!active) {
-            currScreen.goToFormScreen();
+            currScreen.goToFormScreen(this.currCategory);
         }
+    }
+
+    @FXML
+    private void handleAnalysisClick() {
+        System.out.println("Go to analysis screen now");
+        currScreen.goToAnalysisScreen(this.currCategory);
     }
 
     @FXML

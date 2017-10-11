@@ -39,7 +39,6 @@ public class Category {
 
   }
 
-
   public List<String> getSubCategoryNames() {
     List<String> names = new ArrayList<String>();
     for(Category c : subCategories) {
@@ -47,14 +46,6 @@ public class Category {
     }
     return names;
   }
-  public List<Category> getSubCategory() {
-    List<Category> category = new ArrayList<Category>();
-    for(Category c : subCategories) {
-      category.add(c);
-    }
-    return category;
-  }
-
   
   public void addSubCategory(Category c) {
     subCategories.add(c);
@@ -122,6 +113,7 @@ public class Category {
     }
   }
 
+
   public long getTotalTime() {
     // the total time = sum of all child tasks time + sum of all subcategory times
     long totaltime = 0;
@@ -133,7 +125,7 @@ public class Category {
     }
     return totaltime;
   }
-
+  
   public String getTotalTimeString() {
     return convertTime(getTotalTime());
   }
@@ -155,10 +147,5 @@ public class Category {
             String.format("%02d", elapsedMinutes) + ":" +
             String.format("%02d", elapsedSeconds);
   }
-
-
-
-  
-  // TODO: add functions to access subtasks, do analysis etc.
 
 }

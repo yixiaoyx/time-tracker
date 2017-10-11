@@ -53,7 +53,6 @@ public class FormController extends Controller{
                 }
             });
             categoryMenu.getItems().add(item);
-
         }
     }
 
