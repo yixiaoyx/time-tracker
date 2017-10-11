@@ -16,10 +16,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TextAPI" />
         <module name="trackattack" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="TextAPI" target="1.8" />
       <module name="trackattack" target="1.8" />
     </bytecodeTargetLevel>
   </component>

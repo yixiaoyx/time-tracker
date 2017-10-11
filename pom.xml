@@ -13,6 +13,11 @@
     </dependencies>
 
     <build>
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<finalName>${artifactId}-${version}</finalName>
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+		<sourceDirectory>src</sourceDirectory>
         <resources>
             <resource>
                 <directory>src/view</directory>
