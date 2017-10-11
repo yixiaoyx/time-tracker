@@ -156,8 +156,10 @@ public class InterfaceDriver {
 
   public List<String> getSubCategoryNames(String categoryName) {
     Category c = getCategoryByName(categoryName);
+
     if(c == null) {
       System.out.println("InterfaceDriver: getSubCategoryNames error");
+      System.out.println("CategoryName was " + categoryName);
       return null;
     }
     else {

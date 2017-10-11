@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.TaskAnalytics">
-  <children>
+<children>
     <AreaChart id="AreaChart" fx:id="taskAnalysis" layoutX="25.0" layoutY="110.0" prefHeight="350.0" prefWidth="450.0">
-      <xAxis>
-        <CategoryAxis label="Date" side="BOTTOM" />
-      </xAxis>
-      <yAxis>
-        <NumberAxis label="Time Spent" side="LEFT" />
-      </yAxis>
+        <xAxis>
+            <CategoryAxis label="Date" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Time Spent" side="LEFT" />
+        </yAxis>
     </AreaChart>
-  </children>
+</children>
 </AnchorPane>

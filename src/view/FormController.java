@@ -32,7 +32,7 @@ public class FormController extends Controller{
 
     @FXML
     protected void initialize(){
-        String topLevelCategory = "ALL";
+        String topLevelCategory = "All";
         MenuItem menuItem = new MenuItem(topLevelCategory);
         menuItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override

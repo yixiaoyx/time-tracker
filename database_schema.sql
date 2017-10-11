@@ -4,6 +4,8 @@ ID int NOT NULL AUTO_INCREMENT,
 category_name VARCHAR(50) not NULL,
 lft int not NULL,
 rght int not NULL,
+subCategory int not NULL,
+parent_category VARCHAR (50) not NULL,
 PRIMARY KEY (ID)
 );
 
@@ -16,7 +18,8 @@ duration_string VARCHAR(8) not NULL,
 duration LONG not NULL,
 date_of_task_start datetime NULL,
 date_of_task_finish datetime NULL,
-PRIMARY KEY (ID)
+
+PRIMARY KEY (ID),
 FOREIGN KEY (category_ID) REFERENCES Category(ID)
 );
 
