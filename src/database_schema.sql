@@ -1,25 +1,28 @@
-DROP TABLE IF EXISTS Category;
-CREATE TABLE Category (
-ID int NOT NULL AUTO_INCREMENT,
-category_name VARCHAR(50) not NULL,
-lft int not NULL,
-rght int not NULL,
-subCategory int not NULL,
-parent_category VARCHAR (50) not NULL,
-PRIMARY KEY (ID)
+create table Category
+(
+	ID int auto_increment primary key,
+	category_name varchar(50) not null,
+	lft int null,
+	rght int null,
+	subCategory tinyint(1) default '1' null,
+	parent_category varchar(50) null
 );
 
-DROP TABLE IF EXISTS Tasks;
-CREATE TABLE Tasks (
-ID int NOT NULL AUTO_INCREMENT,
-task_name VARCHAR(50) not NULL,
-category_ID INT,
-duration_string VARCHAR(8) not NULL,
-duration LONG not NULL,
-date_of_task_start datetime NULL,
-date_of_task_finish datetime NULL,
+create table Tasks
+(
+	ID int auto_increment
+		primary key,
+	task_name varchar(50) not null,
+	category_ID int null,
+	duration_string varchar(8) null,
+	duration mediumtext not null,
+	date_of_task_start datetime null,
+	date_of_task_finish datetime null,
+	constraint tasks_ibfk_1
+	oreign key (category_ID) references trackerdb.Category (ID)
+)
+;
 
-PRIMARY KEY (ID),
-FOREIGN KEY (category_ID) REFERENCES Category(ID)
-);
+create index category_ID
+	on Tasks (category_ID);
 

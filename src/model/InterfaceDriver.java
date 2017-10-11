@@ -12,7 +12,7 @@ public class InterfaceDriver {
 
   // each of these can have sub-categories, and sub-tasks
   private List<Category> topLevelCategories;
-    DatabaseDriver db;
+  DatabaseDriver db;
 
   public InterfaceDriver() {
     topLevelCategories = new ArrayList<Category>();
@@ -29,25 +29,34 @@ public class InterfaceDriver {
 
   public void addSubCategory(String parentCategoryName, String uniqueName) {
     System.out.println("InterfaceDriver: added sub-category " + uniqueName + " to category " + parentCategoryName);
-    
+
     Category c = getCategoryByName(parentCategoryName);
-    
+
     if(c != null) {
       c.addSubCategory(new Category(uniqueName));
+      if(parentCategoryName.equals("All")) {
+        db.saveCategory(uniqueName, parentCategoryName);
+
+      }
+      else {
+        db.saveSubCategory(uniqueName, parentCategoryName);
+
+      }
     }
     else {
       System.out.println("Couldn't find parent category " + parentCategoryName);
     }
   }
-  
+
 
   public void addTask(String categoryName, String uniqueName) {
-        System.out.println("InterfaceDriver: added task " + uniqueName + " to category " + categoryName);
+    System.out.println("InterfaceDriver: added task " + uniqueName + " to category " + categoryName);
 
     Category c = getCategoryByName(categoryName);
-    
+
     if(c != null) {
       c.addTask(new Task(uniqueName));
+      db.saveTasks(uniqueName,categoryName, null, 0, null, null);
     }
     else {
       System.out.println("Couldn't find category " + categoryName);
@@ -55,13 +64,13 @@ public class InterfaceDriver {
   }
   //retrieve all categories from the database and add into topLevelCategories if it doesn't exist already
   public void retrieveAllCategories() {
-     List<Category> categories = db.restoreCategories();
-     for(Category c: categories) {
-         if(!topLevelCategories.contains(c)) {
-           System.out.println("adding category => " + c.getName() + " under its parent -> " + c.getParentCategory().getName());
-             addSubCategory(c.getParentCategory().getName(), c.getName());
-         }
-     }
+    List<Category> categories = db.restoreCategories();
+    for(Category c: categories) {
+      if(!topLevelCategories.contains(c)) {
+        System.out.println("adding category => " + c.getName() + " under its parent -> " + c.getParentCategory().getName());
+        addSubCategory(c.getParentCategory().getName(), c.getName());
+      }
+    }
 
 
   }
@@ -70,10 +79,10 @@ public class InterfaceDriver {
     List<Task> getTasks = db.restoreTasks();
 
     for(Task t: getTasks) {
-       Category c = t.getParentCategory();
-       if(c.getTaskByName(t.getName()) == null) { //find if task already exists.
-           addTask(c.getName(), t.getName());
-       }
+      Category c = t.getParentCategory();
+      if(c.getTaskByName(t.getName()) == null) { //find if task already exists.
+        addTask(c.getName(), t.getName());
+      }
 
     }
 
@@ -103,21 +112,21 @@ public class InterfaceDriver {
     }
   }
 
-  
+
   // finds an already existing category with the given name
   public Category getCategoryByName(String uniqueName) {
     for(Category c : topLevelCategories) {
       // check if it's just a top level category
       if(c.getName().equals(uniqueName)) {
-	return c;
+        return c;
       }
 
       // now check if it's a sub category of one of the top level categories
       else {
-	Category c2 = c.getSubCategoryByName(uniqueName);
-	if(c2 != null) {
-	  return c2;
-	}
+        Category c2 = c.getSubCategoryByName(uniqueName);
+        if(c2 != null) {
+          return c2;
+        }
       }
     }
 
@@ -130,12 +139,12 @@ public class InterfaceDriver {
     for(Category c : topLevelCategories) {
       Task t = c.getTaskByName(uniqueName);
       if(t != null) {
-	return t;
+        return t;
       }
     }
     return null;
   }
-  
+
   // helper function that prints out a representation of the categories/sub categories/tasks
   public void displayStructure() {
     for(Category c : topLevelCategories) {
@@ -151,15 +160,20 @@ public class InterfaceDriver {
     }
     return names;
   }
+  public List<Category> getTopLevelCategory() {
+    List<Category> names = new ArrayList<Category>();
+    for(Category c : topLevelCategories) {
+      names.add(c);
+    }
+    return names;
+  }
 
 
 
   public List<String> getSubCategoryNames(String categoryName) {
     Category c = getCategoryByName(categoryName);
-
     if(c == null) {
       System.out.println("InterfaceDriver: getSubCategoryNames error");
-      System.out.println("CategoryName was " + categoryName);
       return null;
     }
     else {
@@ -212,7 +226,7 @@ public class InterfaceDriver {
 
   public static void main(String[] args) {
     // Basic workflow:
-    
+
     // Initialise:
     InterfaceDriver I = new InterfaceDriver();
 
@@ -225,7 +239,7 @@ public class InterfaceDriver {
 
     I.addTask("Project", "Standup diary");
     I.addTask("Work", "Siphoning funds");
-    
+
 
     // Clock in and out of tasks
     I.clockIn("Standup diary");
