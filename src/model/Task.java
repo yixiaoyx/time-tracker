@@ -29,6 +29,9 @@ public class Task {
     //duration object containing start + end of duration.
     private Duration duration;
 
+    DatabaseDriver db;
+
+    SimpleDateFormat sdf;
 
     public Category parentCategory;
 
@@ -44,6 +47,8 @@ public class Task {
         this.name = name;
         active = false;
         timings = new ArrayList<Duration>();
+        db = new DatabaseDriver();
+        sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     }
 
     public void clockIn() {
@@ -56,9 +61,12 @@ public class Task {
             System.out.println("Clocked in task " + name);
 
             activeStartTime = new Date();
+
+
             System.out.println("Clock-in got start time: " + activeStartTime.toString());
 
             active = true;
+
         }
     }
 
@@ -78,11 +86,20 @@ public class Task {
             // clear the active variables
             active = false;
 
+
+            //save task to the database after clocking out.
+            db.updateTask(getName(), getParentCategory().getName(),convertTime(duration.time()),
+                    duration.time(), activeEndTime, activeEndTime);
+
         }
+
     }
 
     public List<Duration> getTimings() {
         return timings;
+    }
+    public Duration getDuration() {
+        return duration;
     }
 
     public void addTiming(Duration d) {
@@ -90,8 +107,8 @@ public class Task {
     }
 
     public void addTiming(Date start, Date end) {
-        Duration d = new Duration(start, end);
-        timings.add(d);
+        duration = new Duration(start, end);
+        timings.add(duration);
     }
 
     public Boolean getStatus() {
@@ -117,7 +134,7 @@ public class Task {
             long milliSecondDelta = rightNow.getTime() - activeStartTime.getTime();
 
             // now we want to convert this to hh:mm:ss
-            // this snippet taken from https://stackoverflow.com/questions/43892644
+
             String timeConverted = convertTime(milliSecondDelta);
 
             return timeConverted;
@@ -154,6 +171,7 @@ public class Task {
 
 
     public String convertTime(long milliSecondDelta) {
+        // this snippet taken from https://stackoverflow.com/questions/43892644
         long secondsInMilli = 1000;
         long minutesInMilli = secondsInMilli * 60;
         long hoursInMilli = minutesInMilli * 60;
