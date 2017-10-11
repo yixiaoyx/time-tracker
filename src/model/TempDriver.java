@@ -17,7 +17,7 @@ public class TempDriver {
             } else if (input.equals("o")) {
                 t.clockOut();
                 //grab total time of task 
-                System.out.println("total time of task " + t.totalDuration() + " in seconds = " + t.durationInSeconds() );
+                System.out.println("total time of task " + t.getName() + " in seconds = " + t.durationInSeconds() );
 
             } else if (input.equals("r")) {
                 System.out.println(t.getActiveRunTimeString());
