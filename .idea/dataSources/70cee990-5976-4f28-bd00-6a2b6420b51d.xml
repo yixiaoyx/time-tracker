@@ -66,7 +66,6 @@
     <column id="22" parent="11" name="duration_string">
       <Position>4</Position>
       <DataType>varchar(8)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="23" parent="11" name="duration">
       <Position>5</Position>

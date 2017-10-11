@@ -39,6 +39,7 @@ public class Category {
 
   }
 
+
   public List<String> getSubCategoryNames() {
     List<String> names = new ArrayList<String>();
     for(Category c : subCategories) {
@@ -46,6 +47,14 @@ public class Category {
     }
     return names;
   }
+  public List<Category> getSubCategory() {
+    List<Category> category = new ArrayList<Category>();
+    for(Category c : subCategories) {
+      category.add(c);
+    }
+    return category;
+  }
+
   
   public void addSubCategory(Category c) {
     subCategories.add(c);
@@ -112,6 +121,42 @@ public class Category {
       c.displaySelf(indent + "  ");
     }
   }
+
+  public long getTotalTime() {
+    // the total time = sum of all child tasks time + sum of all subcategory times
+    long totaltime = 0;
+    for(Task t : childTasks) {
+      totaltime += t.getTotalTime();
+    }
+    for(Category c : subCategories) {
+      totaltime += c.getTotalTime();
+    }
+    return totaltime;
+  }
+
+  public String getTotalTimeString() {
+    return convertTime(getTotalTime());
+  }
+
+  // LAZY Copied from Task, cleanup if have time
+  public String convertTime(long milliSecondDelta) {
+    long secondsInMilli = 1000;
+    long minutesInMilli = secondsInMilli * 60;
+    long hoursInMilli = minutesInMilli * 60;
+
+    long elapsedHours = milliSecondDelta / hoursInMilli;
+    milliSecondDelta = milliSecondDelta % hoursInMilli;
+
+    long elapsedMinutes = milliSecondDelta / minutesInMilli;
+    milliSecondDelta = milliSecondDelta % minutesInMilli;
+
+    long elapsedSeconds = milliSecondDelta / secondsInMilli;
+    return String.format("%02d", elapsedHours) + ":" +
+            String.format("%02d", elapsedMinutes) + ":" +
+            String.format("%02d", elapsedSeconds);
+  }
+
+
 
   
   // TODO: add functions to access subtasks, do analysis etc.
