@@ -55,7 +55,7 @@ public abstract class Screen {
     abstract Controller setUpController();
 
     public void goToAnalysisScreen(String currCategory) {
-        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver());
+        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), currCategory);
         System.out.println("Going to the analysis screen");
         try {
             currScreen.start();
