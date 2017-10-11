@@ -13,10 +13,10 @@ public abstract class Screen {
     FXMLLoader fxmlLoader;
     InterfaceDriver driver;
 
-    public Screen(Stage s, String fxmlFile, String title, InterfaceDriver d) {
+    public Screen(Stage s, String file, String title, InterfaceDriver d) {
         stage = s;
         driver = d;
-        this.fxmlFile = fxmlFile;
+        fxmlFile = "../"+file;
         this.title = title;
         fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
 
@@ -25,9 +25,9 @@ public abstract class Screen {
     public void start() throws Exception {
         stage.setTitle(title);
 
-        System.out.println(getClass().getResource(this.fxmlFile));
 
         fxmlLoader.setController(setUpController());
+        //System.out.println(fxmlLoader);
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root, 500, 500);
