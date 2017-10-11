@@ -21,10 +21,8 @@ public class CategoryScreen extends Screen {
     Controller setUpController() {
         CategoryController controller = new CategoryController(driver, this, currCategory);
         return controller;
-                //fxmlLoader.<CategoryController>getController();
+        //fxmlLoader.<CategoryController>getController();
         //controller.setDriver(driver);
         //controller.setCurrCategory(currCategory);
     }
-
-
 }
