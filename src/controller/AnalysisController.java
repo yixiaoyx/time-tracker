@@ -28,7 +28,7 @@ public class AnalysisController extends Controller {
 
 
         NumberAxis xAxis = new NumberAxis();
-        xAxis.setLabel("Days since started working");
+        xAxis.setLabel("Days ago");
 
         NumberAxis yAxis = new NumberAxis();
         yAxis.setLabel("Minutes on task");
@@ -52,11 +52,8 @@ public class AnalysisController extends Controller {
         dumbSeries.setName(currCategory);
 
         for(int k : timings.keySet()) {
-            dumbSeries.getData().add(new XYChart.Data(k, timings.get(k)));
+            dumbSeries.getData().add(new XYChart.Data(-k, timings.get(k)));
         }
-//        dumbSeries.getData().add(new XYChart.Data(3, 10));
-//        dumbSeries.getData().add(new XYChart.Data(6, 15));
-//        dumbSeries.getData().add(new XYChart.Data(9, 8));
 
         analysisAreaChart.getData().addAll(dumbSeries);
         anchorPane.getChildren().addAll(analysisAreaChart);

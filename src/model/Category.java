@@ -136,6 +136,20 @@ public class Category {
     System.out.println("Getting the formatted timings from category " + name);
     Map<Integer, Double> ts = new HashMap<Integer, Double>();
 
+    ts.put(0, 2.0);
+    ts.put(1, 0.5);
+    ts.put(2, 0.1);
+    ts.put(3, 5.0);
+    ts.put(3, 0.0);
+    ts.put(3, 3.0);
+    ts.put(0, 2.51);
+    ts.put(11, 0.0);
+    ts.put(21, 0.0);
+    ts.put(31, 0.0);
+    ts.put(41, 0.0);
+    ts.put(51, 3.2);
+
+
     for(Task t: childTasks) {
       for(Duration d : t.getTimings()) {
         // calculate how many days ago
@@ -159,6 +173,7 @@ public class Category {
         if(ts.containsKey(k)) {
           ts.put(k, ts.get(k) + newTimings.get(k));
           System.out.println("Added " + newTimings.get(k) + " to " + k);
+          //System.out.println("Now: " + ts.get(k));
         }
         else {
           ts.put(k, newTimings.get(k));
@@ -171,18 +186,6 @@ public class Category {
 
 
     // todo make this read from the timings
-//    ts.put(0, 2.0);
-//    ts.put(1, 0.5);
-//    ts.put(2, 0.1);
-//    ts.put(3, 5.0);
-//    ts.put(3, 0.0);
-//    ts.put(3, 3.0);
-//    ts.put(0, 2.51);
-//    ts.put(11, 0.0);
-//    ts.put(21, 0.0);
-//    ts.put(31, 0.0);
-//    ts.put(41, 0.0);
-//    ts.put(51, 3.2);
 
 
     return ts;
