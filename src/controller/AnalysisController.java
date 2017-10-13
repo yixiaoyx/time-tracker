@@ -5,6 +5,10 @@ import javafx.scene.chart.*;
 import javafx.scene.layout.AnchorPane;
 import model.InterfaceDriver;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
 
 public class AnalysisController extends Controller {
     private Screen currScreen;
@@ -22,9 +26,11 @@ public class AnalysisController extends Controller {
         this.currScreen = currScreen;
         this.currCategory = currCategory;
 
-        NumberAxis xAxis = new NumberAxis(1, 31, 1);
-        NumberAxis yAxis = new NumberAxis();
+        NumberAxis xAxis = new NumberAxis();
+        xAxis.setLabel("Days since started working");
 
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Seconds on task");
 
         analysisAreaChart = new AreaChart<Number, Number>(xAxis, yAxis);
 
@@ -34,14 +40,21 @@ public class AnalysisController extends Controller {
     protected void initialize() {
         System.out.println("Got into initialise for analysis controller, currCat is " + currCategory);
 
+        // xValue: days ago
+        // yValue: time put in
+        Map<Integer, Integer> timings = driver.getFormattedTimingsFromCategory(currCategory);
+
 
 
         XYChart.Series dumbSeries= new XYChart.Series();
-        dumbSeries.setName("Dummy Task");
-        dumbSeries.getData().add(new XYChart.Data(1, 4));
-        dumbSeries.getData().add(new XYChart.Data(3, 10));
-        dumbSeries.getData().add(new XYChart.Data(6, 15));
-        dumbSeries.getData().add(new XYChart.Data(9, 8));
+        dumbSeries.setName(currCategory);
+
+        for(int k : timings.keySet()) {
+            dumbSeries.getData().add(new XYChart.Data(k, timings.get(k)));
+        }
+//        dumbSeries.getData().add(new XYChart.Data(3, 10));
+//        dumbSeries.getData().add(new XYChart.Data(6, 15));
+//        dumbSeries.getData().add(new XYChart.Data(9, 8));
 
         analysisAreaChart.getData().addAll(dumbSeries);
         anchorPane.getChildren().addAll(analysisAreaChart);

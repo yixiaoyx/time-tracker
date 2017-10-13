@@ -1,7 +1,9 @@
 package model;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Category {
   private List<Task> childTasks;
@@ -128,6 +130,29 @@ public class Category {
   
   public String getTotalTimeString() {
     return convertTime(getTotalTime());
+  }
+
+  public Map<Integer, Integer> getFormattedTimings() {
+    System.out.println("Getting the formatted timings from category " + name);
+    Map<Integer, Integer> ts = new HashMap<Integer, Integer>();
+
+
+    // todo make this read from the timings
+    ts.put(0, 200);
+    ts.put(1, 0);
+    ts.put(2, 0);
+    ts.put(3, 0);
+    ts.put(4, 0);
+    ts.put(5, 300);
+    ts.put(0, 200);
+    ts.put(11, 0);
+    ts.put(21, 0);
+    ts.put(31, 0);
+    ts.put(41, 0);
+    ts.put(51, 300);
+
+
+    return ts;
   }
 
   // LAZY Copied from Task, cleanup if have time

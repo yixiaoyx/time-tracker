@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // SEE MAIN METHOD AT BOTTOM OF FILE FOR EXAMPLE OF HOW TO USE
 
@@ -223,6 +224,12 @@ public class InterfaceDriver {
     Category c = getCategoryByName(categoryName);
     return c.getTotalTimeString();
   }
+
+  public Map<Integer, Integer> getFormattedTimingsFromCategory(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    return c.getFormattedTimings();
+  }
+
 
   public static void main(String[] args) {
     // Basic workflow:
