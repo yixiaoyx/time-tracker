@@ -31,7 +31,7 @@ public class AnalysisController extends Controller {
         xAxis.setLabel("Days since started working");
 
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Hours on task");
+        yAxis.setLabel("Minutes on task");
 
         analysisAreaChart = new LineChart(xAxis, yAxis);
 

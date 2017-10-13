@@ -26,4 +26,10 @@ public class Duration {
   public double timeInHours() {
     return time()/1000/60/60;
   }
+
+  public double timeInMinutes() {
+    System.out.println(time());
+    return time()/1000.0/60.0;
+  }
+
 }

@@ -10,9 +10,9 @@ public class Category {
   private List<Category> subCategories;
   private Category parentCategory;
 
-  
+
   private String name;
-  
+
   public Category(String name) {
     this.name = name;
     childTasks = new ArrayList<Task>();
@@ -22,7 +22,7 @@ public class Category {
   public String getName() {
     return name;
   }
-  
+
   public void addTask(Task t) {
     childTasks.add(t);
     t.setParentCategory(this);
@@ -48,7 +48,7 @@ public class Category {
     }
     return names;
   }
-  
+
   public void addSubCategory(Category c) {
     subCategories.add(c);
     c.setParentCategory(this);
@@ -96,7 +96,7 @@ public class Category {
 	return t;
       }
     }
-    
+
     return null;
   }
 
@@ -127,7 +127,7 @@ public class Category {
     }
     return totaltime;
   }
-  
+
   public String getTotalTimeString() {
     return convertTime(getTotalTime());
   }
@@ -139,24 +139,50 @@ public class Category {
     for(Task t: childTasks) {
       for(Duration d : t.getTimings()) {
         // calculate how many days ago
-        double daysAgo = (System.currentTimeMillis() - d.getStart().getTime()) / (24 * 60 * 60 * 1000d);
+        int daysAgo = (int) ((System.currentTimeMillis() - d.getStart().getTime()) / (24 * 60 * 60 * 1000d));
 
-        ts.put((int) daysAgo, d.timeInHours());
+        if(ts.containsKey(daysAgo)) {
+          ts.put(daysAgo, ts.get(daysAgo) + d.timeInMinutes());
+          System.out.println("Added " + d.timeInMinutes() + " to " + daysAgo);
+        }
+        else {
+          ts.put(daysAgo, d.timeInMinutes());
+          System.out.println("Put " + d.timeInMinutes() + " in " + daysAgo);
+
+        }
       }
     }
+
+    for(Category c : subCategories) {
+      Map<Integer, Double> newTimings = c.getFormattedTimings();
+      for(int k : newTimings.keySet()) {
+        if(ts.containsKey(k)) {
+          ts.put(k, ts.get(k) + newTimings.get(k));
+          System.out.println("Added " + newTimings.get(k) + " to " + k);
+        }
+        else {
+          ts.put(k, newTimings.get(k));
+          System.out.println("Put " + newTimings.get(k) + " in " + k);
+
+        }
+
+      }
+    }
+
+
     // todo make this read from the timings
-    ts.put(0, 2.0);
-    ts.put(1, 0.5);
-    ts.put(2, 0.1);
-    ts.put(3, 5.0);
-    ts.put(4, 0.0);
-    ts.put(5, 3.0);
-    ts.put(0, 2.51);
-    ts.put(11, 0.0);
-    ts.put(21, 0.0);
-    ts.put(31, 0.0);
-    ts.put(41, 0.0);
-    ts.put(51, 3.2);
+//    ts.put(0, 2.0);
+//    ts.put(1, 0.5);
+//    ts.put(2, 0.1);
+//    ts.put(3, 5.0);
+//    ts.put(3, 0.0);
+//    ts.put(3, 3.0);
+//    ts.put(0, 2.51);
+//    ts.put(11, 0.0);
+//    ts.put(21, 0.0);
+//    ts.put(31, 0.0);
+//    ts.put(41, 0.0);
+//    ts.put(51, 3.2);
 
 
     return ts;
