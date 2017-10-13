@@ -136,18 +136,18 @@ public class Category {
     System.out.println("Getting the formatted timings from category " + name);
     Map<Integer, Double> ts = new HashMap<Integer, Double>();
 
-    ts.put(0, 2.0);
-    ts.put(1, 0.5);
-    ts.put(2, 0.1);
-    ts.put(3, 5.0);
-    ts.put(3, 0.0);
-    ts.put(3, 3.0);
-    ts.put(0, 2.51);
-    ts.put(11, 0.0);
-    ts.put(21, 0.0);
-    ts.put(31, 0.0);
-    ts.put(41, 0.0);
-    ts.put(51, 3.2);
+//    ts.put(0, 2.0);
+//    ts.put(1, 0.5);
+//    ts.put(2, 0.1);
+//    ts.put(3, 5.0);
+//    ts.put(3, 0.0);
+//    ts.put(3, 3.0);
+//    ts.put(0, 2.51);
+//    ts.put(11, 0.0);
+//    ts.put(21, 0.0);
+//    ts.put(31, 0.0);
+//    ts.put(41, 0.0);
+//    ts.put(51, 3.2);
 
 
     for(Task t: childTasks) {
