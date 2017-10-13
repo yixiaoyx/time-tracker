@@ -132,24 +132,31 @@ public class Category {
     return convertTime(getTotalTime());
   }
 
-  public Map<Integer, Integer> getFormattedTimings() {
+  public Map<Integer, Double> getFormattedTimings() {
     System.out.println("Getting the formatted timings from category " + name);
-    Map<Integer, Integer> ts = new HashMap<Integer, Integer>();
+    Map<Integer, Double> ts = new HashMap<Integer, Double>();
 
+    for(Task t: childTasks) {
+      for(Duration d : t.getTimings()) {
+        // calculate how many days ago
+        double daysAgo = (System.currentTimeMillis() - d.getStart().getTime()) / (24 * 60 * 60 * 1000d);
 
+        ts.put((int) daysAgo, d.timeInHours());
+      }
+    }
     // todo make this read from the timings
-    ts.put(0, 200);
-    ts.put(1, 0);
-    ts.put(2, 0);
-    ts.put(3, 0);
-    ts.put(4, 0);
-    ts.put(5, 300);
-    ts.put(0, 200);
-    ts.put(11, 0);
-    ts.put(21, 0);
-    ts.put(31, 0);
-    ts.put(41, 0);
-    ts.put(51, 300);
+    ts.put(0, 2.0);
+    ts.put(1, 0.5);
+    ts.put(2, 0.1);
+    ts.put(3, 5.0);
+    ts.put(4, 0.0);
+    ts.put(5, 3.0);
+    ts.put(0, 2.51);
+    ts.put(11, 0.0);
+    ts.put(21, 0.0);
+    ts.put(31, 0.0);
+    ts.put(41, 0.0);
+    ts.put(51, 3.2);
 
 
     return ts;

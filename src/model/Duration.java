@@ -22,4 +22,8 @@ public class Duration {
   public long time() {
     return end.getTime() - start.getTime();
   }
+
+  public double timeInHours() {
+    return time()/1000/60/60;
+  }
 }

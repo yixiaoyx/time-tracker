@@ -225,7 +225,7 @@ public class InterfaceDriver {
     return c.getTotalTimeString();
   }
 
-  public Map<Integer, Integer> getFormattedTimingsFromCategory(String categoryName) {
+  public Map<Integer, Double> getFormattedTimingsFromCategory(String categoryName) {
     Category c = getCategoryByName(categoryName);
     return c.getFormattedTimings();
   }

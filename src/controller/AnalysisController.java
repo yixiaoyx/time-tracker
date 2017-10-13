@@ -16,7 +16,7 @@ public class AnalysisController extends Controller {
     private String currCategory;
 
     @FXML
-    AreaChart analysisAreaChart;
+    LineChart<Number, Number> analysisAreaChart;
 
     @FXML
     AnchorPane anchorPane;
@@ -26,15 +26,17 @@ public class AnalysisController extends Controller {
         this.currScreen = currScreen;
         this.currCategory = currCategory;
 
+
         NumberAxis xAxis = new NumberAxis();
         xAxis.setLabel("Days since started working");
 
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Seconds on task");
+        yAxis.setLabel("Hours on task");
 
-        analysisAreaChart = new AreaChart<Number, Number>(xAxis, yAxis);
+        analysisAreaChart = new LineChart(xAxis, yAxis);
 
     }
+
 
     @FXML
     protected void initialize() {
@@ -42,7 +44,7 @@ public class AnalysisController extends Controller {
 
         // xValue: days ago
         // yValue: time put in
-        Map<Integer, Integer> timings = driver.getFormattedTimingsFromCategory(currCategory);
+        Map<Integer, Double> timings = driver.getFormattedTimingsFromCategory(currCategory);
 
 
 
