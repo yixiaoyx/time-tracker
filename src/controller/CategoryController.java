@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import model.InterfaceDriver;
@@ -137,6 +139,23 @@ public class CategoryController extends Controller {
     private Button addCategoryToTable(String categoryName) {
         Image image = new Image(categoryPath, false);
 
+        VBox vbox = new VBox();
+        Label label = new Label(categoryName);
+
+        vbox.getChildren().addAll(new ImageView(image), label);
+        vbox.setAlignment(Pos.CENTER);
+
+        // JFX Components from http://www.jfoenix.com/documentation.html
+        JFXButton categoryButton = new JFXButton();
+        categoryButton.setGraphic(vbox);
+        categoryButton.getStyleClass().add("button-raised");
+        categoryButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                handleCategoryClick(categoryName);
+            }
+        });
+        /*
         Button categoryButton = new Button(categoryName);
         categoryButton.setGraphic(new ImageView(image));
         categoryButton.setId("category-button");
@@ -152,6 +171,7 @@ public class CategoryController extends Controller {
                 handleCategoryClick(categoryName);
             }
         });
+        */
 
         categoryTable.getChildren().add(categoryButton);
         javafx.scene.layout.TilePane.setMargin(categoryButton, new Insets(22, 20, 20, 20));
