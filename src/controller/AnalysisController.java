@@ -61,8 +61,6 @@ public class AnalysisController extends Controller {
         // yValue: time put in
         Map<Integer, Double> timings = driver.getFormattedTimingsFromCategory(currCategory);
 
-
-
         XYChart.Series dumbSeries= new XYChart.Series();
         dumbSeries.setName(currCategory);
 
