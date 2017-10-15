@@ -33,7 +33,7 @@ public abstract class Screen {
         Scene scene = new Scene(root, 500, 500);
 
         // ASSIGN CSS STYLE SHEET
-        scene.getStylesheets().add("CategoryScreen.css");
+        // scene.getStylesheets().add("CategoryScreen.css");
 
         stage.setScene(scene);
         stage.show();

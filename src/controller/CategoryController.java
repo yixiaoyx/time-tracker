@@ -20,6 +20,19 @@ public class CategoryController extends Controller {
     private String currCategory;
     private boolean active;
 
+    // FILEPATHS FOR BUTTON GRAPHICS
+    final File categoryFile= new File("src/assets/Category_2.png");
+    final File taskFile= new File("src/assets/Task_2.png");
+    final File backFile = new File("src/assets/Back_Button_3.png");
+    final File analysisFile = new File("src/assets/Back_Button_3.png");
+    final File addFile = new File("src/assets/Add_Button_3.png");
+
+    final String categoryPath = categoryFile.toURI().toString();
+    final String taskPath = taskFile.toURI().toString();
+    final String backPath = backFile.toURI().toString();
+    final String analysisPath = analysisFile.toURI().toString();
+    final String addPath = addFile.toURI().toString();
+
     @FXML
     private TilePane categoryTable;
 
@@ -31,6 +44,9 @@ public class CategoryController extends Controller {
 
     @FXML
     private Button analysisButton;
+
+    @FXML
+    private Button addButton;
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
@@ -59,7 +75,7 @@ public class CategoryController extends Controller {
             categoryBackButton.setVisible(false);
         }
 
-
+        setGraphics();
 
     }
 
@@ -67,13 +83,38 @@ public class CategoryController extends Controller {
         currCategory = category;
 
     }
+    /* ---------------------------------------
+        METHODS FOR SETTING GRAPHICS
+       --------------------------------------- */
+
+    private void setGraphics() {
+        // Back Button
+        Image backImage = new Image(backPath, false);
+        categoryBackButton.setGraphic(new ImageView(backImage));
+
+        // Analysis Button
+        Image analysisImage = new Image(analysisPath, false);
+        analysisButton.setGraphic(new ImageView(analysisImage));
+
+        // Add Button
+        Image addImage = new Image(addPath, false);
+        addButton.setGraphic(new ImageView(addImage));
+
+    }
+
 
     /* ---------------------------------------
         METHODS FOR DISPLAYING TASKS AND CATEGORIES IN A TABLE
      */
     private Button addTaskToTable(String taskName) {
         Button taskButton = new Button(taskName);
-        taskButton.setStyle("-fx-base: #00000000; -fx-graphic:url(../assets/Task_2.png)");
+
+        taskButton.setId("task-button");
+
+        Image image = new Image(taskPath, false);
+        taskButton.setGraphic(new ImageView(image));
+
+        taskButton.setStyle("-fx-base: #00000000;");
         //taskButton.setTextFill(Color.WHITE);
         taskButton.setLayoutX(30.0);
         taskButton.setLayoutY(32.0);
@@ -94,15 +135,12 @@ public class CategoryController extends Controller {
     }
 
     private Button addCategoryToTable(String categoryName) {
-        /*File categoryFile = new File("src/assets/Category_2.png");
-        String categoryString = categoryFile.toURI().toString();
-        System.out.println(categoryString);
-        Image image = new Image(categoryString, false);
-*/
+        Image image = new Image(categoryPath, false);
+
         Button categoryButton = new Button(categoryName);
-        //categoryButton.setGraphic(new ImageView(image));
+        categoryButton.setGraphic(new ImageView(image));
         categoryButton.setId("category-button");
-        //categoryButton.setStyle("-fx-base: #00000000; -fx-graphic:url(/trackattack/src/assets/Category_2.png)");
+        categoryButton.setStyle("-fx-base: #00000000;");
         //categoryButton.setTextFill(Color.WHITE);
         categoryButton.setLayoutX(30.0);
         categoryButton.setLayoutY(32.0);
@@ -122,6 +160,9 @@ public class CategoryController extends Controller {
         return categoryButton;
     }
 
+    /* ---------------------------------------
+        HANDLERS
+       --------------------------------------- */
     @FXML
     private void handleAddClick(){
         if (!active) {

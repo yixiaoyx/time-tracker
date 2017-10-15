@@ -35,38 +35,36 @@
         </TilePane>
     </bottom>
     <top>
-        <Label fx:id="categoryName" alignment="CENTER"
-               prefHeight="62.0" prefWidth="277.0"
-               text="CATEGORYNAME" textAlignment="CENTER" wrapText="true"
-               BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Calibri" size="42.0" />
-            </font>
-        </Label>
-    </top>
-    <left>
-        <Button fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleBackClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="&lt;" textAlignment="CENTER" translateX="-0.5" translateY="-38.5" BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Arial" size="32.0" />
-            </font>
-        </Button>
-    </left>
-    <right>
+
         <HBox>
             <children>
-                <Button fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleAnalysisClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="A" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                <Button fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleBackClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-base: #00000000" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="&lt;" textAlignment="CENTER">
+                    <font>
+                        <Font name="Arial" size="32.0" />
+                    </font>
+                </Button>
+                <Label fx:id="categoryName" alignment="CENTER"
+                       prefHeight="62.0" prefWidth="277.0"
+                       text="CATEGORYNAME" textAlignment="CENTER" wrapText="true"
+                       BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Calibri" size="42.0" />
+                    </font>
+                </Label>
+                <Button fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleAnalysisClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-base: #00000000" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="A" textAlignment="CENTER" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="Arial" size="32.0" />
                     </font>
                 </Button>
 
-                <Button fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleAddClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="+" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                <Button fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleAddClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-base: #00000000" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="+" textAlignment="CENTER" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="Arial" size="32.0" />
                     </font>
                 </Button>
             </children>
         </HBox>
-    </right>
+    </top>
+
 </BorderPane>
 
