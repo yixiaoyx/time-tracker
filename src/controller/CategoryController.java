@@ -109,25 +109,26 @@ public class CategoryController extends Controller {
         METHODS FOR DISPLAYING TASKS AND CATEGORIES IN A TABLE
      */
     private Button addTaskToTable(String taskName) {
-        Button taskButton = new Button(taskName);
-
-        taskButton.setId("task-button");
-
         Image image = new Image(taskPath, false);
-        taskButton.setGraphic(new ImageView(image));
 
-        taskButton.setStyle("-fx-base: #00000000;");
-        //taskButton.setTextFill(Color.WHITE);
-        taskButton.setLayoutX(30.0);
-        taskButton.setLayoutY(32.0);
-        taskButton.setPrefHeight(60.0);
-        taskButton.setPrefWidth(80.0);
+        VBox vbox = new VBox();
+        Label label = new Label(taskName);
+
+        vbox.getChildren().addAll(new ImageView(image), label);
+        vbox.setAlignment(Pos.CENTER);
+
+        // JFX Components from http://www.jfoenix.com/documentation.html
+        JFXButton taskButton = new JFXButton();
+        taskButton.setGraphic(vbox);
+        taskButton.getStyleClass().add("button-raised-task");
         taskButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 handleTaskClick(taskName);
             }
         });
+
+
 
         categoryTable.getChildren().add(taskButton);
         javafx.scene.layout.TilePane.setMargin(taskButton, new Insets(22, 20, 20, 20));
@@ -155,23 +156,7 @@ public class CategoryController extends Controller {
                 handleCategoryClick(categoryName);
             }
         });
-        /*
-        Button categoryButton = new Button(categoryName);
-        categoryButton.setGraphic(new ImageView(image));
-        categoryButton.setId("category-button");
-        categoryButton.setStyle("-fx-base: #00000000;");
-        //categoryButton.setTextFill(Color.WHITE);
-        categoryButton.setLayoutX(30.0);
-        categoryButton.setLayoutY(32.0);
-        categoryButton.setPrefHeight(60.0);
-        categoryButton.setPrefWidth(80.0);
-        categoryButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                handleCategoryClick(categoryName);
-            }
-        });
-        */
+
 
         categoryTable.getChildren().add(categoryButton);
         javafx.scene.layout.TilePane.setMargin(categoryButton, new Insets(22, 20, 20, 20));
