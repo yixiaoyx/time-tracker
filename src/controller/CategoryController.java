@@ -4,11 +4,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import model.InterfaceDriver;
+
+import java.io.File;
 
 public class CategoryController extends Controller {
 
@@ -69,8 +73,8 @@ public class CategoryController extends Controller {
      */
     private Button addTaskToTable(String taskName) {
         Button taskButton = new Button(taskName);
-        taskButton.setStyle("-fx-background-color: #939393");
-        taskButton.setTextFill(Color.WHITE);
+        taskButton.setStyle("-fx-base: #00000000; -fx-graphic:url(../assets/Task_2.png)");
+        //taskButton.setTextFill(Color.WHITE);
         taskButton.setLayoutX(30.0);
         taskButton.setLayoutY(32.0);
         taskButton.setPrefHeight(60.0);
@@ -90,9 +94,16 @@ public class CategoryController extends Controller {
     }
 
     private Button addCategoryToTable(String categoryName) {
+        /*File categoryFile = new File("src/assets/Category_2.png");
+        String categoryString = categoryFile.toURI().toString();
+        System.out.println(categoryString);
+        Image image = new Image(categoryString, false);
+*/
         Button categoryButton = new Button(categoryName);
-        categoryButton.setStyle("-fx-background-color: #3F3F3F");
-        categoryButton.setTextFill(Color.WHITE);
+        //categoryButton.setGraphic(new ImageView(image));
+        categoryButton.setId("category-button");
+        //categoryButton.setStyle("-fx-base: #00000000; -fx-graphic:url(/trackattack/src/assets/Category_2.png)");
+        //categoryButton.setTextFill(Color.WHITE);
         categoryButton.setLayoutX(30.0);
         categoryButton.setLayoutY(32.0);
         categoryButton.setPrefHeight(60.0);

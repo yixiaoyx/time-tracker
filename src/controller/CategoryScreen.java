@@ -8,6 +8,8 @@ public class CategoryScreen extends Screen {
 
     private String currCategory;
 
+
+
     public CategoryScreen(Stage s, InterfaceDriver driver, String category) {
         super(s, "CategoryScreen.fxml", "Category", driver);
         currCategory = category;

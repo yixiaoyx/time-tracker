@@ -31,6 +31,10 @@ public abstract class Screen {
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root, 500, 500);
+
+        // ASSIGN CSS STYLE SHEET
+        scene.getStylesheets().add("CategoryScreen.css");
+
         stage.setScene(scene);
         stage.show();
     }
@@ -52,6 +56,8 @@ public abstract class Screen {
     }
 
     abstract Controller setUpController();
+
+
 
     public void goToAnalysisScreen(String currCategory) {
         Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), currCategory);
