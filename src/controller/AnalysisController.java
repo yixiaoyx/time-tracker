@@ -3,7 +3,10 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import model.InterfaceDriver;
+import javafx.scene.control.Button;
+
 
 import java.util.Date;
 import java.util.List;
@@ -20,6 +23,13 @@ public class AnalysisController extends Controller {
 
     @FXML
     AnchorPane anchorPane;
+
+    @FXML
+    VBox vbox;
+
+    @FXML
+    private Button analysisBackButton;
+
 
     public AnalysisController(InterfaceDriver driver, AnalysisScreen currScreen, String currCategory) {
         super(driver);
@@ -56,7 +66,12 @@ public class AnalysisController extends Controller {
         }
 
         analysisAreaChart.getData().addAll(dumbSeries);
-        anchorPane.getChildren().addAll(analysisAreaChart);
+        vbox.getChildren().addAll(analysisAreaChart);
 
+    }
+
+    @FXML
+    public void handleBackClick() {
+        currScreen.goToCategoryScreen(currCategory);
     }
 }
