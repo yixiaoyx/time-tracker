@@ -82,8 +82,6 @@ public class CategoryController extends Controller {
             categoryBackButton.setVisible(false);
         }
 
-        setGraphics();
-
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scroll.setFitToHeight(true);
 
@@ -96,22 +94,6 @@ public class CategoryController extends Controller {
     /* ---------------------------------------
         METHODS FOR SETTING GRAPHICS
        --------------------------------------- */
-
-    private void setGraphics() {
-        /*
-        // Back Button
-        Image backImage = new Image(backPath, false);
-        categoryBackButton.setGraphic(new ImageView(backImage));
-
-        // Analysis Button
-        Image analysisImage = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(analysisImage));
-
-        // Add Button
-        Image addImage = new Image(addPath, false);
-        addButton.setGraphic(new ImageView(addImage));
-        */
-    }
 
 
     /* ---------------------------------------

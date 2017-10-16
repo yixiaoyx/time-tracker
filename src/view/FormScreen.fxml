@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import com.jfoenix.controls.JFXRadioButton?>
-<BorderPane maxHeight="500.0" maxWidth="500.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #dae2ee;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="500.0" maxWidth="500.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #dae2ee;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <VBox fx:id="form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="403.0" BorderPane.alignment="CENTER">
             <children>
@@ -38,12 +38,12 @@
                           <ToggleGroup fx:id="radioGroup" />
                       </fx:define>
 
-                      <JFXRadioButton toggleGroup="$radioGroup" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Task">
+                      <JFXRadioButton toggleGroup="$radioGroup" selected="true" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Task" userData="task">
                           <padding>
                               <Insets bottom="20.0" />
                           </padding>
                       </JFXRadioButton>
-                      <JFXRadioButton toggleGroup="$radioGroup" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Category" translateX="60.0">
+                      <JFXRadioButton toggleGroup="$radioGroup" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Category" translateX="60.0" userData="category">
                           <padding>
                               <Insets bottom="20.0" />
                           </padding>
@@ -60,7 +60,7 @@
                     <!-- =========== ROW 2 =========== -->
                     <Label GridPane.columnIndex="0" GridPane.rowIndex="2">
                     </Label>
-               <JFXComboBox fx:id="categoryMenu" editable="false" focusColor="#74a5ff" prefHeight="60.0" prefWidth="292.0" promptText="CATEGORY" style="-fx-background-color: #f7fbff; " translateX="-30.0" unFocusColor="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <JFXComboBox fx:id="categoryMenu" editable="false" focusColor="#74a5ff" prefHeight="60.0" prefWidth="292.0" promptText="CATEGORY" style="-fx-background-color: #f7fbff; -fx-font-size: 24.0px; -fx-text-alignment: center" translateX="-30.0" unFocusColor="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <effect>
                      <DropShadow blurType="ONE_PASS_BOX" color="#bfbfbf" height="18.03" offsetY="5.0" spread="0.65" width="23.97" />
                   </effect>
@@ -71,10 +71,16 @@
                   <GridPane.margin>
                      <Insets bottom="20.0" />
                   </GridPane.margin></JFXComboBox>
-               <JFXTextField alignment="BOTTOM_LEFT" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="293.0" promptText="NAME" style="-fx-background-color: #f7fbff;" translateX="-30.0" unFocusColor="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <JFXTextField fx:id="nameField" alignment="TOP_LEFT" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="293.0" promptText="Name" style="-fx-background-color: #f7fbff;" translateX="-30.0" unFocusColor="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="2">
                   <effect>
                      <DropShadow blurType="ONE_PASS_BOX" color="#c6c6c6" height="32.86" offsetY="5.0" radius="15.93" spread="0.49" width="32.86" />
                   </effect>
+                   <padding>
+                       <Insets bottom="30.0" left="30.0"/>
+                   </padding>
+                   <font>
+                       <Font name="Lato" size="24.0"/>
+                   </font>
                   <padding>
                      <Insets bottom="30.0" />
                   </padding></JFXTextField>
@@ -91,7 +97,8 @@
                     </rowConstraints>
 
                 </GridPane>
-                 <TextField fx:id="nameField" maxHeight="-Infinity" maxWidth="250" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="127.0" translateY="300.0">
+                 <TextField fx:id="n" maxHeight="-Infinity" maxWidth="250" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="127.0" translateY="300.0" alignment="CENTER">
+
                         <!---              <VBox.margin>
                                          <Insets left="30.0" top="100.0" />
                                       </VBox.margin>
@@ -101,19 +108,18 @@
                     </MenuButton>
                 <!--
                             -->
+                <JFXButton buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="125.0" ripplerFill="#bedaff" style="-fx-background-color: #74a5ff;" text="GO" textFill="WHITE" translateX="150.0" translateY="-100.0" BorderPane.alignment="CENTER" onAction="#handleOkClick">
+                    <font>
+                        <Font name="Arial Narrow Bold" size="26.0" />
+                    </font>
+                    <effect>
+                        <DropShadow color="#b5c9dd" />
+                    </effect>
+                </JFXButton>
             </children>
         </VBox>
     </center>
-   <bottom>
-      <JFXButton buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="125.0" ripplerFill="#bedaff" style="-fx-background-color: #74a5ff;" text="GO" textFill="WHITE" translateX="90.0" translateY="-120.0" BorderPane.alignment="CENTER" onAction="#handleOkClick">
-         <font>
-            <Font name="Arial Narrow Bold" size="26.0" />
-         </font>
-         <effect>
-            <DropShadow color="#b5c9dd" />
-         </effect>
-      </JFXButton>
-   </bottom>
+
    <top>
       <JFXButton mnemonicParsing="false" prefHeight="59.0" prefWidth="74.0" ripplerFill="#e4e4e4" style="-fx-background-color: #b1b1b1;" text="&lt;" textFill="WHITE" translateX="-200.0" translateY="10.0" BorderPane.alignment="CENTER">
          <font>
@@ -123,4 +129,6 @@
             <DropShadow color="#cdcdcd" height="53.62" radius="23.345" spread="0.3" width="41.76" />
          </effect></JFXButton>
    </top>
+    <bottom>
+    </bottom>
 </BorderPane>
