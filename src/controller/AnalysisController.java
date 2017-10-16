@@ -71,6 +71,8 @@ public class AnalysisController extends Controller {
         analysisAreaChart.getData().addAll(dumbSeries);
         contentvbox.getChildren().addAll(analysisAreaChart);
 
+
+
         Label totalTimeLabel = new Label("Total time: " + driver.getCategoryTimeString(currCategory));
         contentvbox.getChildren().addAll(totalTimeLabel);
 
