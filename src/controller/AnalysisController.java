@@ -23,6 +23,7 @@ import java.util.Map;
 public class AnalysisController extends Controller {
     private Screen currScreen;
 
+    private String backCategory;
     private String currCategory;
 
     @FXML
@@ -44,11 +45,11 @@ public class AnalysisController extends Controller {
     private Button analysisBackButton;
 
 
-    public AnalysisController(InterfaceDriver driver, AnalysisScreen currScreen, String currCategory) {
+    public AnalysisController(InterfaceDriver driver, AnalysisScreen currScreen, String currCategory, String backCategory) {
         super(driver);
         this.currScreen = currScreen;
         this.currCategory = currCategory;
-
+        this.backCategory = backCategory;
 
         NumberAxis xAxis = new NumberAxis();
         xAxis.setLabel("Days ago");
@@ -121,6 +122,6 @@ public class AnalysisController extends Controller {
 
     @FXML
     public void handleBackClick() {
-        currScreen.goToCategoryScreen(currCategory);
+        currScreen.goToCategoryScreen(backCategory);
     }
 }

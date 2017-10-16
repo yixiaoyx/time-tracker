@@ -28,6 +28,10 @@ public class Category {
     t.setParentCategory(this);
   }
 
+  public void addTaskWithoutParentUpdate(Task t) {
+    childTasks.add(t);
+  }
+
   public void deleteTask(Task t) {
     childTasks.remove(t);
   }

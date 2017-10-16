@@ -91,8 +91,12 @@ public class TaskController extends Controller {
     }
 
     @FXML
+    private void handleAnalysisClick() {
+        currScreen.goToTaskAnalysisScreen(this.currTask);
+    }
+
+    @FXML
     protected void initialize() {
-        //TODO: currTask is not set
         taskName.setText(currTask);
 
     }

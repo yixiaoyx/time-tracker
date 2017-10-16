@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -48,6 +49,7 @@ public class InterfaceDriver {
       System.out.println("Couldn't find parent category " + parentCategoryName);
     }
   }
+
 
   public void deleteSubCategory(String uniqueName) {
       System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
@@ -193,6 +195,7 @@ public class InterfaceDriver {
     }
     return names;
   }
+
   public List<Category> getTopLevelCategory() {
     List<Category> names = new ArrayList<Category>();
     for(Category c : topLevelCategories) {
@@ -268,6 +271,14 @@ public class InterfaceDriver {
     return c.getTaskBreakdown();
   }
 
+
+  // this function makes a category containing only the given task, named the same as the given task.
+  // This allows us to analyse individual tasks the same way we analyse categories.
+  public void makeDummyCategory(String taskName) {
+    Category c = new Category(taskName);
+    c.addTaskWithoutParentUpdate(getTaskByName(taskName));
+    topLevelCategories.add(c);
+  }
 
   public static void main(String[] args) {
     // Basic workflow:
