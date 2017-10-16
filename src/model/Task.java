@@ -88,8 +88,8 @@ public class Task {
 
 
             //save task to the database after clocking out.
-            db.updateTask(getName(), getParentCategory().getName(),convertTime(duration.time()),
-                    duration.time(), activeEndTime, activeEndTime);
+            db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
+                    getTotalTime(), activeEndTime, activeEndTime);
 
         }
 
