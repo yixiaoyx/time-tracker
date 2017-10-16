@@ -119,6 +119,9 @@ public class Task {
 
         return name;
     }
+    public void setName(String newName) {
+        this.name = newName;
+    }
 
     // returns 'active' clock time: time it has currently been running
     // for

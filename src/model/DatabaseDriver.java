@@ -339,7 +339,7 @@ public class DatabaseDriver {
     }
 
 
-    public void changeCategory(String newCategoryName, String oldCategoryName) {
+    public void changeCategory( String oldCategoryName, String newCategoryName) {
 
         try {
             s = c.createStatement();
@@ -351,7 +351,7 @@ public class DatabaseDriver {
 
     }
 
-    public void changeTaskname(String newTaskName, String oldTaskName) {
+    public void changeTaskname(String oldTaskName, String newTaskName) {
         try {
             s = c.createStatement();
             String query = "UPDATE Tasks SET task_name ='" + newTaskName + "' WHERE task_name ='" + oldTaskName + "' ";
@@ -403,6 +403,7 @@ public class DatabaseDriver {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
     }
 
     public String getTask (String taskname) {
@@ -508,6 +509,12 @@ public class DatabaseDriver {
 
         Date start = sdf.parse("2017-08-10 12:02:05");
         Date finish = sdf.parse("2017-08-10 12:32:05");
+
+        db.changeTaskname("COMP4920_proj1p2", "COMP4921_proj1p2");
+        System.out.println ("changed name?");
+        db.changeCategory("COMP1917_W2", "COMP1917_W1");
+ //       db.deleteCategory("COMP1917_W1");
+
 /*
 
 
