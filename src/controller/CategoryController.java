@@ -210,8 +210,8 @@ public class CategoryController extends Controller {
     @FXML
     private void handleDelete() {
         if (!currCategory.equals("All")) {
-            handleBackClick();
             driver.deleteSubCategory(currCategory);
+            handleBackClick();
 
         }
     }

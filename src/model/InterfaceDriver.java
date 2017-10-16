@@ -232,6 +232,7 @@ public class InterfaceDriver {
       return p.getName();
     }
     else {
+      System.out.println("parent category is not set");
       return "";
     }
   }

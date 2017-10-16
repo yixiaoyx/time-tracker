@@ -24,7 +24,7 @@
 
         <HBox>
             <children>
-                <Button fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="&lt;" textAlignment="CENTER">
+                <Button fx:id="categoryBackButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="&lt;" textAlignment="CENTER">
                     <font>
                         <Font name="Arial" size="32.0" />
                     </font>
@@ -34,13 +34,13 @@
                         <Font name="Calibri" size="42.0" />
                     </font>
                 </Label>
-                <Button fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="A" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                <Button fx:id="analysisButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="A" textAlignment="CENTER" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="Arial" size="32.0" />
                     </font>
                 </Button>
 
-                <Button fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="+" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                <Button fx:id="addButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="+" textAlignment="CENTER" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="Arial" size="32.0" />
                     </font>

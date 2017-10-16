@@ -24,3 +24,12 @@
     -fx-text-alignment: CENTER;
 
 }
+
+.button-small{
+    -jfx-button-type: FLAT;
+    -fx-background-color: rgb(131, 211, 198);
+    -fx-pref-width: 72;
+    -fx-pref-height: 50;
+    -fx-text-fill: WHITE;
+
+}
