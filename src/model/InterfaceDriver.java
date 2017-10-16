@@ -49,6 +49,22 @@ public class InterfaceDriver {
     }
   }
 
+  public void deleteSubCategory(String uniqueName) {
+      System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
+
+      Category c = getCategoryByName(uniqueName);
+      Category parent = c.getParentCategory();
+
+      if(parent != null) {
+          parent.deleteSubCategory(c);
+          db.deleteCategory(uniqueName);
+
+      }
+      else {
+          System.out.println("Couldn't find parent category for sub-category " + uniqueName);
+      }
+  }
+
 
   public void addTask(String categoryName, String uniqueName) {
     System.out.println("InterfaceDriver: added task " + uniqueName + " to category " + categoryName);

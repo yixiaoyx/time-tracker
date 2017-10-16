@@ -36,11 +36,11 @@
                         <Font size="30.0" />
                     </font>
                 </Button>
-            <Button fx:id="delButton" mnemonicParsing="false" onMouseClicked="#handleDelete" text="DELETE" textAlignment="CENTER" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <font>
-                  <Font name="DejaVu Sans" size="14.0" />
-               </font>
-            </Button>
+                <Button fx:id="delButton" mnemonicParsing="false" onMouseClicked="#handleDelete" text="DELETE" textAlignment="CENTER" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                   <font>
+                      <Font name="DejaVu Sans" size="14.0" />
+                   </font>
+                </Button>
             </children>
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

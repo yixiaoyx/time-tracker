@@ -204,4 +204,12 @@ public class CategoryController extends Controller {
             currScreen.goToTaskScreen(task);
         }
     }
+
+    @FXML
+    private void handleDelete() {
+        if (!currCategory.equals("All")) {
+            driver.deleteSubCategory(currCategory);
+
+        }
+    }
 }

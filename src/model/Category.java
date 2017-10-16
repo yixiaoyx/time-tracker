@@ -57,6 +57,14 @@ public class Category {
     c.setParentCategory(this);
   }
 
+  public void deleteSubCategory(Category c) {
+      c.childTasks.clear();
+      for(Category sub: subCategories) {
+          c.deleteSubCategory(sub);
+      }
+      subCategories.remove(c);
+  }
+
   public void setParentCategory(Category c) {
     parentCategory = c;
   }
