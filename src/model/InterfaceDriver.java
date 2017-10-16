@@ -50,15 +50,16 @@ public class InterfaceDriver {
   }
 
   public void deleteSubCategory(String uniqueName) {
-      System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
+
 
       Category c = getCategoryByName(uniqueName);
       Category parent = c.getParentCategory();
 
       if(parent != null) {
           parent.deleteSubCategory(c);
+       //   if(parent.getName().equals("All")) {
           db.deleteCategory(uniqueName);
-
+        System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
       }
       else {
           System.out.println("Couldn't find parent category for sub-category " + uniqueName);
@@ -85,9 +86,9 @@ public class InterfaceDriver {
     Task t = getTaskByName(uniqueName);
     Category c = t.getParentCategory();
 
-    System.out.println("InterfaceDriver: delete task " + uniqueName);
 
     if(c != null) {
+      System.out.println("InterfaceDriver: delete task " + uniqueName);
       c.deleteTask(t);
       db.deleteTask(uniqueName);
     }
@@ -244,6 +245,30 @@ public class InterfaceDriver {
   public void addTimingToTask(String taskName, Duration d) {
     Task t = getTaskByName(taskName);
     t.addTiming(d);
+  }
+
+  public void changeTaskName(String currentTaskname, String newTaskname) {
+    Task t = getTaskByName(currentTaskname);
+    Category c = t.getParentCategory();
+
+    if (c != null) {
+      System.out.println("InterfaceDriver: Changing task name from " + currentTaskname + " to " + newTaskname);
+      t.setName(newTaskname);
+      db.changeTaskname(currentTaskname, newTaskname);
+    } else {
+      System.out.println("Couldn't find task with the name " + currentTaskname);
+    }
+  }
+  public void changeCategory(String currentCategoryName, String newCategoryName) {
+
+    Category c = getCategoryByName(currentCategoryName);
+    if (c != null) {
+      System.out.println("InterfaceDriver: Changing category name from " + currentCategoryName + " to " + newCategoryName);
+      c.setName(newCategoryName);
+      db.changeCategory(currentCategoryName, newCategoryName);
+    } else {
+      System.out.println("Couldn't find category with the name " + currentCategoryName);
+    }
   }
 
   // use for analysis
