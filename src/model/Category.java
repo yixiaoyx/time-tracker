@@ -28,6 +28,9 @@ public class Category {
     t.setParentCategory(this);
   }
 
+  public void deleteTask(Task t) {
+    childTasks.remove(t);
+  }
   public List<Task> getTasks() {
     return childTasks;
   }
@@ -62,26 +65,28 @@ public class Category {
     return this.parentCategory;
   }
 
+
   public Category getSubCategoryByName(String uniqueName) {
     for(Category c : subCategories) {
-      // check if it's one of our categories
-      if(c.getName().equals(uniqueName)) {
-	return c;
-      }
+        // check if it's one of our categories
+        if (c.getName().equals(uniqueName)) {
+            return c;
+        }
 
-      // now check if it's a sub category of one of the top level categories
-      else {
-	Category c2 = c.getSubCategoryByName(uniqueName);
-	if(c2 != null) {
-	  return c2;
-	}
-      }
+        // now check if it's a sub category of one of the top level categories
+        else {
+            Category c2 = c.getSubCategoryByName(uniqueName);
+            if (c2 != null) {
+                return c2;
+            }
+        }
     }
 
     // didn't find it
     return null;
 
   }
+
 
   public Task getTaskByName(String uniqueName) {
     for(Task t : childTasks) {

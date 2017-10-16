@@ -63,6 +63,23 @@ public class InterfaceDriver {
       System.out.println("Couldn't find category " + categoryName);
     }
   }
+
+  public void deleteTask(String uniqueName) {
+
+    Task t = getTaskByName(uniqueName);
+    Category c = t.getParentCategory();
+
+    System.out.println("InterfaceDriver: delete task " + uniqueName);
+
+    if(c != null) {
+      c.deleteTask(t);
+      db.deleteTask(uniqueName);
+    }
+    else {
+      System.out.println("Couldn't find parent category of task " + uniqueName);
+    }
+  }
+
   //retrieve all categories from the database and add into topLevelCategories if it doesn't exist already
   public void retrieveAllCategories() {
     List<Category> categories = db.restoreCategories();
@@ -88,7 +105,6 @@ public class InterfaceDriver {
     }
 
   }
-
 
 
   public void clockIn(String taskName) {

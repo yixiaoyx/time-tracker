@@ -29,11 +29,11 @@ public class Task {
     //duration object containing start + end of duration.
     private Duration duration;
 
-    DatabaseDriver db;
+    private DatabaseDriver db;
 
-    SimpleDateFormat sdf;
+    private SimpleDateFormat sdf;
 
-    public Category parentCategory;
+    private Category parentCategory;
 
     public Category getParentCategory() {
         return parentCategory;

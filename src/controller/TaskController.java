@@ -23,6 +23,8 @@ public class TaskController extends Controller {
     private Button taskBackButton;
     @FXML
     private Label taskName;
+    @FXML
+    private Button delButton;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
@@ -81,6 +83,11 @@ public class TaskController extends Controller {
         if (!active) {
             currScreen.goToCategoryScreen();
         }
+    }
+
+    @FXML
+    private void handleDelete() {
+        driver.deleteTask(currTask);
     }
 
     @FXML
