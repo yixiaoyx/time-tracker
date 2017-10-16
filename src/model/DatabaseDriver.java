@@ -398,12 +398,11 @@ public class DatabaseDriver {
     public void deleteTask(String taskname) {
         try {
             s = c.createStatement();
-            String query = "DELETE FROM Tasks WHERE category_name ='" + taskname + "'";
+            String query = "DELETE FROM Tasks WHERE task_name ='" + taskname + "'";
             s.executeUpdate(query);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     public String getTask (String taskname) {
