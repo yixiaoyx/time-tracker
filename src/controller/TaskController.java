@@ -87,6 +87,7 @@ public class TaskController extends Controller {
 
     @FXML
     private void handleDelete() {
+        currScreen.goToCategoryScreen();
         driver.deleteTask(currTask);
     }
 

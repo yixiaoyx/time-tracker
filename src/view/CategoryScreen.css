@@ -28,3 +28,9 @@
     -fx-text-fill: WHITE;
 
 }
+
+.button-delete{
+    -jfx-button-type: FLAT;
+    -fx-background-color: rgb(204, 91, 126);
+    -fx-text-fill: WHITE;
+}

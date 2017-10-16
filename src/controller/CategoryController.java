@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +10,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -42,6 +45,8 @@ public class CategoryController extends Controller {
     final String addPath = addFile.toURI().toString();
 
     @FXML
+    private StackPane stackPane;
+    @FXML
     private TilePane categoryTable;
 
     @FXML
@@ -59,6 +64,9 @@ public class CategoryController extends Controller {
     @FXML
     private ScrollPane scroll;
 
+    @FXML
+    private JFXButton changeButton;
+
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
@@ -70,6 +78,11 @@ public class CategoryController extends Controller {
 
     @FXML
     protected void initialize() {
+        JFXDialog dialog = new JFXDialog();
+        dialog.setContent(new Label("Content"));
+        changeButton.setOnAction((action)->dialog.show(stackPane));
+
+
         for (String cur: driver.getSubCategoryNames(currCategory)) {
             addCategoryToTable(cur);
             System.out.println(cur);
@@ -203,5 +216,10 @@ public class CategoryController extends Controller {
             driver.deleteSubCategory(currCategory);
 
         }
+    }
+
+    @FXML
+    private void handleChange() {
+
     }
 }
