@@ -230,6 +230,12 @@ public class InterfaceDriver {
     return c.getFormattedTimings();
   }
 
+  // maps from a task name to the amount of time spent on it
+  public Map<String, Double> getTaskBreakdown(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    return c.getTaskBreakdown();
+  }
+
 
   public static void main(String[] args) {
     // Basic workflow:

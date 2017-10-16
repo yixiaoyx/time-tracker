@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -80,13 +81,14 @@ public class AnalysisController extends Controller {
 
         //contentvbox.getChildren().addAll(analysisAreaChart);
 
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Grapefruit", 13),
-                        new PieChart.Data("Oranges", 25),
-                        new PieChart.Data("Plums", 10),
-                        new PieChart.Data("Pears", 22),
-                        new PieChart.Data("Apples", 30));
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+
+
+        Map<String, Double> taskBreakdown = driver.getTaskBreakdown(currCategory);
+        for(String taskName : taskBreakdown.keySet()) {
+            pieChartData.add(new PieChart.Data(taskName, taskBreakdown.get(taskName)));
+        }
+
 
         taskBreakdownChart = new PieChart(pieChartData);
         taskBreakdownChart.setTitle("Task Breakdown");

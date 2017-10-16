@@ -161,6 +161,15 @@ public class Task {
         return totaltime;
     }
 
+    public double getTotalTimeInMinutes() {
+        double totaltime = 0;
+        for(Duration d : timings) {
+            totaltime += d.timeInMinutes();
+        }
+        return totaltime;
+
+    }
+
     public String getTotalTimeString() {
         return convertTime(getTotalTime());
     }
