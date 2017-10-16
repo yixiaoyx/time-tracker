@@ -98,6 +98,7 @@ public class CategoryController extends Controller {
        --------------------------------------- */
 
     private void setGraphics() {
+        /*
         // Back Button
         Image backImage = new Image(backPath, false);
         categoryBackButton.setGraphic(new ImageView(backImage));
@@ -109,7 +110,7 @@ public class CategoryController extends Controller {
         // Add Button
         Image addImage = new Image(addPath, false);
         addButton.setGraphic(new ImageView(addImage));
-
+        */
     }
 
 
@@ -209,6 +210,7 @@ public class CategoryController extends Controller {
     @FXML
     private void handleDelete() {
         if (!currCategory.equals("All")) {
+            handleBackClick();
             driver.deleteSubCategory(currCategory);
 
         }
