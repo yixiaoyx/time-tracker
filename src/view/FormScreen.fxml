@@ -105,7 +105,7 @@
         </VBox>
     </center>
    <bottom>
-      <JFXButton buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="125.0" ripplerFill="#bedaff" style="-fx-background-color: #74a5ff;" text="GO" textFill="WHITE" translateX="90.0" translateY="-120.0" BorderPane.alignment="CENTER">
+      <JFXButton buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="125.0" ripplerFill="#bedaff" style="-fx-background-color: #74a5ff;" text="GO" textFill="WHITE" translateX="90.0" translateY="-120.0" BorderPane.alignment="CENTER" onAction="#handleOkClick">
          <font>
             <Font name="Arial Narrow Bold" size="26.0" />
          </font>

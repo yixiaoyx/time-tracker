@@ -5,6 +5,9 @@ import javafx.scene.control.*;
 import javafx.event.*;
 import model.InterfaceDriver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FormController extends Controller{
     private FormScreen currScreen;
     private boolean active;
@@ -33,38 +36,21 @@ public class FormController extends Controller{
 
     @FXML
     protected void initialize(){
-        /*
-        // Set menu
-        MenuItem menuItem = new MenuItem(topLevelCategory);
-        menuItem.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                setSelectedCategory(topLevelCategory);
-
-                categoryMenu.setPromptText(topLevelCategory);
-            }
-        });
         categoryMenu.setPromptText(selectedCategory);
-        categoryMenu.getItems().add(menuItem);
-        for (String c: driver.getSubCategoryNames(topLevelCategory)) {
-            MenuItem item = new MenuItem(c);
-            item.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    setSelectedCategory(c);
-                    categoryMenu.setPromptText(c);
-                }
-            });
-            categoryMenu.getItems().add(item);
-        }
-        */
-        categoryMenu.setPromptText(selectedCategory);
+        categoryMenu.setValue(selectedCategory);
         categoryMenu.getItems().add(topLevelCategory);
-        for (String c: driver.getSubCategoryNames(topLevelCategory)){
-            categoryMenu.getItems().add(c);
-        }
+        categoryMenu.getItems().addAll(findSubCategories(topLevelCategory));
 
-        //setSelectedCategory(categoryMenu.);
+    }
+
+    private ArrayList<String> findSubCategories(String category){
+        ArrayList<String> sclist = new ArrayList<String>();
+        if (driver.getSubCategoryNames(category) == null) return sclist;
+        for (String c: driver.getSubCategoryNames(category)) {
+            sclist.add(c);
+            sclist.addAll(findSubCategories(c));
+        }
+        return sclist;
     }
 
     @FXML
@@ -87,10 +73,11 @@ public class FormController extends Controller{
         // TO DO: Sanitise text input of Name and make sure name will not conflict with other items
 
        // Check category
-        String category = selectedCategory;
+        String category = categoryMenu.getValue().toString();
 
        // Add task/category
        // Go to relevant screen
+        /*
         if (addType.equals("task")){
             driver.addTask(selectedCategory, name);
             currScreen.goToTaskScreen(name);
@@ -98,5 +85,7 @@ public class FormController extends Controller{
             driver.addSubCategory(selectedCategory, name);
             currScreen.goToCategoryScreen(selectedCategory);
         }
+        */
+        System.out.println(category);
     }
 }
