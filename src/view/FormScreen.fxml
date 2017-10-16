@@ -20,8 +20,8 @@
 <?import javafx.scene.text.Font?>
 
 <?import com.jfoenix.controls.JFXRadioButton?>
-<BorderPane fx:id="borderPane" maxHeight="500.0" maxWidth="500.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #dae2ee;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
-    <center>
+<BorderPane fx:id="borderPane" stylesheets="CategoryScreen.css" maxHeight="500.0" maxWidth="500.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #eeeae7;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <center >
         <VBox fx:id="form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="403.0" BorderPane.alignment="CENTER">
             <children>
                 <GridPane hgap="10.0" prefHeight="140.0" prefWidth="424.0" vgap="10.0">
@@ -121,7 +121,7 @@
     </center>
 
    <top>
-      <JFXButton mnemonicParsing="false" prefHeight="59.0" prefWidth="74.0" ripplerFill="#e4e4e4" style="-fx-background-color: #b1b1b1;" text="&lt;" textFill="WHITE" translateX="-200.0" translateY="10.0" BorderPane.alignment="CENTER">
+      <JFXButton mnemonicParsing="false" prefHeight="59.0" prefWidth="74.0" ripplerFill="#e4e4e4" text="&lt;" textFill="WHITE" translateX="-200.0" translateY="10.0" BorderPane.alignment="CENTER" onAction="#handleBackClick" styleClass="button-small">
          <font>
             <Font size="28.0" />
          </font>

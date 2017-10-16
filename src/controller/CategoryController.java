@@ -13,9 +13,14 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import model.InterfaceDriver;
 
 import java.io.File;
+
+import static javafx.scene.paint.Color.LIGHTGREY;
+import static javafx.scene.paint.Color.WHITE;
 
 public class CategoryController extends Controller {
 
@@ -104,6 +109,7 @@ public class CategoryController extends Controller {
 
         VBox vbox = new VBox();
         Label label = new Label(taskName);
+        label.setTextFill(LIGHTGREY);
 
         vbox.getChildren().addAll(new ImageView(image), label);
         vbox.setAlignment(Pos.CENTER);
@@ -133,6 +139,7 @@ public class CategoryController extends Controller {
 
         VBox vbox = new VBox();
         Label label = new Label(categoryName);
+        label.setTextFill(LIGHTGREY);
 
         vbox.getChildren().addAll(new ImageView(image), label);
         vbox.setAlignment(Pos.CENTER);

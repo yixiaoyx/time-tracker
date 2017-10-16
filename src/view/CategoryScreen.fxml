@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #e0e0e0;" stylesheets="@CategoryScreen.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <ScrollPane fx:id="scroll">
@@ -49,11 +50,11 @@
         </HBox>
     </top>
    <bottom>
-          <Button fx:id="delButton" mnemonicParsing="false" onMouseClicked="#handleDelete" text="DELETE" textAlignment="CENTER" textFill="GREY" BorderPane.alignment="CENTER">
+          <JFXButton fx:id="delButton" style="-jfx-button-type: FLAT; -fx-background-color: rgb(204, 91, 126)" mnemonicParsing="false" onMouseClicked="#handleDelete" text="Delete this Category" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
              <font>
                 <Font name="DejaVu Sans" size="14.0" />
              </font>
-          </Button>
+          </JFXButton>
    </bottom>
 
 </BorderPane>
