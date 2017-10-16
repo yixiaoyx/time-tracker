@@ -12,12 +12,22 @@
     <children>
     <VBox fx:id="vbox">
     <children>
+        <HBox>
         <Button fx:id="analysisBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleBackClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-base: #00000000" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="&lt;" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>
         </Button>
+        <Label fx:id="categoryName" alignment="CENTER" prefHeight="62.0" prefWidth="277.0" text="CATEGORYNAME" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Calibri" size="42.0" />
+            </font>
+        </Label>
+        </HBox>
+
     </children>
+    <VBox fx:id="contentvbox">
+    </VBox>
     </VBox>
 
         <!--<AreaChart id="AreaChart" fx:id="analysisAreaChart" layoutX="25.0" layoutY="110.0" prefHeight="350.0" prefWidth="450.0">-->

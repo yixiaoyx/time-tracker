@@ -1,7 +1,9 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.chart.*;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import model.InterfaceDriver;
@@ -25,7 +27,10 @@ public class AnalysisController extends Controller {
     AnchorPane anchorPane;
 
     @FXML
-    VBox vbox;
+    Label categoryName;
+
+    @FXML
+    VBox contentvbox;
 
     @FXML
     private Button analysisBackButton;
@@ -56,8 +61,6 @@ public class AnalysisController extends Controller {
         // yValue: time put in
         Map<Integer, Double> timings = driver.getFormattedTimingsFromCategory(currCategory);
 
-
-
         XYChart.Series dumbSeries= new XYChart.Series();
         dumbSeries.setName(currCategory);
 
@@ -66,8 +69,16 @@ public class AnalysisController extends Controller {
         }
 
         analysisAreaChart.getData().addAll(dumbSeries);
-        vbox.getChildren().addAll(analysisAreaChart);
+        contentvbox.getChildren().addAll(analysisAreaChart);
 
+
+
+        Label totalTimeLabel = new Label("Total time: " + driver.getCategoryTimeString(currCategory));
+        contentvbox.getChildren().addAll(totalTimeLabel);
+
+        contentvbox.setAlignment(Pos.CENTER);
+
+        categoryName.setText(currCategory);
     }
 
     @FXML
