@@ -167,6 +167,7 @@ public class CategoryController extends Controller {
 
 
         categoryTable.getChildren().add(categoryButton);
+
         javafx.scene.layout.TilePane.setMargin(categoryButton, new Insets(22, 20, 20, 20));
 
 

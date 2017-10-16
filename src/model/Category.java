@@ -198,10 +198,28 @@ public class Category {
     }
 
 
-    // todo make this read from the timings
-
-
     return ts;
+  }
+
+  List<Task> recursiveGetTasks() {
+    List<Task> l = new ArrayList<Task>();
+    for(Task t : childTasks) {
+      l.add(t);
+    }
+
+    for(Category c : subCategories) {
+      l.addAll(c.recursiveGetTasks());
+    }
+
+    return l;
+  }
+
+  Map<String, Double> getTaskBreakdown() {
+    Map<String, Double> m = new HashMap<String, Double>();
+    for(Task t : recursiveGetTasks()) {
+      m.put(t.getName(), t.getTotalTimeInMinutes());
+    }
+    return m;
   }
 
   // LAZY Copied from Task, cleanup if have time

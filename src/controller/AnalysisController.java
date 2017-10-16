@@ -1,9 +1,13 @@
 package controller;
 
+import com.jfoenix.controls.JFXTabPane;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import model.InterfaceDriver;
@@ -11,6 +15,7 @@ import javafx.scene.control.Button;
 
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +27,9 @@ public class AnalysisController extends Controller {
 
     @FXML
     LineChart<Number, Number> analysisAreaChart;
+
+    @FXML
+    PieChart taskBreakdownChart;
 
     @FXML
     AnchorPane anchorPane;
@@ -69,13 +77,43 @@ public class AnalysisController extends Controller {
         }
 
         analysisAreaChart.getData().addAll(dumbSeries);
-        contentvbox.getChildren().addAll(analysisAreaChart);
 
 
+        //contentvbox.getChildren().addAll(analysisAreaChart);
+
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+
+
+        Map<String, Double> taskBreakdown = driver.getTaskBreakdown(currCategory);
+        for(String taskName : taskBreakdown.keySet()) {
+            pieChartData.add(new PieChart.Data(taskName, taskBreakdown.get(taskName)));
+        }
+
+
+        taskBreakdownChart = new PieChart(pieChartData);
+        taskBreakdownChart.setTitle("Task Breakdown");
+        //contentvbox.getChildren().add(taskBreakdownChart);
 
         Label totalTimeLabel = new Label("Total time: " + driver.getCategoryTimeString(currCategory));
         contentvbox.getChildren().addAll(totalTimeLabel);
 
+
+        JFXTabPane tabPane = new JFXTabPane();
+
+        Tab tab = new Tab();
+        tab.setText("Line Graph");
+        tab.setContent(analysisAreaChart);
+
+        tabPane.getTabs().add(tab);
+
+        Tab tab1 = new Tab();
+        tab1.setText("Pie Chart");
+        tab1.setContent(taskBreakdownChart);
+
+        tabPane.getTabs().add(tab1);
+
+
+        contentvbox.getChildren().add(tabPane);
         contentvbox.setAlignment(Pos.CENTER);
 
         categoryName.setText(currCategory);

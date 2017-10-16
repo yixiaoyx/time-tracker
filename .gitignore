@@ -1,6 +1,10 @@
 # Compiled class file
 *.class
 
+# output folder
+out
+target
+
 # Log file
 *.log
 
@@ -23,3 +27,5 @@ hs_err_pid*
 
 # Miscellaneous
 .DS_Store
+
+.idea/workspace.xml
