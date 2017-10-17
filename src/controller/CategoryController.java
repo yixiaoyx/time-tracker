@@ -2,6 +2,9 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,19 +13,20 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
 
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static javafx.scene.paint.Color.LIGHTGREY;
+import static javafx.scene.paint.Color.SEAGREEN;
 import static javafx.scene.paint.Color.WHITE;
 
 public class CategoryController extends Controller {
@@ -44,6 +48,8 @@ public class CategoryController extends Controller {
     final String analysisPath = analysisFile.toURI().toString();
     final String addPath = addFile.toURI().toString();
 
+    @FXML
+    private StackPane sp;
 
     @FXML
     private TilePane categoryTable;
@@ -216,5 +222,89 @@ public class CategoryController extends Controller {
 
     @FXML
     private void handleChange() {
+        JFXDialog dialog = new JFXDialog();
+        Insets insets = new Insets(10, 10, 10, 10);
+        // Create contents of Dialog Box
+        VBox changebox = new VBox();
+        changebox.setAlignment(Pos.CENTER);
+        changebox.setPrefSize(300,170);
+
+            // Title
+        Label title = new Label("Change Category Name");
+        title.setTextAlignment(TextAlignment.CENTER);
+        title.setFont(Font.font("Arial Narrow Bold", 18));
+
+            // Input
+        JFXTextField inputField = new JFXTextField();
+        inputField.setPromptText(currCategory);
+        inputField.setAlignment(Pos.CENTER);
+
+            // Button
+        JFXButton okButton = new JFXButton("Confirm");
+        okButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String newCategoryName = inputField.getText();
+                String warning = getWarning(isNameValid(newCategoryName));
+
+                if (warning.isEmpty()) {
+                    changeName(newCategoryName);
+                    dialog.close();
+                    handleCategoryClick(newCategoryName);
+                } else {
+                    JFXSnackbar bar = new JFXSnackbar(changebox);
+                    bar.setAlignment(Pos.CENTER);
+                    bar.setStyle("-fx-background-color: #F19F4D; -fx-font-size: 42px");
+
+                    bar.enqueue(new JFXSnackbar.SnackbarEvent(warning));
+                }
+            }
+        });
+
+        okButton.setStyle("-fx-background-color: #F19F4D");
+        //        okButton.getStyleClass().add("button-delete");
+        changebox.getChildren().addAll(title, inputField,  okButton);
+
+        changebox.setMargin(title, insets);
+        changebox.setMargin(inputField, insets);
+        changebox.setMargin(okButton, insets);
+        // Insert contents into dialog box
+        dialog.setContent(changebox);
+        dialog.show(sp);
+    }
+
+    @FXML
+    private void changeName(String newName) {
+        driver.changeCategory(currCategory, newName);
+    }
+
+    private String isNameValid(String name){
+        String category = driver.getParentCategoryName(currCategory);
+
+        Pattern invalidChars = Pattern.compile(".*\\W+.*");
+        Matcher invalidMatch = invalidChars.matcher(name);
+
+        if (name.isEmpty()) return "empty";
+        if (invalidMatch.matches()) return "illegalchar";
+        for (String c: driver.getSubCategoryNames(category)) {
+            if (c.equals(name)) return "categorymatch";
+        }
+
+        return "valid";
+    }
+
+    private String getWarning(String reason) {
+        String warning = "";
+        if (reason.equals("empty")) {
+            warning = "No input in Name field";
+        }
+        else if (reason.equals("illegalchar")) {
+            warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
+        } else if (reason.equals("categorymatch")) {
+            warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
+        } else {
+            warning = "I'm not sure what you did wrong.";
+        }
+        return warning;
     }
 }
