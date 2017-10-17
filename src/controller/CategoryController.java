@@ -254,7 +254,6 @@ public class CategoryController extends Controller {
             public void handle(ActionEvent event) {
                 String newCategoryName = inputField.getText();
                 String warning = getWarning(isNameValid(newCategoryName));
-
                 if (warning.isEmpty()) {
                     changeName(newCategoryName);
                     dialog.close();
@@ -322,8 +321,6 @@ public class CategoryController extends Controller {
             warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
-        } else {
-            warning = "I'm not sure what you did wrong.";
         }
         return warning;
     }
