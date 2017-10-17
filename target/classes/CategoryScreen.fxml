@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -9,60 +9,67 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDialog?>
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #e0e0e0;" stylesheets="@CategoryScreen.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" stylesheets="@CategoryScreen.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <ScrollPane fx:id="scroll">
-        <TilePane fx:id="categoryTable" prefHeight="430.0" prefWidth="481.0" BorderPane.alignment="CENTER">
-            <BorderPane.margin>
-                <Insets />
-            </BorderPane.margin>
-         
-        </TilePane>
+        <ScrollPane fx:id="scroll" hbarPolicy="NEVER" style="-fx-background-color: #D9D9D9;">
+            <TilePane fx:id="categoryTable" prefHeight="419.0" prefWidth="499.0" style="-fx-background-color: #D9D9D9;" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets />
+                </BorderPane.margin>
+
+            </TilePane>
         </ScrollPane>
     </center>
     <top>
 
         <HBox>
             <children>
-                <Button fx:id="categoryBackButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="&lt;" textAlignment="CENTER">
+                <JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="5.0" translateY="5.0">
                     <font>
-                        <Font name="Arial" size="32.0" />
+                        <Font name="Arial" size="24.0" />
                     </font>
-                </Button>
-                <Label fx:id="categoryName" alignment="CENTER" prefHeight="62.0" prefWidth="277.0" text="CATEGORYNAME" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                </JFXButton>
+                <Label fx:id="categoryName" alignment="CENTER" prefHeight="62.0" prefWidth="395.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
                     <font>
-                        <Font name="Calibri" size="42.0" />
+                        <Font name="Calibri" size="30.0" />
                     </font>
                 </Label>
-                <Button fx:id="analysisButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="A" textAlignment="CENTER" BorderPane.alignment="CENTER">
-                    <font>
-                        <Font name="Arial" size="32.0" />
-                    </font>
-                </Button>
-
-                <Button fx:id="addButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" text="+" textAlignment="CENTER" BorderPane.alignment="CENTER">
-                    <font>
-                        <Font name="Arial" size="32.0" />
-                    </font>
-                </Button>
             </children>
         </HBox>
     </top>
-   <bottom>
-       <HBox BorderPane.alignment="CENTER">
-           <JFXButton fx:id="changeButton" styleClass="button-delete" mnemonicParsing="false" onMouseClicked="#handleChange" text="Change Category Name" textAlignment="CENTER">
-               <font>
-                   <Font name="DejaVu Sans" size="14.0" />
-               </font>
-           </JFXButton>
-           <JFXButton fx:id="delButton" styleClass="button-delete" mnemonicParsing="false" onMouseClicked="#handleDelete" text="Delete this Category" textAlignment="CENTER">
-               <font>
-                   <Font name="DejaVu Sans" size="14.0" />
-               </font>
-           </JFXButton>
-       </HBox>
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <JFXButton fx:id="changeButton" mnemonicParsing="false" onMouseClicked="#handleChange" styleClass="button-delete" text="Change Category Name" textAlignment="CENTER">
+                <font>
+                    <Font name="DejaVu Sans" size="14.0" />
+                </font>
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="delButton" mnemonicParsing="false" onMouseClicked="#handleDelete" styleClass="button-delete" text="Delete this Category" textAlignment="CENTER">
+                <font>
+                    <Font name="DejaVu Sans" size="14.0" />
+                </font>
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000" styleClass="button-small" text="A" textAlignment="CENTER">
+                <font>
+                    <Font name="Arial" size="14.0" />
+                </font>
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </JFXButton>
 
-   </bottom>
+            <JFXButton fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="31.0" style="-fx-base: #00000000" styleClass="button-small" text="+" textAlignment="CENTER">
+                <font>
+                    <Font name="Arial" size="14.0" />
+                </font>
+            </JFXButton>
+        </HBox>
+
+    </bottom>
 </BorderPane>

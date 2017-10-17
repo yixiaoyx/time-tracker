@@ -30,7 +30,7 @@ public class InterfaceDriver {
 
 
   public void addSubCategory(String parentCategoryName, String uniqueName) {
-    System.out.println("InterfaceDriver: added sub-category " + uniqueName + " to category " + parentCategoryName);
+    System.out.println("InterfaceDriver: adding sub-category " + uniqueName + " to category " + parentCategoryName);
 
     Category c = getCategoryByName(parentCategoryName);
 
@@ -231,6 +231,9 @@ public class InterfaceDriver {
 
   public String getParentCategoryName(String categoryName) {
     Category c = getCategoryByName(categoryName);
+    if (c==null) {
+      System.out.println("cannot find "+categoryName);
+    }
     Category p = c.getParentCategory();
     if(p != null) {
       return p.getName();
