@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseDriver.java" afterPath="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/InterfaceDriver.java" afterPath="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,81 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Category.java">
+      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1026">
-              <caret line="75" column="4" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
-              <folding>
-                <element signature="e#907#915#0" expanded="true" />
-                <element signature="e#1094#1102#0" expanded="true" />
-                <element signature="e#1547#1548#0" expanded="true" />
-                <element signature="e#1575#1576#0" expanded="true" />
-                <element signature="e#3490#3507#0" expanded="true" />
-                <element signature="e#4941#4947#0" expanded="true" />
-                <element signature="e#5190#5206#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-598">
-              <caret line="105" column="34" lean-forward="false" selection-start-line="94" selection-start-column="43" selection-end-line="98" selection-end-column="5" />
-              <folding>
-                <marker date="1508236650813" expanded="true" signature="1266:1285" ph="select * fro... Tasks" />
-                <marker date="1508236650813" expanded="true" signature="1780:1923" ph="INSERT INTO Tasks... " />
-                <marker date="1508236650813" expanded="true" signature="2521:2540" ph="select * fro... Tasks" />
-                <marker date="1508236650813" expanded="true" signature="3460:3479" ph="select * fro... Tasks" />
-                <marker date="1508236650813" expanded="true" signature="4103:4397" ph="UPDATE Tasks... " />
-                <marker date="1508236650813" expanded="true" signature="4833:4897" ph="SELECT categ... Category" />
-                <marker date="1508236650813" expanded="true" signature="5379:5443" ph="SELECT ID FR... Category" />
-                <marker date="1508236650813" expanded="true" signature="5965:6023" ph="SELECT @idCo... " />
-                <marker date="1508236650813" expanded="true" signature="6055:6117" ph="SELECT @valu... " />
-                <marker date="1508236650813" expanded="true" signature="6170:6193" ph="select * fro... Category" />
-                <marker date="1508236650813" expanded="true" signature="7067:7115" ph="UPDATE categ... " />
-                <marker date="1508236650813" expanded="true" signature="7147:7328" ph="INSERT INTO category... " />
-                <marker date="1508236650813" expanded="true" signature="7954:8012" ph="SELECT @idCo... " />
-                <marker date="1508236650813" expanded="true" signature="8047:8119" ph="SELECT @Left... " />
-                <marker date="1508236650813" expanded="true" signature="8172:8217" ph="select * fro... Category" />
-                <marker date="1508236650813" expanded="true" signature="9207:9273" ph="UPDATE categ... " />
-                <marker date="1508236650813" expanded="true" signature="9306:9370" ph="UPDATE categ... " />
-                <marker date="1508236650813" expanded="true" signature="9403:9593" ph="INSERT INTO category... " />
-                <marker date="1508236650813" expanded="true" signature="10214:10236" ph="select * fro... Category" />
-                <marker date="1508236650813" expanded="true" signature="11322:11388" ph="SELECT categ... Tasks" />
-                <marker date="1508236650813" expanded="true" signature="11644:11816" ph="SELECT paren... category" />
-                <marker date="1508236650813" expanded="true" signature="12427:12535" ph="UPDATE Categ... " />
-                <marker date="1508236650813" expanded="true" signature="12828:12916" ph="UPDATE Tasks... " />
-                <marker date="1508236650813" expanded="true" signature="13254:13374" ph="SELECT @left... " />
-                <marker date="1508236650813" expanded="true" signature="13991:14070" ph="DELETE FROM " />
-                <marker date="1508236650813" expanded="true" signature="14102:14187" ph="UPDATE Categ... " />
-                <marker date="1508236650813" expanded="true" signature="14545:14598" ph="DELETE FROM " />
-                <marker date="1508236650813" expanded="true" signature="14893:14945" ph="SELECT * fro... Tasks" />
-                <marker date="1508236650813" expanded="true" signature="15457:15517" ph="SELECT ID fr... Category" />
-                <marker date="1508236650813" expanded="true" signature="15771:15823" ph="SELECT * fro... Tasks" />
-                <marker date="1508236650813" expanded="true" signature="17037:17165" ph="SELECT * fro... Tasks" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryScreen.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/CategoryScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InterfaceDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/InterfaceDriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="846">
+              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -238,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/view/CategoryScreen.css" />
         <option value="$PROJECT_DIR$/src/controller/Screen.java" />
         <option value="$PROJECT_DIR$/src/model/Task.java" />
-        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/controller/Main.java" />
         <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
         <option value="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
@@ -247,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/controller/FormController.java" />
         <option value="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
         <option value="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
+        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
       </list>
     </option>
   </component>
@@ -259,7 +189,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1359" />
-    <option name="y" value="-779" />
+    <option name="y" value="-11" />
     <option name="width" value="1362" />
     <option name="height" value="780" />
   </component>
@@ -574,10 +504,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44248000" />
+    <option name="totallyTimeSpent" value="44802000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1359" y="-779" width="1362" height="780" extended-state="6" />
+    <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -812,16 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="87" column="7" lean-forward="false" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-          <folding>
-            <element signature="e#2233#2234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -848,6 +768,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -869,22 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3753">
-          <caret line="164" column="12" lean-forward="false" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,10 +889,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-491">
+          <caret line="105" column="36" lean-forward="true" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CategoryScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
+        <state relative-caret-position="-189">
           <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
         </state>
       </provider>
