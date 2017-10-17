@@ -27,6 +27,7 @@ public class Main extends Application {
         driver.retrieveAllCategories();
         driver.retrieveAllTasks();
         primaryStage.setResizable(false);
+
         Screen currScreen = new CategoryScreen(primaryStage, driver, "All");
 
         //Screen currScreen = new TaskScreen(primaryStage, driver, "Dummy Task 0");

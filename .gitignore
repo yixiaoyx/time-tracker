@@ -2,8 +2,8 @@
 *.class
 
 # output folder
-out
-target
+out/*
+target/*
 
 # Log file
 *.log

@@ -7,10 +7,12 @@ import model.InterfaceDriver;
 
 public class AnalysisScreen extends Screen {
     private String currCategory;
+    private String backCategory;
 
-    public AnalysisScreen(Stage s, InterfaceDriver driver, String currCategory) {
+    public AnalysisScreen(Stage s, InterfaceDriver driver, String currCategory, String backCategory) {
         super(s, "AnalysisScreen.fxml", "Analysis", driver);
         this.currCategory = currCategory;
+        this.backCategory = backCategory;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class AnalysisScreen extends Screen {
 
     @Override
     Controller setUpController() {
-        AnalysisController controller = new AnalysisController(driver, this, currCategory);
+        AnalysisController controller = new AnalysisController(driver, this, currCategory, backCategory);
         return controller;
     }
 

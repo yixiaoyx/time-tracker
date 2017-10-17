@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -49,16 +50,18 @@ public class InterfaceDriver {
     }
   }
 
+
   public void deleteSubCategory(String uniqueName) {
-      System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
+
 
       Category c = getCategoryByName(uniqueName);
       Category parent = c.getParentCategory();
 
       if(parent != null) {
           parent.deleteSubCategory(c);
+       //   if(parent.getName().equals("All")) {
           db.deleteCategory(uniqueName);
-
+        System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
       }
       else {
           System.out.println("Couldn't find parent category for sub-category " + uniqueName);
@@ -85,9 +88,9 @@ public class InterfaceDriver {
     Task t = getTaskByName(uniqueName);
     Category c = t.getParentCategory();
 
-    System.out.println("InterfaceDriver: delete task " + uniqueName);
 
     if(c != null) {
+      System.out.println("InterfaceDriver: delete task " + uniqueName);
       c.deleteTask(t);
       db.deleteTask(uniqueName);
     }
@@ -193,6 +196,7 @@ public class InterfaceDriver {
     }
     return names;
   }
+
   public List<Category> getTopLevelCategory() {
     List<Category> names = new ArrayList<Category>();
     for(Category c : topLevelCategories) {
@@ -232,7 +236,7 @@ public class InterfaceDriver {
       return p.getName();
     }
     else {
-      System.out.println("parent category is not set");
+      System.out.println("parent category is not set for "+categoryName);
       return "";
     }
   }
@@ -245,6 +249,30 @@ public class InterfaceDriver {
   public void addTimingToTask(String taskName, Duration d) {
     Task t = getTaskByName(taskName);
     t.addTiming(d);
+  }
+
+  public void changeTaskName(String currentTaskname, String newTaskname) {
+    Task t = getTaskByName(currentTaskname);
+    Category c = t.getParentCategory();
+
+    if (c != null) {
+      System.out.println("InterfaceDriver: Changing task name from " + currentTaskname + " to " + newTaskname);
+      t.setName(newTaskname);
+      db.changeTaskname(currentTaskname, newTaskname);
+    } else {
+      System.out.println("Couldn't find task with the name " + currentTaskname);
+    }
+  }
+  public void changeCategory(String currentCategoryName, String newCategoryName) {
+
+    Category c = getCategoryByName(currentCategoryName);
+    if (c != null) {
+      System.out.println("InterfaceDriver: Changing category name from " + currentCategoryName + " to " + newCategoryName);
+      c.setName(newCategoryName);
+      db.changeCategory(currentCategoryName, newCategoryName);
+    } else {
+      System.out.println("Couldn't find category with the name " + currentCategoryName);
+    }
   }
 
   // use for analysis
@@ -269,6 +297,14 @@ public class InterfaceDriver {
     return c.getTaskBreakdown();
   }
 
+
+  // this function makes a category containing only the given task, named the same as the given task.
+  // This allows us to analyse individual tasks the same way we analyse categories.
+  public void makeDummyCategory(String taskName) {
+    Category c = new Category(taskName);
+    c.addTaskWithoutParentUpdate(getTaskByName(taskName));
+    topLevelCategories.add(c);
+  }
 
   public static void main(String[] args) {
     // Basic workflow:

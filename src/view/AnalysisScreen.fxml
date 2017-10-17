@@ -13,7 +13,7 @@
     <VBox fx:id="vbox">
     <children>
         <HBox>
-        <Button fx:id="analysisBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" onMouseClicked="#handleBackClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-base: #00000000" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="&lt;" textAlignment="CENTER">
+        <Button fx:id="analysisBackButton" styleClass="button-small" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" stylesheets="@CategoryScreen.css" onMouseClicked="#handleBackClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-base: #00000000" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" text="&lt;" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>

@@ -88,8 +88,8 @@ public class Task {
 
 
             //save task to the database after clocking out.
-            db.updateTask(getName(), getParentCategory().getName(),convertTime(duration.time()),
-                    duration.time(), activeEndTime, activeEndTime);
+            db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
+                    getTotalTime(), activeEndTime, activeEndTime);
 
         }
 
@@ -118,6 +118,9 @@ public class Task {
     public String getName() {
 
         return name;
+    }
+    public void setName(String newName) {
+        this.name = newName;
     }
 
     // returns 'active' clock time: time it has currently been running

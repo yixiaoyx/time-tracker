@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,13 +10,20 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import model.InterfaceDriver;
 
 import java.io.File;
+
+import static javafx.scene.paint.Color.LIGHTGREY;
+import static javafx.scene.paint.Color.WHITE;
 
 public class CategoryController extends Controller {
 
@@ -37,6 +45,8 @@ public class CategoryController extends Controller {
     final String addPath = addFile.toURI().toString();
 
     @FXML
+    private StackPane stackPane;
+    @FXML
     private TilePane categoryTable;
 
     @FXML
@@ -54,6 +64,9 @@ public class CategoryController extends Controller {
     @FXML
     private ScrollPane scroll;
 
+    @FXML
+    private JFXButton changeButton;
+
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
@@ -65,6 +78,11 @@ public class CategoryController extends Controller {
 
     @FXML
     protected void initialize() {
+        JFXDialog dialog = new JFXDialog();
+        dialog.setContent(new Label("Content"));
+        changeButton.setOnAction((action)->dialog.show(stackPane));
+
+
         for (String cur: driver.getSubCategoryNames(currCategory)) {
             addCategoryToTable(cur);
             System.out.println(cur);
@@ -82,8 +100,6 @@ public class CategoryController extends Controller {
             categoryBackButton.setVisible(false);
         }
 
-        setGraphics();
-
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scroll.setFitToHeight(true);
 
@@ -97,22 +113,6 @@ public class CategoryController extends Controller {
         METHODS FOR SETTING GRAPHICS
        --------------------------------------- */
 
-    private void setGraphics() {
-        /*
-        // Back Button
-        Image backImage = new Image(backPath, false);
-        categoryBackButton.setGraphic(new ImageView(backImage));
-
-        // Analysis Button
-        Image analysisImage = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(analysisImage));
-
-        // Add Button
-        Image addImage = new Image(addPath, false);
-        addButton.setGraphic(new ImageView(addImage));
-        */
-    }
-
 
     /* ---------------------------------------
         METHODS FOR DISPLAYING TASKS AND CATEGORIES IN A TABLE
@@ -122,6 +122,7 @@ public class CategoryController extends Controller {
 
         VBox vbox = new VBox();
         Label label = new Label(taskName);
+        label.setTextFill(LIGHTGREY);
 
         vbox.getChildren().addAll(new ImageView(image), label);
         vbox.setAlignment(Pos.CENTER);
@@ -151,6 +152,7 @@ public class CategoryController extends Controller {
 
         VBox vbox = new VBox();
         Label label = new Label(categoryName);
+        label.setTextFill(LIGHTGREY);
 
         vbox.getChildren().addAll(new ImageView(image), label);
         vbox.setAlignment(Pos.CENTER);
@@ -214,5 +216,10 @@ public class CategoryController extends Controller {
             handleBackClick();
 
         }
+    }
+
+    @FXML
+    private void handleChange() {
+
     }
 }
