@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<GridPane alignment="CENTER" stylesheets="CategoryScreen.css" hgap="10.0" prefHeight="500.0" prefWidth="500.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane  alignment="CENTER" stylesheets="CategoryScreen.css" hgap="10.0" prefHeight="500.0" prefWidth="500.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <GridPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #eeeeee;" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <children>
@@ -18,13 +18,13 @@
                     <font>
                         <Font name="DejaVu Sans Bold" size="20.0" />
                     </font>
-                    <graphic>
-                        <ProgressBar prefHeight="83.0" prefWidth="386.0" progress="0.0" style="-fx-background-color: #eeeeee;">
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </ProgressBar>
-                    </graphic>
+                    <!--<graphic>-->
+                        <!--<ProgressBar prefHeight="83.0" prefWidth="386.0" progress="0.0" style="-fx-background-color: #eeeeee;">-->
+                            <!--<cursor>-->
+                                <!--<Cursor fx:constant="HAND" />-->
+                            <!--</cursor>-->
+                        <!--</ProgressBar>-->
+                    <!--</graphic>-->
                 </Button>
                 <Label fx:id="taskName" alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="200.0" text="TASK" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                     <font>
@@ -32,16 +32,16 @@
                     </font>
                 </Label>
                 <Label fx:id="duration" alignment="TOP_CENTER" font="$x1" prefHeight="70.0" prefWidth="200.0" text="00:00:00" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-                <Button fx:id="taskBackButton" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="70.0" prefWidth="70.0" text="⇦" underline="false" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
+                <JFXButton fx:id="taskBackButton" styleClass="button-small" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="70.0" prefWidth="70.0" text="⇦" underline="false" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
                     <font>
                         <Font size="30.0" />
                     </font>
-                </Button>
-                <Button fx:id="taskAnalysisButton" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="70.0" prefWidth="70.0" text="A" underline="false" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="TOP">
+                </JFXButton>
+                <JFXButton fx:id="taskAnalysisButton" styleClass="button-small" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="70.0" prefWidth="70.0" text="A" underline="false" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="TOP">
                     <font>
                         <Font size="30.0" />
                     </font>
-                </Button>
+                </JFXButton>
 
                 <JFXButton fx:id="delButton" styleClass="button-delete" mnemonicParsing="false" onMouseClicked="#handleDelete" text="DELETE" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                    <font>
