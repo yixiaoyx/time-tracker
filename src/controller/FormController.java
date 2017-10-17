@@ -1,11 +1,13 @@
 package controller;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXSnackbar;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.event.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
 import java.util.ArrayList;
@@ -28,6 +30,10 @@ public class FormController extends Controller{
     private JFXComboBox categoryMenu;
     @FXML
     private BorderPane borderPane;
+    @FXML
+    private JFXRadioButton taskRadio;
+    @FXML
+    private JFXRadioButton categoryRadio;
 
     public FormController(InterfaceDriver driver, FormScreen currScreen){
         super(driver);
@@ -47,6 +53,8 @@ public class FormController extends Controller{
         categoryMenu.setValue(selectedCategory);
         categoryMenu.getItems().add(topLevelCategory);
         categoryMenu.getItems().addAll(findSubCategories(topLevelCategory));
+
+        taskRadio.setShape(new Rectangle(10,10));
 
     }
 

@@ -216,8 +216,5 @@ public class CategoryController extends Controller {
 
     @FXML
     private void handleChange() {
-        JFXDialog dialog = new JFXDialog();
-        dialog.setContent(new Label("Content"));
-        changeButton.setOnAction((action)->dialog.show());
     }
 }

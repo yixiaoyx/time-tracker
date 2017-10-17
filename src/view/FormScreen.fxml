@@ -40,12 +40,12 @@
                               <ToggleGroup fx:id="radioGroup" />
                           </fx:define>
 
-                          <JFXRadioButton toggleGroup="$radioGroup" selected="true" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Task" userData="task">
+                          <JFXRadioButton toggleGroup="$radioGroup" fx:id="taskRadio" selected="true" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Task" userData="task">
                               <padding>
                                   <Insets bottom="20.0" />
                               </padding>
                           </JFXRadioButton>
-                          <JFXRadioButton toggleGroup="$radioGroup" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Category" translateX="60.0" userData="category">
+                          <JFXRadioButton toggleGroup="$radioGroup" fx:id="categoryRadio" selectedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" scaleZ="1.5" text="Category" translateX="60.0" userData="category">
                               <padding>
                                   <Insets bottom="20.0" />
                               </padding>
