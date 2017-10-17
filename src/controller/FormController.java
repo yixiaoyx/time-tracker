@@ -73,7 +73,7 @@ public class FormController extends Controller{
 //        String name;
 //        String category;
        // Check selected radio group item
-        addType = "task";//radioGroup.getSelectedToggle().getUserData().toString();
+        addType = radioGroup.getSelectedToggle().getUserData().toString();
 
         // Check category
         String category = categoryMenu.getValue().toString();
@@ -99,7 +99,6 @@ public class FormController extends Controller{
             currScreen.goToCategoryScreen(category);
         }
 
-        System.out.println(category);
     }
 
     /*
