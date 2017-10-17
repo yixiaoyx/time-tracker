@@ -72,6 +72,9 @@ public class CategoryController extends Controller {
     @FXML
     private JFXButton changeButton;
 
+    @FXML
+    private JFXButton delButton;
+
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
@@ -100,6 +103,8 @@ public class CategoryController extends Controller {
         String parentCategory = driver.getParentCategoryName(currCategory);
         if (parentCategory.equals("")) {
             categoryBackButton.setVisible(false);
+            changeButton.setDisable(true);
+            delButton.setDisable(true);
         }
 
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
@@ -226,8 +231,8 @@ public class CategoryController extends Controller {
         Insets insets = new Insets(10, 10, 10, 10);
         // Create contents of Dialog Box
         VBox changebox = new VBox();
-        changebox.setAlignment(Pos.CENTER);
-        changebox.setPrefSize(300,170);
+        changebox.setAlignment(Pos.TOP_CENTER);
+        changebox.setPrefSize(370,200);
 
             // Title
         Label title = new Label("Change Category Name");
@@ -236,10 +241,13 @@ public class CategoryController extends Controller {
 
             // Input
         JFXTextField inputField = new JFXTextField();
-        inputField.setPromptText(currCategory);
+        inputField.setPromptText("Enter name here...");
         inputField.setAlignment(Pos.CENTER);
 
             // Button
+        HBox buttonBox = new HBox();
+        buttonBox.setAlignment(Pos.CENTER);
+
         JFXButton okButton = new JFXButton("Confirm");
         okButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -263,9 +271,21 @@ public class CategoryController extends Controller {
 
         okButton.setStyle("-fx-background-color: #F19F4D");
         //        okButton.getStyleClass().add("button-delete");
-        changebox.getChildren().addAll(title, inputField,  okButton);
+        JFXButton cancelButton = new JFXButton("Cancel");
+        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                dialog.close();
+            }
+        });
 
-        changebox.setMargin(title, insets);
+        cancelButton.getStyleClass().add("button-delete");
+
+        buttonBox.getChildren().addAll(okButton,cancelButton);
+
+        changebox.getChildren().addAll(title, inputField,  buttonBox);
+
+        changebox.setMargin(title, new Insets(25,10,10,10));
         changebox.setMargin(inputField, insets);
         changebox.setMargin(okButton, insets);
         // Insert contents into dialog box

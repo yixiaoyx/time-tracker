@@ -41,3 +41,8 @@
     -fx-background-color: #F19F4D;
     -fx-text-fill: WHITE;
 }
+
+.button-invalid{
+    -fx-background-color: #888888;
+    -fx-text-fill: #121212;
+}
