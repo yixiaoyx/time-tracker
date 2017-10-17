@@ -44,8 +44,7 @@ public class CategoryController extends Controller {
     final String analysisPath = analysisFile.toURI().toString();
     final String addPath = addFile.toURI().toString();
 
-    @FXML
-    private StackPane stackPane;
+
     @FXML
     private TilePane categoryTable;
 
@@ -78,9 +77,6 @@ public class CategoryController extends Controller {
 
     @FXML
     protected void initialize() {
-        JFXDialog dialog = new JFXDialog();
-        dialog.setContent(new Label("Content"));
-        changeButton.setOnAction((action)->dialog.show(stackPane));
 
 
         for (String cur: driver.getSubCategoryNames(currCategory)) {
@@ -220,6 +216,5 @@ public class CategoryController extends Controller {
 
     @FXML
     private void handleChange() {
-
     }
 }

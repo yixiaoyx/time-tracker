@@ -2,7 +2,7 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14px;
     -jfx-button-type: RAISED;
-    -fx-background-color: rgb(77,102,204);
+    -fx-background-color: #3c77bb;
     -fx-pref-width: 200;
     -fx-text-fill: WHITE;
     -fx-text-alignment: CENTER;
@@ -13,7 +13,7 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14px;
     -jfx-button-type: RAISED;
-    -fx-background-color: rgb(204, 91, 126);
+    -fx-background-color: #66b5ff;
     -fx-pref-width: 200;
     -fx-text-fill: WHITE;
     -fx-text-alignment: CENTER;
@@ -22,15 +22,22 @@
 
 .button-small{
     -jfx-button-type: FLAT;
-    -fx-background-color: rgb(131, 211, 198);
+    -fx-background-color: #4484CE;
     -fx-pref-width: 72;
-    -fx-pref-height: 50;
+    -fx-pref-height: 30;
     -fx-text-fill: WHITE;
 
 }
 
+.button-back {
+    -jfx-button-type: FLAT;
+    -fx-background-colour: #4484CE;
+    -fx-pref-height: 45;
+    -fx-pref-width: 20;
+    -fx-text-fill: WHITE;
+}
 .button-delete{
     -jfx-button-type: FLAT;
-    -fx-background-color: rgb(204, 91, 126);
+    -fx-background-color: #F19F4D;
     -fx-text-fill: WHITE;
 }

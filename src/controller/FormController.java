@@ -1,11 +1,14 @@
 package controller;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXSnackbar;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.event.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
 import java.util.ArrayList;
@@ -28,6 +31,10 @@ public class FormController extends Controller{
     private JFXComboBox categoryMenu;
     @FXML
     private BorderPane borderPane;
+    @FXML
+    private JFXCheckBox taskCheckBox;
+    @FXML
+    private JFXCheckBox categoryCheckBox;
 
     public FormController(InterfaceDriver driver, FormScreen currScreen){
         super(driver);
@@ -47,6 +54,7 @@ public class FormController extends Controller{
         categoryMenu.setValue(selectedCategory);
         categoryMenu.getItems().add(topLevelCategory);
         categoryMenu.getItems().addAll(findSubCategories(topLevelCategory));
+
 
     }
 
@@ -68,17 +76,30 @@ public class FormController extends Controller{
     }
 
     @FXML
+    public void handleTaskCheck(){
+        taskCheckBox.setSelected(true);
+        categoryCheckBox.setSelected(false);
+    }
+
+    @FXML
+    public void handleCategoryCheck(){
+        taskCheckBox.setSelected(false);
+        categoryCheckBox.setSelected(true);
+    }
+
+    @FXML
     public void handleOkClick() {
         String addType = "";
 //        String name;
 //        String category;
-       // Check selected radio group item
-        addType = "task";//radioGroup.getSelectedToggle().getUserData().toString();
+        // Check selected radio group item
+        if (taskCheckBox.isSelected()) addType = "task";
+        else addType = "category";
 
         // Check category
         String category = categoryMenu.getValue().toString();
 
-       // Check name
+        // Check name
 
         String name = nameField.getText();
         // TO DO: Sanitise text input of Name and make sure name will not conflict with other items
@@ -88,8 +109,8 @@ public class FormController extends Controller{
         }
 
 
-       // Add task/category
-       // Go to relevant screen
+        // Add task/category
+        // Go to relevant screen
 
         if (addType.equals("task")){
             driver.addTask(category, name);
@@ -99,7 +120,6 @@ public class FormController extends Controller{
             currScreen.goToCategoryScreen(category);
         }
 
-        System.out.println(category);
     }
 
     /*
