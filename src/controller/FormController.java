@@ -1,4 +1,5 @@
 package controller;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXSnackbar;
@@ -31,9 +32,9 @@ public class FormController extends Controller{
     @FXML
     private BorderPane borderPane;
     @FXML
-    private JFXRadioButton taskRadio;
+    private JFXCheckBox taskCheckBox;
     @FXML
-    private JFXRadioButton categoryRadio;
+    private JFXCheckBox categoryCheckBox;
 
     public FormController(InterfaceDriver driver, FormScreen currScreen){
         super(driver);
@@ -54,7 +55,6 @@ public class FormController extends Controller{
         categoryMenu.getItems().add(topLevelCategory);
         categoryMenu.getItems().addAll(findSubCategories(topLevelCategory));
 
-        taskRadio.setShape(new Rectangle(10,10));
 
     }
 
@@ -76,17 +76,30 @@ public class FormController extends Controller{
     }
 
     @FXML
+    public void handleTaskCheck(){
+        taskCheckBox.setSelected(true);
+        categoryCheckBox.setSelected(false);
+    }
+
+    @FXML
+    public void handleCategoryCheck(){
+        taskCheckBox.setSelected(false);
+        categoryCheckBox.setSelected(true);
+    }
+
+    @FXML
     public void handleOkClick() {
         String addType = "";
 //        String name;
 //        String category;
-       // Check selected radio group item
-        addType = radioGroup.getSelectedToggle().getUserData().toString();
+        // Check selected radio group item
+        if (taskCheckBox.isSelected()) addType = "task";
+        else addType = "category";
 
         // Check category
         String category = categoryMenu.getValue().toString();
 
-       // Check name
+        // Check name
 
         String name = nameField.getText();
         // TO DO: Sanitise text input of Name and make sure name will not conflict with other items
@@ -96,8 +109,8 @@ public class FormController extends Controller{
         }
 
 
-       // Add task/category
-       // Go to relevant screen
+        // Add task/category
+        // Go to relevant screen
 
         if (addType.equals("task")){
             driver.addTask(category, name);
