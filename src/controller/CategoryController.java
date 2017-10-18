@@ -333,11 +333,11 @@ public class CategoryController extends Controller {
     private String isNameValid(String name){
         String category = driver.getParentCategoryName(currCategory);
 
-        Pattern invalidChars = Pattern.compile(".*\\W+.*");
-        Matcher invalidMatch = invalidChars.matcher(name);
+        //Pattern invalidChars = Pattern.compile(".*\\W+.*");
+        //Matcher invalidMatch = invalidChars.matcher(name);
 
         if (name.isEmpty()) return "empty";
-        if (invalidMatch.matches()) return "illegalchar";
+        //if (invalidMatch.matches()) return "illegalchar";
         for (String c: driver.getSubCategoryNames(category)) {
             if (c.equals(name)) return "categorymatch";
         }
@@ -349,9 +349,8 @@ public class CategoryController extends Controller {
         String warning = "";
         if (reason.equals("empty")) {
             warning = "No input in Name field";
-        }
-        else if (reason.equals("illegalchar")) {
-            warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
+        //} else if (reason.equals("illegalchar")) {
+        //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         }

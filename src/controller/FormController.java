@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.event.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
@@ -16,13 +17,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class FormController extends Controller{
     private Screen currScreen;
     private boolean active;
     private String selectedCategory;
     final String topLevelCategory = "All";
 
-
+    @FXML
+    private VBox vbox;
     @FXML
     private ToggleGroup radioGroup;
     @FXML
@@ -126,11 +129,11 @@ public class FormController extends Controller{
     private String isNameValid(String name){
         String category = categoryMenu.getValue().toString();
 
-        Pattern invalidChars = Pattern.compile(".*\\W+.*");
-        Matcher invalidMatch = invalidChars.matcher(name);
+        //Pattern invalidChars = Pattern.compile(".*\\W+.*");
+        //Matcher invalidMatch = invalidChars.matcher(name);
 
         if (name.isEmpty()) return "empty";
-        if (invalidMatch.matches()) return "illegalchar";
+        // if (invalidMatch.matches()) return "illegalchar";
         for (String c: driver.getSubCategoryNames(category)) {
             if (c.equals(name)) return "categorymatch";
         }
@@ -146,19 +149,18 @@ public class FormController extends Controller{
         String warning = "";
         if (reason.equals("empty")) {
             warning = "No input in Name field";
-        }
-
-        else if (reason.equals("illegalchar")) {
-            warning = "Illegal characters found. Only alphanumeric characters, spaces, and hyphens are allowed";
+        //} else if (reason.equals("illegalchar")) {
+        //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         } else if (reason.equals("taskmatch")) {
-            warning = "Duplicate task name in selected category. Please change Name or selected Category.";
+            warning = "Duplicate task name in selected category.\nPlease change Name or selected Category.";
         } else {
             warning = "I'm not sure what you did wrong.";
         }
         System.out.println(warning);
-        JFXSnackbar bar = new JFXSnackbar(borderPane);
+
+        JFXSnackbar bar = new JFXSnackbar(vbox);
         bar.setAlignment(Pos.CENTER);
         bar.enqueue(new JFXSnackbar.SnackbarEvent(warning));
     }
