@@ -1,9 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // SEE MAIN METHOD AT BOTTOM OF FILE FOR EXAMPLE OF HOW TO USE
 
@@ -335,6 +332,18 @@ public class InterfaceDriver {
     return t.getEstimatedTime();
   }
 
+
+  public Map<String, Long[]> getCategoryTaskProgress(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    Map<String, Long[]> m = new HashMap<String, Long[]>();
+
+    for(Task t : c.recursiveGetTasks()) {
+      Long[] l = {t.getTotalTime(), t.getEstimatedTime()};
+      m.put(t.getName(), l);
+    }
+
+    return m;
+  }
 
   public static void main(String[] args) {
     // Basic workflow:
