@@ -1,3 +1,3 @@
-INSERT INTO TrackerDB.Tasks (task_name, category_ID, duration_string, duration, date_of_task_start, date_of_task_finish) VALUES ('COMP4920_proj1p1', 2, '00:22:33', '1353', '2017-08-20 12:02:05', '2017-08-20 12:24:38');
-INSERT INTO TrackerDB.Tasks (task_name, category_ID, duration_string, duration, date_of_task_start, date_of_task_finish) VALUES ('Question1-3', 15, '01:00:50', '13003', '2017-10-10 10:41:52', '2017-10-10 10:41:53');
-INSERT INTO TrackerDB.Tasks (task_name, category_ID, duration_string, duration, date_of_task_start, date_of_task_finish) VALUES ('COMP4920_proj1p2', 2, '00:50:30', '13135', '2017-10-06 10:50:10', '2017-10-06 11:40:40');
+INSERT INTO TrackerDB.Tasks (task_name, category_ID, duration_string, duration) VALUES ('Task1', 2, '00:00:02', '2487');
+INSERT INTO TrackerDB.Tasks (task_name, category_ID, duration_string, duration) VALUES ('Task2', 2, '00:00:06', '6266');
+INSERT INTO TrackerDB.Tasks (task_name, category_ID, duration_string, duration) VALUES ('Assignment1', 17, '00:00:07', '7271');

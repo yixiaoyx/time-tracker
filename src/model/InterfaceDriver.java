@@ -124,10 +124,16 @@ public class InterfaceDriver {
   public void retrieveAllTasks() {
     List<Task> getTasks = db.restoreTasks();
 
+    int i = 0;
+
     for(Task t: getTasks) {
       Category c = t.getParentCategory();
-      if(c.getTaskByName(t.getName()) == null) { //find if task already exists.
+      List<Task> taskDurations = db.getAllTaskDurations(t.getName());
+      if (c.getTaskByName(t.getName()) == null) { //find if task already exists.
         addTask(c.getName(), t.getName());
+      }
+      for (Duration d : taskDurations.get(0).getTimings()) {
+        t.addTiming(d);
       }
 
     }
@@ -258,8 +264,15 @@ public class InterfaceDriver {
     return t.getParentCategory().getName();
   }
 
+
+
+
   public void addTimingToTask(String taskName, Duration d) {
     Task t = getTaskByName(taskName);
+
+
+
+
     t.addTiming(d);
   }
 
