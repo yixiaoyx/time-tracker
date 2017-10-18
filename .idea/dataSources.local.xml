@@ -2,12 +2,11 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="TrackerDB@localhost" uuid="845d6a25-c616-450e-90cd-95a1e7a58b66">
-      <database-info product="MySQL" version="5.7.19-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <database-info product="MySQL" version="5.7.19" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
       <user-name>root</user-name>
       <introspection-schemas>*:TrackerDB</introspection-schemas>
     </data-source>
