@@ -285,6 +285,10 @@ public class Category {
 
   }
 
+  public void clearTasksAndCategories() {
+    this.childTasks = new ArrayList<Task>();
+    this.subCategories = new ArrayList<Category>();
+  }
 
   // LAZY Copied from Task, cleanup if have time
   public String convertTime(long milliSecondDelta) {

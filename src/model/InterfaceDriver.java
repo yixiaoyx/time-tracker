@@ -396,6 +396,31 @@ public class InterfaceDriver {
     return c.searchForCategories(searchQuery);
   }
 
+  public String makeSearchCategory(List<String> taskNames, List<String> categoryNames) {
+
+
+    Category c = getCategoryByName("Search Results");
+
+    if(c == null) {
+      c = new Category("Search Results");
+    }
+    else {
+      c.clearTasksAndCategories();
+    }
+
+    for(String t : taskNames) {
+      c.addTask(new Task(t));
+    }
+    for(String cat : categoryNames) {
+      c.addSubCategory(new Category(cat));
+    }
+    c.setParentCategory(getCategoryByName("All"));
+
+    topLevelCategories.add(c);
+
+    return "Search Results";
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
 

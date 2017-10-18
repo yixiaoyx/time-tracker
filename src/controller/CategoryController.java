@@ -425,13 +425,16 @@ public class CategoryController extends Controller {
         List<String> matchingTasks = driver.searchForTasks(searchQuery, currCategory);
         List<String> matchingCategories = driver.searchForCategories(searchQuery, currCategory);
 
-        for(String s : matchingTasks) {
-            System.out.println("Found task: " + s);
-        }
+        String searchCategory = driver.makeSearchCategory(matchingTasks, matchingCategories);
+        handleCategoryClick(searchCategory);
 
-        for(String s : matchingCategories) {
-            System.out.println("Found category: " + s);
-        }
+//        for(String s : matchingTasks) {
+//            System.out.println("Found task: " + s);
+//        }
+//
+//        for(String s : matchingCategories) {
+//            System.out.println("Found category: " + s);
+//        }
 
     }
 }
