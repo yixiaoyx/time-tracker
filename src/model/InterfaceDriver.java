@@ -129,9 +129,9 @@ public class InterfaceDriver {
       if (c.getTaskByName(t.getName()) == null) { //find if task already exists.
         addTask(c.getName(), t.getName());
       }
-      for (Duration d : taskDurations.get(0).getTimings()) {
-        t.addTiming(d);
-      }
+//      for (Duration d : taskDurations.get(0).getTimings()) {
+//        t.addTiming(d);
+//      }
 
     }
 

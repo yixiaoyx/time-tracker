@@ -1,15 +1,20 @@
 package controller;
 
+import javafx.fxml.FXML;
 import com.jfoenix.controls.JFXProgressBar;
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
 
 import java.util.Map;
+import java.io.File;
 
 public class TaskController extends Controller {
 
@@ -17,6 +22,9 @@ public class TaskController extends Controller {
     private String currTask;
     private boolean active;
     private final Timeline activeTime;
+
+    final File analysisFile = new File("src/assets/Graph_1.png");
+    final String analysisPath = analysisFile.toURI().toString();
 
     @FXML
     private Button clockButton;
@@ -30,6 +38,8 @@ public class TaskController extends Controller {
     private Button delButton;
     @FXML
     private JFXProgressBar bigProgressBar;
+        @FXML
+    private JFXButton analysisButton;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
@@ -47,9 +57,9 @@ public class TaskController extends Controller {
 
                             Long[] l = driver.getTaskTimeAndEstimatedTime(currTask);
 
-                            double progress = (double) ((l[0]+driver.getTaskByName(currTask).getActiveRunTime()) / l[1]);
+                            //double progress = (double) ((l[0]+driver.getTaskByName(currTask).getActiveRunTime()) / l[1]);
 
-                            bigProgressBar.setProgress(progress);
+                            bigProgressBar.setProgress(0.5);
                         }
                     }
                 ),
@@ -107,6 +117,10 @@ public class TaskController extends Controller {
     @FXML
     protected void initialize() {
         taskName.setText(currTask);
+
+        Image analysisImage = new Image(analysisPath, false);
+        analysisButton.setGraphic(new ImageView(analysisImage));
+
 
     }
 
