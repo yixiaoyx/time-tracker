@@ -112,7 +112,7 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        currScreen.goToCategoryScreen();
+        currScreen.goToCategoryScreen(driver.getParentCategoryOfTask(currTask));
     }
 
     @FXML

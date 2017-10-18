@@ -14,7 +14,7 @@ public class FormScreen extends Screen {
 
     @Override
     Controller setUpController(){
-        FormController controller = new FormController(driver, this);
+        FormController controller = new FormController(driver, this, prevCategory);
         return controller;
     }
 
@@ -26,23 +26,4 @@ public class FormScreen extends Screen {
         goToCategoryScreen(prevCategory);
     }
 
-    public void goToCategoryScreen(String category) {
-        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
-        System.out.println("I am going to the category screen");
-        try {
-            currScreen.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void goToTaskScreen(String task) {
-        Screen currScreen = new TaskScreen(this.getStage(), this.getDriver(), task);
-        try {
-            currScreen.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

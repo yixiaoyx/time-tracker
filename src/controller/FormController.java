@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FormController extends Controller{
-    private FormScreen currScreen;
+    private Screen currScreen;
     private boolean active;
     private String selectedCategory;
     final String topLevelCategory = "All";
@@ -36,10 +36,10 @@ public class FormController extends Controller{
     @FXML
     private JFXCheckBox categoryCheckBox;
 
-    public FormController(InterfaceDriver driver, FormScreen currScreen){
+    public FormController(InterfaceDriver driver, Screen currScreen, String category){
         super(driver);
         this.currScreen = currScreen;
-        setSelectedCategory(currScreen.getPrevCategory());
+        setSelectedCategory(category);
         active = false;
 
     }
@@ -68,12 +68,6 @@ public class FormController extends Controller{
         return sclist;
     }
 
-    @FXML
-    public void handleBackClick(){
-        if (!active){
-            currScreen.goBack();
-        }
-    }
 
     @FXML
     public void handleTaskCheck(){

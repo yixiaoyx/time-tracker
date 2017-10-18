@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -22,6 +23,7 @@ import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -203,9 +205,23 @@ public class CategoryController extends Controller {
        --------------------------------------- */
     @FXML
     private void handleAddClick(){
-        if (!active) {
-            currScreen.goToFormScreen(this.currCategory);
+        //currScreen.goToFormScreen(this.currCategory);
+        JFXDialog dialog = new JFXDialog();
+        //Pane newPane = new Pane();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../FormScreen.fxml"));
+            fxmlLoader.setController(new FormController(driver, currScreen, currCategory));
+
+            dialog.setContent(fxmlLoader.load());
+
+            //newPane = fxmlLoader.load();
+            //newPane.getChildren().add(newPane);
+        //    newPane.getChildren().add(new Label("I AM A PANE"));
+        } catch (/*IO*/Exception e) {
+            e.printStackTrace();
         }
+
+        dialog.show(sp);
     }
 
     @FXML
