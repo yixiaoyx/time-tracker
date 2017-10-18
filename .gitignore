@@ -4,6 +4,9 @@
 # output folder
 out/*
 target/*
+target/classes/*
+target/classes/model/*
+target/classes/controller/*
 
 # Log file
 *.log
