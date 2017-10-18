@@ -28,12 +28,6 @@
 
                 <HBox>
                     <children>
-                        <!--<JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="5.0" translateY="5.0">-->
-                            <!--<font>-->
-                                <!--<Font name="Arial" size="24.0" />-->
-                            <!--</font>-->
-                        <!--</JFXButton>-->
-
                         <VBox>
                         <children>
                             <HBox fx:id="categoryPathHBox" alignment="BOTTOM_LEFT">
@@ -52,6 +46,7 @@
             </top>
             <bottom>
                 <HBox BorderPane.alignment="CENTER">
+                    <children>
                     <JFXButton fx:id="changeButton" mnemonicParsing="false" onMouseClicked="#handleChange" styleClass="button-delete" text="Change Category Name" textAlignment="CENTER">
                         <font>
                             <Font name="DejaVu Sans" size="14.0" />
@@ -60,6 +55,8 @@
                             <Insets right="10.0" />
                         </HBox.margin>
                     </JFXButton>
+
+
                     <JFXButton fx:id="delButton" mnemonicParsing="false" onMouseClicked="#handleDelete" styleClass="button-delete" text="Delete this Category" textAlignment="CENTER">
                         <font>
                             <Font name="DejaVu Sans" size="14.0" />
@@ -68,6 +65,8 @@
                             <Insets right="10.0" />
                         </HBox.margin>
                     </JFXButton>
+
+
                     <JFXButton fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000;" styleClass="button-small" text="A" textAlignment="CENTER">
                         <font>
                             <Font name="Arial" size="14.0" />
@@ -77,11 +76,23 @@
                         </HBox.margin>
                     </JFXButton>
 
+                    <JFXButton fx:id="searchButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleSearchClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000;" styleClass="button-small" text="S" textAlignment="CENTER">
+                        <font>
+                            <Font name="Arial" size="14.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </JFXButton>
+
+
+
                     <JFXButton fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="31.0" style="-fx-base: #00000000" styleClass="button-small" text="+" textAlignment="CENTER">
                         <font>
                             <Font name="Arial" size="14.0" />
                         </font>
                     </JFXButton>
+                    </children>
                 </HBox>
 
             </bottom>
