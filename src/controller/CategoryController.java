@@ -111,9 +111,11 @@ public class CategoryController extends Controller {
         scroll.setFitToHeight(true);
 
         //SETTING GRAPHICS
-        Image image = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(image));
+        Image analysisImage = new Image(analysisPath, false);
+        analysisButton.setGraphic(new ImageView(analysisImage));
 
+        Image addImage = new Image(addPath, false);
+        addButton.setGraphic(new ImageView(addImage));
     }
 
     public void setCurrCategory(String category) {
