@@ -64,15 +64,7 @@ public class TaskController extends Controller {
             active = true;
 
         } else {
-            driver.clockOut(currTask);
-            clockButton.setText("CLOCK IN");
-
-            System.out.println("ANALYSIS BOIIII");
-            System.out.println("Total Task Time: " + driver.getTaskTimeString(currTask));
-            System.out.println("ALL Category Time: " + driver.getCategoryTimeString("All"));
-
-            activeTime.stop();
-            active = false;
+            controllerClockOut();
         }
 
     }
@@ -80,15 +72,20 @@ public class TaskController extends Controller {
     @FXML
     private void handleBackClick() {
 
-        if (!active) {
-            currScreen.goToCategoryScreen();
+        if (active) {
+            controllerClockOut();
         }
+        currScreen.goToCategoryScreen();
     }
 
     @FXML
     private void handleDelete() {
-        currScreen.goToCategoryScreen();
+        if (active) {
+            controllerClockOut();
+        }
+        String parentCategory = driver.getParentCategoryOfTask(currTask);
         driver.deleteTask(currTask);
+        currScreen.goToCategoryScreen(parentCategory);
     }
 
     @FXML
@@ -102,11 +99,18 @@ public class TaskController extends Controller {
 
     }
 
-/*
-    @FXML
-    void goBack() {
+    private void controllerClockOut() {
+        driver.clockOut(currTask);
+        clockButton.setText("CLOCK IN");
+
+        System.out.println("ANALYSIS BOIIII");
+        System.out.println("Total Task Time: " + driver.getTaskTimeString(currTask));
+        System.out.println("ALL Category Time: " + driver.getCategoryTimeString("All"));
+
+        activeTime.stop();
+        active = false;
 
     }
-*/
+
 
 }

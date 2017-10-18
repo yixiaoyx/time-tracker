@@ -178,8 +178,8 @@ public class DatabaseDriver {
 
         try {
             s = c.createStatement();
-            String query1 = "SELECT @idCol := id from category ORDER BY id DESC LIMIT 1";
-            String query2 = "SELECT @value := rght from category ORDER BY rght DESC LIMIT 1;";
+            String query1 = "SELECT @idCol := ID from Category ORDER BY ID DESC LIMIT 1";
+            String query2 = "SELECT @value := rght from Category ORDER BY rght DESC LIMIT 1;";
 
 
             ResultSet record = s.executeQuery("select  * from Category");
@@ -205,8 +205,8 @@ public class DatabaseDriver {
             if (id.next()) {
                 idCol = Integer.parseInt(id.getString("@idCol := id"));
             }
-            String query3 = "UPDATE category SET rght = rght + 2 WHERE id = 1";
-            String query4 = "INSERT INTO category(id, category_name, lft, rght, subCategory, parent_category) VALUES('" + idCol + "'+1,'" + category + "','" + rootVal + "', '" + rootVal + "'+1, 0, '"+parent+"');";
+            String query3 = "UPDATE Category SET rght = rght + 2 WHERE id = 1";
+            String query4 = "INSERT INTO Category(id, category_name, lft, rght, subCategory, parent_category) VALUES('" + idCol + "'+1,'" + category + "','" + rootVal + "', '" + rootVal + "'+1, 0, '"+parent+"');";
 
             s = c.createStatement();
             s.addBatch(query3);
@@ -231,8 +231,8 @@ public class DatabaseDriver {
     public void saveSubCategory(String category, String parent) {
         try {
             s = c.createStatement();
-            String query1 = "SELECT @idCol := id from category ORDER BY id DESC LIMIT 1;  ";
-            String query2 = "SELECT @Left := lft FROM category WHERE category_name = '" + parent + "' ";
+            String query1 = "SELECT @idCol := ID from Category ORDER BY ID DESC LIMIT 1;  ";
+            String query2 = "SELECT @Left := lft FROM Category WHERE category_name = '" + parent + "' ";
 
 
             ResultSet record = s.executeQuery("select  * from Category where subCategory = 1");
@@ -263,9 +263,9 @@ public class DatabaseDriver {
 
                 }
             }
-            String query3 = "UPDATE category SET rght = rght + 2 WHERE rght > '" + leftVal + "';";
-            String query4 = "UPDATE category SET lft = lft + 2 WHERE lft >  '" + leftVal + "';";
-            String query5 = "INSERT INTO category(id, category_name, lft, rght, subCategory, parent_category) VALUES( '" + idCol + "'+1,'" + category + "', '" + leftVal + "' + 1,  '" + leftVal + "' + 2, 1, '"+parent+"')";
+            String query3 = "UPDATE Category SET rght = rght + 2 WHERE rght > '" + leftVal + "';";
+            String query4 = "UPDATE Category SET lft = lft + 2 WHERE lft >  '" + leftVal + "';";
+            String query5 = "INSERT INTO Category(id, category_name, lft, rght, subCategory, parent_category) VALUES( '" + idCol + "'+1,'" + category + "', '" + leftVal + "' + 1,  '" + leftVal + "' + 2, 1, '"+parent+"')";
 
 
             s.addBatch(query3);
@@ -322,7 +322,7 @@ public class DatabaseDriver {
                 categoryID = Integer.parseInt(results.getString("category_ID"));
             }
 
-            String query = "SELECT parent.category_name FROM category AS node, category AS parent where node.lft BETWEEN parent.lft AND parent.rght AND node.id = '" + categoryID + "' ORDER by node.lft;";
+            String query = "SELECT parent.category_name FROM Category AS node, category AS parent where node.lft BETWEEN parent.lft AND parent.rght AND node.id = '" + categoryID + "' ORDER by node.lft;";
             ResultSet results2 = s.executeQuery(query);
            // System.out.println("Path : ");
             //print saved tasks
@@ -366,7 +366,7 @@ public class DatabaseDriver {
     public void deleteCategory(String categoryname) {
         try {
             s = c.createStatement();
-            String query1 = "SELECT @left := lft, @right := rght, @width := rght - lft + 1 FROM category WHERE category_name = '" + categoryname + "'";
+            String query1 = "SELECT @left := lft, @right := rght, @width := rght - lft + 1 FROM Category WHERE category_name = '" + categoryname + "'";
 
 
             ResultSet getVals = s.executeQuery(query1);
