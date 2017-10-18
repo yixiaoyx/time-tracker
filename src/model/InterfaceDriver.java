@@ -317,6 +317,11 @@ public class InterfaceDriver {
     t.setEstimatedTime(estTime);
   }
 
+  public long getEstimatedTimeOfTask(String taskName) {
+    Task t = getTaskByName(taskName);
+    return t.getEstimatedTime();
+  }
+
 
   public static void main(String[] args) {
     // Basic workflow:

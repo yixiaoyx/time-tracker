@@ -51,6 +51,7 @@ public class Task {
         timings = new ArrayList<Duration>();
         db = new DatabaseDriver();
         sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        estimatedTime = 10*1000;
     }
 
     public void setEstimatedTime(long t) {
