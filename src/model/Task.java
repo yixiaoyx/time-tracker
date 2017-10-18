@@ -107,7 +107,7 @@ public class Task {
     }
 
     public void addTiming(Date start, Date end) {
-        duration = new Duration(start, end);
+        duration = new Duration(start, end, name);
         timings.add(duration);
     }
 

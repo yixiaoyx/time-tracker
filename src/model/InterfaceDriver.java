@@ -297,6 +297,11 @@ public class InterfaceDriver {
   }
 
 
+  public List<Duration> getDurationsFromCategory(String categoryName) {
+    Category c = getCategoryByName(categoryName);
+    return c.getDurations();
+  }
+
   // this function makes a category containing only the given task, named the same as the given task.
   // This allows us to analyse individual tasks the same way we analyse categories.
   public void makeDummyCategory(String taskName) {
