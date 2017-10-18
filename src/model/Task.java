@@ -166,8 +166,13 @@ public class Task {
     }
 
     public long getActiveRunTime() {
-        Date rightNow = new Date();
-        return rightNow.getTime() - activeStartTime.getTime();
+        if(active) {
+            Date rightNow = new Date();
+            return rightNow.getTime() - activeStartTime.getTime();
+        }
+        else {
+            return 0;
+        }
     }
 
     //get total duration of task

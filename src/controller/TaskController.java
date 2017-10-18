@@ -46,7 +46,10 @@ public class TaskController extends Controller {
         this.currScreen = currScreen;
         currTask = task;
 
+        bigProgressBar = new JFXProgressBar();
+
         active = false;
+
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -54,12 +57,7 @@ public class TaskController extends Controller {
                         @Override
                         public void handle(ActionEvent actionEvent) {
                             duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
-
-                            Long[] l = driver.getTaskTimeAndEstimatedTime(currTask);
-
-                            //double progress = (double) ((l[0]+driver.getTaskByName(currTask).getActiveRunTime()) / l[1]);
-
-                            bigProgressBar.setProgress(0.5);
+                            updateBigProgressBar();
                         }
                     }
                 ),
@@ -67,11 +65,28 @@ public class TaskController extends Controller {
         );
 
         activeTime.setCycleCount(Animation.INDEFINITE);
+
+        updateBigProgressBar();
+
     }
 
     public void setCurrTask(String currTask) {
         this.currTask = currTask;
     }
+
+    private void updateBigProgressBar() {
+        Long[] l = driver.getTaskTimeAndEstimatedTime(currTask);
+
+        double timeAlreadyLogged = l[0] + driver.getTaskByName(currTask).getActiveRunTime();
+        double goal = l[1];
+
+        System.out.println(timeAlreadyLogged + " " + goal);
+
+        double progress = (double) (timeAlreadyLogged/goal);
+        bigProgressBar.setProgress(progress);
+
+    }
+
 
     @FXML
     private void handleClick() {
