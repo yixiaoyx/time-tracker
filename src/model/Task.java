@@ -188,7 +188,7 @@ public class Task {
     public double getTotalTimeInMinutes() {
         totaltime = 0;
         for(Duration d : timings) {
-            totaltime += d.timeInMinutes();
+            totaltime += d.time();
         }
         return totaltime;
 

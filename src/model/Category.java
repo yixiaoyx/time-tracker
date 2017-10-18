@@ -234,6 +234,7 @@ public class Category {
   Map<String, Double> getTaskBreakdown() {
     Map<String, Double> m = new HashMap<String, Double>();
     for(Task t : recursiveGetTasks()) {
+      System.out.println("Inside Category, time is: " + t.getTotalTimeInMinutes());
       m.put(t.getName(), t.getTotalTimeInMinutes());
     }
     return m;

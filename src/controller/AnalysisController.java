@@ -89,9 +89,9 @@ public class AnalysisController extends Controller {
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-
         Map<String, Double> taskBreakdown = driver.getTaskBreakdown(currCategory);
         for(String taskName : taskBreakdown.keySet()) {
+            System.out.println("Task name: " + taskBreakdown.get(taskName));
             pieChartData.add(new PieChart.Data(taskName, taskBreakdown.get(taskName)));
         }
 
