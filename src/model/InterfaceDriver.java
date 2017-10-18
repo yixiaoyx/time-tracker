@@ -386,6 +386,16 @@ public class InterfaceDriver {
   }
 
 
+  public List<String> searchForTasks(String searchQuery, String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    return c.searchForTasks(searchQuery);
+  }
+
+  public List<String> searchForCategories(String searchQuery, String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    return c.searchForCategories(searchQuery);
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
 

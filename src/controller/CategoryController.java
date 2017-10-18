@@ -422,6 +422,16 @@ public class CategoryController extends Controller {
     }
 
     private void runSearch(String searchQuery) {
-        
+        List<String> matchingTasks = driver.searchForTasks(searchQuery, currCategory);
+        List<String> matchingCategories = driver.searchForCategories(searchQuery, currCategory);
+
+        for(String s : matchingTasks) {
+            System.out.println("Found task: " + s);
+        }
+
+        for(String s : matchingCategories) {
+            System.out.println("Found category: " + s);
+        }
+
     }
 }
