@@ -14,8 +14,11 @@ public class Task {
     // what time did we start the current active clock?
     private Date activeStartTime;
 
+    // initial start time of the task
+    private Date startTime;
+
     //what time did we clock out f?
-    private  Date activeEndTime;
+    private Date activeEndTime;
 
     // list of start and end times
     private List<Duration> timings;
@@ -28,6 +31,9 @@ public class Task {
 
     //duration object containing start + end of duration.
     private Duration duration;
+
+    // initial total active time of task from database
+    private String initialActiveTime;
 
     private long estimatedTime;
 
@@ -51,6 +57,7 @@ public class Task {
         timings = new ArrayList<Duration>();
         db = new DatabaseDriver();
         sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //initialActiveTime = convertTime(db)
     }
 
     public void setEstimatedTime(long t) {
@@ -72,6 +79,9 @@ public class Task {
 
             activeStartTime = new Date();
 
+            if (startTime==null) {
+                startTime = new Date();
+            }
 
             System.out.println("Clock-in got start time: " + activeStartTime.toString());
 
@@ -133,8 +143,7 @@ public class Task {
         this.name = newName;
     }
 
-    // returns 'active' clock time: time it has currently been running
-    // for
+    // return dynamically calculated total runtime
     public String getActiveRunTimeString() {
         if (!active) {
             System.out.println("Tried to getActiveRunTimeString for non-active task " + name);
@@ -144,7 +153,7 @@ public class Task {
 
             // current run time in milliseconds
             // will break at daylight savings time crossover but who cares
-            long milliSecondDelta = rightNow.getTime() - activeStartTime.getTime();
+            long milliSecondDelta = rightNow.getTime() - startTime.getTime();
 
             // now we want to convert this to hh:mm:ss
 

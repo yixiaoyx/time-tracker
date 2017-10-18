@@ -32,6 +32,7 @@ public class TaskController extends Controller {
         currTask = task;
 
         active = false;
+        duration.setText(driver.getTaskByName(currTask).getDurationString());
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
