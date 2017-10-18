@@ -22,6 +22,7 @@ import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
 
 import java.io.File;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,8 +58,8 @@ public class CategoryController extends Controller {
     @FXML
     private Label categoryName;
 
-    @FXML
-    private Button categoryBackButton;
+    //@FXML
+    //private Button categoryBackButton;
 
     @FXML
     private Button analysisButton;
@@ -76,7 +77,7 @@ public class CategoryController extends Controller {
     private JFXButton delButton;
 
     @FXML
-    private Label smallCategoryPath;
+    private HBox categoryPathHBox;
 
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
@@ -102,15 +103,26 @@ public class CategoryController extends Controller {
         }
 
 
-        String catPath = driver.getCategoryPath(currCategory);
-        smallCategoryPath.setText(catPath);
-        smallCategoryPath.setStyle("-fx-text-fill: #AAAAAA");
+        List<String> catPath = driver.getCategoryPath(currCategory);
+        for(String s : catPath) {
+            JFXButton b = new JFXButton(s);
+            b.getStyleClass().add("button-breadcrumb");
+            b.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    handleCategoryClick(s);
+                }
+            });
+
+            categoryPathHBox.getChildren().add(b);
+        }
+
 
         categoryName.setText(currCategory);
 
         String parentCategory = driver.getParentCategoryName(currCategory);
         if (parentCategory.equals("")) {
-            categoryBackButton.setVisible(false);
+            //categoryBackButton.setVisible(false);
             changeButton.setDisable(true);
             delButton.setDisable(true);
         }

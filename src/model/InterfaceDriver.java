@@ -1,5 +1,6 @@
 package model;
 
+import javax.print.DocFlavor;
 import java.util.*;
 
 // SEE MAIN METHOD AT BOTTOM OF FILE FOR EXAMPLE OF HOW TO USE
@@ -364,7 +365,8 @@ public class InterfaceDriver {
     return l;
   }
 
-  public String getCategoryPath(String currCategory) {
+
+  public List<String> getCategoryPath(String currCategory) {
     Category c = getCategoryByName(currCategory);
     Stack<String> parentCategoryNames = new Stack<String>();
 
@@ -375,13 +377,14 @@ public class InterfaceDriver {
       c = c.getParentCategory();
     }
 
-    String path = "";
+    List<String> parents = new ArrayList<String>();
     while(!parentCategoryNames.empty()) {
-      path = path + parentCategoryNames.pop() + ">";
+      parents.add(parentCategoryNames.pop());
     }
 
-    return path;
+    return parents;
   }
+
 
   public static void main(String[] args) {
     // Basic workflow:

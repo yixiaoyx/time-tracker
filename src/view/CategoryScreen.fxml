@@ -28,25 +28,23 @@
 
                 <HBox>
                     <children>
-                        <JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="5.0" translateY="5.0">
-                            <font>
-                                <Font name="Arial" size="24.0" />
-                            </font>
-                        </JFXButton>
+                        <!--<JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="5.0" translateY="5.0">-->
+                            <!--<font>-->
+                                <!--<Font name="Arial" size="24.0" />-->
+                            <!--</font>-->
+                        <!--</JFXButton>-->
 
                         <VBox>
                         <children>
-                        <Label fx:id="smallCategoryPath" alignment="CENTER" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
-                            <font>
-                                <Font name="Calibri" size="14.0" />
-                            </font>
-                        </Label>
+                            <HBox fx:id="categoryPathHBox" alignment="BOTTOM_LEFT">
+                                <!--<Label fx:id="smallCategoryPath" alignment="CENTER" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">-->
+                            </HBox>
 
-                        <Label fx:id="categoryName" alignment="CENTER" prefWidth="395.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
+                            <Label fx:id="categoryName" alignment="CENTER" prefWidth="395.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
                             <font>
                                 <Font name="Calibri" size="30.0" />
                             </font>
-                        </Label>
+                            </Label>
                         </children>
                         </VBox>
                     </children>
