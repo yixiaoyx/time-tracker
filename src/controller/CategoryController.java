@@ -39,7 +39,7 @@ public class CategoryController extends Controller {
     final File categoryFile= new File("src/assets/Category_2.png");
     final File taskFile= new File("src/assets/Task_2.png");
     final File backFile = new File("src/assets/Back_Button_3.png");
-    final File analysisFile = new File("src/assets/Back_Button_3.png");
+    final File analysisFile = new File("src/assets/Graph_1.png");
     final File addFile = new File("src/assets/Add_Button_3.png");
 
     final String categoryPath = categoryFile.toURI().toString();
@@ -110,6 +110,10 @@ public class CategoryController extends Controller {
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scroll.setFitToHeight(true);
 
+        //SETTING GRAPHICS
+        Image image = new Image(analysisPath, false);
+        analysisButton.setGraphic(new ImageView(image));
+
     }
 
     public void setCurrCategory(String category) {
@@ -129,7 +133,7 @@ public class CategoryController extends Controller {
 
         VBox vbox = new VBox();
         Label label = new Label(taskName);
-        label.setTextFill(LIGHTGREY);
+        label.setTextFill(WHITE);
 
         vbox.getChildren().addAll(new ImageView(image), label);
         vbox.setAlignment(Pos.CENTER);
@@ -159,7 +163,7 @@ public class CategoryController extends Controller {
 
         VBox vbox = new VBox();
         Label label = new Label(categoryName);
-        label.setTextFill(LIGHTGREY);
+        label.setTextFill(WHITE);
 
         vbox.getChildren().addAll(new ImageView(image), label);
         vbox.setAlignment(Pos.CENTER);
