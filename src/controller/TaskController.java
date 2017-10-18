@@ -61,7 +61,7 @@ public class TaskController extends Controller {
                         }
                     }
                 ),
-                new KeyFrame(Duration.seconds(1))
+                new KeyFrame(Duration.seconds(0.01))
         );
 
         activeTime.setCycleCount(Animation.INDEFINITE);
@@ -80,10 +80,11 @@ public class TaskController extends Controller {
         double timeAlreadyLogged = l[0] + driver.getTaskByName(currTask).getActiveRunTime();
         double goal = l[1];
 
-        System.out.println(timeAlreadyLogged + " " + goal);
+        //System.out.println(timeAlreadyLogged + " " + goal);
 
         double progress = (double) (timeAlreadyLogged/goal);
         bigProgressBar.setProgress(progress);
+
 
     }
 
@@ -135,6 +136,8 @@ public class TaskController extends Controller {
 
         Image analysisImage = new Image(analysisPath, false);
         analysisButton.setGraphic(new ImageView(analysisImage));
+        updateBigProgressBar();
+
 
 
     }
