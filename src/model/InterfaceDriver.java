@@ -310,6 +310,14 @@ public class InterfaceDriver {
     topLevelCategories.add(c);
   }
 
+
+
+  public void addEstimatedTimeToTask(String taskName, long estTime) {
+    Task t = getTaskByName(taskName);
+    t.setEstimatedTime(estTime);
+  }
+
+
   public static void main(String[] args) {
     // Basic workflow:
 
