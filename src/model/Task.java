@@ -35,6 +35,7 @@ public class Task {
 
     private SimpleDateFormat sdf;
 
+    private long totaltime;
     private Category parentCategory;
 
     public Category getParentCategory() {
@@ -99,8 +100,17 @@ public class Task {
 
 
             //save task to the database after clocking out.
+
+            //save task to the database after clocking out.
+
             db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
-                    getTotalTime(), activeEndTime, activeEndTime);
+                    getTotalTime());// activeEndTime, activeEndTime);
+
+
+            String getDuration = getLengthOfLastClockInOut();
+            db.addTaskDuration(getName(),durationSecs, getDuration, activeStartTime, activeEndTime);
+            // System.out.println("stirng = " + durationString + );
+            activeStartTime = null;
 
         }
 
@@ -161,7 +171,7 @@ public class Task {
         durationSecs = difference/1000;
         String timeConverted = convertTime(difference);
 
-        activeStartTime = null;
+        //activeStartTime = null;
 
 
         return timeConverted;
@@ -176,12 +186,16 @@ public class Task {
     }
 
     public double getTotalTimeInMinutes() {
-        double totaltime = 0;
+        totaltime = 0;
         for(Duration d : timings) {
             totaltime += d.timeInMinutes();
         }
         return totaltime;
 
+    }
+
+    public void setTotalTime (long totalTime) {
+        this.totaltime = totalTime;
     }
 
     public String getTotalTimeString() {

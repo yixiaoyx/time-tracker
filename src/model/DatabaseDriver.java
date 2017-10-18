@@ -36,7 +36,8 @@ public class DatabaseDriver {
 
 
     //saves a task to the task table
-    public void saveTasks(String task, String category, String durationString, long duration, Date startTime, Date finishTime) {
+    public void saveTasks(String task, String Category, String durationString, long duration,
+                          Date startDate, Date finishDate) {
 
         try {
 
@@ -53,15 +54,64 @@ public class DatabaseDriver {
                     break;
                 }
             }
-            int categoryID = getCategoryID(category);
-            // System.out.println("categ id = " + categoryID);
-            String sql = "INSERT INTO Tasks VALUES (NULL, '"+task +"', '"+categoryID+"', '"+durationString+"', '" + duration + "', " + startTime + ", " + finishTime + ")";
+            int CategoryID = getCategoryID(Category);
+            // System.out.println("categ id = " + CategoryID);
+            String query1 = "INSERT INTO Tasks VALUES (NULL, '"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "' )";
 
             System.out.println("Task does not exist");
             if (check == false) {
                 s = c.createStatement();
-                s.executeUpdate(sql);
+                s.executeUpdate(query1);
                 System.out.println("inserted new task into the database");
+            }
+            int task_id = 0;
+            String query2 = "SELECT ID from Tasks WHERE task_name = '"+task+"' ";
+            s = c.createStatement();
+            ResultSet getID = s.executeQuery(query2);
+
+            if(getID.next()) {
+                task_id = Integer.parseInt(getID.getString("ID"));
+            }
+
+
+            // String query3 = "INSERT INTO task_durations VALUES ('"+task_id+"', '"+task+"', '"+duration+"','"+durationString+"', '"+startDate+"','"+finishDate+"')";
+
+            //insert into task durations
+            //  s = c.createStatement();
+            //s.executeUpdate(query3);
+
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+
+    //Add a task duration for an existing task
+    public void addTaskDuration(String task, long duration, String durationString, Date startDate, Date finishDate) {
+        try {
+
+            s = c.createStatement();
+            ResultSet record = s.executeQuery("select * from Tasks");
+            boolean check = false;
+
+
+            //check if task exists
+            while (record.next()) {
+                if (record.getString("task_name").equals(task)) {
+                    check = true;
+                    break;
+                }
+            }
+
+            if (check == true) {
+                int task_id = getTaskID(task);
+                s = c.createStatement();
+                System.out.println("start = "+ sdf.format(startDate) + " id = " + task_id);
+                String query =  "INSERT INTO task_durations VALUES (NULL,'"+task_id+"','"+task+"', '"+duration+"','"+durationString+"', '" +sdf.format(startDate)+"','" +sdf.format(finishDate)+"')";
+                s.executeUpdate(query);
+                System.out.println("inserted duration into task_durtions table");
             }
 
 
@@ -69,6 +119,7 @@ public class DatabaseDriver {
             System.out.println(e.getMessage());
 
         }
+
 
     }
 
@@ -83,11 +134,11 @@ public class DatabaseDriver {
             //print saved tasks
             while (results.next()) {
                 Task t = new Task(results.getString("task_name"));
-                int cat_id = Integer.parseInt(results.getString("category_ID"));
+                int cat_id = Integer.parseInt(results.getString("Category_ID"));
                 Category c = new Category(getCategoryName(cat_id));
                 t.setParentCategory(c);
                 tasks.add(t);
-                System.out.println("added task: " + t.getName() + " and set its parent category to = " + t.getParentCategory().getName());
+                System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 
             }
 
@@ -98,7 +149,7 @@ public class DatabaseDriver {
         return tasks;
     }
 
-    public void updateTask(String task, String category, String durationString, long duration, Date startTime, Date finishTime) {
+    public void updateTask(String task, String Category, String durationString, long duration) {
 
         try {
             s = c.createStatement();
@@ -118,14 +169,13 @@ public class DatabaseDriver {
                 System.out.println("Could not update task - task does not exist in the DB");
                 return;
             }
-            int categoryID = getCategoryID(category);
+            int CategoryID = getCategoryID(Category);
             s = c.createStatement();
 
-            String sql = "UPDATE Tasks SET duration_string = '" + durationString + "', duration = '" + duration + "', date_of_task_start = '" +    sdf.format(startTime) + "', date_of_task_finish = '" +    sdf.format(finishTime) +"'" +
-                    " WHERE task_name = '"+task+"' AND category_id = '"+categoryID+"'";
+            String sql = "UPDATE Tasks SET duration_string = '" + durationString +"', duration = '" + duration +"' WHERE task_name = '"+task+"' AND Category_ID = '"+CategoryID+"'";
 
-                s.executeUpdate(sql);
-                System.out.println("updated task new task into the database");
+            s.executeUpdate(sql);
+            System.out.println("updated task new task into the database");
 
 
 
@@ -136,29 +186,29 @@ public class DatabaseDriver {
 
     }
 
-    //given a categoryID return the categoryName
-    public String getCategoryName(int category) {
-      String categoryName = "";
+    //given a CategoryID return the CategoryName
+    public String getCategoryName(int Category) {
+        String CategoryName = "";
         try {
             s = c.createStatement();
-            String getID = "SELECT category_name FROM Category WHERE ID = '" + category + "'";
+            String getID = "SELECT Category_name FROM Category WHERE ID = '" + Category + "'";
             ResultSet r = s.executeQuery(getID);
             if (r.next()) {
 
-                categoryName = r.getString("category_name");
+                CategoryName = r.getString("Category_name");
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
 
         }
-        return categoryName;
+        return CategoryName;
     }
-    //given a categoryName, return the categoryID
-    public int getCategoryID(String category) {
+    //given a CategoryName, return the CategoryID
+    public int getCategoryID(String Category) {
         int ID = 0;
         try {
             s = c.createStatement();
-            String getID = "SELECT ID FROM Category WHERE category_name = '" + category + "'";
+            String getID = "SELECT ID FROM Category WHERE Category_name = '" + Category + "'";
             ResultSet r = s.executeQuery(getID);
             while (r.next()) {
 
@@ -173,21 +223,21 @@ public class DatabaseDriver {
     }
 
 
-    //Add a new parent node category/sub category given a category name + the parent category above
-    public void saveCategory(String category, String parent) {
+    //Add a new parent node Category/sub Category given a Category name + the parent Category above
+    public void saveCategory(String Category, String parent) {
 
         try {
             s = c.createStatement();
-            String query1 = "SELECT @idCol := ID from Category ORDER BY ID DESC LIMIT 1";
+            String query1 = "SELECT @idCol := id from Category ORDER BY id DESC LIMIT 1";
             String query2 = "SELECT @value := rght from Category ORDER BY rght DESC LIMIT 1;";
 
 
             ResultSet record = s.executeQuery("select  * from Category");
 
             boolean check = false;
-            //check if category exists already
+            //check if Category exists already
             while (record.next()) {
-                if (record.getString("category_name").equals(category)) {
+                if (record.getString("Category_name").equals(Category)) {
                     System.out.println("Category already exists in the database");
                     check = true;
                     break;
@@ -206,7 +256,7 @@ public class DatabaseDriver {
                 idCol = Integer.parseInt(id.getString("@idCol := id"));
             }
             String query3 = "UPDATE Category SET rght = rght + 2 WHERE id = 1";
-            String query4 = "INSERT INTO Category(id, category_name, lft, rght, subCategory, parent_category) VALUES('" + idCol + "'+1,'" + category + "','" + rootVal + "', '" + rootVal + "'+1, 0, '"+parent+"');";
+            String query4 = "INSERT INTO Category(id, Category_name, lft, rght, subCategory, parent_Category) VALUES('" + idCol + "'+1,'" + Category + "','" + rootVal + "', '" + rootVal + "'+1, 0, '"+parent+"');";
 
             s = c.createStatement();
             s.addBatch(query3);
@@ -216,7 +266,7 @@ public class DatabaseDriver {
             if (check == false) {
                 s.executeBatch();
                 //  s.executeUpdate(query2);
-                System.out.println("inserted new parent category into the new database");
+                System.out.println("inserted new parent Category into the new database");
             }
 
 
@@ -227,12 +277,12 @@ public class DatabaseDriver {
 
     }
 
-    //save a sub category within a parent category
-    public void saveSubCategory(String category, String parent) {
+    //save a sub Category within a parent Category
+    public void saveSubCategory(String Category, String parent) {
         try {
             s = c.createStatement();
-            String query1 = "SELECT @idCol := ID from Category ORDER BY ID DESC LIMIT 1;  ";
-            String query2 = "SELECT @Left := lft FROM Category WHERE category_name = '" + parent + "' ";
+            String query1 = "SELECT @idCol := id from Category ORDER BY id DESC LIMIT 1;  ";
+            String query2 = "SELECT @Left := lft FROM Category WHERE Category_name = '" + parent + "' ";
 
 
             ResultSet record = s.executeQuery("select  * from Category where subCategory = 1");
@@ -254,18 +304,18 @@ public class DatabaseDriver {
 
 
             boolean check = false;
-            //check if sub category exists already
+            //check if sub Category exists already
             while (record.next()) {
-                if (record.getString("category_name").equals(category)) {
+                if (record.getString("Category_name").equals(Category)) {
                     System.out.println("Category already exists in the database");
-                    check = true; //sub category already exists
+                    check = true; //sub Category already exists
                     break;
 
                 }
             }
             String query3 = "UPDATE Category SET rght = rght + 2 WHERE rght > '" + leftVal + "';";
             String query4 = "UPDATE Category SET lft = lft + 2 WHERE lft >  '" + leftVal + "';";
-            String query5 = "INSERT INTO Category(id, category_name, lft, rght, subCategory, parent_category) VALUES( '" + idCol + "'+1,'" + category + "', '" + leftVal + "' + 1,  '" + leftVal + "' + 2, 1, '"+parent+"')";
+            String query5 = "INSERT INTO Category(id, Category_name, lft, rght, subCategory, parent_Category) VALUES( '" + idCol + "'+1,'" + Category + "', '" + leftVal + "' + 1,  '" + leftVal + "' + 2, 1, '"+parent+"')";
 
 
             s.addBatch(query3);
@@ -274,7 +324,7 @@ public class DatabaseDriver {
 
             if (check == false) {
                 s.executeBatch();
-                System.out.println("inserted new category into the database");
+                System.out.println("inserted new Category into the database");
             }
 
 
@@ -294,12 +344,12 @@ public class DatabaseDriver {
             System.out.println("All Categories stored: ");
             //print saved tasks
             while (results.next()) {
-                if (!results.getString("category_name").equals("All")) {
-                    Category c = new Category(results.getString("category_name"));
-                    Category parent = new Category(results.getString("parent_category"));
+                if (!results.getString("Category_name").equals("All")) {
+                    Category c = new Category(results.getString("Category_name"));
+                    Category parent = new Category(results.getString("parent_Category"));
                     c.setParentCategory(parent);
                     Categories.add(c);
-                    System.out.println("added category: " + c.getName() + " and set its parent category to = " + c.getParentCategory().getName());
+                    System.out.println("added Category: " + c.getName() + " and set its parent Category to = " + c.getParentCategory().getName());
                 }
             }
         } catch (SQLException e) {
@@ -315,20 +365,20 @@ public class DatabaseDriver {
         List<String> path = new ArrayList<String>();
         try {
             //get the path of categories of the current task
-            String getCategoryID = "SELECT category_ID from Tasks where task_name = '" + taskname + "'";
+            String getCategoryID = "SELECT Category_ID from Tasks where task_name = '" + taskname + "'";
             ResultSet results = s.executeQuery(getCategoryID);
-            int categoryID = 0;
+            int CategoryID = 0;
             if (results.next()) {
-                categoryID = Integer.parseInt(results.getString("category_ID"));
+                CategoryID = Integer.parseInt(results.getString("Category_ID"));
             }
 
-            String query = "SELECT parent.category_name FROM Category AS node, category AS parent where node.lft BETWEEN parent.lft AND parent.rght AND node.id = '" + categoryID + "' ORDER by node.lft;";
+            String query = "SELECT parent.Category_name FROM Category AS node, Category AS parent where node.lft BETWEEN parent.lft AND parent.rght AND node.id = '" + CategoryID + "' ORDER by node.lft;";
             ResultSet results2 = s.executeQuery(query);
-           // System.out.println("Path : ");
+            // System.out.println("Path : ");
             //print saved tasks
             while (results2.next()) {
-                path.add(results2.getString("category_name"));
-                System.out.println(results2.getString("category_name"));
+                path.add(results2.getString("Category_name"));
+                System.out.println(results2.getString("Category_name"));
             }
 
         } catch (SQLException e) {
@@ -343,7 +393,7 @@ public class DatabaseDriver {
 
         try {
             s = c.createStatement();
-            String query = "UPDATE Category SET category_name ='" + newCategoryName + "' WHERE category_name = '" + oldCategoryName + "' ";
+            String query = "UPDATE Category SET Category_name ='" + newCategoryName + "' WHERE Category_name = '" + oldCategoryName + "' ";
             s.executeUpdate(query);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -362,11 +412,11 @@ public class DatabaseDriver {
 
     }
 
-    //deletes a category and its sub categories + tasks within
-    public void deleteCategory(String categoryname) {
+    //deletes a Category and its sub categories + tasks within
+    public void deleteCategory(String Categoryname) {
         try {
             s = c.createStatement();
-            String query1 = "SELECT @left := lft, @right := rght, @width := rght - lft + 1 FROM Category WHERE category_name = '" + categoryname + "'";
+            String query1 = "SELECT @left := lft, @right := rght, @width := rght - lft + 1 FROM Category WHERE Category_name = '" + Categoryname + "'";
 
 
             ResultSet getVals = s.executeQuery(query1);
@@ -379,7 +429,7 @@ public class DatabaseDriver {
 
             }
 
-            String query3 = "DELETE Tasks FROM Tasks join Category on (Tasks.category_id = Category.id) WHERE lft BETWEEN '" + leftVal + "' AND  '" + rightVal + "'";
+            String query3 = "DELETE Tasks FROM Tasks join Category on (Tasks.Category_id = Category.id) WHERE lft BETWEEN '" + leftVal + "' AND  '" + rightVal + "'";
             String query4 = "DELETE FROM Category WHERE lft BETWEEN '" + leftVal + "' AND '" + rightVal + "'";
             String query5 = "UPDATE Category SET rght = rght - '" + widthVal + "' WHERE rght >  '" + rightVal + "'";
 
@@ -425,13 +475,13 @@ public class DatabaseDriver {
 
         return duration;
     }
-    //gets all tasks within a given category name
-    public List<Task> getTasksFromCategory (String category) {
+    //gets all tasks within a given Category name
+    public List<Task> getTasksFromCategory (String Category) {
         List<Task> tasks = new ArrayList<Task>();
 
         try {
             s = c.createStatement();
-            String query1 = "SELECT ID from Category where category_name = '"+category+"' ";
+            String query1 = "SELECT ID from Category where Category_name = '"+Category+"' ";
             ResultSet getCategoryID = s.executeQuery(query1);
 
             int cat_id = 0;
@@ -441,21 +491,19 @@ public class DatabaseDriver {
 
             }
 
-            String query2 = "SELECT * from Tasks where category_ID = '"+cat_id+"'";
+            String query2 = "SELECT * from Tasks where Category_ID = '"+cat_id+"'";
             s = c.createStatement();
             ResultSet r = s.executeQuery(query2);
 
-
-
             while(r.next()) {
-                //store name, duration, start + finish times of all tasks within category
+                //store name, duration & duration string of all tasks within Category
                 Task newTask = new Task(r.getString("task_name"));
                 newTask.setDurationString(     r.getString("duration_string"));
-                Date start = sdf.parse(r.getString("date_of_task_start"));
-                Date finish = sdf.parse(r.getString("date_of_task_finish"));
-                Duration d = new Duration(start, finish, newTask.getName());
-                newTask.setDuration(d);
-              //  System.out.println("added task => " + newTask.getName());
+                // Date start = sdf.parse(r.getString("date_of_task_start"));
+                //  Date finish = sdf.parse(r.getString("date_of_task_finish"));
+                // Duration d = new Duration(start, finish);
+                long totalTime = Long.parseLong(r.getString("duration"));
+                newTask.setTotalTime(totalTime);
                 tasks.add(newTask);
             }
         }
@@ -466,6 +514,124 @@ public class DatabaseDriver {
         return tasks;
 
     }
+
+    //retrieve all indivdiual tasks durations for a task
+    public List<Task> getAllTaskDurations(String taskname) {
+        List<Task> tasks = new ArrayList<Task>();
+
+        try {
+            s = c.createStatement();
+            String query1 = "SELECT ID from Tasks where task_name = '"+taskname+"' ";
+            ResultSet getID = s.executeQuery(query1);
+
+            int task_id = 0;
+            if(getID.next()) {
+                task_id = Integer.parseInt(getID.getString("ID"));
+            }
+
+            String query2 = "SELECT * from task_durations where task_id = '"+task_id+"' ";
+            s = c.createStatement();
+            ResultSet r = s.executeQuery(query2);
+
+            while(r.next()) {
+                //store individual duration, duration string and the dates for the current task
+                Task newTask = new Task(r.getString("task_name"));
+                System.out.println("new task ");
+                newTask.setDurationString(r.getString("task_duration_string"));
+                Date start = sdf.parse(r.getString("date_task_start"));
+                Date finish = sdf.parse(r.getString("date_task_finish"));
+                Duration d = new Duration(start, finish, r.getString("task_name"));
+                newTask.addTiming(d);
+
+                tasks.add(newTask);
+
+            }
+        }
+        catch (Exception e) {
+            e.getMessage();
+        }
+
+        return tasks;
+
+    }
+
+    //retrieve all task durations within a Category
+    public List<Task> getCategoryTaskDurations (String Category) {
+        List<Task> tasks = new ArrayList<Task>();
+
+        try {
+            s = c.createStatement();
+            String query1 = "SELECT ID from Category where Category_name = '"+Category+"' ";
+            ResultSet getID = s.executeQuery(query1);
+
+
+            int cat_id = 0;
+            if(getID.next()) {
+                cat_id = Integer.parseInt(getID.getString("ID"));
+            }
+            s = c.createStatement();
+            String query2 = "SELECT * from task_durations join Tasks on (Tasks.id = task_durations.task_id) join Category on (Category.id = Tasks.category_ID) WHERE Category.ID = '"+cat_id+"' ";
+            ResultSet r = s.executeQuery(query2);
+            int i = 0;
+            while(r.next()) {
+                //store individual duration, duration string and the dates for the current task
+                Task newTask = new Task(r.getString("task_name"));
+                newTask.setDurationString(r.getString("task_duration_string"));
+                Date start = sdf.parse(r.getString("date_task_start"));
+                Date finish = sdf.parse(r.getString("date_task_finish"));
+                Duration d = new Duration(start, finish, r.getString("task_name"));
+                long totalTime = Long.parseLong(r.getString("duration"));
+                newTask.addTiming(d);
+                tasks.add(newTask);
+
+
+            }
+        }
+        catch (Exception e) {
+            e.getMessage();
+        }
+
+        return tasks;
+
+    }
+
+    public List<Integer> getTaskID(int CategoryID) {
+        int task_id = 0;
+        List<Integer> taskIds = new ArrayList<Integer>();
+        try {
+            s = c.createStatement();
+            String query2 = "SELECT ID from Tasks where Category_ID = '" + CategoryID + "' ";
+
+            ResultSet r = s.executeQuery(query2);
+            while(r.next()) {
+                task_id = Integer.parseInt(r.getString("ID"));
+                System.out.println("task id  = " + task_id);
+                taskIds.add(task_id);
+            }
+        }
+        catch (SQLException e) {
+            e.getMessage();
+        }
+        return taskIds;
+    }
+
+    public int getTaskID (String task_name) {
+        int task_id = 0;
+        try {
+            s = c.createStatement();
+            String query2 = "SELECT ID from Tasks where task_name = '" + task_name + "' ";
+
+            ResultSet r = s.executeQuery(query2);
+            if(r.next()) {
+                task_id = Integer.parseInt(r.getString("ID"));
+            }
+        }
+        catch (SQLException e) {
+            e.getMessage();
+        }
+        return task_id;
+    }
+
 
     /*  get tasks within periodA and period B
         Precondition: PeriodA comes before periodB
@@ -480,14 +646,15 @@ public class DatabaseDriver {
             ResultSet getTasks = s.executeQuery(query1);
 
             while(getTasks.next()) {
-                //store name, duration, start + finish times of all tasks within category
+                //store name, duration, start + finish times of all tasks within Category
                 Task newTask = new Task(getTasks.getString("task_name"));
                 newTask.setDurationString(getTasks.getString("duration_string"));
                 Date start = sdf.parse(getTasks.getString("date_of_task_start"));
                 Date finish = sdf.parse(getTasks.getString("date_of_task_finish"));
-                Duration d = new Duration(start, finish, newTask.getName());
+                Duration d = new Duration(start, finish, getTasks.getString("task_name"));
                 newTask.setDuration(d);
                 tasks.add(newTask);
+
 
             }
         }
@@ -501,7 +668,7 @@ public class DatabaseDriver {
 
 
     public static void main(String[] args) throws Exception {
-
+/*
         //add tasks
         DatabaseDriver db = new DatabaseDriver();
 
@@ -510,25 +677,16 @@ public class DatabaseDriver {
         Date start = sdf.parse("2017-08-10 12:02:05");
         Date finish = sdf.parse("2017-08-10 12:32:05");
 
-        db.changeTaskname("COMP4920_proj1p2", "COMP4921_proj1p2");
-        System.out.println ("changed name?");
-        db.changeCategory("COMP1917_W2", "COMP1917_W1");
- //       db.deleteCategory("COMP1917_W1");
-
-/*
-
-
-        db.saveTasks("COMP1917_Proj1", "Projects", "00:30:00", 1000,
-                start, finish);
-        db.saveCategory("Assignments", "main");
-
-        //restore all tasks saved on database;
-        List<Task> getTasks = db.restoreTasks();
-
-        //restore category path of a task
-        List<String> getPath = db.restoreCategoryPath("Question1-3");
-
-        db.saveSubCategory("COMP1917_W10", "Tutorial");
+      List<Task> taskDurations = db.getAllTaskDurations("task3");
+        System.out.println("getting task durations from category3");
+        for(Task t : taskDurations) {
+            System.out.println(t.getDurationString());
+        }
+        System.out.println("task durations from category All");
+        List<Task> taskDurationsCat = db.getCategoryTaskDurations("All");
+        for(Task t : taskDurationsCat) {
+            System.out.println(t.getDurationString());
+        }
 */
     }
 }
