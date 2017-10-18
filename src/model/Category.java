@@ -90,6 +90,7 @@ public class Category {
   }
 
 
+
   public Category getSubCategoryByName(String uniqueName) {
     for(Category c : subCategories) {
         // check if it's one of our categories
@@ -236,6 +237,16 @@ public class Category {
       m.put(t.getName(), t.getTotalTimeInMinutes());
     }
     return m;
+  }
+
+  public List<Duration> getDurations() {
+    List<Duration> l = new ArrayList<Duration>();
+    for(Task t : recursiveGetTasks()) {
+      for(Duration d : t.getTimings()) {
+        l.add(d);
+      }
+    }
+    return l;
   }
 
   // LAZY Copied from Task, cleanup if have time

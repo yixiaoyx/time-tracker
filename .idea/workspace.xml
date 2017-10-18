@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/Graph_1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Controller.class" afterPath="$PROJECT_DIR$/target/classes/controller/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/model/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/DatabaseDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/DatabaseDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Driver.class" afterPath="$PROJECT_DIR$/target/classes/model/Driver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Duration.class" afterPath="$PROJECT_DIR$/target/classes/model/Duration.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/model/Task.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/TempDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/TempDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AnalysisController.java" afterPath="$PROJECT_DIR$/src/controller/AnalysisController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/controller/CategoryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Category.java" afterPath="$PROJECT_DIR$/src/model/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseDriver.java" afterPath="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Duration.java" afterPath="$PROJECT_DIR$/src/model/Duration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/InterfaceDriver.java" afterPath="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Task.java" afterPath="$PROJECT_DIR$/src/model/Task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FormScreen.fxml" afterPath="$PROJECT_DIR$/src/view/FormScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FormScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/FormScreen.fxml" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -89,9 +115,11 @@
       <file leaf-file-name="CategoryController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="513">
+              <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+              <folding>
+                <marker date="1508287262377" expanded="true" signature="10327:10370" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,9 +145,8 @@
               <folding>
                 <element signature="e#907#915#0" expanded="true" />
                 <element signature="e#1094#1102#0" expanded="true" />
-                <element signature="e#3771#3788#0" expanded="true" />
-                <element signature="e#5222#5228#0" expanded="true" />
-                <element signature="e#5471#5487#0" expanded="true" />
+                <marker date="1508287262375" expanded="true" signature="5826:5831" ph="{...}" />
+                <marker date="1508287262375" expanded="true" signature="5933:6522" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -272,53 +299,6 @@
               <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="compile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="compile" type="462c0819:PsiDirectoryNode" />
-              <item name="default-compile" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -567,7 +547,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48592000" />
+    <option name="totallyTimeSpent" value="48748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
@@ -845,37 +825,37 @@
         <state relative-caret-position="-598">
           <caret line="105" column="34" lean-forward="false" selection-start-line="94" selection-start-column="43" selection-end-line="98" selection-end-column="5" />
           <folding>
-            <marker date="1508236650813" expanded="true" signature="1266:1285" ph="select * fro... Tasks" />
-            <marker date="1508236650813" expanded="true" signature="1780:1923" ph="INSERT INTO Tasks... " />
-            <marker date="1508236650813" expanded="true" signature="2521:2540" ph="select * fro... Tasks" />
-            <marker date="1508236650813" expanded="true" signature="3460:3479" ph="select * fro... Tasks" />
-            <marker date="1508236650813" expanded="true" signature="4103:4397" ph="UPDATE Tasks... " />
-            <marker date="1508236650813" expanded="true" signature="4833:4897" ph="SELECT categ... Category" />
-            <marker date="1508236650813" expanded="true" signature="5379:5443" ph="SELECT ID FR... Category" />
-            <marker date="1508236650813" expanded="true" signature="5965:6023" ph="SELECT @idCo... " />
-            <marker date="1508236650813" expanded="true" signature="6055:6117" ph="SELECT @valu... " />
-            <marker date="1508236650813" expanded="true" signature="6170:6193" ph="select * fro... Category" />
-            <marker date="1508236650813" expanded="true" signature="7067:7115" ph="UPDATE categ... " />
-            <marker date="1508236650813" expanded="true" signature="7147:7328" ph="INSERT INTO category... " />
-            <marker date="1508236650813" expanded="true" signature="7954:8012" ph="SELECT @idCo... " />
-            <marker date="1508236650813" expanded="true" signature="8047:8119" ph="SELECT @Left... " />
-            <marker date="1508236650813" expanded="true" signature="8172:8217" ph="select * fro... Category" />
-            <marker date="1508236650813" expanded="true" signature="9207:9273" ph="UPDATE categ... " />
-            <marker date="1508236650813" expanded="true" signature="9306:9370" ph="UPDATE categ... " />
-            <marker date="1508236650813" expanded="true" signature="9403:9593" ph="INSERT INTO category... " />
-            <marker date="1508236650813" expanded="true" signature="10214:10236" ph="select * fro... Category" />
-            <marker date="1508236650813" expanded="true" signature="11322:11388" ph="SELECT categ... Tasks" />
-            <marker date="1508236650813" expanded="true" signature="11644:11816" ph="SELECT paren... category" />
-            <marker date="1508236650813" expanded="true" signature="12427:12535" ph="UPDATE Categ... " />
-            <marker date="1508236650813" expanded="true" signature="12828:12916" ph="UPDATE Tasks... " />
-            <marker date="1508236650813" expanded="true" signature="13254:13374" ph="SELECT @left... " />
-            <marker date="1508236650813" expanded="true" signature="13991:14070" ph="DELETE FROM " />
-            <marker date="1508236650813" expanded="true" signature="14102:14187" ph="UPDATE Categ... " />
-            <marker date="1508236650813" expanded="true" signature="14545:14598" ph="DELETE FROM " />
-            <marker date="1508236650813" expanded="true" signature="14893:14945" ph="SELECT * fro... Tasks" />
-            <marker date="1508236650813" expanded="true" signature="15457:15517" ph="SELECT ID fr... Category" />
-            <marker date="1508236650813" expanded="true" signature="15771:15823" ph="SELECT * fro... Tasks" />
-            <marker date="1508236650813" expanded="true" signature="17037:17165" ph="SELECT * fro... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="1266:1285" ph="select * fro... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="1780:1923" ph="INSERT INTO Tasks... " />
+            <marker date="1508287262374" expanded="true" signature="2521:2540" ph="select * fro... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="3460:3479" ph="select * fro... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="4103:4397" ph="UPDATE Tasks... " />
+            <marker date="1508287262374" expanded="true" signature="4833:4897" ph="SELECT categ... Category" />
+            <marker date="1508287262374" expanded="true" signature="5379:5443" ph="SELECT ID FR... Category" />
+            <marker date="1508287262374" expanded="true" signature="5965:6023" ph="SELECT @idCo... " />
+            <marker date="1508287262374" expanded="true" signature="6055:6117" ph="SELECT @valu... " />
+            <marker date="1508287262374" expanded="true" signature="6170:6193" ph="select * fro... Category" />
+            <marker date="1508287262374" expanded="true" signature="7067:7115" ph="UPDATE categ... " />
+            <marker date="1508287262374" expanded="true" signature="7147:7328" ph="INSERT INTO category... " />
+            <marker date="1508287262374" expanded="true" signature="7954:8012" ph="SELECT @idCo... " />
+            <marker date="1508287262374" expanded="true" signature="8047:8119" ph="SELECT @Left... " />
+            <marker date="1508287262374" expanded="true" signature="8172:8217" ph="select * fro... Category" />
+            <marker date="1508287262374" expanded="true" signature="9207:9273" ph="UPDATE categ... " />
+            <marker date="1508287262374" expanded="true" signature="9306:9370" ph="UPDATE categ... " />
+            <marker date="1508287262374" expanded="true" signature="9403:9593" ph="INSERT INTO category... " />
+            <marker date="1508287262374" expanded="true" signature="10214:10236" ph="select * fro... Category" />
+            <marker date="1508287262374" expanded="true" signature="11322:11388" ph="SELECT categ... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="11644:11816" ph="SELECT paren... category" />
+            <marker date="1508287262374" expanded="true" signature="12427:12535" ph="UPDATE Categ... " />
+            <marker date="1508287262374" expanded="true" signature="12828:12916" ph="UPDATE Tasks... " />
+            <marker date="1508287262374" expanded="true" signature="13254:13374" ph="SELECT @left... " />
+            <marker date="1508287262374" expanded="true" signature="13991:14070" ph="DELETE FROM " />
+            <marker date="1508287262374" expanded="true" signature="14102:14187" ph="UPDATE Categ... " />
+            <marker date="1508287262374" expanded="true" signature="14545:14598" ph="DELETE FROM " />
+            <marker date="1508287262374" expanded="true" signature="14893:14945" ph="SELECT * fro... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="15457:15517" ph="SELECT ID fr... Category" />
+            <marker date="1508287262374" expanded="true" signature="15771:15823" ph="SELECT * fro... Tasks" />
+            <marker date="1508287262374" expanded="true" signature="17037:17165" ph="SELECT * fro... Tasks" />
           </folding>
         </state>
       </provider>
@@ -946,9 +926,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="513">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding>
+            <marker date="1508287262377" expanded="true" signature="10327:10370" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -959,9 +941,8 @@
           <folding>
             <element signature="e#907#915#0" expanded="true" />
             <element signature="e#1094#1102#0" expanded="true" />
-            <element signature="e#3771#3788#0" expanded="true" />
-            <element signature="e#5222#5228#0" expanded="true" />
-            <element signature="e#5471#5487#0" expanded="true" />
+            <marker date="1508287262375" expanded="true" signature="5826:5831" ph="{...}" />
+            <marker date="1508287262375" expanded="true" signature="5933:6522" ph="{...}" />
           </folding>
         </state>
       </provider>

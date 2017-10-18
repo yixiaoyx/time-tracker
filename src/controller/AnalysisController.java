@@ -1,19 +1,26 @@
 package controller;
 
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
+import com.jfoenix.controls.JFXTreeTableColumn;
+import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.chart.*;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import model.Driver;
+import model.Duration;
 import model.InterfaceDriver;
-import javafx.scene.control.Button;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -99,19 +106,41 @@ public class AnalysisController extends Controller {
         contentvbox.getChildren().addAll(totalTimeLabel);
 
 
+
+        // Simple time log
+        JFXListView<Label> list = new JFXListView<Label>();
+        for(Duration d : driver.getDurationsFromCategory(currCategory)) {
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            String formattedDate = formatter.format(d.getStart());
+
+
+            list.getItems().add(new Label(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate));
+        }
+
+        list.getStyleClass().add("mylistview");
+
+
+
         JFXTabPane tabPane = new JFXTabPane();
 
-        Tab tab = new Tab();
-        tab.setText("Line Graph");
-        tab.setContent(analysisAreaChart);
+        Tab tab0 = new Tab();
+        tab0.setText("Time Log");
+        tab0.setContent(list);
 
-        tabPane.getTabs().add(tab);
+        tabPane.getTabs().add(tab0);
+
 
         Tab tab1 = new Tab();
-        tab1.setText("Pie Chart");
-        tab1.setContent(taskBreakdownChart);
+        tab1.setText("Line Graph");
+        tab1.setContent(analysisAreaChart);
 
         tabPane.getTabs().add(tab1);
+
+        Tab tab2 = new Tab();
+        tab2.setText("Pie Chart");
+        tab2.setContent(taskBreakdownChart);
+
+        tabPane.getTabs().add(tab2);
 
 
         contentvbox.getChildren().add(tabPane);

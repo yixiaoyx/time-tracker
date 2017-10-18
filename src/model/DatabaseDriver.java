@@ -453,7 +453,7 @@ public class DatabaseDriver {
                 newTask.setDurationString(     r.getString("duration_string"));
                 Date start = sdf.parse(r.getString("date_of_task_start"));
                 Date finish = sdf.parse(r.getString("date_of_task_finish"));
-                Duration d = new Duration(start, finish);
+                Duration d = new Duration(start, finish, newTask.getName());
                 newTask.setDuration(d);
               //  System.out.println("added task => " + newTask.getName());
                 tasks.add(newTask);
@@ -485,7 +485,7 @@ public class DatabaseDriver {
                 newTask.setDurationString(getTasks.getString("duration_string"));
                 Date start = sdf.parse(getTasks.getString("date_of_task_start"));
                 Date finish = sdf.parse(getTasks.getString("date_of_task_finish"));
-                Duration d = new Duration(start, finish);
+                Duration d = new Duration(start, finish, newTask.getName());
                 newTask.setDuration(d);
                 tasks.add(newTask);
 
