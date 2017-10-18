@@ -358,6 +358,12 @@ public class InterfaceDriver {
     return m;
   }
 
+  public Long[] getTaskTimeAndEstimatedTime(String taskName) {
+    Task t = getTaskByName(taskName);
+    Long[] l = {t.getTotalTime(), t.getEstimatedTime()};
+    return l;
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
 

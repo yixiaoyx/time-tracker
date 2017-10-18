@@ -165,6 +165,11 @@ public class Task {
         }
     }
 
+    public long getActiveRunTime() {
+        Date rightNow = new Date();
+        return rightNow.getTime() - activeStartTime.getTime();
+    }
+
     //get total duration of task
     public String getLengthOfLastClockInOut() {
         long difference = activeEndTime.getTime()-activeStartTime.getTime();

@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXProgressBar;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,6 +8,8 @@ import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
+
+import java.util.Map;
 
 public class TaskController extends Controller {
 
@@ -25,6 +28,8 @@ public class TaskController extends Controller {
     private Label taskName;
     @FXML
     private Button delButton;
+    @FXML
+    private JFXProgressBar bigProgressBar;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
@@ -39,6 +44,12 @@ public class TaskController extends Controller {
                         @Override
                         public void handle(ActionEvent actionEvent) {
                             duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+
+                            Long[] l = driver.getTaskTimeAndEstimatedTime(currTask);
+
+                            double progress = (double) ((l[0]+driver.getTaskByName(currTask).getActiveRunTime()) / l[1]);
+
+                            bigProgressBar.setProgress(progress);
                         }
                     }
                 ),
@@ -102,10 +113,6 @@ public class TaskController extends Controller {
     private void controllerClockOut() {
         driver.clockOut(currTask);
         clockButton.setText("CLOCK IN");
-
-        System.out.println("ANALYSIS BOIIII");
-        System.out.println("Total Task Time: " + driver.getTaskTimeString(currTask));
-        System.out.println("ALL Category Time: " + driver.getCategoryTimeString("All"));
 
         activeTime.stop();
         active = false;

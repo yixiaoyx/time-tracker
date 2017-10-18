@@ -35,7 +35,7 @@
                         <Font name="DejaVu Sans" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXProgressBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="302.0" progress="0.0" translateX="-55.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <JFXProgressBar fx:id="bigProgressBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="302.0" progress="0.0" translateX="-55.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <effect>
                         <Blend mode="SCREEN" />
                     </effect>
