@@ -29,6 +29,8 @@ public class Task {
     //duration object containing start + end of duration.
     private Duration duration;
 
+    private long estimatedTime;
+
     private DatabaseDriver db;
 
     private SimpleDateFormat sdf;
@@ -49,6 +51,14 @@ public class Task {
         timings = new ArrayList<Duration>();
         db = new DatabaseDriver();
         sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    }
+
+    public void setEstimatedTime(long t) {
+        estimatedTime = t;
+    }
+
+    public long getEstimatedTime() {
+        return estimatedTime;
     }
 
     public void clockIn() {
