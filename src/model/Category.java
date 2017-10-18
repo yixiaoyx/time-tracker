@@ -1,9 +1,6 @@
 package model;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 
 public class Category {
   private List<Task> childTasks;
@@ -232,6 +229,19 @@ public class Category {
     return l;
   }
 
+  List<Category> recursiveGetCategories() {
+    List<Category> l = new ArrayList<Category>();
+    for(Category c : subCategories) {
+      l.add(c);
+    }
+
+    for(Category c : subCategories) {
+      l.addAll(c.recursiveGetCategories());
+    }
+
+    return l;
+  }
+
   Map<String, Double> getTaskBreakdown() {
     Map<String, Double> m = new HashMap<String, Double>();
     for(Task t : recursiveGetTasks()) {
@@ -249,6 +259,35 @@ public class Category {
       }
     }
     return l;
+  }
+
+
+  public List<String> searchForTasks(String searchQuery) {
+    List<String> l = new ArrayList<String>();
+    for(Task t : recursiveGetTasks()) {
+      if(t.getName().toLowerCase().contains(searchQuery.toLowerCase())) {
+        l.add(t.getName());
+      }
+    }
+
+    return l;
+  }
+
+  public List<String> searchForCategories(String searchQuery) {
+    List<String> l = new ArrayList<String>();
+    for(Category c : recursiveGetCategories()) {
+      if(c.getName().toLowerCase().contains(searchQuery.toLowerCase())) {
+        l.add(c.getName());
+      }
+    }
+
+    return l;
+
+  }
+
+  public void clearTasksAndCategories() {
+    this.childTasks = new ArrayList<Task>();
+    this.subCategories = new ArrayList<Category>();
   }
 
   // LAZY Copied from Task, cleanup if have time

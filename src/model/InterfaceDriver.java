@@ -1,5 +1,6 @@
 package model;
 
+import javax.print.DocFlavor;
 import java.util.*;
 
 // SEE MAIN METHOD AT BOTTOM OF FILE FOR EXAMPLE OF HOW TO USE
@@ -364,7 +365,8 @@ public class InterfaceDriver {
     return l;
   }
 
-  public String getCategoryPath(String currCategory) {
+
+  public List<String> getCategoryPath(String currCategory) {
     Category c = getCategoryByName(currCategory);
     Stack<String> parentCategoryNames = new Stack<String>();
 
@@ -375,12 +377,48 @@ public class InterfaceDriver {
       c = c.getParentCategory();
     }
 
-    String path = "";
+    List<String> parents = new ArrayList<String>();
     while(!parentCategoryNames.empty()) {
-      path = path + parentCategoryNames.pop() + ">";
+      parents.add(parentCategoryNames.pop());
     }
 
-    return path;
+    return parents;
+  }
+
+
+  public List<String> searchForTasks(String searchQuery, String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    return c.searchForTasks(searchQuery);
+  }
+
+  public List<String> searchForCategories(String searchQuery, String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    return c.searchForCategories(searchQuery);
+  }
+
+  public String makeSearchCategory(List<String> taskNames, List<String> categoryNames) {
+
+
+    Category c = getCategoryByName("Search Results");
+
+    if(c == null) {
+      c = new Category("Search Results");
+    }
+    else {
+      c.clearTasksAndCategories();
+    }
+
+    for(String t : taskNames) {
+      c.addTask(new Task(t));
+    }
+    for(String cat : categoryNames) {
+      c.addSubCategory(new Category(cat));
+    }
+    c.setParentCategory(getCategoryByName("All"));
+
+    topLevelCategories.add(c);
+
+    return "Search Results";
   }
 
   public static void main(String[] args) {

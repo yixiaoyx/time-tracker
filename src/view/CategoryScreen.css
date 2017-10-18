@@ -46,3 +46,8 @@
     -fx-background-color: #888888;
     -fx-text-fill: #121212;
 }
+
+.button-breadcrumb {
+    -fx-background-color: #BBBBBB;
+    -fx-text-fill: #121212;
+}

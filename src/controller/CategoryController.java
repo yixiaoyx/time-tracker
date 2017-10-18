@@ -23,7 +23,9 @@ import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
 
 import java.io.File;
+
 import java.io.IOException;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,8 +61,8 @@ public class CategoryController extends Controller {
     @FXML
     private Label categoryName;
 
-    @FXML
-    private Button categoryBackButton;
+    //@FXML
+    //private Button categoryBackButton;
 
     @FXML
     private Button analysisButton;
@@ -78,7 +80,8 @@ public class CategoryController extends Controller {
     private JFXButton delButton;
 
     @FXML
-    private Label smallCategoryPath;
+    private HBox categoryPathHBox;
+
 
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
@@ -104,15 +107,28 @@ public class CategoryController extends Controller {
         }
 
 
-        String catPath = driver.getCategoryPath(currCategory);
-        smallCategoryPath.setText(catPath);
-        smallCategoryPath.setStyle("-fx-text-fill: #AAAAAA");
+        // breadcrumbs
+        List<String> catPath = driver.getCategoryPath(currCategory);
+        for(String s : catPath) {
+            JFXButton b = new JFXButton(s);
+            b.getStyleClass().add("button-breadcrumb");
+            b.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    handleCategoryClick(s);
+                }
+            });
+
+            categoryPathHBox.getChildren().add(b);
+        }
+
+
 
         categoryName.setText(currCategory);
 
         String parentCategory = driver.getParentCategoryName(currCategory);
         if (parentCategory.equals("")) {
-            categoryBackButton.setVisible(false);
+            //categoryBackButton.setVisible(false);
             changeButton.setDisable(true);
             delButton.setDisable(true);
         }
@@ -258,6 +274,70 @@ public class CategoryController extends Controller {
         }
     }
 
+
+    @FXML
+    private void handleSearchClick() {
+        JFXDialog dialog = new JFXDialog();
+        Insets insets = new Insets(10, 10, 10, 10);
+        // Create contents of Dialog Box
+        VBox changebox = new VBox();
+        changebox.setAlignment(Pos.TOP_CENTER);
+        changebox.setPrefSize(370,200);
+
+        // Title
+        Label title = new Label("Search in " + currCategory);
+        title.setTextAlignment(TextAlignment.CENTER);
+        title.setFont(Font.font("Arial Narrow Bold", 18));
+
+        // Input
+        JFXTextField inputField = new JFXTextField();
+        inputField.setPromptText("");
+        inputField.setAlignment(Pos.CENTER);
+
+        // Button
+        HBox buttonBox = new HBox();
+        buttonBox.setAlignment(Pos.CENTER);
+
+        JFXButton okButton = new JFXButton("Search");
+        okButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String searchQuery = inputField.getText();
+                dialog.close();
+
+
+                // RUN THE SEARCH HERE
+                runSearch(searchQuery);
+
+            }
+        });
+
+        okButton.setStyle("-fx-background-color: #F19F4D");
+        //        okButton.getStyleClass().add("button-delete");
+        JFXButton cancelButton = new JFXButton("Cancel");
+        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                dialog.close();
+            }
+        });
+
+        cancelButton.getStyleClass().add("button-delete");
+
+        buttonBox.getChildren().addAll(okButton,cancelButton);
+
+        changebox.getChildren().addAll(title, inputField,  buttonBox);
+
+        changebox.setMargin(title, new Insets(25,10,10,10));
+        changebox.setMargin(inputField, insets);
+        changebox.setMargin(okButton, insets);
+        // Insert contents into dialog box
+        dialog.setContent(changebox);
+        dialog.show(sp);
+
+
+    }
+
     @FXML
     private void handleChange() {
         JFXDialog dialog = new JFXDialog();
@@ -355,5 +435,22 @@ public class CategoryController extends Controller {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         }
         return warning;
+    }
+
+    private void runSearch(String searchQuery) {
+        List<String> matchingTasks = driver.searchForTasks(searchQuery, currCategory);
+        List<String> matchingCategories = driver.searchForCategories(searchQuery, currCategory);
+
+        String searchCategory = driver.makeSearchCategory(matchingTasks, matchingCategories);
+        handleCategoryClick(searchCategory);
+
+//        for(String s : matchingTasks) {
+//            System.out.println("Found task: " + s);
+//        }
+//
+//        for(String s : matchingCategories) {
+//            System.out.println("Found category: " + s);
+//        }
+
     }
 }
