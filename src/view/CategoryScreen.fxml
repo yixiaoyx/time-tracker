@@ -6,12 +6,13 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.layout.StackPane?>
+
 <StackPane fx:id="sp" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" stylesheets="@CategoryScreen.css" >
+        <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" stylesheets="@CategoryScreen.css">
             <center>
                 <ScrollPane fx:id="scroll" hbarPolicy="NEVER" style="-fx-background-color: #D9D9D9;">
                     <TilePane fx:id="categoryTable" prefHeight="419.0" prefWidth="499.0" style="-fx-background-color: #D9D9D9;" BorderPane.alignment="CENTER">
@@ -57,7 +58,7 @@
                             <Insets right="10.0" />
                         </HBox.margin>
                     </JFXButton>
-                    <JFXButton fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000" styleClass="button-small" text="A" textAlignment="CENTER">
+                    <JFXButton fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000;" styleClass="button-small" text="A" textAlignment="CENTER">
                         <font>
                             <Font name="Arial" size="14.0" />
                         </font>
