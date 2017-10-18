@@ -219,8 +219,11 @@ public class CategoryController extends Controller {
     @FXML
     private void handleDelete() {
         if (!currCategory.equals("All")) {
+
+
+            String parentCategory = driver.getParentCategoryName(currCategory);
             driver.deleteSubCategory(currCategory);
-            handleBackClick();
+            handleCategoryClick(parentCategory);
 
         }
     }

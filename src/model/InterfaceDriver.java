@@ -58,10 +58,19 @@ public class InterfaceDriver {
       Category parent = c.getParentCategory();
 
       if(parent != null) {
-          parent.deleteSubCategory(c);
-       //   if(parent.getName().equals("All")) {
-          db.deleteCategory(uniqueName);
-        System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
+          List<String> categories = new ArrayList<String>();
+          List<String> tasks = new ArrayList<String>();
+          parent.deleteSubCategory(c, categories, tasks);
+
+          for (String name: categories) {
+              db.deleteCategory(name);
+          }
+          for (String name: tasks) {
+              db.deleteTask(name);
+          }
+          System.out.println("InterfaceDriver: delete sub-category " + uniqueName);
+          System.out.println("deleted categories: "+categories.toString());
+          System.out.println("deleted tasks: "+tasks.toString());
       }
       else {
           System.out.println("Couldn't find parent category for sub-category " + uniqueName);

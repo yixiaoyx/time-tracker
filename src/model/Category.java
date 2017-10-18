@@ -64,12 +64,21 @@ public class Category {
     c.setParentCategory(this);
   }
 
-  public void deleteSubCategory(Category c) {
-      c.childTasks.clear();
-      for(Category sub: subCategories) {
-          c.deleteSubCategory(sub);
+  public void deleteSubCategory(Category c, List<String> categories, List<String> tasks) {
+
+      for (Task t: childTasks) {
+          tasks.add(t.getName());
       }
+      c.childTasks.clear();
+
+      List<Category> toDelete = new ArrayList<>();
+      toDelete.addAll(c.subCategories);
+      for(Category sub: toDelete) {
+          c.deleteSubCategory(sub, categories, tasks);
+      }
+      categories.add(c.name);
       subCategories.remove(c);
+      toDelete.clear();
   }
 
   public void setParentCategory(Category c) {

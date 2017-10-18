@@ -83,8 +83,9 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        currScreen.goToCategoryScreen();
+        String parentCategory = driver.getParentCategoryOfTask(currTask);
         driver.deleteTask(currTask);
+        currScreen.goToCategoryScreen(parentCategory);
     }
 
     @FXML
