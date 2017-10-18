@@ -137,9 +137,6 @@ public class TaskController extends Controller {
         Image analysisImage = new Image(analysisPath, false);
         analysisButton.setGraphic(new ImageView(analysisImage));
         updateBigProgressBar();
-
-
-
     }
 
     private void controllerClockOut() {

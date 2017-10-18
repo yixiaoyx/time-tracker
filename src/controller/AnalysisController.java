@@ -206,7 +206,6 @@ public class AnalysisController extends Controller {
 
         tabPane.getTabs().add(tab3);
 
-
         contentvbox.getChildren().add(tabPane);
         contentvbox.setAlignment(Pos.CENTER);
 

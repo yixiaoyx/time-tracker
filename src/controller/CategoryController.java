@@ -75,6 +75,9 @@ public class CategoryController extends Controller {
     @FXML
     private JFXButton delButton;
 
+    @FXML
+    private Label smallCategoryPath;
+
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
         super(driver);
@@ -97,6 +100,11 @@ public class CategoryController extends Controller {
             addTaskToTable(cur);
             System.out.println(cur);
         }
+
+
+        String catPath = driver.getCategoryPath(currCategory);
+        smallCategoryPath.setText(catPath);
+        smallCategoryPath.setStyle("-fx-text-fill: #AAAAAA");
 
         categoryName.setText(currCategory);
 

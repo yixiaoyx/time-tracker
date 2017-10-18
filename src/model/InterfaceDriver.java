@@ -364,6 +364,25 @@ public class InterfaceDriver {
     return l;
   }
 
+  public String getCategoryPath(String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    Stack<String> parentCategoryNames = new Stack<String>();
+
+    //parentCategoryNames.push(currCategory);
+
+    while(c.getParentCategory() != null) {
+      parentCategoryNames.push(c.getParentCategory().getName());
+      c = c.getParentCategory();
+    }
+
+    String path = "";
+    while(!parentCategoryNames.empty()) {
+      path = path + parentCategoryNames.pop() + ">";
+    }
+
+    return path;
+  }
+
   public static void main(String[] args) {
     // Basic workflow:
 
