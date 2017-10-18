@@ -1,9 +1,6 @@
 package controller;
 
-import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXTabPane;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
@@ -13,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Driver;
 import model.Duration;
@@ -120,6 +118,32 @@ public class AnalysisController extends Controller {
         list.getStyleClass().add("mylistview");
 
 
+        // progress bar page
+        VBox progressVBox = new VBox();
+
+        Map<String, Long[]> m = driver.getCategoryTaskProgress(currCategory);
+
+        for(String taskName : m.keySet()) {
+            HBox h = new HBox();
+            Long[] times = m.get(taskName);
+
+            double progress = (double) times[0] / times[1];
+
+
+            h.getChildren().add(new Label(taskName + " " + times[0] + " " + times[1] + " " + progress));
+
+            JFXProgressBar jfxBar = new JFXProgressBar();
+            jfxBar.setPrefHeight(100);
+            //jfxBar.setPrefWidth(500);
+
+
+            jfxBar.setProgress(progress);
+            h.getChildren().add(jfxBar);
+
+            progressVBox.getChildren().add(h);
+        }
+
+
 
         JFXTabPane tabPane = new JFXTabPane();
 
@@ -141,6 +165,12 @@ public class AnalysisController extends Controller {
         tab2.setContent(taskBreakdownChart);
 
         tabPane.getTabs().add(tab2);
+
+        Tab tab3 = new Tab();
+        tab3.setText("Task Progress");
+        tab3.setContent(progressVBox);
+
+        tabPane.getTabs().add(tab3);
 
 
         contentvbox.getChildren().add(tabPane);
