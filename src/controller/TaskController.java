@@ -13,8 +13,14 @@ import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Map;
 import java.io.File;
+import java.util.Scanner;
 
 public class TaskController extends Controller {
 
@@ -137,6 +143,47 @@ public class TaskController extends Controller {
         Image analysisImage = new Image(analysisPath, false);
         analysisButton.setGraphic(new ImageView(analysisImage));
         updateBigProgressBar();
+
+        // Test Looking at running processes stuff
+        /*
+        Process process = null;
+        try {
+            process = Runtime.getRuntime().exec("tasklist.exe");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scanner scanner = new Scanner(new InputStreamReader(process.getInputStream()));
+        while (scanner.hasNext()) {
+            System.out.println(scanner.nextLine());
+        }
+        scanner.close();
+        */
+        try {
+            // Checking to see if file can be found
+
+            String pathString = System.getenv("windir").toString() + "\\\\System32" + "\\\\tasklist.exe";
+            /*
+            File f = new File(pathString);
+            if (f.exists()) {
+                System.out.println(pathString + " found");
+            } else System.out.println(pathString + " not found");
+            */
+
+            String line;
+            //String command = "System.getenv(\"windir\") +\"\\\\System32\\\\\"+\"tasklist.exe\"";
+            Process p = Runtime.getRuntime().exec(pathString);
+            BufferedReader input =
+                    new BufferedReader(new InputStreamReader(p.getInputStream()));
+            while ((line = input.readLine()) != null) {
+                System.out.println(line); //<-- Parse data here.
+            }
+            input.close();
+
+
+        } catch (Exception err) {
+            err.printStackTrace();
+        }
+
     }
 
     private void controllerClockOut() {
