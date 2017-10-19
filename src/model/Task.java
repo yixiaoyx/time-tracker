@@ -29,13 +29,17 @@ public class Task {
     //duration object containing start + end of duration.
     private Duration duration;
 
+
     private long estimatedTime;
 
+    private boolean goalComplete;
+
+    //To make updates to the database
     private DatabaseDriver db;
 
-    private SimpleDateFormat sdf;
 
     private long totaltime;
+
     private Category parentCategory;
 
     public Category getParentCategory() {
@@ -51,7 +55,6 @@ public class Task {
         active = false;
         timings = new ArrayList<Duration>();
         db = new DatabaseDriver();
-        sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         estimatedTime = 10*1000;
     }
 
@@ -61,6 +64,12 @@ public class Task {
 
     public long getEstimatedTime() {
         return estimatedTime;
+    }
+    public void setGoalComplete(Boolean goalComplete) {
+        this.goalComplete = goalComplete;
+    }
+    public boolean getGoaComplete() {
+        return this.goalComplete;
     }
 
     public void clockIn() {
@@ -101,15 +110,12 @@ public class Task {
 
             //save task to the database after clocking out.
 
-            //save task to the database after clocking out.
-
             db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
-                    getTotalTime());// activeEndTime, activeEndTime);
-
+                    getTotalTime(),getEstimatedTime(), getGoaComplete());// activeEndTime, activeEndTime);
 
             String getDuration = getLengthOfLastClockInOut();
             db.addTaskDuration(getName(),durationSecs, getDuration, activeStartTime, activeEndTime);
-            // System.out.println("stirng = " + durationString + );
+
             activeStartTime = null;
 
         }

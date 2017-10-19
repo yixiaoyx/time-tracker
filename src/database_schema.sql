@@ -16,6 +16,8 @@ create table Tasks (
   category_ID int null,
   duration_string varchar(8) null,
   duration mediumtext not null,
+  estimated_time mediumtext null,
+  completed_goal tinyint(1) default '0' null,
   foreign key (category_ID) references Category (ID)
 );
 DROP table if EXISTS task_durations;

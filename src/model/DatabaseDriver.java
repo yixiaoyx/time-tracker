@@ -37,7 +37,7 @@ public class DatabaseDriver {
 
     //saves a task to the task table
     public void saveTasks(String task, String Category, String durationString, long duration,
-                          Date startDate, Date finishDate) {
+                          long estimated_time, boolean completed_goal) {
 
         try {
 
@@ -55,8 +55,11 @@ public class DatabaseDriver {
                 }
             }
             int CategoryID = getCategoryID(Category);
-            // System.out.println("categ id = " + CategoryID);
-            String query1 = "INSERT INTO Tasks VALUES (NULL, '"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "' )";
+           int completed_goal_num = 0;
+            if(completed_goal == true) {
+                completed_goal_num = 1;
+            }
+            String query1 = "INSERT INTO Tasks VALUES (NULL, '"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "', '"+estimated_time+"', '"+completed_goal_num+"')";
 
             System.out.println("Task does not exist");
             if (check == false) {
@@ -137,6 +140,13 @@ public class DatabaseDriver {
                 int cat_id = Integer.parseInt(results.getString("Category_ID"));
                 Category c = new Category(getCategoryName(cat_id));
                 t.setParentCategory(c);
+                t.setEstimatedTime(Long.parseLong(results.getString("estimated_time")));
+                if(Integer.parseInt(results.getString("completed_goal")) == 0) {
+                    t.setGoalComplete(false);
+                }
+                else {
+                    t.setGoalComplete(true);
+                }
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 
@@ -149,7 +159,7 @@ public class DatabaseDriver {
         return tasks;
     }
 
-    public void updateTask(String task, String Category, String durationString, long duration) {
+    public void updateTask(String task, String Category, String durationString, long duration, long estimated_time, boolean completed_goal) {
 
         try {
             s = c.createStatement();
@@ -171,11 +181,15 @@ public class DatabaseDriver {
             }
             int CategoryID = getCategoryID(Category);
             s = c.createStatement();
+            int completed = 0;
+            if(completed_goal == true) {
+                completed = 1;
 
-            String sql = "UPDATE Tasks SET duration_string = '" + durationString +"', duration = '" + duration +"' WHERE task_name = '"+task+"' AND Category_ID = '"+CategoryID+"'";
-
+            }
+            String sql = "UPDATE Tasks SET duration_string = '" + durationString +"', duration = '" + duration +"' WHERE task_name = '"+task+"' AND Category_ID = '"+CategoryID+"'AND estimated_time = '"+estimated_time+"' AND completed_goal = '"+completed+"' ";
+          //  System.out.println("duration string = " + durationString);
             s.executeUpdate(sql);
-            System.out.println("updated task new task into the database");
+            System.out.println("updated new task into the database");
 
 
 
@@ -428,14 +442,15 @@ public class DatabaseDriver {
                 widthVal = Integer.parseInt(getVals.getString("@width := rght - lft + 1"));
 
             }
+            String query3 = "DELETE task_durations FROM task_durations join Tasks on (task_durations.task_id = Tasks.id) join Category on (Tasks.Category_ID = Category.id) WHERE category_name = '"+Categoryname+"'";
+            String query4 = "DELETE Tasks FROM Tasks join Category on (Tasks.Category_id = Category.id) WHERE lft BETWEEN '" + leftVal + "' AND  '" + rightVal + "'";
+            String query5 = "DELETE FROM Category WHERE lft BETWEEN '" + leftVal + "' AND '" + rightVal + "'";
+            String query6 = "UPDATE Category SET rght = rght - '" + widthVal + "' WHERE rght >  '" + rightVal + "'";
 
-            String query3 = "DELETE Tasks FROM Tasks join Category on (Tasks.Category_id = Category.id) WHERE lft BETWEEN '" + leftVal + "' AND  '" + rightVal + "'";
-            String query4 = "DELETE FROM Category WHERE lft BETWEEN '" + leftVal + "' AND '" + rightVal + "'";
-            String query5 = "UPDATE Category SET rght = rght - '" + widthVal + "' WHERE rght >  '" + rightVal + "'";
-
-            s.addBatch(query3);
+           s.addBatch(query3);
             s.addBatch(query4);
             s.addBatch(query5);
+            s.addBatch(query6);
 
             s.executeBatch();
 
@@ -448,8 +463,11 @@ public class DatabaseDriver {
     public void deleteTask(String taskname) {
         try {
             s = c.createStatement();
-            String query = "DELETE FROM Tasks WHERE task_name ='" + taskname + "'";
-            s.executeUpdate(query);
+            String query1 = "DELETE FROM task_durations WHERE task_name = '"+taskname+"'";
+            String query2 = "DELETE FROM Tasks WHERE task_name ='" + taskname + "'";
+            s.executeUpdate(query1);
+            s = c.createStatement();
+            s.executeUpdate(query2);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
