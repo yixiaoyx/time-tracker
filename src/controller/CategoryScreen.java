@@ -16,6 +16,10 @@ public class CategoryScreen extends Screen {
 
     }
 
+    public String getCategory(){
+        return currCategory;
+    }
+
     @Override
     Controller setUpController() {
         CategoryController controller = new CategoryController(driver, this, currCategory);

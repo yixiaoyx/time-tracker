@@ -339,6 +339,11 @@ public class CategoryController extends Controller {
     }
 
     @FXML
+    private void handleBlackListClick() {
+        currScreen.goToBlackListScreen(currScreen);
+    }
+
+    @FXML
     private void handleChange() {
         JFXDialog dialog = new JFXDialog();
         Insets insets = new Insets(10, 10, 10, 10);

@@ -23,7 +23,7 @@ public abstract class Screen {
     }
 
     public void start() throws Exception {
-        stage.setTitle(title);
+        stage.setTitle("Track Attack");
 
 
         fxmlLoader.setController(setUpController());
@@ -106,6 +106,15 @@ public abstract class Screen {
 
     public void goToTaskScreen(String task) {
         Screen currScreen = new TaskScreen(this.getStage(), this.getDriver(), task);
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToBlackListScreen(Screen prevScreen){
+        Screen currScreen = new BlackListScreen(this.getStage(), this.getDriver(), prevScreen);
         try {
             currScreen.start();
         } catch (Exception e) {
