@@ -83,7 +83,7 @@ public class InterfaceDriver {
 
     if(c != null) {
       c.addTask(new Task(uniqueName));
-      db.saveTasks(uniqueName,categoryName, null, 0, null, null);
+      db.saveTasks(uniqueName,categoryName, null, 0, null,0, false, null);
     }
     else {
       System.out.println("Couldn't find category " + categoryName);
@@ -97,7 +97,7 @@ public class InterfaceDriver {
 
         if(c != null) {
             c.addTask(task);
-            db.saveTasks(task.getName(),categoryName, null, 0, null, null);
+            db.saveTasks(task.getName(),categoryName, null, 0, null,0, false, null);
         }
         else {
             System.out.println("Couldn't find category " + categoryName);
@@ -151,7 +151,6 @@ public class InterfaceDriver {
             Category c = t.getParentCategory();
             if (c.getTaskByName(t.getName()) == null) { //find if task already exists.
                 addTaskObject(c.getName(), t);
-                System.out.println("task contains duration -> " + t.getTimings().size());
             }
         }
     }
