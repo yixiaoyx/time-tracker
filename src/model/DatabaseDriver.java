@@ -37,7 +37,7 @@ public class DatabaseDriver {
 
     //saves a task to the task table
     public void saveTasks(String task, String Category, String durationString, long duration,
-                          long estimated_time, boolean completed_goal) {
+                         String estimated_time_string, long estimated_time, boolean completed_goal, Date due_date) {
 
         try {
 
@@ -59,7 +59,8 @@ public class DatabaseDriver {
             if(completed_goal == true) {
                 completed_goal_num = 1;
             }
-            String query1 = "INSERT INTO Tasks VALUES (NULL, '"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "', '"+estimated_time+"', '"+completed_goal_num+"')";
+            String query1 = "INSERT INTO Tasks VALUES (NULL, '"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "', '"+estimated_time_string+"','"+estimated_time+"', '"+completed_goal_num+"', null)";
+
 
             System.out.println("Task does not exist");
             if (check == false) {
@@ -141,25 +142,28 @@ public class DatabaseDriver {
                 Category c = new Category(getCategoryName(cat_id));
                 t.setParentCategory(c);
                 t.setEstimatedTime(Long.parseLong(results.getString("estimated_time")));
+                t.setEstimatedTimeString(results.getString("estimated_time_string"));
                 if(Integer.parseInt(results.getString("completed_goal")) == 0) {
                     t.setGoalComplete(false);
                 }
                 else {
                     t.setGoalComplete(true);
                 }
+                Date dueDate = sdf.parse(results.getString("due_date"));
+                t.setDueDate(dueDate);
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
 
         }
         return tasks;
     }
 
-    public void updateTask(String task, String Category, String durationString, long duration, long estimated_time, boolean completed_goal) {
+    public void updateTask(String task, String Category, String durationString, long duration, String estimated_time_string, long estimated_time, boolean completed_goal, Date dueDate) {
 
         try {
             s = c.createStatement();
@@ -186,8 +190,10 @@ public class DatabaseDriver {
                 completed = 1;
 
             }
-            String sql = "UPDATE Tasks SET duration_string = '" + durationString +"', duration = '" + duration +"' WHERE task_name = '"+task+"' AND Category_ID = '"+CategoryID+"'AND estimated_time = '"+estimated_time+"' AND completed_goal = '"+completed+"' ";
-          //  System.out.println("duration string = " + durationString);
+            System.out.println("duration = " + durationString);
+            String sql = "UPDATE Tasks SET duration_string = '" + durationString +"', duration = '" + duration +"', Category_ID = '"+CategoryID+"', estimated_time_string = '"+estimated_time_string+"', estimated_time = '"+estimated_time+"', completed_goal = '"+completed+"' WHERE task_name = '"+task+"'";
+            // AND due_date = '\"+dueDate+\"'\";
+            //  System.out.println("duration string = " + durationString);
             s.executeUpdate(sql);
             System.out.println("updated new task into the database");
 

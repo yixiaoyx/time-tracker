@@ -29,8 +29,11 @@ public class Task {
     //duration object containing start + end of duration.
     private Duration duration;
 
-
     private long estimatedTime;
+
+    private String estimatedTimeString;
+
+    private Date dueDate;
 
     private boolean goalComplete;
 
@@ -65,6 +68,13 @@ public class Task {
     public long getEstimatedTime() {
         return estimatedTime;
     }
+    public String getEstimatedTimeString() {
+        return estimatedTimeString;
+    }
+
+    public void setEstimatedTimeString(String estimatedTimeString) {
+        this.estimatedTimeString = estimatedTimeString;
+    }
     public void setGoalComplete(Boolean goalComplete) {
         this.goalComplete = goalComplete;
     }
@@ -72,6 +82,12 @@ public class Task {
         return this.goalComplete;
     }
 
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
+    }
+    public Date getDueDate() {
+        return this.dueDate;
+    }
     public void clockIn() {
         // we can't clock in to an already active task
         if(active) {
@@ -111,7 +127,7 @@ public class Task {
             //save task to the database after clocking out.
 
             db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
-                    getTotalTime(),getEstimatedTime(), getGoaComplete());// activeEndTime, activeEndTime);
+                    getTotalTime(),getEstimatedTimeString(),getEstimatedTime(), getGoaComplete(), getDueDate());// activeEndTime, activeEndTime);
 
             String getDuration = getLengthOfLastClockInOut();
             db.addTaskDuration(getName(),durationSecs, getDuration, activeStartTime, activeEndTime);
