@@ -127,7 +127,7 @@ public class FormController extends Controller{
 
 
         } catch (ParseException e) {
-            e.printStackTrace();
+            estimatedSeconds = null;
         }
 
 
@@ -136,10 +136,19 @@ public class FormController extends Controller{
         // Go to relevant screen
 
         if (addType.equals("task")){
-            driver.addTask(category, name,estimatedTime, estimatedSeconds);
+            System.out.println("estimatedTime = " + estimatedTime);
+            driver.addTask(category, name);
             // Check if given existing estimated time and add to task
-            if (estimatedSeconds != null) driver.addEstimatedTimeToTask(name, estimatedSeconds);
+            if (estimatedSeconds != null) {
+                driver.addEstimatedTimeToTask(estimatedTime, estimatedSeconds, name);
+            }
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
+          /*  if(dueDate != null) {
+                driver.addDueDate(Date);
+            }
+
+            */
+
             // Check if given due date and add to task
             // -
             currScreen.goToTaskScreen(name);

@@ -21,6 +21,7 @@ public class TaskController extends Controller {
     private TaskScreen currScreen;
     private String currTask;
     private boolean active;
+    private boolean reached;
     private final Timeline activeTime;
 
     final File analysisFile = new File("src/assets/Graph_1.png");
@@ -56,16 +57,27 @@ public class TaskController extends Controller {
 
         active = false;
 
+        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
+
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
-                        new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent actionEvent) {
-                                duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
-                                updateBigProgressBar();
+                    new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent actionEvent) {
+                            duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            updateBigProgressBar();
+
+                            //get the total time (current run time + other durations for task) spent on a task
+                            Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
+                                    (driver.getTaskByName(currTask).getTotalTimeSecs());
+                            //display text on goal reached
+                            if (reached == false && total >= estimatedTime) {
+                                goalReached.setText("Goal Reached WOOOOO!");
+                                driver.completedGoal(true, currTask);
                             }
                         }
+                    }
                 ),
                 new KeyFrame(Duration.seconds(0.01))
         );
