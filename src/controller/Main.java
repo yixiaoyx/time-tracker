@@ -26,7 +26,11 @@ public class Main extends Application {
 
         driver.retrieveAllCategories();
         driver.retrieveAllTasks();
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
+        primaryStage.setMaxHeight(700);
+        primaryStage.setMaxWidth(600);
+        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(500);
 
         Screen currScreen = new CategoryScreen(primaryStage, driver, "All");
 

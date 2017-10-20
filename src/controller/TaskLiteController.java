@@ -16,9 +16,9 @@ import model.InterfaceDriver;
 import java.util.Map;
 import java.io.File;
 
-public class TaskController extends Controller {
+public class TaskLiteController extends Controller {
 
-    private TaskScreen currScreen;
+    private TaskLiteScreen currScreen;
     private String currTask;
     private boolean active;
     private boolean reached;
@@ -48,7 +48,8 @@ public class TaskController extends Controller {
     @FXML
     private Label goalReached;
 
-    public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
+
+    public TaskLiteController(InterfaceDriver driver, TaskLiteScreen currScreen, String task) {
         super(driver);
         this.currScreen = currScreen;
         currTask = task;
@@ -65,7 +66,7 @@ public class TaskController extends Controller {
                     new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent actionEvent) {
-                            duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            clockButton.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
                             updateBigProgressBar();
 
                             //get the total time (current run time + other durations for task) spent on a task
@@ -73,7 +74,7 @@ public class TaskController extends Controller {
                                     (driver.getTaskByName(currTask).getTotalTimeSecs());
                             //display text on goal reached
                             if (reached == false && total >= estimatedTime) {
-                                goalReached.setText("Goal Reached WOOOOO!");
+//                                goalReached.setText("Goal Reached WOOOOO!");
                                 driver.completedGoal(true, currTask);
                             }
                         }
@@ -112,7 +113,6 @@ public class TaskController extends Controller {
 
         if (!active) {
             driver.clockIn(currTask);
-            clockButton.setText("CLOCK OUT");
             activeTime.play();
             active = true;
 
@@ -144,24 +144,16 @@ public class TaskController extends Controller {
         currScreen.goToCategoryScreen(parentCategory);
     }
 
-    @FXML
-    private void handleAnalysisClick() {
-        currScreen.goToTaskAnalysisScreen(this.currTask);
-    }
 
     @FXML
     private void handleLiteClick() {
-        currScreen.goToTaskLiteScreen(currTask);
+        currScreen.goToTaskScreen(currTask);
     }
 
     @FXML
     protected void initialize() {
         taskName.setText(currTask);
-        goalReached.setText("");
-        Image analysisImage = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(analysisImage));
-        Image binImage = new Image(binPath, false);
-        delButton.setGraphic(new ImageView(binImage));
+        //  SET ACHIEVEMENT THING HERE goalReached.setText("");
         updateBigProgressBar();
     }
 
@@ -175,7 +167,7 @@ public class TaskController extends Controller {
         Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
         System.out.println("total time = " + total + " estiamted = " + estimatedTime);
         if(total >= estimatedTime) {
-            goalReached.setText("Goal Reached WOO!");
+
             System.out.println("goal reached");
         }
         active = false;

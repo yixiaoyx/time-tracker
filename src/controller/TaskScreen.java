@@ -8,7 +8,10 @@ public class TaskScreen extends Screen {
     private String task;
 
     public TaskScreen(Stage s, InterfaceDriver driver, String task) {
+
         super(s, "TaskScreen.fxml", "Task", driver);
+        stage.setResizable(false);
+        stage.setAlwaysOnTop(false);
         this.task = task;
 
     }
