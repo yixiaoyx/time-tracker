@@ -73,6 +73,7 @@ public class TaskController extends Controller {
                             //display text on goal reached
                             if(reached == false && total >= estimatedTime) {
                                 goalReached.setText("Goal Reached WOOOOO!");
+                                driver.completedGoal(true, currTask);
                             }
                         }
                     }

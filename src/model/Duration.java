@@ -67,3 +67,4 @@ public class Duration extends RecursiveTreeObject<Duration> {
 
 
 }
+

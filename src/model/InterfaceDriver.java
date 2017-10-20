@@ -76,14 +76,14 @@ public class InterfaceDriver {
   }
 
 
-  public void addTask(String categoryName, String uniqueName, String estimated_time_string, Long estimated_time) {
+  public void addTask(String categoryName, String uniqueName) {
     System.out.println("InterfaceDriver: added task " + uniqueName + " to category " + categoryName);
 
     Category c = getCategoryByName(categoryName);
 
     if(c != null) {
       c.addTask(new Task(uniqueName));
-      db.saveTasks(uniqueName,categoryName, null, 0, estimated_time_string ,estimated_time, false, null);
+      db.saveTasks(uniqueName,categoryName, null, 0);
     }
     else {
       System.out.println("Couldn't find category " + categoryName);
@@ -97,7 +97,7 @@ public class InterfaceDriver {
 
         if(c != null) {
             c.addTask(task);
-            db.saveTasks(task.getName(),categoryName, null, 0, null,0, false, null);
+            db.saveTasks(task.getName(),categoryName, null, 0);
         }
         else {
             System.out.println("Couldn't find category " + categoryName);
@@ -352,11 +352,10 @@ public class InterfaceDriver {
     topLevelCategories.add(c);
   }
 
-
-
-  public void addEstimatedTimeToTask(String taskName, long estTime) {
+  public void addEstimatedTimeToTask(String estimated_time_string, long estimated_time, String taskName) {
     Task t = getTaskByName(taskName);
-    t.setEstimatedTime(estTime);
+    t.setEstimatedTime(estimated_time);
+    db.updateEstimatedTime(estimated_time_string, estimated_time, taskName);
   }
 
   public long getEstimatedTimeOfTask(String taskName) {
@@ -364,6 +363,16 @@ public class InterfaceDriver {
     return t.getEstimatedTime();
   }
 
+  public void addDueDate(Date dueDate, String taskName) {
+    Task t = getTaskByName(taskName);
+    db.updateDueDate(dueDate, taskName);
+
+  }
+  public void completedGoal(Boolean completed, String taskName) {
+    Task t = getTaskByName(taskName);
+
+    db.updateGoal(completed, taskName);
+  }
 
   public Map<String, Long[]> getCategoryTaskProgress(String categoryName) {
     Category c = getCategoryByName(categoryName);
