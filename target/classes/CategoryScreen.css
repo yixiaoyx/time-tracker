@@ -22,8 +22,8 @@
 
 .button-small{
     -jfx-button-type: FLAT;
-    -fx-background-color: #4484CE;
-    -fx-pref-width: 72;
+    -fx-background-color: #62b9eb;
+    -fx-pref-width: 65;
     -fx-pref-height: 30;
     -fx-text-fill: WHITE;
 
@@ -39,6 +39,7 @@
 .button-delete{
     -jfx-button-type: FLAT;
     -fx-background-color: #F19F4D;
+    -fx-pref-width: 65;
     -fx-text-fill: WHITE;
 }
 

@@ -41,16 +41,22 @@ public class CategoryController extends Controller {
 
     // FILEPATHS FOR BUTTON GRAPHICS
     final File categoryFile= new File("src/assets/Category_2.png");
-    final File taskFile= new File("src/assets/Task_2.png");
+    final File taskFile= new File("src/assets/Task.png");
     final File backFile = new File("src/assets/Back_Button_3.png");
     final File analysisFile = new File("src/assets/Graph_1.png");
     final File addFile = new File("src/assets/Add_Button_3.png");
+    final File binFile = new File("src/assets/Bin_1.png");
+    final File searchFile = new File("src/assets/Search_1.png");
+    final File changeFile = new File("src/assets/Edit_1.png");
 
     final String categoryPath = categoryFile.toURI().toString();
     final String taskPath = taskFile.toURI().toString();
     final String backPath = backFile.toURI().toString();
     final String analysisPath = analysisFile.toURI().toString();
     final String addPath = addFile.toURI().toString();
+    final String binPath = binFile.toURI().toString();
+    final String searchPath = searchFile.toURI().toString();
+    final String changePath = changeFile.toURI().toString();
 
     @FXML
     private StackPane sp;
@@ -81,6 +87,9 @@ public class CategoryController extends Controller {
 
     @FXML
     private HBox categoryPathHBox;
+
+    @FXML
+    private JFXButton searchButton;
 
 
 
@@ -142,6 +151,15 @@ public class CategoryController extends Controller {
 
         Image addImage = new Image(addPath, false);
         addButton.setGraphic(new ImageView(addImage));
+
+        Image binImage = new Image(binPath, false);
+        delButton.setGraphic(new ImageView(binImage));
+
+        Image searchImage = new Image(searchPath, false);
+        searchButton.setGraphic(new ImageView(searchImage));
+
+        Image changeImage = new Image(changePath, false);
+        changeButton.setGraphic(new ImageView(changeImage));
     }
 
     public void setCurrCategory(String category) {
@@ -232,7 +250,7 @@ public class CategoryController extends Controller {
 
             //newPane = fxmlLoader.load();
             //newPane.getChildren().add(newPane);
-        //    newPane.getChildren().add(new Label("I AM A PANE"));
+            //    newPane.getChildren().add(new Label("I AM A PANE"));
         } catch (/*IO*/Exception e) {
             e.printStackTrace();
         }
@@ -265,8 +283,6 @@ public class CategoryController extends Controller {
     @FXML
     private void handleDelete() {
         if (!currCategory.equals("All")) {
-
-
             String parentCategory = driver.getParentCategoryName(currCategory);
             driver.deleteSubCategory(currCategory);
             handleCategoryClick(parentCategory);
@@ -282,10 +298,10 @@ public class CategoryController extends Controller {
         // Create contents of Dialog Box
         VBox changebox = new VBox();
         changebox.setAlignment(Pos.TOP_CENTER);
-        changebox.setPrefSize(370,200);
+        changebox.setPrefSize(370,170);
 
         // Title
-        Label title = new Label("Search in " + currCategory);
+        Label title = new Label("Search in " + "\"" + currCategory + "\"");
         title.setTextAlignment(TextAlignment.CENTER);
         title.setFont(Font.font("Arial Narrow Bold", 18));
 
@@ -347,17 +363,17 @@ public class CategoryController extends Controller {
         changebox.setAlignment(Pos.TOP_CENTER);
         changebox.setPrefSize(370,200);
 
-            // Title
+        // Title
         Label title = new Label("Change Category Name");
         title.setTextAlignment(TextAlignment.CENTER);
         title.setFont(Font.font("Arial Narrow Bold", 18));
 
-            // Input
+        // Input
         JFXTextField inputField = new JFXTextField();
         inputField.setPromptText("Enter name here...");
         inputField.setAlignment(Pos.CENTER);
 
-            // Button
+        // Button
         HBox buttonBox = new HBox();
         buttonBox.setAlignment(Pos.CENTER);
 
@@ -429,8 +445,8 @@ public class CategoryController extends Controller {
         String warning = "";
         if (reason.equals("empty")) {
             warning = "No input in Name field";
-        //} else if (reason.equals("illegalchar")) {
-        //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
+            //} else if (reason.equals("illegalchar")) {
+            //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         }
