@@ -151,6 +151,7 @@ public class InterfaceDriver {
             Category c = t.getParentCategory();
             if (c.getTaskByName(t.getName()) == null) { //find if task already exists.
                 addTaskObject(c.getName(), t);
+             //  System.out.println("interface estiamted time " +  t.getEstimatedTime());
             }
         }
     }

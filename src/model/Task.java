@@ -41,6 +41,7 @@ public class Task {
     private DatabaseDriver db;
 
 
+
     private long totaltime;
 
     private Category parentCategory;
@@ -58,7 +59,7 @@ public class Task {
         active = false;
         timings = new ArrayList<Duration>();
         db = new DatabaseDriver();
-        estimatedTime = 10*1000;
+     //   estimatedTime = 10*1000;
     }
 
     public void setEstimatedTime(long t) {
@@ -78,7 +79,7 @@ public class Task {
     public void setGoalComplete(Boolean goalComplete) {
         this.goalComplete = goalComplete;
     }
-    public boolean getGoaComplete() {
+    public boolean getGoalComplete() {
         return this.goalComplete;
     }
 
@@ -102,6 +103,7 @@ public class Task {
 
             System.out.println("Clock-in got start time: " + activeStartTime.toString());
 
+
             active = true;
 
         }
@@ -114,12 +116,19 @@ public class Task {
         }
         else {
             System.out.println("Clocked out task " + name);
+            System.out.println("estimated time = " + estimatedTime);
+
 
             activeEndTime = new Date();
             System.out.println("Clock-out got end time: " + activeEndTime.toString());
 
             addTiming(activeStartTime, activeEndTime);
 
+            System.out.println("total time = " + getTotalTime());
+            if(getTotalTime() >= estimatedTime) {
+
+                System.out.println("goal reached!" );
+            }
             // clear the active variables
             active = false;
 
@@ -127,7 +136,7 @@ public class Task {
             //save task to the database after clocking out.
 
             db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
-                    getTotalTime(),getEstimatedTimeString(),getEstimatedTime(), getGoaComplete(), getDueDate());// activeEndTime, activeEndTime);
+                    getTotalTime(),getEstimatedTimeString(),getEstimatedTime(), getGoalComplete(), getDueDate());// activeEndTime, activeEndTime);
 
             String getDuration = getLengthOfLastClockInOut();
             db.addTaskDuration(getName(),durationSecs, getDuration, activeStartTime, activeEndTime);
@@ -210,7 +219,7 @@ public class Task {
     }
 
     public long getTotalTime() {
-        long totaltime = 0;
+
         for(Duration d : timings) {
             totaltime += d.time();
         }
@@ -218,7 +227,7 @@ public class Task {
     }
 
     public double getTotalTimeInMinutes() {
-        totaltime = 0;
+
         for(Duration d : timings) {
             totaltime += d.time();
         }

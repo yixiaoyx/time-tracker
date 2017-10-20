@@ -138,19 +138,23 @@ public class DatabaseDriver {
             //print saved tasks
             while (results.next()) {
                 Task t = new Task(results.getString("task_name"));
-                int cat_id = Integer.parseInt(results.getString("Category_ID"));
+
+                int cat_id = Integer.parseInt(results.getString("category_ID"));
                 Category c = new Category(getCategoryName(cat_id));
                 t.setParentCategory(c);
                 t.setEstimatedTime(Long.parseLong(results.getString("estimated_time")));
+               // long total = Long.parseLong(results.getString("duration"));
+             //   t.setTotalTime(total);
                 t.setEstimatedTimeString(results.getString("estimated_time_string"));
-                if(Integer.parseInt(results.getString("completed_goal")) == 0) {
+                int goal = Integer.parseInt(results.getString("completed_goal"));
+                if(goal == 0) {
                     t.setGoalComplete(false);
                 }
                 else {
                     t.setGoalComplete(true);
                 }
-                Date dueDate = sdf.parse(results.getString("due_date"));
-                t.setDueDate(dueDate);
+                //Date dueDate = sdf.parse(results.getString("due_date"));
+              //  t.setDueDate(dueDate);
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 

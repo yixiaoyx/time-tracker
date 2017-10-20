@@ -18,6 +18,11 @@
                         <Font name="Lucida Sans Regular" size="30.0" fx:id="x1" />
                     </font>
                 </Label>
+                <Label fx:id="goalReached" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="337.0" text="TASK" textFill="GREY" translateX="-1.0" translateY="30.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                    <font>
+                        <Font name="Lucida Sans Regular" size="30.0" fx:id="x1" />
+                    </font>
+                </Label>
                 <Label fx:id="duration" alignment="TOP_CENTER" font="$x1" prefHeight="51.0" prefWidth="200.0" text="00:00:00" textFill="GREY" translateY="-55.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
                 <JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="6.0" translateY="-47.0">
                     <font>
