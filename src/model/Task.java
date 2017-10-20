@@ -124,23 +124,25 @@ public class Task {
 
             addTiming(activeStartTime, activeEndTime);
 
-            System.out.println("total time = " + getTotalTime());
-            if(getTotalTime() >= estimatedTime) {
+            System.out.println("total time = " + totaltime);
+            if(totaltime >= estimatedTime) {
 
                 System.out.println("goal reached!" );
             }
-            // clear the active variables
-            active = false;
+
 
 
             //save task to the database after clocking out.
+            getTotalTime();
+            db.updateTask(getName(), getParentCategory().getName(), getTotalTimeString(),
+                    getTotalTimeSecs(),getEstimatedTimeString(),getEstimatedTime(), getGoalComplete(), getDueDate());// activeEndTime, activeEndTime);
 
-            db.updateTask(getName(), getParentCategory().getName(),getTotalTimeString(),
-                    getTotalTime(),getEstimatedTimeString(),getEstimatedTime(), getGoalComplete(), getDueDate());// activeEndTime, activeEndTime);
-
+            System.out.println("total time " + getTotalTimeSecs() + " as string = " + getTotalTimeString());
             String getDuration = getLengthOfLastClockInOut();
             db.addTaskDuration(getName(),durationSecs, getDuration, activeStartTime, activeEndTime);
 
+            // clear the active variables
+            active = false;
             activeStartTime = null;
 
         }
@@ -219,11 +221,16 @@ public class Task {
     }
 
     public long getTotalTime() {
-
+        long totalTime = 0;
         for(Duration d : timings) {
-            totaltime += d.time();
+            totalTime += d.time();
         }
+        totaltime = totalTime;
         return totaltime;
+    }
+    public long getTotalTimeSecs() {
+        getTotalTime();
+        return totaltime / 1000;
     }
 
     public double getTotalTimeInMinutes() {
@@ -240,7 +247,7 @@ public class Task {
     }
 
     public String getTotalTimeString() {
-        return convertTime(getTotalTime());
+        return convertTime(totaltime);
     }
 
     public long durationInSeconds() {

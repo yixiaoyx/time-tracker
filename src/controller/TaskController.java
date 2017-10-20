@@ -44,6 +44,8 @@ public class TaskController extends Controller {
     @FXML
     private Label goalReached;
 
+    private boolean reached;
+
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
         this.currScreen = currScreen;
@@ -53,6 +55,9 @@ public class TaskController extends Controller {
 
         active = false;
 
+        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
+
+
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -61,6 +66,14 @@ public class TaskController extends Controller {
                         public void handle(ActionEvent actionEvent) {
                             duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
                             updateBigProgressBar();
+
+                            //get the total time (current run time + other durations for task) spent on a task
+                            Long total = (driver.getTaskByName(currTask).getActiveRunTime())/1000+
+                                    (driver.getTaskByName(currTask).getTotalTimeSecs());
+                            //display text on goal reached
+                            if(reached == false && total >= estimatedTime) {
+                                goalReached.setText("Goal Reached WOOOOO!");
+                            }
                         }
                     }
                 ),
@@ -89,6 +102,7 @@ public class TaskController extends Controller {
         bigProgressBar.setProgress(progress);
 
 
+
     }
 
 
@@ -100,10 +114,6 @@ public class TaskController extends Controller {
             clockButton.setText("CLOCK OUT");
             activeTime.play();
             active = true;
-
-
-
-
         } else {
             controllerClockOut();
         }
@@ -138,10 +148,22 @@ public class TaskController extends Controller {
     protected void initialize() {
         taskName.setText(currTask);
         goalReached.setText("");
+        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
+
+        Long total = driver.getTaskByName(currTask).getTotalTimeSecs();
+
+        System.out.println("estimated time = " + estimatedTime + "total = " + total);
+        reached = false;
+        if(total >= estimatedTime) {
+            goalReached.setText("");
+            reached = true;
+        }
+
         Image analysisImage = new Image(analysisPath, false);
         analysisButton.setGraphic(new ImageView(analysisImage));
         updateBigProgressBar();
     }
+
 
     private void controllerClockOut() {
         driver.clockOut(currTask);
@@ -149,13 +171,7 @@ public class TaskController extends Controller {
 
         activeTime.stop();
 
-        Long total = driver.getTaskByName(currTask).getTotalTime();
-        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-        System.out.println("total time = " + total + " estiamted = " + estimatedTime);
-        if(total >= estimatedTime) {
-            goalReached.setText("Goal Reached WOO!");
-            System.out.println("goal reached");
-        }
+
         active = false;
 
     }

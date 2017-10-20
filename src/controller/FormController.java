@@ -116,11 +116,13 @@ public class FormController extends Controller{
 
         // Convert to time string
         try {
+
             DateFormat dateFormat = new SimpleDateFormat("HH:mm");
             Date baseRef = dateFormat.parse("00:00:00");
             Date estTime = dateFormat.parse(estimatedTime);
             estimatedSeconds = (estTime.getTime() - baseRef.getTime()) / 1000L;
             System.out.println("Converted time to " + estimatedSeconds.toString() + " seconds");
+
             // Convert to seconds
 
 
@@ -134,7 +136,7 @@ public class FormController extends Controller{
         // Go to relevant screen
 
         if (addType.equals("task")){
-            driver.addTask(category, name);
+            driver.addTask(category, name,estimatedTime, estimatedSeconds);
             // Check if given existing estimated time and add to task
             if (estimatedSeconds != null) driver.addEstimatedTimeToTask(name, estimatedSeconds);
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
@@ -178,8 +180,8 @@ public class FormController extends Controller{
         String warning = "";
         if (reason.equals("empty")) {
             warning = "No input in Name field";
-        //} else if (reason.equals("illegalchar")) {
-        //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
+            //} else if (reason.equals("illegalchar")) {
+            //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         } else if (reason.equals("taskmatch")) {

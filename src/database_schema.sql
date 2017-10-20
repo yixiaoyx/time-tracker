@@ -1,4 +1,7 @@
+DROP table if EXISTS task_durations;
+drop table if exists Tasks;
 DROP table if EXISTS Category;
+
 create table Category
 (
   ID int auto_increment
@@ -9,7 +12,7 @@ create table Category
   subCategory tinyint(1) default '1' null,
   parent_category varchar(50) null
 );
-drop table if exists Tasks;
+
 create table Tasks (
   ID int auto_increment primary key,
   task_name varchar(50) not null,
@@ -22,7 +25,7 @@ create table Tasks (
   due_date datetime null,
   foreign key (category_ID) references Category (ID)
 );
-DROP table if EXISTS task_durations;
+
 create table task_durations
 (
   ID int auto_increment PRIMARY KEY,

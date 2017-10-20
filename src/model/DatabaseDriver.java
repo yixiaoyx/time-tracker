@@ -37,7 +37,7 @@ public class DatabaseDriver {
 
     //saves a task to the task table
     public void saveTasks(String task, String Category, String durationString, long duration,
-                         String estimated_time_string, long estimated_time, boolean completed_goal, Date due_date) {
+                          String estimated_time_string, long estimated_time, boolean completed_goal, Date due_date) {
 
         try {
 
@@ -55,7 +55,7 @@ public class DatabaseDriver {
                 }
             }
             int CategoryID = getCategoryID(Category);
-           int completed_goal_num = 0;
+            int completed_goal_num = 0;
             if(completed_goal == true) {
                 completed_goal_num = 1;
             }
@@ -143,8 +143,8 @@ public class DatabaseDriver {
                 Category c = new Category(getCategoryName(cat_id));
                 t.setParentCategory(c);
                 t.setEstimatedTime(Long.parseLong(results.getString("estimated_time")));
-               // long total = Long.parseLong(results.getString("duration"));
-             //   t.setTotalTime(total);
+                // long total = Long.parseLong(results.getString("duration"));
+                //   t.setTotalTime(total);
                 t.setEstimatedTimeString(results.getString("estimated_time_string"));
                 int goal = Integer.parseInt(results.getString("completed_goal"));
                 if(goal == 0) {
@@ -154,7 +154,7 @@ public class DatabaseDriver {
                     t.setGoalComplete(true);
                 }
                 //Date dueDate = sdf.parse(results.getString("due_date"));
-              //  t.setDueDate(dueDate);
+                //  t.setDueDate(dueDate);
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 
@@ -457,7 +457,7 @@ public class DatabaseDriver {
             String query5 = "DELETE FROM Category WHERE lft BETWEEN '" + leftVal + "' AND '" + rightVal + "'";
             String query6 = "UPDATE Category SET rght = rght - '" + widthVal + "' WHERE rght >  '" + rightVal + "'";
 
-           s.addBatch(query3);
+            s.addBatch(query3);
             s.addBatch(query4);
             s.addBatch(query5);
             s.addBatch(query6);
@@ -560,15 +560,19 @@ public class DatabaseDriver {
             String query2 = "SELECT * from task_durations where task_id = '"+task_id+"' ";
             s = c.createStatement();
             ResultSet r = s.executeQuery(query2);
-
+            int i = 0;
+            Task newTask= null;
             while(r.next()) {
                 //store individual duration, duration string and the dates for the current task
-                Task newTask = new Task(r.getString("task_name"));
-                System.out.println("new task ");
+                if(i == 0) {
+                    newTask = new Task(r.getString("task_name"));
+                    i = 1;
+                }
                 newTask.setDurationString(r.getString("task_duration_string"));
                 Date start = sdf.parse(r.getString("date_task_start"));
                 Date finish = sdf.parse(r.getString("date_task_finish"));
                 Duration d = new Duration(start, finish, r.getString("task_name"));
+                System.out.println("added timing to " + newTask.getName() + " = " + d.time());
                 newTask.addTiming(d);
 
                 tasks.add(newTask);

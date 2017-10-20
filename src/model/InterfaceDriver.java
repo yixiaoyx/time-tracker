@@ -76,14 +76,14 @@ public class InterfaceDriver {
   }
 
 
-  public void addTask(String categoryName, String uniqueName) {
+  public void addTask(String categoryName, String uniqueName, String estimated_time_string, Long estimated_time) {
     System.out.println("InterfaceDriver: added task " + uniqueName + " to category " + categoryName);
 
     Category c = getCategoryByName(categoryName);
 
     if(c != null) {
       c.addTask(new Task(uniqueName));
-      db.saveTasks(uniqueName,categoryName, null, 0, null,0, false, null);
+      db.saveTasks(uniqueName,categoryName, null, 0, estimated_time_string ,estimated_time, false, null);
     }
     else {
       System.out.println("Couldn't find category " + categoryName);
@@ -142,7 +142,7 @@ public class InterfaceDriver {
             if (taskDurations.size() != 0) {
                 for (Duration d : taskDurations.get(0).getTimings()) {
                     t.addTiming(d);
-                    System.out.println("added timing to task " + t.getName() + " = " + d.time());
+                    System.out.println("added timing to task " + t.getName() + " = " + d.time() + " get timings size = " + taskDurations.get(0).getTimings().size());
                 }
             }
         }
@@ -452,8 +452,8 @@ public class InterfaceDriver {
     I.addSubCategory("Uni", "Ethics");
     I.addSubCategory("Ethics", "Project");
 
-    I.addTask("Project", "Standup diary");
-    I.addTask("Work", "Siphoning funds");
+    //I.addTask("Project", "Standup diary");
+    //I.addTask("Work", "Siphoning funds");
 
 
     // Clock in and out of tasks

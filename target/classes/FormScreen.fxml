@@ -16,49 +16,49 @@
     <children>
 
 
-            <HBox alignment="CENTER">
-                <children>
-                    <JFXCheckBox fx:id="taskCheckBox" checkedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleTaskCheck" scaleX="1" scaleY="1" scaleZ="1" selected="true" text="Task">
-                        <padding>
-                            <Insets bottom="30.0" />
-                        </padding>
-                        <HBox.margin>
-                            <Insets top="40.0" />
-                        </HBox.margin></JFXCheckBox>
-                    <JFXCheckBox fx:id="categoryCheckBox" checkedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleCategoryCheck" scaleX="1" scaleY="1" scaleZ="1" text="Category">
-                        <padding>
-                            <Insets bottom="30.0" />
-                        </padding>
-                        <HBox.margin>
-                            <Insets left="40.0" top="40.0" />
-                        </HBox.margin>
-                    </JFXCheckBox>
-                </children>
+        <HBox alignment="CENTER">
+            <children>
+                <JFXCheckBox fx:id="taskCheckBox" checkedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleTaskCheck" scaleX="1" scaleY="1" scaleZ="1" selected="true" text="Task">
+                    <padding>
+                        <Insets bottom="30.0" />
+                    </padding>
+                    <HBox.margin>
+                        <Insets top="40.0" />
+                    </HBox.margin></JFXCheckBox>
+                <JFXCheckBox fx:id="categoryCheckBox" checkedColor="#38aff4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleCategoryCheck" scaleX="1" scaleY="1" scaleZ="1" text="Category">
+                    <padding>
+                        <Insets bottom="30.0" />
+                    </padding>
+                    <HBox.margin>
+                        <Insets left="40.0" top="40.0" />
+                    </HBox.margin>
+                </JFXCheckBox>
+            </children>
 
-            </HBox>
+        </HBox>
 
-            <JFXComboBox fx:id="categoryMenu" editable="false" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="220.0" promptText="Category" style="-fx-background-color: #f7fbff; -fx-text-alignment: center" translateX="15.0" translateY="-15.0" unFocusColor="#6f6f6f">
+        <JFXComboBox fx:id="categoryMenu" editable="false" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="220.0" promptText="Category" style="-fx-background-color: #f7fbff; -fx-text-alignment: center" translateX="15.0" translateY="-15.0" unFocusColor="#6f6f6f">
 
-                <HBox.margin>
-                    <Insets top="100.0" />
-                </HBox.margin>
-                <effect>
-                    <DropShadow blurType="ONE_PASS_BOX" color="#bfbfbf" height="18.03" offsetY="5.0" spread="0.65" width="23.97" />
-                </effect>
-            </JFXComboBox>
-            <JFXTextField fx:id="nameField" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="220.0" promptText="Name" style="-fx-background-color: #f7fbff;" translateX="15.0" unFocusColor="#6f6f6f">
-                <effect>
-                    <DropShadow blurType="ONE_PASS_BOX" color="#c6c6c6" height="32.86" offsetY="5.0" radius="15.93" spread="0.49" width="32.86" />
-                </effect>
-                <HBox.margin>
-                    <Insets top="40.0" />
-                </HBox.margin>
-                <padding>
-                    <Insets left="9" />
-                </padding>
+            <HBox.margin>
+                <Insets top="100.0" />
+            </HBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" color="#bfbfbf" height="18.03" offsetY="5.0" spread="0.65" width="23.97" />
+            </effect>
+        </JFXComboBox>
+        <JFXTextField fx:id="nameField" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="220.0" promptText="Name" style="-fx-background-color: #f7fbff;" translateX="15.0" unFocusColor="#6f6f6f">
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" color="#c6c6c6" height="32.86" offsetY="5.0" radius="15.93" spread="0.49" width="32.86" />
+            </effect>
+            <HBox.margin>
+                <Insets top="40.0" />
+            </HBox.margin>
+            <padding>
+                <Insets left="9" />
+            </padding>
 
 
-            </JFXTextField>
+        </JFXTextField>
         <JFXTextField fx:id="estimatedTimeField" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="220.0" promptText="Estimated Duration  HH:MM" style="-fx-background-color: #f7fbff;" translateX="15.0" unFocusColor="#6f6f6f">
             <effect>
                 <DropShadow blurType="ONE_PASS_BOX" color="#c6c6c6" height="32.86" offsetY="5.0" radius="15.93" spread="0.49" width="32.86" />
@@ -72,7 +72,7 @@
 
         </JFXTextField>
         <JFXDatePicker>
-            
+
         </JFXDatePicker>
         <JFXTimePicker>
 
