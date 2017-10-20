@@ -1,8 +1,5 @@
 package controller;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -12,7 +9,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,7 +31,7 @@ public class FormController extends Controller{
     @FXML
     private ToggleGroup radioGroup;
     @FXML
-    private TextField nameField;
+    private JFXTextField nameField;
     @FXML
     private JFXComboBox categoryMenu;
     @FXML
@@ -38,6 +40,8 @@ public class FormController extends Controller{
     private JFXCheckBox taskCheckBox;
     @FXML
     private JFXCheckBox categoryCheckBox;
+    @FXML
+    private JFXTextField estimatedTimeField;
 
     public FormController(InterfaceDriver driver, Screen currScreen, String category){
         super(driver);
@@ -105,12 +109,37 @@ public class FormController extends Controller{
             return;
         }
 
+        String estimatedTime = "";
+        estimatedTime = estimatedTimeField.getText();
+        System.out.println("Estimated Duration input: " + estimatedTime);
+        Long estimatedSeconds = null;
+
+        // Convert to time string
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+            Date baseRef = dateFormat.parse("00:00:00");
+            Date estTime = dateFormat.parse(estimatedTime);
+            estimatedSeconds = (estTime.getTime() - baseRef.getTime()) / 1000L;
+            System.out.println("Converted time to " + estimatedSeconds.toString() + " seconds");
+            // Convert to seconds
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
 
         // Add task/category
         // Go to relevant screen
 
         if (addType.equals("task")){
             driver.addTask(category, name);
+            // Check if given existing estimated time and add to task
+            if (estimatedSeconds != null) driver.addEstimatedTimeToTask(name, estimatedSeconds);
+            System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
+            // Check if given due date and add to task
+            // -
             currScreen.goToTaskScreen(name);
         } else {
             driver.addSubCategory(category, name);
