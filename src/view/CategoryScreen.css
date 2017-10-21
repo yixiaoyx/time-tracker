@@ -31,7 +31,8 @@
 
 .button-back {
     -jfx-button-type: FLAT;
-    -fx-background-colour: #4484CE;
+    -fx-base: #00000000;
+    -fx-background-color: #e47575;
     -fx-pref-height: 45;
     -fx-pref-width: 20;
     -fx-text-fill: WHITE;

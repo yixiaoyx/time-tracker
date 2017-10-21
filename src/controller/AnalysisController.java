@@ -113,7 +113,6 @@ public class AnalysisController extends Controller {
 
     private JFXListView<Label> getLog(){
         JFXListView<Label> list = new JFXListView<Label>();
-        list.getItems().add(new Label("HEEHEE"));
         for(Duration d : driver.getDurationsFromCategory(currCategory)) {
             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String formattedDate = formatter.format(d.getStart());

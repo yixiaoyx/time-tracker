@@ -18,7 +18,7 @@
     <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="97.0" prefWidth="500.0">
     <children>
         <HBox>
-        <Button fx:id="analysisBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" styleClass="button-small" stylesheets="@CategoryScreen.css" text="&lt;" textAlignment="CENTER">
+        <Button fx:id="analysisBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" styleClass="button-back" stylesheets="@CategoryScreen.css" text="&lt;" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>
