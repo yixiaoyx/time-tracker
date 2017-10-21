@@ -39,7 +39,7 @@
                                     <!--<Label fx:id="smallCategoryPath" alignment="CENTER" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">-->
                                 </HBox>
 
-                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="444.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
+                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="444.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
                                     <font>
                                         <Font name="Calibri" size="30.0" />
                                     </font>
@@ -51,7 +51,7 @@
                            </VBox.margin>
                                 </Label>
 
-                                <JFXTextField fx:id="searchBar" alignment="CENTER" focusColor="#74a5ff" onKeyReleased="#handleSearchText" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
+                                <JFXTextField fx:id="searchBar" alignment="CENTER" focusColor="#74a5ff" onKeyReleased="#handleSearchText" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="21.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
 
                             </children>
                         </VBox>
@@ -101,6 +101,9 @@
 
             </bottom>
         </BorderPane>
-      <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #D9D9D9;" translateY="-228.0" />
+      <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" style="-fx-background-color: #D9D9D9;" translateX="-9.0" translateY="-224.0">
+         <StackPane.margin>
+            <Insets top="3.0" />
+         </StackPane.margin></Button>
     </children>
 </StackPane>

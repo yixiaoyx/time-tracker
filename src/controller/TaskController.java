@@ -1,20 +1,16 @@
 package controller;
 
-import javafx.fxml.FXML;
-import com.jfoenix.controls.JFXProgressBar;
-import com.jfoenix.controls.JFXButton;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.fxml.*;
+import com.jfoenix.controls.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
 
-import java.util.Map;
-import java.io.File;
+import java.text.Normalizer;
+
 
 public class TaskController extends Controller {
 
@@ -23,24 +19,8 @@ public class TaskController extends Controller {
     private boolean active;
     private boolean reached;
     private final Timeline activeTime;
-
-    final File analysisFile = new File("src/assets/Graph_1.png");
-    final String analysisPath = analysisFile.toURI().toString();
-
-    final File binFile = new File("src/assets/Bin_1.png");
-    final String binPath = binFile.toURI().toString();
-
-    final File badge1File = new File("src/assets/Badge_1.png");
-    final File badge2File = new File("src/assets/Badge_2.png");
-    final File badge3File = new File("src/assets/Badge_3.png");
-    final File badge4File = new File("src/assets/Badge_4.png");
-    final File badge5File = new File("src/assets/Badge_5.png");
-
-    final String badge1Path = badge1File.toURI().toString();
-    final String badge2Path = badge2File.toURI().toString();
-    final String badge3Path = badge3File.toURI().toString();
-    final String badge4Path = badge4File.toURI().toString();
-    final String badge5Path = badge5File.toURI().toString();
+    private String parentCategory;
+    private Long estimatedTime;
 
     @FXML
     private Button clockButton;
@@ -61,6 +41,8 @@ public class TaskController extends Controller {
     @FXML
     private Label goalReached;
     @FXML
+    private StackPane sp;
+    @FXML
     private JFXButton badge1Button;
     @FXML
     private JFXButton badge2Button;
@@ -72,25 +54,34 @@ public class TaskController extends Controller {
     private JFXButton badge5Button;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
+
         super(driver);
+
+
         this.currScreen = currScreen;
         currTask = task;
+        parentCategory = driver.getParentCategoryOfTask(currTask);
 
         bigProgressBar = new JFXProgressBar();
 
+        dontUpdate = false;
+
         active = false;
-        //duration.setText(driver.getTaskByName(currTask).getDurationString());
 
-        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-
-
+        estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
                     new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent actionEvent) {
-                            duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            //duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            if(!dontUpdate) {
+                                clockButton.setText(driver.getTaskTotalAndActiveTimeString(currTask));
+                            }
+                            //clockButton.setText(driver.getTaskTimeString(currTask));
+
+
                             updateBigProgressBar();
 
                             //get the total time (current run time + other durations for task) spent on a task
@@ -161,12 +152,30 @@ public class TaskController extends Controller {
     }
 
 
+    private boolean dontUpdate;
+    @FXML
+    private void mouseOverClockButton() {
+        if(driver.isActive()) {
+            dontUpdate = true;
+            clockButton.setText("Clock Out");
+        }
+    }
+
+    @FXML
+    private void mouseOutClockButton() {
+        dontUpdate = false;
+    }
+
     @FXML
     private void handleClick() {
 
         if (!active) {
             driver.clockIn(currTask);
-            clockButton.setText("CLOCK OUT");
+
+            //clockButton.setTooltip(new Tooltip("Clock out"));
+
+            //clockButton.setText(driver.getTaskTimeString(currTask));
+            //clockButton.setText("CLOCK OUT");
 
             //goalReached.setText("Started a Task GJ!");
 
@@ -186,7 +195,7 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        currScreen.goToCategoryScreen(driver.getParentCategoryOfTask(currTask));
+        currScreen.goToCategoryScreen(parentCategory);
     }
 
     @FXML
@@ -194,7 +203,6 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        String parentCategory = driver.getParentCategoryOfTask(currTask);
         driver.deleteTask(currTask);
         currScreen.goToCategoryScreen(parentCategory);
     }
@@ -206,6 +214,20 @@ public class TaskController extends Controller {
 
     @FXML
     private void handleChange() {
+        JFXDialog dialog = new JFXDialog();
+        //Pane newPane = new Pane();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../FormScreen.fxml"));
+            FormController controller = new FormController(driver, currScreen, parentCategory);
+            fxmlLoader.setController(controller);
+            dialog.setContent(fxmlLoader.load());
+            controller.editTask(currTask, parentCategory, estimatedTime);
+
+        } catch (/*IO*/Exception e) {
+            e.printStackTrace();
+        }
+
+        dialog.show(sp);
 
     }
 
@@ -219,6 +241,8 @@ public class TaskController extends Controller {
         taskName.setText(currTask);
         goalReached.setText("");
 
+        duration.setVisible(false);
+
         // setting up graphics
         analysisButton.setGraphic(Assets.analysisImage);
         delButton.setGraphic(Assets.binImage);
@@ -227,26 +251,15 @@ public class TaskController extends Controller {
 
 
         // 0% boi
-        Image badge1Image = new Image(badge1Path, false);
-        badge1Button.setGraphic(new ImageView(badge1Image));
-
-
+        badge1Button.setGraphic(Assets.badge1Image);
         // 25% boi
-        Image badge2Image = new Image(badge2Path, false);
-        badge2Button.setGraphic(new ImageView(badge2Image));
-
+        badge2Button.setGraphic(Assets.badge2Image);
         // 50% boi
-        Image badge3Image = new Image(badge3Path, false);
-        badge3Button.setGraphic(new ImageView(badge3Image));
-
+        badge3Button.setGraphic(Assets.badge3Image);
         // 75% boi
-        Image badge4Image = new Image(badge4Path, false);
-        badge4Button.setGraphic(new ImageView(badge4Image));
-
+        badge4Button.setGraphic(Assets.badge4Image);
         // 100% boi
-        Image badge5Image = new Image(badge5Path, false);
-        badge5Button.setGraphic(new ImageView(badge5Image));
-
+        badge5Button.setGraphic(Assets.badge5Image);
 
         Long total = (driver.getTaskByName(currTask).getTotalTime());
 
@@ -302,7 +315,9 @@ public class TaskController extends Controller {
 
     private void controllerClockOut() {
         driver.clockOut(currTask);
-        clockButton.setText("CLOCK IN");
+        clockButton.setText("Clock In");
+
+
 
         activeTime.stop();
 

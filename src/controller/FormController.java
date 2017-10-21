@@ -25,6 +25,10 @@ public class FormController extends Controller{
     private boolean active;
     private String selectedCategory;
     final String topLevelCategory = "All";
+    private boolean editTaskMode;
+    private boolean editCategoryMode;
+    private String oldName;
+    private String oldParent;
 
     @FXML
     private VBox vbox;
@@ -52,6 +56,8 @@ public class FormController extends Controller{
         this.currScreen = currScreen;
         setSelectedCategory(category);
         active = false;
+        editTaskMode = false;
+        editCategoryMode = false;
 
     }
 
@@ -67,6 +73,35 @@ public class FormController extends Controller{
         categoryMenu.getItems().addAll(findSubCategories(topLevelCategory));
 
 
+    }
+
+    public void editTask(String task, String parent, Long estimatedTime) {
+        editTaskMode = true;
+        taskCheckBox.setSelected(true);
+        taskCheckBox.setVisible(false);
+        categoryCheckBox.setSelected(false);
+        categoryCheckBox.setVisible(false);
+        nameField.setText(task);
+        oldName = task;
+        oldParent = parent;
+
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date estTime = new Date(estimatedTime);
+        estimatedTimeField.setText(dateFormat.format(estTime));
+    }
+
+    public void editCategory(String category, String parent) {
+        editCategoryMode = true;
+        taskCheckBox.setSelected(false);
+        taskCheckBox.setVisible(false);
+        categoryCheckBox.setSelected(true);
+        categoryCheckBox.setVisible(false);
+        nameField.setText(category);
+        oldName = category;
+        oldParent = parent;
+
+        estimatedTimeField.setDisable(true);
+        // TODO
     }
 
     private ArrayList<String> findSubCategories(String category){
@@ -107,7 +142,7 @@ public class FormController extends Controller{
 //        String category;
         // Check selected radio group item
         if (taskCheckBox.isSelected()) addType = "task";
-        else addType = "category";
+        else if (categoryCheckBox.isSelected()) addType = "category";
 
         // Check category
         String category = categoryMenu.getValue().toString();
@@ -149,7 +184,15 @@ public class FormController extends Controller{
 
         if (addType.equals("task")){
             System.out.println("estimatedTime = " + estimatedTime);
-            driver.addTask(category, name);
+            if (editTaskMode) {
+                driver.changeTaskName(oldName, name);
+                driver.changeTaskParentCategory(name, oldParent, category);
+                oldName = null;
+                oldParent = null;
+                editTaskMode = false;
+            } else {
+                driver.addTask(category, name);
+            }
             // Check if given existing estimated time and add to task
             if (estimatedSeconds != null) {
                 driver.addEstimatedTimeToTask(estimatedTime, estimatedSeconds, name);
@@ -168,6 +211,7 @@ public class FormController extends Controller{
             // -
             currScreen.goToTaskScreen(name);
         } else {
+
             driver.addSubCategory(category, name);
             currScreen.goToCategoryScreen(category);
         }

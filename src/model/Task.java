@@ -295,6 +295,8 @@ public class Task {
         return convertTime(totaltime);
     }
 
+    public String getTotalAndActiveTimeString() { return convertTime(totaltime + getActiveRunTime());}
+
     public long durationInSeconds() {
         return durationSecs;
     }

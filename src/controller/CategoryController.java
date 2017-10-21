@@ -42,9 +42,10 @@ public class CategoryController extends Controller {
     private String currCategory;
     private boolean active;
     private String initialSearchQuery;
+    private String parentCategory;
 
-    final File badge1File = new File("src/assets/Badge_1.png");
-    final String badge1Path = badge1File.toURI().toString();
+    final File homeFile = new File("src/assets/Home_1.png");
+    final String homePath = homeFile.toURI().toString();
 
     @FXML
     private StackPane sp;
@@ -90,7 +91,7 @@ public class CategoryController extends Controller {
         super(driver);
         this.currScreen = currScreen;
         currCategory = category;
-
+        parentCategory = driver.getParentCategoryName(category);
         active = false;
     }
 
@@ -126,8 +127,8 @@ public class CategoryController extends Controller {
             JFXButton b;
             if(s == "All") {
                 b = new JFXButton("Home");
-                Image badge1Image = new Image(badge1Path, false);
-                b.setGraphic(new ImageView(badge1Image));
+                Image homeImage = new Image(homePath, false);
+                b.setGraphic(new ImageView(homeImage));
             }
             else {
                 b = new JFXButton(s);
@@ -151,9 +152,9 @@ public class CategoryController extends Controller {
 
 
         if(currCategory == "All") {
-            categoryName.setText("likasombodi");
-            Image badge1Image = new Image(badge1Path, false);
-            homeButton.setGraphic(new ImageView(badge1Image));
+            categoryName.setText("");
+            Image homeImage = new Image(homePath, false);
+            homeButton.setGraphic(new ImageView(homeImage));
         }
         else {
             categoryName.setText(currCategory);
@@ -385,6 +386,24 @@ public class CategoryController extends Controller {
 
     @FXML
     private void handleChange() {
+        // new version: change name and parent
+
+        JFXDialog dialog = new JFXDialog();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../FormScreen.fxml"));
+            FormController controller = new FormController(driver, currScreen, parentCategory);
+            fxmlLoader.setController(controller);
+            dialog.setContent(fxmlLoader.load());
+            controller.editCategory(currCategory, parentCategory);
+
+        } catch (/*IO*/Exception e) {
+            e.printStackTrace();
+        }
+
+        dialog.show(sp);
+
+/*
+        // old version: change name only
         JFXDialog dialog = new JFXDialog();
         Insets insets = new Insets(10, 10, 10, 10);
         // Create contents of Dialog Box
@@ -448,6 +467,7 @@ public class CategoryController extends Controller {
         // Insert contents into dialog box
         dialog.setContent(changebox);
         dialog.show(sp);
+*/
     }
 
     @FXML

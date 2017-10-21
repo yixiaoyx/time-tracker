@@ -54,7 +54,6 @@ public class TaskLiteController extends Controller {
 
         Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
-
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
                     new EventHandler<ActionEvent>() {
@@ -110,9 +109,6 @@ public class TaskLiteController extends Controller {
             activeTime.play();
             active = true;
 
-
-
-
         } else {
             controllerClockOut();
         }
@@ -157,13 +153,13 @@ public class TaskLiteController extends Controller {
 
         activeTime.stop();
 
-        Long total = driver.getTaskByName(currTask).getTotalTime();
-        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-        System.out.println("total time = " + total + " estiamted = " + estimatedTime);
-        if(total >= estimatedTime) {
-
-            System.out.println("goal reached");
-        }
+//        Long total = driver.getTaskByName(currTask).getTotalTime();
+//        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
+//        System.out.println("total time = " + total + " estiamted = " + estimatedTime);
+//        if(total >= estimatedTime) {
+//
+//            System.out.println("goal reached");
+//        }
         active = false;
 
     }
