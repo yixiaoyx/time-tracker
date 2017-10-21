@@ -120,7 +120,7 @@ public class FormController extends Controller{
             DateFormat dateFormat = new SimpleDateFormat("HH:mm");
             Date baseRef = dateFormat.parse("00:00:00");
             Date estTime = dateFormat.parse(estimatedTime);
-            estimatedSeconds = (estTime.getTime() - baseRef.getTime()) / 1000L;
+            estimatedSeconds = (estTime.getTime() - baseRef.getTime());
             System.out.println("Converted time to " + estimatedSeconds.toString() + " seconds");
 
             // Convert to seconds
