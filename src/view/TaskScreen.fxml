@@ -32,9 +32,9 @@
                               <Font name="Arial" size="24.0" />
                           </font>
                       </JFXButton>
-                      <Label fx:id="DaysTillDue" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="337.0" text="TASK" textFill="GREY" translateX="-1.0" translateY="30.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                      <Label fx:id="DaysTillDue" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="337.0" text="TASK" textFill="GREY" translateX="-1.0" translateY="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                           <font>
-                              <Font name="Lucida Sans Regular" size="50.0" fx:id="x1" />
+                              <Font name="Lucida Sans Regular" size="15.0" fx:id="x1" />
                           </font>
                       </Label>
                       <JFXButton fx:id="changeButton" mnemonicParsing="false" onMouseClicked="#handleChange" styleClass="button-delete" textAlignment="CENTER" translateY="1.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
