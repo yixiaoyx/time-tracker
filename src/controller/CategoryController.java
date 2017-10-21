@@ -139,7 +139,13 @@ public class CategoryController extends Controller {
         // breadcrumbs
         List<String> catPath = driver.getCategoryPath(currCategory);
         for(String s : catPath) {
-            JFXButton b = new JFXButton(s);
+            JFXButton b;
+            if(s == "All") {
+                b = new JFXButton("Home");
+            }
+            else {
+                b = new JFXButton(s);
+            }
             b.getStyleClass().add("button-breadcrumb");
             b.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
@@ -157,7 +163,13 @@ public class CategoryController extends Controller {
 //        categoryPathHBox.getChildren().add(searchBar);
 //
 
-        categoryName.setText(currCategory);
+
+        if(currCategory == "All") {
+            categoryName.setText("Home");
+        }
+        else {
+            categoryName.setText(currCategory);
+        }
 
         String parentCategory = driver.getParentCategoryName(currCategory);
         if (parentCategory.equals("")) {
