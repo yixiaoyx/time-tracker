@@ -23,6 +23,7 @@ public class Assets {
     final static File badge5File = new File("src/assets/Badge_5.png");
 
     final static String categoryPath = categoryFile.toURI().toString();
+    final static String categoryAlertPath = categoryAlertFile.toURI().toString();
     final static String taskAlertPath= taskAlertFile.toURI().toString();
     final static String taskPath = taskFile.toURI().toString();
     final static String backPath = backFile.toURI().toString();
@@ -31,7 +32,6 @@ public class Assets {
     final static String binPath = binFile.toURI().toString();
     final static String searchPath = searchFile.toURI().toString();
     final static String changePath = changeFile.toURI().toString();
-
     final static String badge1Path = badge1File.toURI().toString();
     final static String badge2Path = badge2File.toURI().toString();
     final static String badge3Path = badge3File.toURI().toString();
@@ -39,10 +39,9 @@ public class Assets {
     final static String badge5Path = badge5File.toURI().toString();
 
     final static Image categoryImage = new Image(categoryPath, false);
+    final static Image categoryAlertImage = new Image(categoryAlertPath, false);
     final static Image taskImage = new Image(taskPath, false);
     final static Image taskAlertImage = new Image(taskAlertPath, false);
-
-
 
     final static ImageView backImage = new ImageView(new Image(backPath, false));
     final static ImageView analysisImage = new ImageView(new Image(analysisPath, false));

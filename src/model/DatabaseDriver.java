@@ -102,7 +102,7 @@ public class DatabaseDriver {
             System.out.println("connected");
             s = c.createStatement();
 
-            String query2 = "UPDATE Tasks SET due_date = '"+sdf.format(dueDate)+" WHERE task_name = '"+taskName+"'";
+            String query2 = "UPDATE Tasks SET due_date = '"+sdf.format(dueDate)+"' WHERE task_name = '"+taskName+"'";
             s.executeUpdate(query2);
             c.close();
         } catch (SQLException e) {
