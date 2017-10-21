@@ -316,6 +316,13 @@ public class InterfaceDriver {
     }
   }
 
+  public void changeTaskParentCategory(String task, String oldParent, String newParent) {
+
+  }
+
+  public void changeCategoryParentCategory(String category, String oldParent, String newParent) {
+
+  }
   // use for analysis
   public String getTaskTimeString(String taskName) {
     Task t = getTaskByName(taskName);

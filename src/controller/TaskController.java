@@ -1,20 +1,16 @@
 package controller;
 
-import javafx.fxml.FXML;
-import com.jfoenix.controls.JFXProgressBar;
-import com.jfoenix.controls.JFXButton;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.fxml.*;
+import com.jfoenix.controls.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
 
-import java.util.Map;
-import java.io.File;
+import java.text.Normalizer;
+
 
 public class TaskController extends Controller {
 
@@ -23,6 +19,8 @@ public class TaskController extends Controller {
     private boolean active;
     private boolean reached;
     private final Timeline activeTime;
+    private String parentCategory;
+    private Long estimatedTime;
 
     @FXML
     private Button clockButton;
@@ -42,18 +40,20 @@ public class TaskController extends Controller {
     private JFXButton analysisButton;
     @FXML
     private Label goalReached;
+    @FXML
+    private StackPane sp;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
         this.currScreen = currScreen;
         currTask = task;
+        parentCategory = driver.getParentCategoryOfTask(currTask);
 
         bigProgressBar = new JFXProgressBar();
 
         active = false;
-        //duration.setText(driver.getTaskByName(currTask).getDurationString());
 
-        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
+        estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
 
 
@@ -151,7 +151,7 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        currScreen.goToCategoryScreen(driver.getParentCategoryOfTask(currTask));
+        currScreen.goToCategoryScreen(parentCategory);
     }
 
     @FXML
@@ -159,7 +159,6 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        String parentCategory = driver.getParentCategoryOfTask(currTask);
         driver.deleteTask(currTask);
         currScreen.goToCategoryScreen(parentCategory);
     }
@@ -171,6 +170,23 @@ public class TaskController extends Controller {
 
     @FXML
     private void handleChange() {
+        JFXDialog dialog = new JFXDialog();
+        //Pane newPane = new Pane();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../FormScreen.fxml"));
+            FormController controller = new FormController(driver, currScreen, parentCategory);
+            fxmlLoader.setController(controller);
+            dialog.setContent(fxmlLoader.load());
+            controller.editTask(currTask, parentCategory, estimatedTime);
+
+            //newPane = fxmlLoader.load();
+            //newPane.getChildren().add(newPane);
+            //    newPane.getChildren().add(new Label("I AM A PANE"));
+        } catch (/*IO*/Exception e) {
+            e.printStackTrace();
+        }
+
+        dialog.show(sp);
 
     }
 
