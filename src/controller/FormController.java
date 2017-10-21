@@ -86,6 +86,20 @@ public class FormController extends Controller{
         estimatedTimeField.setText(dateFormat.format(estTime));
     }
 
+    public void editCategory(String category, String parent) {
+        editCategoryMode = true;
+        taskCheckBox.setSelected(false);
+        taskCheckBox.setVisible(false);
+        categoryCheckBox.setSelected(true);
+        categoryCheckBox.setVisible(false);
+        nameField.setText(category);
+        oldName = category;
+        oldParent = parent;
+
+        estimatedTimeField.setDisable(true);
+        // TODO
+    }
+
     private ArrayList<String> findSubCategories(String category){
         ArrayList<String> sclist = new ArrayList<String>();
         if (driver.getSubCategoryNames(category) == null) return sclist;
