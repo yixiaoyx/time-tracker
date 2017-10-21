@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Controller.class" afterPath="$PROJECT_DIR$/target/classes/controller/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormController.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Main.class" afterPath="$PROJECT_DIR$/target/classes/controller/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/model/Category.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Driver.class" afterPath="$PROJECT_DIR$/target/classes/model/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Duration.class" afterPath="$PROJECT_DIR$/target/classes/model/Duration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/model/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/TempDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/TempDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/Assets.java" afterPath="$PROJECT_DIR$/src/controller/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/controller/CategoryController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/FormController.java" afterPath="$PROJECT_DIR$/src/controller/FormController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseDriver.java" afterPath="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/InterfaceDriver.java" afterPath="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Task.java" afterPath="$PROJECT_DIR$/src/model/Task.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/TaskScreen.fxml" afterPath="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path="out/" />
@@ -73,12 +44,12 @@
       <file leaf-file-name="FormController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
               <folding>
                 <element signature="e#1751#1752#0" expanded="true" />
                 <element signature="e#1794#1795#0" expanded="true" />
-                <element signature="e#3233#3241#0" expanded="true" />
+                <element signature="e#3510#3518#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,14 +126,14 @@
         <option value="$PROJECT_DIR$/src/controller/EditController.java" />
         <option value="$PROJECT_DIR$/src/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/controller/Assets.java" />
-        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
-        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
         <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/model/Category.java" />
         <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
         <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
         <option value="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
+        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
       </list>
     </option>
   </component>
@@ -476,7 +447,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109150000" />
+    <option name="totallyTimeSpent" value="110529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
@@ -777,49 +748,49 @@
         <state relative-caret-position="324">
           <caret line="493" column="16" lean-forward="false" selection-start-line="493" selection-start-column="16" selection-end-line="493" selection-end-column="16" />
           <folding>
-            <marker date="1508569184168" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="1857:2054" ph="INSERT INTO Tasks... " />
-            <marker date="1508569184168" expanded="true" signature="2746:2883" ph="UPDATE Tasks... " />
-            <marker date="1508569184168" expanded="true" signature="3309:3394" ph="UPDATE Tasks... " />
-            <marker date="1508569184168" expanded="true" signature="3919:3999" ph="UPDATE Tasks... " />
-            <marker date="1508569184168" expanded="true" signature="4540:4559" ph="select * fro... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="5077:5239" ph="INSERT INTO task_durations... " />
-            <marker date="1508569184168" expanded="true" signature="5853:5872" ph="select * fro... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="7805:7824" ph="select * fro... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="8629:8904" ph="UPDATE Tasks... " />
-            <marker date="1508569184168" expanded="true" signature="9591:9655" ph="SELECT Categ... Category" />
-            <marker date="1508569184168" expanded="true" signature="10275:10339" ph="SELECT ID FR... Category" />
-            <marker date="1508569184168" expanded="true" signature="11000:11058" ph="SELECT @idCo... " />
-            <marker date="1508569184168" expanded="true" signature="11090:11152" ph="SELECT @valu... " />
-            <marker date="1508569184168" expanded="true" signature="11205:11228" ph="select * fro... Category" />
-            <marker date="1508569184168" expanded="true" signature="12102:12150" ph="UPDATE Categ... " />
-            <marker date="1508569184168" expanded="true" signature="12182:12367" ph="INSERT INTO Category... " />
-            <marker date="1508569184168" expanded="true" signature="13131:13189" ph="SELECT @idCo... " />
-            <marker date="1508569184168" expanded="true" signature="13224:13296" ph="SELECT @Left... " />
-            <marker date="1508569184168" expanded="true" signature="13349:13394" ph="select * fro... Category" />
-            <marker date="1508569184168" expanded="true" signature="14384:14450" ph="UPDATE Categ... " />
-            <marker date="1508569184168" expanded="true" signature="14483:14547" ph="UPDATE Categ... " />
-            <marker date="1508569184168" expanded="true" signature="14580:14770" ph="INSERT INTO Category... " />
-            <marker date="1508569184168" expanded="true" signature="15530:15552" ph="select * fro... Category" />
-            <marker date="1508569184168" expanded="true" signature="16788:16854" ph="SELECT Categ... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="17110:17282" ph="SELECT paren... Category" />
-            <marker date="1508569184168" expanded="true" signature="18032:18140" ph="UPDATE Categ... " />
-            <marker date="1508569184168" expanded="true" signature="18572:18660" ph="UPDATE Tasks... " />
-            <marker date="1508569184168" expanded="true" signature="19136:19256" ph="SELECT @left... " />
-            <marker date="1508569184168" expanded="true" signature="20087:20166" ph="DELETE FROM " />
-            <marker date="1508569184168" expanded="true" signature="20198:20283" ph="UPDATE Categ... " />
-            <marker date="1508569184168" expanded="true" signature="20812:20871" ph="DELETE FROM " />
-            <marker date="1508569184168" expanded="true" signature="20903:20956" ph="DELETE FROM " />
-            <marker date="1508569184168" expanded="true" signature="21464:21516" ph="SELECT * fro... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="22166:22226" ph="SELECT ID fr... Category" />
-            <marker date="1508569184168" expanded="true" signature="22480:22532" ph="SELECT * fro... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="23776:23829" ph="SELECT ID fr... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="24059:24117" ph="SELECT * fro... task_durations" />
-            <marker date="1508569184168" expanded="true" signature="25522:25582" ph="SELECT ID fr... Category" />
-            <marker date="1508569184168" expanded="true" signature="25847:26009" ph="SELECT * fro... task_durations" />
-            <marker date="1508569184168" expanded="true" signature="27217:27278" ph="SELECT ID fr... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="27941:27999" ph="SELECT ID fr... Tasks" />
-            <marker date="1508569184168" expanded="true" signature="28780:28902" ph="SELECT * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="1857:2054" ph="INSERT INTO Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="2746:2883" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="3309:3395" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="3919:3999" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="4540:4559" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="5077:5239" ph="INSERT INTO task_durations... " />
+            <marker date="1508569741327" expanded="true" signature="5853:5872" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="7805:7824" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="8629:8904" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="9591:9655" ph="SELECT Categ... Category" />
+            <marker date="1508569741327" expanded="true" signature="10275:10339" ph="SELECT ID FR... Category" />
+            <marker date="1508569741327" expanded="true" signature="11000:11058" ph="SELECT @idCo... " />
+            <marker date="1508569741327" expanded="true" signature="11090:11152" ph="SELECT @valu... " />
+            <marker date="1508569741327" expanded="true" signature="11205:11228" ph="select * fro... Category" />
+            <marker date="1508569741327" expanded="true" signature="12102:12150" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="12182:12367" ph="INSERT INTO Category... " />
+            <marker date="1508569741327" expanded="true" signature="13131:13189" ph="SELECT @idCo... " />
+            <marker date="1508569741327" expanded="true" signature="13224:13296" ph="SELECT @Left... " />
+            <marker date="1508569741327" expanded="true" signature="13349:13394" ph="select * fro... Category" />
+            <marker date="1508569741327" expanded="true" signature="14384:14450" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="14483:14547" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="14580:14770" ph="INSERT INTO Category... " />
+            <marker date="1508569741327" expanded="true" signature="15530:15552" ph="select * fro... Category" />
+            <marker date="1508569741327" expanded="true" signature="16788:16854" ph="SELECT Categ... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="17110:17282" ph="SELECT paren... Category" />
+            <marker date="1508569741327" expanded="true" signature="18032:18140" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="18572:18660" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="19136:19256" ph="SELECT @left... " />
+            <marker date="1508569741327" expanded="true" signature="20087:20166" ph="DELETE FROM " />
+            <marker date="1508569741327" expanded="true" signature="20198:20283" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="20812:20871" ph="DELETE FROM " />
+            <marker date="1508569741327" expanded="true" signature="20903:20956" ph="DELETE FROM " />
+            <marker date="1508569741327" expanded="true" signature="21464:21516" ph="SELECT * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="22166:22226" ph="SELECT ID fr... Category" />
+            <marker date="1508569741327" expanded="true" signature="22480:22532" ph="SELECT * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="23776:23829" ph="SELECT ID fr... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="24059:24117" ph="SELECT * fro... task_durations" />
+            <marker date="1508569741327" expanded="true" signature="25522:25582" ph="SELECT ID fr... Category" />
+            <marker date="1508569741327" expanded="true" signature="25847:26009" ph="SELECT * fro... task_durations" />
+            <marker date="1508569741327" expanded="true" signature="27217:27278" ph="SELECT ID fr... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="27941:27999" ph="SELECT ID fr... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="28780:28902" ph="SELECT * fro... Tasks" />
           </folding>
         </state>
       </provider>
@@ -848,9 +819,9 @@
           <caret line="386" column="63" lean-forward="false" selection-start-line="386" selection-start-column="63" selection-end-line="386" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1508569184167" expanded="false" signature="13754:13773" ph=" { " />
-            <marker date="1508569184167" expanded="false" signature="13788:13802" ph=" }" />
-            <marker date="1508569184167" expanded="true" signature="15834:16074" ph="{...}" />
+            <marker date="1508569741326" expanded="false" signature="13808:13827" ph=" { " />
+            <marker date="1508569741326" expanded="false" signature="13842:13856" ph=" }" />
+            <marker date="1508569741326" expanded="true" signature="15888:16128" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -897,12 +868,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
           <folding>
             <element signature="e#1751#1752#0" expanded="true" />
             <element signature="e#1794#1795#0" expanded="true" />
-            <element signature="e#3233#3241#0" expanded="true" />
+            <element signature="e#3510#3518#0" expanded="true" />
           </folding>
         </state>
       </provider>
