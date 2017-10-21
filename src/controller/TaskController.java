@@ -59,6 +59,7 @@ public class TaskController extends Controller {
         Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
 
+
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
                     new EventHandler<ActionEvent>() {
@@ -68,18 +69,34 @@ public class TaskController extends Controller {
                             updateBigProgressBar();
 
                             //get the total time (current run time + other durations for task) spent on a task
-                            Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
-                                    (driver.getTaskByName(currTask).getTotalTimeSecs());
+                            Long total = (driver.getTaskByName(currTask).getActiveRunTime())+
+                                    (driver.getTaskByName(currTask).getTotalTime());
                             //display text on goal reached
 
+                          // System.out.println("Estiamted time for task = " + estimatedTime + " Current time = " + total
+                           //+ "percentage = " + percentage);
                             if (estimatedTime > 0) {
+                                long percentage =(long)((float)total/estimatedTime*100);
+
+                              //  System.out.println(" percentage: " + total/estimatedTime);
+                                if(percentage == 25) {
+                                    goalReached.setText("25% progress made!");
+                                }
+                                if(percentage == 50) {
+                                    goalReached.setText("50% progress made!");
+                                }
+                                if(percentage == 75) {
+                                    goalReached.setText("75% progress made!");
+                                }
                                 if (reached == false && total >= estimatedTime) {
                                     goalReached.setText("Goal Reached WOOOOO!");
                                     driver.completedGoal(true, currTask);
                                     reached = true;
 
                                 }
+
                             }
+
                         }
                     }
                 ),
@@ -117,6 +134,10 @@ public class TaskController extends Controller {
         if (!active) {
             driver.clockIn(currTask);
             clockButton.setText("CLOCK OUT");
+
+            goalReached.setText("Started a Task GJ!");
+
+
             activeTime.play();
             active = true;
 

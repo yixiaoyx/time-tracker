@@ -48,6 +48,7 @@ public class CategoryController extends Controller {
     final File binFile = new File("src/assets/Bin_1.png");
     final File searchFile = new File("src/assets/Search_1.png");
     final File changeFile = new File("src/assets/Edit_1.png");
+    
 
     final String categoryPath = categoryFile.toURI().toString();
     final String taskPath = taskFile.toURI().toString();
