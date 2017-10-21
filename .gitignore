@@ -2,8 +2,8 @@
 *.class
 
 # output folder
-out/*
-target/*
+/out/*
+/target/*
 
 # Log file
 *.log
@@ -27,4 +27,4 @@ hs_err_pid*
 
 # Miscellaneous
 .DS_Store
-.idea/*
+/.idea/*
