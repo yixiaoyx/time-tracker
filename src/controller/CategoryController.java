@@ -152,7 +152,7 @@ public class CategoryController extends Controller {
         Label label = new Label(taskName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(Assets.taskImage, label);
+        vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
@@ -181,7 +181,7 @@ public class CategoryController extends Controller {
         Label label = new Label(categoryName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(Assets.categoryImage, label);
+        vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html

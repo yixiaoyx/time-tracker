@@ -23,8 +23,9 @@ public class Assets {
     final static String searchPath = searchFile.toURI().toString();
     final static String changePath = changeFile.toURI().toString();
 
-    final static ImageView categoryImage = new ImageView(new Image(categoryPath, false));
-    final static ImageView taskImage = new ImageView(new Image(taskPath, false));
+    final static Image categoryImage = new Image(categoryPath, false);
+    final static Image taskImage = new Image(taskPath, false);
+
     final static ImageView backImage = new ImageView(new Image(backPath, false));
     final static ImageView analysisImage = new ImageView(new Image(analysisPath, false));
     final static ImageView addImage = new ImageView(new Image(addPath, false));

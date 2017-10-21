@@ -117,7 +117,7 @@ public class FormController extends Controller{
         // Convert to time string
         try {
 
-            DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+            DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
             Date baseRef = dateFormat.parse("00:00:00");
             Date estTime = dateFormat.parse(estimatedTime);
             estimatedSeconds = (estTime.getTime() - baseRef.getTime());
