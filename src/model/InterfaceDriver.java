@@ -317,7 +317,12 @@ public class InterfaceDriver {
   }
 
   public void changeTaskParentCategory(String task, String oldParent, String newParent) {
-
+    Task t = getTaskByName(task);
+    Category oldP = getCategoryByName(oldParent);
+    Category newP = getCategoryByName(newParent);
+    newP.addTask(t);
+    oldP.deleteTask(t);
+    // TODO: make change in db
   }
 
   public void changeCategoryParentCategory(String category, String oldParent, String newParent) {

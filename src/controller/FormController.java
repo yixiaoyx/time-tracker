@@ -182,6 +182,7 @@ public class FormController extends Controller{
             // -
             currScreen.goToTaskScreen(name);
         } else {
+
             driver.addSubCategory(category, name);
             currScreen.goToCategoryScreen(category);
         }

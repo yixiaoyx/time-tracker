@@ -179,9 +179,6 @@ public class TaskController extends Controller {
             dialog.setContent(fxmlLoader.load());
             controller.editTask(currTask, parentCategory, estimatedTime);
 
-            //newPane = fxmlLoader.load();
-            //newPane.getChildren().add(newPane);
-            //    newPane.getChildren().add(new Label("I AM A PANE"));
         } catch (/*IO*/Exception e) {
             e.printStackTrace();
         }
