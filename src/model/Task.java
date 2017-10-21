@@ -95,6 +95,10 @@ public class Task {
     }
 
     public boolean isDueDateApproaching() {
+
+        if(dueDate == null) {
+            return false;
+        }
         Date currDate = new Date();
 
 
