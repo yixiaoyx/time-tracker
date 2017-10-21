@@ -63,6 +63,12 @@ public class Category {
     c.setParentCategory(this);
   }
 
+  // shallow delete: remove the reference only
+  public void removeSubCategoryReference(Category c) {
+    subCategories.remove(c);
+  }
+
+  // deep delete: delete everything in the sub category
   public void deleteSubCategory(Category c, List<String> categories, List<String> tasks) {
 
       for (Task t: childTasks) {

@@ -238,7 +238,7 @@ public class TaskController extends Controller {
         // 50% boi
         badge3Button.setGraphic(Assets.badge3Image);
         // 75% boi
-        badge4Button.setGraphic(Assets.badge5Image);
+        badge4Button.setGraphic(Assets.badge4Image);
         // 100% boi
         badge5Button.setGraphic(Assets.badge5Image);
 

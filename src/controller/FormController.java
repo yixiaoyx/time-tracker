@@ -101,7 +101,8 @@ public class FormController extends Controller{
         oldParent = parent;
 
         estimatedTimeField.setDisable(true);
-        // TODO
+        dueDatePicker.setDisable(true);
+        dueTimePicker.setDisable(true);
     }
 
     private ArrayList<String> findSubCategories(String category){
@@ -211,9 +212,16 @@ public class FormController extends Controller{
             // -
             currScreen.goToTaskScreen(name);
         } else {
-
-            driver.addSubCategory(category, name);
-            currScreen.goToCategoryScreen(category);
+            if (editCategoryMode) {
+                driver.changeCategory(oldName, name);
+                driver.changeCategoryParentCategory(name, oldParent, category);
+                oldName = null;
+                oldParent = null;
+                editCategoryMode = false;
+            } else {
+                driver.addSubCategory(category, name);
+                currScreen.goToCategoryScreen(category);
+            }
         }
 
     }
