@@ -60,7 +60,7 @@ public abstract class Screen {
 
 
     public void goToAnalysisScreen(String currCategory) {
-        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), currCategory, currCategory);
+        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), currCategory, currCategory, false);
         System.out.println("Going to the analysis screen");
         try {
             currScreen.start();
@@ -71,7 +71,7 @@ public abstract class Screen {
     }
 
     public void goToTaskAnalysisScreen(String task) {
-        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), task, driver.getTaskByName(task).getParentCategory().getName());
+        Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), task, driver.getTaskByName(task).getParentCategory().getName(), true);
         driver.makeDummyCategory(task);
 
         System.out.println("Going to the analysis screen");

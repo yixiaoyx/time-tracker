@@ -8,11 +8,13 @@ import model.InterfaceDriver;
 public class AnalysisScreen extends Screen {
     private String currCategory;
     private String backCategory;
+    private boolean isTaskAnalysis;
 
-    public AnalysisScreen(Stage s, InterfaceDriver driver, String currCategory, String backCategory) {
+    public AnalysisScreen(Stage s, InterfaceDriver driver, String currCategory, String backCategory, boolean taskAnalysis) {
         super(s, "AnalysisScreen.fxml", "Analysis", driver);
         this.currCategory = currCategory;
         this.backCategory = backCategory;
+        isTaskAnalysis = taskAnalysis;
     }
 
     @Override
@@ -21,7 +23,10 @@ public class AnalysisScreen extends Screen {
 
         System.out.println(getClass().getResource(this.fxmlFile));
 
-        fxmlLoader.setController(setUpController());
+        AnalysisController c = (AnalysisController) setUpController();
+        c.setTaskAnalysis(isTaskAnalysis);
+
+        fxmlLoader.setController(c);
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root, 500, 500);

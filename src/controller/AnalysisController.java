@@ -36,6 +36,7 @@ public class AnalysisController extends Controller {
 
     private String backCategory;
     private String currCategory;
+    private boolean taskAnalysis;
 
     @FXML
     LineChart<Number, Number> analysisAreaChart;
@@ -72,6 +73,10 @@ public class AnalysisController extends Controller {
 
     }
 
+
+    public void setTaskAnalysis(boolean taskAnalysis) {
+        this.taskAnalysis =  taskAnalysis;
+    }
 
     @FXML
     protected void initialize() {
@@ -202,12 +207,14 @@ public class AnalysisController extends Controller {
 //
 //        tabPane.getTabs().add(tab1);
 
-        Tab tab2 = new Tab();
-        tab2.setText("Task Breakdown");
-        tab2.setContent(taskBreakdownChart);
 
-        tabPane.getTabs().add(tab2);
+        if(!taskAnalysis) {
+            Tab tab2 = new Tab();
+            tab2.setText("Task Breakdown");
+            tab2.setContent(taskBreakdownChart);
 
+            tabPane.getTabs().add(tab2);
+        }
 
         contentvbox.getChildren().add(tabPane);
         contentvbox.setAlignment(Pos.CENTER);
