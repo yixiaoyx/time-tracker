@@ -137,7 +137,6 @@ public class TaskController extends Controller {
 
             goalReached.setText("Started a Task GJ!");
 
-
             activeTime.play();
             active = true;
 
