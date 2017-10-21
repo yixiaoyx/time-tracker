@@ -2,7 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/FormController.java" afterPath="$PROJECT_DIR$/src/controller/FormController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/documentation/.#design_document.tex" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/Home_1.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Add_Button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Add_Button_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AnalysisScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Back_Button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Back_Button_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Back_Button_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Category.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Category_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Category_TitlePane.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/FormScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Task.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Task_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Controller.class" afterPath="$PROJECT_DIR$/target/classes/controller/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormController.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Main.class" afterPath="$PROJECT_DIR$/target/classes/controller/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/model/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Driver.class" afterPath="$PROJECT_DIR$/target/classes/model/Driver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Duration.class" afterPath="$PROJECT_DIR$/target/classes/model/Duration.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/model/Task.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/TempDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/TempDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/controller/CategoryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Category.java" afterPath="$PROJECT_DIR$/src/model/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/InterfaceDriver.java" afterPath="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/TaskScreen.fxml" afterPath="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path="out/" />
@@ -67,9 +112,15 @@
                 <element signature="e#1785#1793#0" expanded="true" />
                 <element signature="e#6956#6964#0" expanded="true" />
                 <element signature="e#7158#7168#0" expanded="true" />
-                <marker date="1508569555578" expanded="false" signature="12590:12606" ph="&lt;~&gt;" />
-                <marker date="1508569555578" expanded="false" signature="13105:13113" ph="&lt;~&gt;" />
-                <marker date="1508569555578" expanded="false" signature="13353:13361" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="false" signature="12590:12606" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="false" signature="13105:13113" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="false" signature="13353:13361" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="true" signature="13703:13800" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="13885:13987" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="14076:14527" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="14570:15446" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="14576:14614" ph="//..." />
+                <marker date="1508571137530" expanded="true" signature="14845:14964" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -144,7 +195,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1359" />
+    <option name="x" value="-1" />
     <option name="y" value="-11" />
     <option name="width" value="1362" />
     <option name="height" value="780" />
@@ -195,6 +246,11 @@
               <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -447,21 +503,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110529000" />
+    <option name="totallyTimeSpent" value="110749000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="-11" width="1362" height="780" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47033286" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46917292" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -497,7 +552,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Achievements" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console.sql" />
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.task_durations" />
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Tasks" />
@@ -819,9 +873,9 @@
           <caret line="386" column="63" lean-forward="false" selection-start-line="386" selection-start-column="63" selection-end-line="386" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1508569741326" expanded="false" signature="13808:13827" ph=" { " />
-            <marker date="1508569741326" expanded="false" signature="13842:13856" ph=" }" />
-            <marker date="1508569741326" expanded="true" signature="15888:16128" ph="{...}" />
+            <marker date="1508571137514" expanded="false" signature="14364:14383" ph=" { " />
+            <marker date="1508571137514" expanded="false" signature="14398:14412" ph=" }" />
+            <marker date="1508571137514" expanded="true" signature="16444:16684" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -831,8 +885,8 @@
         <state relative-caret-position="324">
           <caret line="67" column="27" lean-forward="false" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
           <folding>
-            <element signature="e#1331#1332#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="false" />
+            <element signature="e#1364#1365#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -859,10 +913,24 @@
             <element signature="e#1785#1793#0" expanded="true" />
             <element signature="e#6956#6964#0" expanded="true" />
             <element signature="e#7158#7168#0" expanded="true" />
-            <marker date="1508569555578" expanded="false" signature="12590:12606" ph="&lt;~&gt;" />
-            <marker date="1508569555578" expanded="false" signature="13105:13113" ph="&lt;~&gt;" />
-            <marker date="1508569555578" expanded="false" signature="13353:13361" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="false" signature="12590:12606" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="false" signature="13105:13113" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="false" signature="13353:13361" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="true" signature="13703:13800" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="13885:13987" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="14076:14527" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="14570:15446" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="14576:14614" ph="//..." />
+            <marker date="1508571137530" expanded="true" signature="14845:14964" ph="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

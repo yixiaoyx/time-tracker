@@ -20,6 +20,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
@@ -42,6 +43,9 @@ public class CategoryController extends Controller {
     private boolean active;
     private String initialSearchQuery;
     private String parentCategory;
+
+    final File homeFile = new File("src/assets/Home_1.png");
+    final String homePath = homeFile.toURI().toString();
 
     @FXML
     private StackPane sp;
@@ -78,6 +82,8 @@ public class CategoryController extends Controller {
 
     @FXML
     private JFXTextField searchBar;
+    @FXML
+    private Button homeButton;
 
 
 
@@ -121,6 +127,8 @@ public class CategoryController extends Controller {
             JFXButton b;
             if(s == "All") {
                 b = new JFXButton("Home");
+                Image homeImage = new Image(homePath, false);
+                b.setGraphic(new ImageView(homeImage));
             }
             else {
                 b = new JFXButton(s);
@@ -144,7 +152,9 @@ public class CategoryController extends Controller {
 
 
         if(currCategory == "All") {
-            categoryName.setText("Home");
+            categoryName.setText("");
+            Image homeImage = new Image(homePath, false);
+            homeButton.setGraphic(new ImageView(homeImage));
         }
         else {
             categoryName.setText(currCategory);
@@ -226,8 +236,13 @@ public class CategoryController extends Controller {
         label.setTextFill(WHITE);
 
 
-        //if(driver.categoryDueSoon(categoryName)) {
-        vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
+        if(driver.categoryDueSoon(categoryName)) {
+            vbox.getChildren().addAll(new ImageView(Assets.categoryAlertImage), label);
+        }
+        else {
+            vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
+        }
+
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html

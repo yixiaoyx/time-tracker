@@ -252,6 +252,7 @@ public class TaskController extends Controller {
         updateBigProgressBar();
         changeButton.setGraphic(Assets.changeImage);
 
+
         // 0% boi
         badge1Button.setGraphic(Assets.badge1Image);
         // 25% boi
