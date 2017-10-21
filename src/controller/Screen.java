@@ -96,7 +96,10 @@ public abstract class Screen {
 
 
     public void goToCategoryScreen(String category) {
+        //setWindowLarge();
+        stage.setResizable(true);
         Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
+        stage.sizeToScene();
         try {
             currScreen.start();
         } catch (Exception e) {
@@ -105,11 +108,43 @@ public abstract class Screen {
     }
 
     public void goToTaskScreen(String task) {
+
+        setWindowLarge();
+        //stage.setResizable(true);
         Screen currScreen = new TaskScreen(this.getStage(), this.getDriver(), task);
+
         try {
             currScreen.start();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    public void goToTaskLiteScreen(String task) {
+        //stage.setResizable(true);
+
+        setWindowSmall();
+        Screen currScreen = new TaskLiteScreen(this.getStage(), this.getDriver(), task);
+
+        try {
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setWindowSmall(){
+        stage.setMinWidth(300);
+        stage.setMinHeight(200);
+
+        stage.setMaxWidth(350);
+        stage.setMaxHeight(200);
+    }
+
+    private void setWindowLarge(){
+        stage.setMaxHeight(700);
+        stage.setMaxWidth(600);
+        stage.setMinHeight(500);
+        stage.setMinWidth(500);
+    }
+
 }

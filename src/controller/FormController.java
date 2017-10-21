@@ -116,16 +116,18 @@ public class FormController extends Controller{
 
         // Convert to time string
         try {
+
             DateFormat dateFormat = new SimpleDateFormat("HH:mm");
             Date baseRef = dateFormat.parse("00:00:00");
             Date estTime = dateFormat.parse(estimatedTime);
-            estimatedSeconds = (estTime.getTime() - baseRef.getTime()) / 1000L;
+            estimatedSeconds = (estTime.getTime() - baseRef.getTime());
             System.out.println("Converted time to " + estimatedSeconds.toString() + " seconds");
+
             // Convert to seconds
 
 
         } catch (ParseException e) {
-            e.printStackTrace();
+            estimatedSeconds = null;
         }
 
 
@@ -134,10 +136,19 @@ public class FormController extends Controller{
         // Go to relevant screen
 
         if (addType.equals("task")){
+            System.out.println("estimatedTime = " + estimatedTime);
             driver.addTask(category, name);
             // Check if given existing estimated time and add to task
-            if (estimatedSeconds != null) driver.addEstimatedTimeToTask(name, estimatedSeconds);
+            if (estimatedSeconds != null) {
+                driver.addEstimatedTimeToTask(estimatedTime, estimatedSeconds, name);
+            }
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
+          /*  if(dueDate != null) {
+                driver.addDueDate(Date);
+            }
+
+            */
+
             // Check if given due date and add to task
             // -
             currScreen.goToTaskScreen(name);
@@ -178,8 +189,8 @@ public class FormController extends Controller{
         String warning = "";
         if (reason.equals("empty")) {
             warning = "No input in Name field";
-        //} else if (reason.equals("illegalchar")) {
-        //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
+            //} else if (reason.equals("illegalchar")) {
+            //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         } else if (reason.equals("taskmatch")) {
