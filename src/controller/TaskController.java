@@ -24,6 +24,24 @@ public class TaskController extends Controller {
     private boolean reached;
     private final Timeline activeTime;
 
+    final File analysisFile = new File("src/assets/Graph_1.png");
+    final String analysisPath = analysisFile.toURI().toString();
+
+    final File binFile = new File("src/assets/Bin_1.png");
+    final String binPath = binFile.toURI().toString();
+
+    final File badge1File = new File("src/assets/Badge_1.png");
+    final File badge2File = new File("src/assets/Badge_2.png");
+    final File badge3File = new File("src/assets/Badge_3.png");
+    final File badge4File = new File("src/assets/Badge_4.png");
+    final File badge5File = new File("src/assets/Badge_5.png");
+
+    final String badge1Path = badge1File.toURI().toString();
+    final String badge2Path = badge2File.toURI().toString();
+    final String badge3Path = badge3File.toURI().toString();
+    final String badge4Path = badge4File.toURI().toString();
+    final String badge5Path = badge5File.toURI().toString();
+
     @FXML
     private Button clockButton;
     @FXML
@@ -42,6 +60,16 @@ public class TaskController extends Controller {
     private JFXButton analysisButton;
     @FXML
     private Label goalReached;
+    @FXML
+    private JFXButton badge1Button;
+    @FXML
+    private JFXButton badge2Button;
+    @FXML
+    private JFXButton badge3Button;
+    @FXML
+    private JFXButton badge4Button;
+    @FXML
+    private JFXButton badge5Button;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
@@ -75,19 +103,39 @@ public class TaskController extends Controller {
                             if (estimatedTime > 0) {
                                 long percentage =(long)((float)total/estimatedTime*100);
 
-                              //  System.out.println(" percentage: " + total/estimatedTime);
+                                //FIRST BADGE FOR STARTING A TASK
+                                Image badge1Image = new Image(badge1Path, false);
+                                badge1Button.setGraphic(new ImageView(badge1Image));
+                                badge1Button.setVisible(true);
+                                //  System.out.println(" percentage: " + total/estimatedTime);
                                 if(percentage == 25) {
                                     goalReached.setText("25% progress made!");
+                                    //SECOND BADGE FOR 25 PERCENT
+                                    Image badge2Image = new Image(badge2Path, false);
+                                    badge2Button.setGraphic(new ImageView(badge2Image));
+                                    badge2Button.setVisible(true);
                                 }
                                 if(percentage == 50) {
                                     goalReached.setText("50% progress made!");
+                                    //THIRD BADGE FOR 50 PERCENT
+                                    Image badge3Image = new Image(badge3Path, false);
+                                    badge3Button.setGraphic(new ImageView(badge3Image));
+                                    badge3Button.setVisible(true);
                                 }
                                 if(percentage == 75) {
                                     goalReached.setText("75% progress made!");
+                                    //FOURTH BADGE FOR 75 PERCENT
+                                    Image badge4Image = new Image(badge4Path, false);
+                                    badge4Button.setGraphic(new ImageView(badge4Image));
+                                    badge4Button.setVisible(true);
                                 }
                                 if (reached == false && total >= estimatedTime) {
                                     goalReached.setText("Goal Reached WOOOOO!");
                                     driver.completedGoal(true, currTask);
+                                    //FOURTH BADGE FOR 75 PERCENT
+                                    Image badge5Image = new Image(badge5Path, false);
+                                    badge5Button.setGraphic(new ImageView(badge5Image));
+                                    badge5Button.setVisible(true);
                                     reached = true;
 
                                 }
@@ -188,6 +236,12 @@ public class TaskController extends Controller {
         delButton.setGraphic(Assets.binImage);
         updateBigProgressBar();
         changeButton.setGraphic(Assets.changeImage);
+
+        badge1Button.setVisible(false);
+        badge2Button.setVisible(false);
+        badge3Button.setVisible(false);
+        badge4Button.setVisible(false);
+        badge5Button.setVisible(false);
     }
 
     private void controllerClockOut() {

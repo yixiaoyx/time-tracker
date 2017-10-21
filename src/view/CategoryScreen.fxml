@@ -38,13 +38,13 @@
                                     <!--<Label fx:id="smallCategoryPath" alignment="CENTER" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">-->
                                 </HBox>
 
-                                <Label fx:id="categoryName" alignment="CENTER" prefWidth="395.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
+                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="427.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
                                     <font>
                                         <Font name="Calibri" size="30.0" />
                                     </font>
                                 </Label>
 
-                                <JFXTextField fx:id="searchBar" onKeyReleased="#handleSearchText" alignment="CENTER" focusColor="#74a5ff" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
+                                <JFXTextField fx:id="searchBar" alignment="CENTER" focusColor="#74a5ff" onKeyReleased="#handleSearchText" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
 
                             </children>
                         </VBox>
@@ -69,7 +69,7 @@
                                 <Font name="DejaVu Sans" size="14.0" />
                             </font>
                             <HBox.margin>
-                                <Insets right="145.0" />
+                                <Insets right="220.0" />
                             </HBox.margin>
                         </JFXButton>
 

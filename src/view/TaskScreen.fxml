@@ -68,6 +68,17 @@
                     <!--</graphic>-->
                 </JFXButton>
             </children>
+            <JFXButton fx:id="badge1Button" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #D9D9D9;" text="B1" translateX="-50.0" translateY="8" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                <GridPane.margin>
+                </GridPane.margin></JFXButton>
+            <JFXButton fx:id="badge2Button" alignment="CENTER" layoutX="160.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #D9D9D9;" text="B2" translateX="10" translateY="8" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                <GridPane.margin>
+                </GridPane.margin>
+            </JFXButton>
+            <JFXButton fx:id="badge3Button" alignment="CENTER" layoutX="160.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #D9D9D9;" text="B3" translateX="70.0" translateY="8" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+            <JFXButton fx:id="badge4Button" alignment="CENTER" layoutX="160.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #D9D9D9;" text="B4" translateX="130.0" translateY="8" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+            <JFXButton fx:id="badge5Button" alignment="CENTER" layoutX="160.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #D9D9D9;" text="B5" translateX="190.0" translateY="8" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" prefWidth="200.0" />
