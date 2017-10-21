@@ -186,7 +186,17 @@ public class CategoryController extends Controller {
         Label label = new Label(taskName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
+        if(driver.taskDueSoon(taskName)) {
+            System.out.println("DUE SOON");
+            vbox.getChildren().addAll(new ImageView(Assets.taskAlertImage), label);
+        }
+        else {
+            System.out.println("NOT DUE SOON");
+            vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
+        }
+
+
+
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html

@@ -102,7 +102,7 @@ public class DatabaseDriver {
             System.out.println("connected");
             s = c.createStatement();
 
-            String query2 = "UPDATE Tasks SET due_date = '"+sdf.format(dueDate)+" WHERE task_name = '"+taskName+"' ";
+            String query2 = "UPDATE Tasks SET due_date = '"+sdf.format(dueDate)+" WHERE task_name = '"+taskName+"'";
             s.executeUpdate(query2);
             c.close();
         } catch (SQLException e) {
@@ -188,10 +188,9 @@ public class DatabaseDriver {
                 //   t.setTotalTime(total);
                 long estimatedTime = Long.parseLong(results.getString("estimated_time"));
                 t.setEstimatedTime(estimatedTime);
+                System.out.println("est time = " + t.getEstimatedTime());
 
                 int goal = Integer.parseInt(results.getString("completed_goal"));
-
-
 
                 if(goal == 0) {
                     t.setGoalComplete(false);
@@ -262,9 +261,118 @@ public class DatabaseDriver {
 
         }
 
+    }
 
+
+    public void updateTaskCategory (String task, String Category) {
+
+        try {
+            Connection c = DriverManager.getConnection(db, user, pw);
+            System.out.println("connected");
+            s = c.createStatement();
+            ResultSet record = s.executeQuery("select * from Tasks");
+            boolean check = false;
+
+            //check if task exists in the database
+
+            while (record.next()) {
+                if (record.getString("task_name").equals(task)) {
+                    System.out.println("Task exists");
+                    check = true;
+                    break;
+                }
+            }
+            if(check == false) {
+                System.out.println("Could not update task - task does not exist in the DB");
+                return;
+            }
+            int CategoryID = getCategoryID(Category);
+            s = c.createStatement();
+
+            String sql = "UPDATE Tasks SET category_ID = '" + CategoryID+"' WHERE task_name = '"+task+"'";
+
+            s.executeUpdate(sql);
+            System.out.println("Changed task category ");
+
+            c.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
 
     }
+    public void updateCategory (String Category, String parent) {
+
+        try {
+            Connection c = DriverManager.getConnection(db, user, pw);
+            System.out.println("connected");
+            s = c.createStatement();
+
+            int oldCatID = getCategoryID(Category);
+
+            String toDelete = "delete";
+            String sql = "UPDATE Category SET category_name = '"+toDelete+"' WHERE category_name = '"+Category+"'";
+            s = c.createStatement();
+            s.executeUpdate(sql);
+
+
+            saveSubCategory(Category,parent);
+
+            int newCatID = getCategoryID(Category);
+
+
+            String sql2 = "UPDATE Tasks SET category_ID = '" +newCatID+"' WHERE category_ID = '"+oldCatID+"' ";
+            s = c.createStatement();
+            s.executeUpdate(sql2);
+
+            System.out.println("Changed category ");
+
+            deleteCategoryOnly("delete");
+
+            c.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+    //deletes a Category and its sub categories + tasks within
+    public void deleteCategoryOnly(String Categoryname) {
+        try {
+            Connection c = DriverManager.getConnection(db, user, pw);
+            System.out.println("connected");
+            s = c.createStatement();
+            String query1 = "SELECT @left := lft, @right := rght, @width := rght - lft + 1 FROM Category WHERE Category_name = '" + Categoryname + "'";
+
+
+            ResultSet getVals = s.executeQuery(query1);
+
+            int leftVal = 0, rightVal = 0, widthVal = 0;
+            if (getVals.next()) {
+                leftVal = Integer.parseInt(getVals.getString("@left := lft"));
+                rightVal = Integer.parseInt(getVals.getString("@right := rght"));
+                widthVal = Integer.parseInt(getVals.getString("@width := rght - lft + 1"));
+
+            }
+            String query5 = "DELETE FROM Category WHERE lft BETWEEN '" + leftVal + "' AND '" + rightVal + "'";
+            String query6 = "UPDATE Category SET rght = rght - '" + widthVal + "' WHERE rght >  '" + rightVal + "'";
+
+
+            s.addBatch(query5);
+            s.addBatch(query6);
+
+            s.executeBatch();
+
+            c.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+    }
+
 
     //given a CategoryID return the CategoryName
     public String getCategoryName(int Category) {
@@ -372,7 +480,9 @@ public class DatabaseDriver {
         try {
             Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
+            // int catID = 0;
             s = c.createStatement();
+
             String query1 = "SELECT @idCol := id from Category ORDER BY id DESC LIMIT 1;  ";
             String query2 = "SELECT @Left := lft FROM Category WHERE Category_name = '" + parent + "' ";
 
@@ -821,14 +931,16 @@ public class DatabaseDriver {
     public static void main(String[] args) throws Exception {
 
 
-        final String sdate = "2017-10-27 13:40:58";
-        SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        final Date date = sdf.parse( sdate ); // conversion from String
-        final java.util.Calendar cal = GregorianCalendar.getInstance();
-        cal.setTime(date);
-        cal.add(GregorianCalendar.DAY_OF_MONTH, -7); // date manipulation
-        System.out.println("result: " + sdf.format(cal.getTime())); // conversion to String
+
+        DatabaseDriver db = new DatabaseDriver();
+
+
+        //  db.updateTaskCategory("t1", "Projects" );
+        db.updateCategory("COMP1917_W10", "Projects");
+        //db.saveSubCategory("COMP1917_W15", "All");
+        // db.deleteCategory("Assignments");
 /*
+
         //add tasks
         DatabaseDriver db = new DatabaseDriver();
 

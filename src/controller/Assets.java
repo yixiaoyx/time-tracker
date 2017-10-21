@@ -6,7 +6,9 @@ import javafx.scene.image.*;
 public class Assets {
     // FILEPATHS FOR BUTTON GRAPHICS
     final static File categoryFile= new File("src/assets/Category_2.png");
+    final static File categoryAlertFile = new File("src/assets/CategoryAlert_1.png");
     final static File taskFile= new File("src/assets/Task.png");
+    final static File taskAlertFile = new File("src/assets/TaskAlert_1.png");
     final static File backFile = new File("src/assets/Back_Button_3.png");
     final static File analysisFile = new File("src/assets/Graph_1.png");
     final static File addFile = new File("src/assets/Add_Button_3.png");
@@ -21,6 +23,7 @@ public class Assets {
     final static File badge5File = new File("src/assets/Badge_5.png");
 
     final static String categoryPath = categoryFile.toURI().toString();
+    final static String taskAlertPath= taskAlertFile.toURI().toString();
     final static String taskPath = taskFile.toURI().toString();
     final static String backPath = backFile.toURI().toString();
     final static String analysisPath = analysisFile.toURI().toString();
@@ -37,6 +40,9 @@ public class Assets {
 
     final static Image categoryImage = new Image(categoryPath, false);
     final static Image taskImage = new Image(taskPath, false);
+    final static Image taskAlertImage = new Image(taskAlertPath, false);
+
+
 
     final static ImageView backImage = new ImageView(new Image(backPath, false));
     final static ImageView analysisImage = new ImageView(new Image(analysisPath, false));
