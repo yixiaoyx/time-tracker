@@ -32,6 +32,11 @@
                               <Font name="Arial" size="24.0" />
                           </font>
                       </JFXButton>
+                      <Label fx:id="DaysTillDue" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="337.0" text="TASK" textFill="GREY" translateX="-1.0" translateY="30.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                          <font>
+                              <Font name="Lucida Sans Regular" size="50.0" fx:id="x1" />
+                          </font>
+                      </Label>
                       <JFXButton fx:id="changeButton" mnemonicParsing="false" onMouseClicked="#handleChange" styleClass="button-delete" textAlignment="CENTER" translateY="1.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
                               <Font name="DejaVu Sans" size="14.0" />
@@ -47,7 +52,7 @@
                               <Font name="Arial" size="14.0" />
                           </font>
                       </JFXButton>
-      
+
                       <JFXButton fx:id="delButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleDelete" prefHeight="30.0" prefWidth="65.0" styleClass="button-delete" textAlignment="CENTER" translateX="-43.0" translateY="61.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                           <font>
                               <Font name="DejaVu Sans" size="14.0" />
