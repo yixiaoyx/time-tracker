@@ -40,28 +40,6 @@ public class CategoryController extends Controller {
     private CategoryScreen currScreen;
     private String currCategory;
     private boolean active;
-
-    // FILEPATHS FOR BUTTON GRAPHICS
-    final File categoryFile= new File("src/assets/Category_2.png");
-    final File taskFile= new File("src/assets/Task.png");
-    final File backFile = new File("src/assets/Back_Button_3.png");
-    final File analysisFile = new File("src/assets/Graph_1.png");
-    final File addFile = new File("src/assets/Add_Button_3.png");
-    final File binFile = new File("src/assets/Bin_1.png");
-    final File searchFile = new File("src/assets/Search_1.png");
-    final File changeFile = new File("src/assets/Edit_1.png");
-    
-
-    final String categoryPath = categoryFile.toURI().toString();
-    final String taskPath = taskFile.toURI().toString();
-    final String backPath = backFile.toURI().toString();
-    final String analysisPath = analysisFile.toURI().toString();
-    final String addPath = addFile.toURI().toString();
-    final String binPath = binFile.toURI().toString();
-    final String searchPath = searchFile.toURI().toString();
-    final String changePath = changeFile.toURI().toString();
-
-
     private String initialSearchQuery;
 
     @FXML
@@ -182,17 +160,11 @@ public class CategoryController extends Controller {
         scroll.setFitToHeight(true);
 
         //SETTING GRAPHICS
-        Image analysisImage = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(analysisImage));
-
-        Image addImage = new Image(addPath, false);
-        addButton.setGraphic(new ImageView(addImage));
-
-        Image binImage = new Image(binPath, false);
-        delButton.setGraphic(new ImageView(binImage));
-
-        Image changeImage = new Image(changePath, false);
-        changeButton.setGraphic(new ImageView(changeImage));
+        analysisButton.setGraphic(Assets.analysisImage);
+        addButton.setGraphic(Assets.addImage);
+        delButton.setGraphic(Assets.binImage);
+        //searchButton.setGraphic(Assets.searchImage);
+        changeButton.setGraphic(Assets.changeImage);
     }
 
     public void setCurrCategory(String category) {
@@ -208,13 +180,12 @@ public class CategoryController extends Controller {
         METHODS FOR DISPLAYING TASKS AND CATEGORIES IN A TABLE
      */
     private Button addTaskToTable(String taskName) {
-        Image image = new Image(taskPath, false);
 
         VBox vbox = new VBox();
         Label label = new Label(taskName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(image), label);
+        vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
@@ -238,13 +209,12 @@ public class CategoryController extends Controller {
     }
 
     private Button addCategoryToTable(String categoryName) {
-        Image image = new Image(categoryPath, false);
 
         VBox vbox = new VBox();
         Label label = new Label(categoryName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(image), label);
+        vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
