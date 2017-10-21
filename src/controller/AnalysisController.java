@@ -146,6 +146,10 @@ public class AnalysisController extends Controller {
 
             double progress = (double) times[0] / times[1];
 
+            if(times[1] == 0) {
+                progress = 0;
+            }
+
             Label l1 = new Label(taskName);
             l1.setStyle("-fx-font-weight: bold");
 
