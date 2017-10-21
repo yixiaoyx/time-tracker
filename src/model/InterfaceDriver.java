@@ -336,7 +336,12 @@ public class InterfaceDriver {
   }
 
   public void changeCategoryParentCategory(String category, String oldParent, String newParent) {
-    // TODO
+    Category c = getCategoryByName(category);
+    Category oldP = getCategoryByName(oldParent);
+    Category newP = getCategoryByName(newParent);
+    newP.addSubCategory(c);
+    oldP.removeSubCategoryReference(c);
+    // TODO make change in db
   }
   // use for analysis
   public String getTaskTimeString(String taskName) {
@@ -367,6 +372,12 @@ public class InterfaceDriver {
   }
 
 
+  public boolean taskDueSoon(String taskName) {
+    Task t = getTaskByName(taskName);
+    System.out.println("got here");
+    return t.isDueDateApproaching();
+  }
+
   public String getTaskTotalAndActiveTimeString(String taskName) {
     Task t = getTaskByName(taskName);
     return t.getTotalAndActiveTimeString();
@@ -393,6 +404,7 @@ public class InterfaceDriver {
 
   public void addDueDate(Date dueDate, String taskName) {
     Task t = getTaskByName(taskName);
+    t.setDueDate(dueDate);
     db.updateDueDate(dueDate, taskName);
 
   }

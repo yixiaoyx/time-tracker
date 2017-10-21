@@ -94,6 +94,34 @@ public class Task {
         return this.dueDate;
     }
 
+    public String getDateTillDue() {
+        if(dueDate == null) {
+            return null;
+        }
+        Date currDate = new Date();
+
+
+        Calendar cal = GregorianCalendar.getInstance();
+        cal.setTime(dueDate);
+        cal.add(GregorianCalendar.DAY_OF_MONTH, -7); // date manipulation
+
+
+        Date d1 = cal.getTime();
+
+        long diff = Math.abs(d1.getTime() - currDate.getTime());
+        long diffDays = diff / (24 * 60 * 60 * 1000);
+        System.out.println("diff days = "+   diffDays);
+        String days = "";
+        if(diffDays <= 7) {
+            long daysTillDue = 7 - diffDays;
+            days = daysTillDue + " days till task due!";
+
+        }
+
+        return days;
+
+    }
+
     public boolean isDueDateApproaching() {
 
         if(dueDate == null) {
@@ -127,7 +155,6 @@ public class Task {
 
         return false;
     }
-
 
 
 

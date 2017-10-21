@@ -12,7 +12,9 @@ import model.InterfaceDriver;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -101,7 +103,8 @@ public class FormController extends Controller{
         oldParent = parent;
 
         estimatedTimeField.setDisable(true);
-        // TODO
+        dueDatePicker.setDisable(true);
+        dueTimePicker.setDisable(true);
     }
 
     private ArrayList<String> findSubCategories(String category){
@@ -201,19 +204,33 @@ public class FormController extends Controller{
             //
 
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
-          /*  if(dueDate != null) {
-                driver.addDueDate(Date);
-            }
 
-            */
+            Date dueDate = java.util.Date.from(
+                    dueDatePicker.getValue().atStartOfDay(
+                            ZoneId.of( "America/Montreal" )
+                    ).toInstant()
+            );
+
+            if(dueDate != null) {
+                 driver.addDueDate(dueDate, name);
+             }
+
+
 
             // Check if given due date and add to task
             // -
             currScreen.goToTaskScreen(name);
         } else {
-
-            driver.addSubCategory(category, name);
-            currScreen.goToCategoryScreen(category);
+            if (editCategoryMode) {
+                driver.changeCategory(oldName, name);
+                driver.changeCategoryParentCategory(name, oldParent, category);
+                oldName = null;
+                oldParent = null;
+                editCategoryMode = false;
+            } else {
+                driver.addSubCategory(category, name);
+                currScreen.goToCategoryScreen(category);
+            }
         }
 
     }
