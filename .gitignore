@@ -2,8 +2,8 @@
 *.class
 
 # output folder
-out/*
-target/*
+/out/*
+/target/*
 target/classes/*
 target/classes/model/*
 target/classes/controller/*
@@ -31,4 +31,5 @@ hs_err_pid*
 # Miscellaneous
 .DS_Store
 
-.idea/workspace.xml
+.gitignore
+/.idea/workspace.xml
