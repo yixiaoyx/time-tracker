@@ -46,7 +46,7 @@ public class Duration extends RecursiveTreeObject<Duration> {
     return time()/1000.0/60.0;
   }
 
-  public String convertTime(long milliSecondDelta) {
+  public static String convertTime(long milliSecondDelta) {
     // this snippet taken from https://stackoverflow.com/questions/43892644
     long secondsInMilli = 1000;
     long minutesInMilli = secondsInMilli * 60;

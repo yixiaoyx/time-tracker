@@ -1,6 +1,7 @@
 package model;
 
 import java.util.*;
+import static model.Duration.convertTime;
 
 public class Category {
   private List<Task> childTasks;
@@ -246,11 +247,9 @@ public class Category {
     return l;
   }
 
-  List<Category> recursiveGetCategories() {
+  private List<Category> recursiveGetCategories() {
     List<Category> l = new ArrayList<Category>();
-    for(Category c : subCategories) {
-      l.add(c);
-    }
+    l.addAll(subCategories);
 
     for(Category c : subCategories) {
       l.addAll(c.recursiveGetCategories());
@@ -305,24 +304,6 @@ public class Category {
   public void clearTasksAndCategories() {
     this.childTasks = new ArrayList<Task>();
     this.subCategories = new ArrayList<Category>();
-  }
-
-  // LAZY Copied from Task, cleanup if have time
-  public String convertTime(long milliSecondDelta) {
-    long secondsInMilli = 1000;
-    long minutesInMilli = secondsInMilli * 60;
-    long hoursInMilli = minutesInMilli * 60;
-
-    long elapsedHours = milliSecondDelta / hoursInMilli;
-    milliSecondDelta = milliSecondDelta % hoursInMilli;
-
-    long elapsedMinutes = milliSecondDelta / minutesInMilli;
-    milliSecondDelta = milliSecondDelta % minutesInMilli;
-
-    long elapsedSeconds = milliSecondDelta / secondsInMilli;
-    return String.format("%02d", elapsedHours) + ":" +
-            String.format("%02d", elapsedMinutes) + ":" +
-            String.format("%02d", elapsedSeconds);
   }
 
 }

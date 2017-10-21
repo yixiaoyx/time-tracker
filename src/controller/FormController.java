@@ -3,23 +3,20 @@ import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.event.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
+import java.time.Duration;
+
+import static model.Duration.convertTime;
 
 
 public class FormController extends Controller{
@@ -87,13 +84,7 @@ public class FormController extends Controller{
         oldName = task;
         oldParent = parent;
 
-
-        //LocalDateTime dateTime = LocalDateTime.ofEpochSecond(estimatedTime/1000, 0, ZoneOffset.UTC);
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE,MMMM d,yyyy h:mm,a", Locale.ENGLISH);
-        //String formattedDate = dateTime.format(formatter);
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        Date estTime = new Date(estimatedTime);
-        estimatedTimeField.setText(dateFormat.format(estTime));
+        estimatedTimeField.setText(convertTime(estimatedTime));
     }
 
     public void editCategory(String category, String parent) {
@@ -157,11 +148,6 @@ public class FormController extends Controller{
         // Check name
 
         String name = nameField.getText();
-        // TO DO: Sanitise text input of Name and make sure name will not conflict with other items
-        if (!isNameValid(name).equals("valid")) {
-            showWarning(isNameValid(name));
-            return;
-        }
 
         String estimatedTime = "";
         estimatedTime = estimatedTimeField.getText();
@@ -184,20 +170,28 @@ public class FormController extends Controller{
             estimatedSeconds = null;
         }
 
-
-
         // Add task/category
         // Go to relevant screen
 
         if (addType.equals("task")){
             System.out.println("estimatedTime = " + estimatedTime);
             if (editTaskMode) {
-                driver.changeTaskName(oldName, name);
-                driver.changeTaskParentCategory(name, oldParent, category);
+                if (!name.equals(oldName)) {
+                    System.out.println("Changing task name "+oldName+" to "+name);
+                    driver.changeTaskName(oldName, name);
+                }
+                if (!category.equals(oldParent)) {
+                    driver.changeTaskParentCategory(name, oldParent, category);
+                }
                 oldName = null;
                 oldParent = null;
                 editTaskMode = false;
             } else {
+                String checkName = isNameValid(name);
+                if (!checkName.equals("valid")) {
+                    showWarning(checkName);
+                    return;
+                }
                 driver.addTask(category, name);
             }
             // Check if given existing estimated time and add to task
@@ -226,12 +220,21 @@ public class FormController extends Controller{
             currScreen.goToTaskScreen(name);
         } else {
             if (editCategoryMode) {
-                driver.changeCategory(oldName, name);
-                driver.changeCategoryParentCategory(name, oldParent, category);
+                if (!name.equals(oldName)) {
+                    driver.changeCategory(oldName, name);
+                }
+                if (!category.equals(oldParent)) {
+                    driver.changeCategoryParentCategory(name, oldParent, category);
+                }
                 oldName = null;
                 oldParent = null;
                 editCategoryMode = false;
             } else {
+                String checkName = isNameValid(name);
+                if (!checkName.equals("valid")) {
+                    showWarning(checkName);
+                    return;
+                }
                 driver.addSubCategory(category, name);
             }
             currScreen.goToCategoryScreen(category);
