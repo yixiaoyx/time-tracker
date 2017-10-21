@@ -6,8 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="d">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Main.class" afterPath="$PROJECT_DIR$/target/classes/controller/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseDriver.java" afterPath="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,14 +117,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Achievements.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Achievements.java">
+      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="157">
+              <caret line="178" column="8" lean-forward="false" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Duration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Duration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Screen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/Screen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="table_changes.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/table_changes.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database_schema.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,8 +180,8 @@
       <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
-              <caret line="231" column="23" lean-forward="false" selection-start-line="231" selection-start-column="23" selection-end-line="231" selection-end-column="23" />
+            <state relative-caret-position="127">
+              <caret line="94" column="49" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -141,64 +196,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/FormScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="130" lean-forward="false" selection-start-line="6" selection-start-column="128" selection-end-line="6" selection-end-column="130" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnalysisScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AnalysisScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnalysisController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AnalysisController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1299">
-              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Category.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="219" column="41" lean-forward="false" selection-start-line="219" selection-start-column="41" selection-end-line="219" selection-end-column="41" />
-              <folding>
-                <element signature="e#5145#5151#0" expanded="true" />
-                <marker date="1508312142000" expanded="true" signature="6817:6822" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Duration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Duration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-127">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InterfaceDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/InterfaceDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="403" column="20" lean-forward="false" selection-start-line="403" selection-start-column="20" selection-end-line="403" selection-end-column="20" />
+            <state relative-caret-position="124">
+              <caret line="373" column="24" lean-forward="true" selection-start-line="373" selection-start-column="24" selection-end-line="373" selection-end-column="24" />
               <folding>
                 <marker date="1508503005000" expanded="true" signature="13142:13147" ph="{...}" />
               </folding>
@@ -209,47 +211,60 @@
       <file leaf-file-name="DatabaseDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="800" column="0" lean-forward="false" selection-start-line="800" selection-start-column="0" selection-end-line="800" selection-end-column="0" />
+            <state relative-caret-position="609">
+              <caret line="857" column="0" lean-forward="true" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
               <folding>
-                <marker date="1508545395000" expanded="true" signature="1209:1228" ph="select * fro... Tasks" />
-                <marker date="1508545395000" expanded="true" signature="1664:1795" ph="INSERT INTO Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="1664:1810" ph="INSERT INTO Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="1664:1813" ph="INSERT INTO Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="2505:2547" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="2505:2591" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="2505:2642" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="2609:2642" ph="SELECT ID fr... Tasks" />
-                <marker date="1508545395000" expanded="true" signature="3068:3154" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="3678:3758" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="4300:4319" ph="select * fro... Tasks" />
-                <marker date="1508545395000" expanded="true" signature="4837:4999" ph="INSERT INTO task_durations... " />
-                <marker date="1508545395000" expanded="true" signature="5614:5633" ph="select * fro... Tasks" />
-                <marker date="1508545395000" expanded="true" signature="7314:7333" ph="select * fro... Tasks" />
-                <marker date="1508545395000" expanded="true" signature="8138:8413" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="9101:9165" ph="SELECT Categ... Category" />
-                <marker date="1508545395000" expanded="true" signature="9786:9850" ph="SELECT ID FR... Category" />
-                <marker date="1508545395000" expanded="true" signature="10512:10570" ph="SELECT @idCo... " />
-                <marker date="1508545395000" expanded="true" signature="10602:10664" ph="SELECT @valu... " />
-                <marker date="1508545395000" expanded="true" signature="10717:10740" ph="select * fro... Category" />
-                <marker date="1508545395000" expanded="true" signature="11614:11662" ph="UPDATE Categ... " />
-                <marker date="1508545395000" expanded="true" signature="11694:11879" ph="INSERT INTO Category... " />
-                <marker date="1508545395000" expanded="true" signature="12644:12702" ph="SELECT @idCo... " />
-                <marker date="1508545395000" expanded="true" signature="12737:12809" ph="SELECT @Left... " />
-                <marker date="1508545395000" expanded="true" signature="12862:12907" ph="select * fro... Category" />
-                <marker date="1508545395000" expanded="true" signature="13897:13963" ph="UPDATE Categ... " />
-                <marker date="1508545395000" expanded="true" signature="13996:14060" ph="UPDATE Categ... " />
-                <marker date="1508545395000" expanded="true" signature="14093:14283" ph="INSERT INTO Category... " />
-                <marker date="1508545395000" expanded="true" signature="15044:15066" ph="select * fro... Category" />
-                <marker date="1508545395000" expanded="true" signature="16303:16369" ph="SELECT Categ... Tasks" />
-                <marker date="1508545395000" expanded="true" signature="16625:16797" ph="SELECT paren... Category" />
-                <marker date="1508545395000" expanded="true" signature="17548:17656" ph="UPDATE Categ... " />
-                <marker date="1508545395000" expanded="true" signature="18089:18177" ph="UPDATE Tasks... " />
-                <marker date="1508545395000" expanded="true" signature="18654:18774" ph="SELECT @left... " />
-                <marker date="1508545395000" expanded="true" signature="19605:19684" ph="DELETE FROM " />
-                <marker date="1508545395000" expanded="true" signature="19716:19801" ph="UPDATE Categ... " />
-                <marker date="1508545395000" expanded="true" signature="20331:20390" ph="DELETE FROM " />
-                <marker date="1508545395000" expanded="true" signature="20422:20475" ph="DELETE FROM " />
+                <element signature="e#5523#5529#0" expanded="true" />
+                <element signature="e#15454#15464#0" expanded="true" />
+                <element signature="e#16745#16753#0" expanded="true" />
+                <element signature="e#22156#22162#0" expanded="true" />
+                <element signature="e#23766#23772#0" expanded="true" />
+                <element signature="e#25512#25518#0" expanded="true" />
+                <element signature="e#27205#27214#0" expanded="true" />
+                <element signature="e#28705#28711#0" expanded="true" />
+                <marker date="1508548517000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="1796:1993" ph="INSERT INTO Tasks... " />
+                <marker date="1508548517000" expanded="true" signature="2685:2822" ph="UPDATE Tasks... " />
+                <marker date="1508548517000" expanded="true" signature="3248:3334" ph="UPDATE Tasks... " />
+                <marker date="1508548517000" expanded="true" signature="3858:3938" ph="UPDATE Tasks... " />
+                <marker date="1508548517000" expanded="true" signature="4479:4498" ph="select * fro... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="5016:5178" ph="INSERT INTO task_durations... " />
+                <marker date="1508548517000" expanded="true" signature="5792:5811" ph="select * fro... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="8001:8020" ph="select * fro... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="8825:9100" ph="UPDATE Tasks... " />
+                <marker date="1508548517000" expanded="true" signature="9787:9851" ph="SELECT Categ... Category" />
+                <marker date="1508548517000" expanded="true" signature="10471:10535" ph="SELECT ID FR... Category" />
+                <marker date="1508548517000" expanded="true" signature="11196:11254" ph="SELECT @idCo... " />
+                <marker date="1508548517000" expanded="true" signature="11286:11348" ph="SELECT @valu... " />
+                <marker date="1508548517000" expanded="true" signature="11401:11424" ph="select * fro... Category" />
+                <marker date="1508548517000" expanded="true" signature="12298:12346" ph="UPDATE Categ... " />
+                <marker date="1508548517000" expanded="true" signature="12378:12563" ph="INSERT INTO Category... " />
+                <marker date="1508548517000" expanded="true" signature="13327:13385" ph="SELECT @idCo... " />
+                <marker date="1508548517000" expanded="true" signature="13420:13492" ph="SELECT @Left... " />
+                <marker date="1508548517000" expanded="true" signature="13545:13590" ph="select * fro... Category" />
+                <marker date="1508548517000" expanded="true" signature="14580:14646" ph="UPDATE Categ... " />
+                <marker date="1508548517000" expanded="true" signature="14679:14743" ph="UPDATE Categ... " />
+                <marker date="1508548517000" expanded="true" signature="14776:14966" ph="INSERT INTO Category... " />
+                <marker date="1508548517000" expanded="true" signature="15726:15748" ph="select * fro... Category" />
+                <marker date="1508548517000" expanded="true" signature="16984:17050" ph="SELECT Categ... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="17306:17478" ph="SELECT paren... Category" />
+                <marker date="1508548517000" expanded="true" signature="18228:18336" ph="UPDATE Categ... " />
+                <marker date="1508548517000" expanded="true" signature="18768:18856" ph="UPDATE Tasks... " />
+                <marker date="1508548517000" expanded="true" signature="19332:19452" ph="SELECT @left... " />
+                <marker date="1508548517000" expanded="true" signature="20283:20362" ph="DELETE FROM " />
+                <marker date="1508548517000" expanded="true" signature="20394:20479" ph="UPDATE Categ... " />
+                <marker date="1508548517000" expanded="true" signature="21008:21067" ph="DELETE FROM " />
+                <marker date="1508548517000" expanded="true" signature="21099:21152" ph="DELETE FROM " />
+                <marker date="1508548517000" expanded="true" signature="21660:21712" ph="SELECT * fro... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="22362:22422" ph="SELECT ID fr... Category" />
+                <marker date="1508548517000" expanded="true" signature="22676:22728" ph="SELECT * fro... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="23972:24025" ph="SELECT ID fr... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="24255:24313" ph="SELECT * fro... task_durations" />
+                <marker date="1508548517000" expanded="true" signature="25718:25778" ph="SELECT ID fr... Category" />
+                <marker date="1508548517000" expanded="true" signature="26043:26205" ph="SELECT * fro... task_durations" />
+                <marker date="1508548517000" expanded="true" signature="27413:27474" ph="SELECT ID fr... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="28137:28195" ph="SELECT ID fr... Tasks" />
+                <marker date="1508548517000" expanded="true" signature="28976:29098" ph="SELECT * fro... Tasks" />
               </folding>
             </state>
           </provider>
@@ -268,24 +283,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getTotalTimeS</find>
-      <find>total time</find>
-      <find>to</find>
-      <find>total</find>
-      <find>totalTime</find>
-      <find>addTiming</find>
-      <find>totalT</find>
-      <find>progress</find>
-      <find>clock out</find>
-      <find>clock IN</find>
-      <find>clock OUT</find>
-      <find>goal reac</find>
       <find>goal!</find>
       <find>addTim</find>
       <find>goalReached</find>
       <find>timings</find>
       <find>timing</find>
-      <find>goal</find>
       <find>date</find>
       <find>join</find>
       <find>task does not</find>
@@ -296,8 +298,21 @@
       <find>addTask</find>
       <find>addEs</find>
       <find>addEstimated</find>
-      <find>saveTask</find>
       <find>timestring</find>
+      <find>saveTasks</find>
+      <find>restoreTask</find>
+      <find>while</find>
+      <find>saveTask</find>
+      <find>clockIn</find>
+      <find>ClockIn</find>
+      <find>goal</find>
+      <find>clockI</find>
+      <find>interface</find>
+      <find>driver</find>
+      <find>completedGoal</find>
+      <find>clock in</find>
+      <find>goal Reached</find>
+      <find>updateGoal</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -357,10 +372,10 @@
         <option value="$PROJECT_DIR$/src/table_changes.sql" />
         <option value="$PROJECT_DIR$/src/model/Duration.java" />
         <option value="$PROJECT_DIR$/src/controller/FormController.java" />
-        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
-        <option value="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
         <option value="$PROJECT_DIR$/src/model/Achievements.java" />
+        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
       </list>
     </option>
   </component>
@@ -785,11 +800,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508494783629</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="merge">
+      <created>1508545901741</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1508545901741</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89269000" />
+    <option name="totallyTimeSpent" value="92070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="23" width="1362" height="807" extended-state="0" />
@@ -804,12 +826,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14905934" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29088277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4196816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08409091" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14848486" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -869,7 +891,8 @@
     <MESSAGE value="&quot;Goal reached &quot; message displayed when goal reached on task screen" />
     <MESSAGE value="a &quot;Goal reached&quot; message pops up when an estimated time for a task is reached" />
     <MESSAGE value="estimated times + due date added in optionally" />
-    <option name="LAST_COMMIT_MESSAGE" value="estimated times + due date added in optionally" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1011,6 +1034,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1089,6 +1113,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,26 +1122,6 @@
         <state relative-caret-position="735">
           <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="142" column="77" lean-forward="false" selection-start-line="142" selection-start-column="77" selection-end-line="142" selection-end-column="77" />
-          <folding>
-            <marker date="1508545427000" expanded="true" signature="6270:6377" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="75" column="68" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1132,53 +1137,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="800" column="0" lean-forward="false" selection-start-line="800" selection-start-column="0" selection-end-line="800" selection-end-column="0" />
-          <folding>
-            <marker date="1508545395000" expanded="true" signature="1209:1228" ph="select * fro... Tasks" />
-            <marker date="1508545395000" expanded="true" signature="1664:1795" ph="INSERT INTO Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="1664:1810" ph="INSERT INTO Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="1664:1813" ph="INSERT INTO Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="2505:2547" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="2505:2591" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="2505:2642" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="2609:2642" ph="SELECT ID fr... Tasks" />
-            <marker date="1508545395000" expanded="true" signature="3068:3154" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="3678:3758" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="4300:4319" ph="select * fro... Tasks" />
-            <marker date="1508545395000" expanded="true" signature="4837:4999" ph="INSERT INTO task_durations... " />
-            <marker date="1508545395000" expanded="true" signature="5614:5633" ph="select * fro... Tasks" />
-            <marker date="1508545395000" expanded="true" signature="7314:7333" ph="select * fro... Tasks" />
-            <marker date="1508545395000" expanded="true" signature="8138:8413" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="9101:9165" ph="SELECT Categ... Category" />
-            <marker date="1508545395000" expanded="true" signature="9786:9850" ph="SELECT ID FR... Category" />
-            <marker date="1508545395000" expanded="true" signature="10512:10570" ph="SELECT @idCo... " />
-            <marker date="1508545395000" expanded="true" signature="10602:10664" ph="SELECT @valu... " />
-            <marker date="1508545395000" expanded="true" signature="10717:10740" ph="select * fro... Category" />
-            <marker date="1508545395000" expanded="true" signature="11614:11662" ph="UPDATE Categ... " />
-            <marker date="1508545395000" expanded="true" signature="11694:11879" ph="INSERT INTO Category... " />
-            <marker date="1508545395000" expanded="true" signature="12644:12702" ph="SELECT @idCo... " />
-            <marker date="1508545395000" expanded="true" signature="12737:12809" ph="SELECT @Left... " />
-            <marker date="1508545395000" expanded="true" signature="12862:12907" ph="select * fro... Category" />
-            <marker date="1508545395000" expanded="true" signature="13897:13963" ph="UPDATE Categ... " />
-            <marker date="1508545395000" expanded="true" signature="13996:14060" ph="UPDATE Categ... " />
-            <marker date="1508545395000" expanded="true" signature="14093:14283" ph="INSERT INTO Category... " />
-            <marker date="1508545395000" expanded="true" signature="15044:15066" ph="select * fro... Category" />
-            <marker date="1508545395000" expanded="true" signature="16303:16369" ph="SELECT Categ... Tasks" />
-            <marker date="1508545395000" expanded="true" signature="16625:16797" ph="SELECT paren... Category" />
-            <marker date="1508545395000" expanded="true" signature="17548:17656" ph="UPDATE Categ... " />
-            <marker date="1508545395000" expanded="true" signature="18089:18177" ph="UPDATE Tasks... " />
-            <marker date="1508545395000" expanded="true" signature="18654:18774" ph="SELECT @left... " />
-            <marker date="1508545395000" expanded="true" signature="19605:19684" ph="DELETE FROM " />
-            <marker date="1508545395000" expanded="true" signature="19716:19801" ph="UPDATE Categ... " />
-            <marker date="1508545395000" expanded="true" signature="20331:20390" ph="DELETE FROM " />
-            <marker date="1508545395000" expanded="true" signature="20422:20475" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1326,6 +1284,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-751">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1367,6 +1326,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1392,22 +1352,7 @@
       </provider>
     </entry>
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Category" />
-    <entry file="file://$PROJECT_DIR$/src/model/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.task_durations" />
-    <entry file="file://$PROJECT_DIR$/src/model/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="231" column="23" lean-forward="false" selection-start-line="231" selection-start-column="23" selection-end-line="231" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Tasks" />
     <entry file="file://$PROJECT_DIR$/src/view/FormScreen.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -1470,37 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Duration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-127">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/FormScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="130" lean-forward="false" selection-start-line="6" selection-start-column="128" selection-end-line="6" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1512,10 +1426,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/table_changes.sql">
+    <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="-1472">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <marker date="1508545427000" expanded="true" signature="6270:6377" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Achievements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="849">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/FormScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="8" column="72" lean-forward="false" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TaskScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1527,22 +1470,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Achievements.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/InterfaceDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="403" column="20" lean-forward="false" selection-start-line="403" selection-start-column="20" selection-end-line="403" selection-end-column="20" />
+        <state relative-caret-position="124">
+          <caret line="373" column="24" lean-forward="true" selection-start-line="373" selection-start-column="24" selection-end-line="373" selection-end-column="24" />
           <folding>
             <marker date="1508503005000" expanded="true" signature="13142:13147" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="94" column="49" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Duration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="178" column="8" lean-forward="false" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/table_changes.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="857" column="0" lean-forward="true" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
+          <folding>
+            <element signature="e#5523#5529#0" expanded="true" />
+            <element signature="e#15454#15464#0" expanded="true" />
+            <element signature="e#16745#16753#0" expanded="true" />
+            <element signature="e#22156#22162#0" expanded="true" />
+            <element signature="e#23766#23772#0" expanded="true" />
+            <element signature="e#25512#25518#0" expanded="true" />
+            <element signature="e#27205#27214#0" expanded="true" />
+            <element signature="e#28705#28711#0" expanded="true" />
+            <marker date="1508548517000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="1796:1993" ph="INSERT INTO Tasks... " />
+            <marker date="1508548517000" expanded="true" signature="2685:2822" ph="UPDATE Tasks... " />
+            <marker date="1508548517000" expanded="true" signature="3248:3334" ph="UPDATE Tasks... " />
+            <marker date="1508548517000" expanded="true" signature="3858:3938" ph="UPDATE Tasks... " />
+            <marker date="1508548517000" expanded="true" signature="4479:4498" ph="select * fro... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="5016:5178" ph="INSERT INTO task_durations... " />
+            <marker date="1508548517000" expanded="true" signature="5792:5811" ph="select * fro... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="8001:8020" ph="select * fro... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="8825:9100" ph="UPDATE Tasks... " />
+            <marker date="1508548517000" expanded="true" signature="9787:9851" ph="SELECT Categ... Category" />
+            <marker date="1508548517000" expanded="true" signature="10471:10535" ph="SELECT ID FR... Category" />
+            <marker date="1508548517000" expanded="true" signature="11196:11254" ph="SELECT @idCo... " />
+            <marker date="1508548517000" expanded="true" signature="11286:11348" ph="SELECT @valu... " />
+            <marker date="1508548517000" expanded="true" signature="11401:11424" ph="select * fro... Category" />
+            <marker date="1508548517000" expanded="true" signature="12298:12346" ph="UPDATE Categ... " />
+            <marker date="1508548517000" expanded="true" signature="12378:12563" ph="INSERT INTO Category... " />
+            <marker date="1508548517000" expanded="true" signature="13327:13385" ph="SELECT @idCo... " />
+            <marker date="1508548517000" expanded="true" signature="13420:13492" ph="SELECT @Left... " />
+            <marker date="1508548517000" expanded="true" signature="13545:13590" ph="select * fro... Category" />
+            <marker date="1508548517000" expanded="true" signature="14580:14646" ph="UPDATE Categ... " />
+            <marker date="1508548517000" expanded="true" signature="14679:14743" ph="UPDATE Categ... " />
+            <marker date="1508548517000" expanded="true" signature="14776:14966" ph="INSERT INTO Category... " />
+            <marker date="1508548517000" expanded="true" signature="15726:15748" ph="select * fro... Category" />
+            <marker date="1508548517000" expanded="true" signature="16984:17050" ph="SELECT Categ... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="17306:17478" ph="SELECT paren... Category" />
+            <marker date="1508548517000" expanded="true" signature="18228:18336" ph="UPDATE Categ... " />
+            <marker date="1508548517000" expanded="true" signature="18768:18856" ph="UPDATE Tasks... " />
+            <marker date="1508548517000" expanded="true" signature="19332:19452" ph="SELECT @left... " />
+            <marker date="1508548517000" expanded="true" signature="20283:20362" ph="DELETE FROM " />
+            <marker date="1508548517000" expanded="true" signature="20394:20479" ph="UPDATE Categ... " />
+            <marker date="1508548517000" expanded="true" signature="21008:21067" ph="DELETE FROM " />
+            <marker date="1508548517000" expanded="true" signature="21099:21152" ph="DELETE FROM " />
+            <marker date="1508548517000" expanded="true" signature="21660:21712" ph="SELECT * fro... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="22362:22422" ph="SELECT ID fr... Category" />
+            <marker date="1508548517000" expanded="true" signature="22676:22728" ph="SELECT * fro... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="23972:24025" ph="SELECT ID fr... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="24255:24313" ph="SELECT * fro... task_durations" />
+            <marker date="1508548517000" expanded="true" signature="25718:25778" ph="SELECT ID fr... Category" />
+            <marker date="1508548517000" expanded="true" signature="26043:26205" ph="SELECT * fro... task_durations" />
+            <marker date="1508548517000" expanded="true" signature="27413:27474" ph="SELECT ID fr... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="28137:28195" ph="SELECT ID fr... Tasks" />
+            <marker date="1508548517000" expanded="true" signature="28976:29098" ph="SELECT * fro... Tasks" />
           </folding>
         </state>
       </provider>

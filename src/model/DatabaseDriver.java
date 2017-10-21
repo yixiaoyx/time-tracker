@@ -9,7 +9,7 @@ import java.util.Date;
 public class DatabaseDriver {
 
     //Variables for connection to the database
-  //  private Connection c;
+    //  private Connection c;
     private Statement s;
     String db;
     String user;
@@ -27,7 +27,7 @@ public class DatabaseDriver {
             System.out.println("Connecting..");
 
         } catch (Exception e) {
-          e.getMessage();
+            e.getMessage();
         }
 
         sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -36,6 +36,9 @@ public class DatabaseDriver {
 
     //saves a task to the task table
     public void saveTasks(String task, String Category, String durationString, long duration){
+
+
+        System.out.println("saveTask category: " + Category);
 
         try {
             Connection  c = DriverManager.getConnection(db, user, pw);
@@ -55,7 +58,9 @@ public class DatabaseDriver {
             }
             int CategoryID = getCategoryID(Category);
 
-            String query1 = "INSERT INTO Tasks (task_name,category_ID, duration_string, duration) VALUES ('"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "')";
+            System.out.println("CategoryID is " + CategoryID);
+
+            String query1 = "INSERT INTO Tasks (task_name,category_ID, duration_string, duration, estimated_time_string, estimated_time) VALUES ('"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "', null, 0)";
 
 
             System.out.println("Task does not exist");
@@ -125,7 +130,7 @@ public class DatabaseDriver {
     //Add a task duration for an existing task
     public void addTaskDuration(String task, long duration, String durationString, Date startDate, Date finishDate) {
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             ResultSet record = s.executeQuery("select * from Tasks");
@@ -161,7 +166,7 @@ public class DatabaseDriver {
     public List<Task> restoreTasks() {
         List<Task> tasks = new ArrayList<Task>();
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             //grab all the tasks from table
             s = c.createStatement();
@@ -172,20 +177,47 @@ public class DatabaseDriver {
             while (results.next()) {
                 Task t = new Task(results.getString("task_name"));
 
+                System.out.println("1");
+
                 int cat_id = Integer.parseInt(results.getString("category_ID"));
+                System.out.println("1.1");
+
                 Category cat = new Category(getCategoryName(cat_id));
+                System.out.println("1.2");
+
                 t.setParentCategory(cat);
-                t.setEstimatedTime(Long.parseLong(results.getString("estimated_time")));
+                System.out.println("1.3");
+
+                String estTime = results.getString("estimated_time");
+                if(estTime == null) {
+                    System.out.println("estTime was null");
+                }
+                else {
+                    t.setEstimatedTime(Long.parseLong(estTime));
+
+                }
+
+                System.out.println("2");
+
+
                 // long total = Long.parseLong(results.getString("duration"));
                 //   t.setTotalTime(total);
                 t.setEstimatedTimeString(results.getString("estimated_time_string"));
                 int goal = Integer.parseInt(results.getString("completed_goal"));
+
+                System.out.println("3");
+
+
                 if(goal == 0) {
                     t.setGoalComplete(false);
                 }
                 else {
                     t.setGoalComplete(true);
                 }
+
+
+                System.out.println("4");
+
 
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
@@ -204,7 +236,7 @@ public class DatabaseDriver {
     public void updateTask(String task, String Category, String durationString, long duration, String estimated_time_string, long estimated_time, boolean completed_goal, Date dueDate) {
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             ResultSet record = s.executeQuery("select * from Tasks");
@@ -252,7 +284,7 @@ public class DatabaseDriver {
     public String getCategoryName(int Category) {
         String CategoryName = "";
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String getID = "SELECT Category_name FROM Category WHERE ID = '" + Category + "'";
@@ -272,7 +304,7 @@ public class DatabaseDriver {
     public int getCategoryID(String Category) {
         int ID = 0;
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String getID = "SELECT ID FROM Category WHERE Category_name = '" + Category + "'";
@@ -296,7 +328,7 @@ public class DatabaseDriver {
     public void saveCategory(String Category, String parent) {
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "SELECT @idCol := id from Category ORDER BY id DESC LIMIT 1";
@@ -352,7 +384,7 @@ public class DatabaseDriver {
     //save a sub Category within a parent Category
     public void saveSubCategory(String Category, String parent) {
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "SELECT @idCol := id from Category ORDER BY id DESC LIMIT 1;  ";
@@ -414,7 +446,7 @@ public class DatabaseDriver {
     public List<Category> restoreCategories() {
         List<Category> Categories = new ArrayList<Category>();
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             //grab all the tasks from table
             s = c.createStatement();
@@ -445,7 +477,7 @@ public class DatabaseDriver {
         List<String> path = new ArrayList<String>();
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             //get the path of categories of the current task
             String getCategoryID = "SELECT Category_ID from Tasks where task_name = '" + taskname + "'";
@@ -476,7 +508,7 @@ public class DatabaseDriver {
     public void changeCategory( String oldCategoryName, String newCategoryName) {
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query = "UPDATE Category SET Category_name ='" + newCategoryName + "' WHERE Category_name = '" + oldCategoryName + "' ";
@@ -491,7 +523,7 @@ public class DatabaseDriver {
 
     public void changeTaskname(String oldTaskName, String newTaskName) {
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query = "UPDATE Tasks SET task_name ='" + newTaskName + "' WHERE task_name ='" + oldTaskName + "' ";
@@ -506,7 +538,7 @@ public class DatabaseDriver {
     //deletes a Category and its sub categories + tasks within
     public void deleteCategory(String Categoryname) {
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "SELECT @left := lft, @right := rght, @width := rght - lft + 1 FROM Category WHERE Category_name = '" + Categoryname + "'";
@@ -542,7 +574,7 @@ public class DatabaseDriver {
     }
     public void deleteTask(String taskname) {
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "DELETE FROM task_durations WHERE task_name = '"+taskname+"'";
@@ -560,7 +592,7 @@ public class DatabaseDriver {
     public String getTask (String taskname) {
         String duration = "";
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query = "SELECT * from Tasks where task_name = '"+taskname+"'";
@@ -584,7 +616,7 @@ public class DatabaseDriver {
         List<Task> tasks = new ArrayList<Task>();
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "SELECT ID from Category where Category_name = '"+Category+"' ";
@@ -628,7 +660,7 @@ public class DatabaseDriver {
         List<Task> tasks = new ArrayList<Task>();
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "SELECT ID from Tasks where task_name = '"+taskname+"' ";
@@ -676,7 +708,7 @@ public class DatabaseDriver {
         List<Task> tasks = new ArrayList<Task>();
 
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query1 = "SELECT ID from Category where Category_name = '"+Category+"' ";
@@ -719,7 +751,7 @@ public class DatabaseDriver {
         int task_id = 0;
         List<Integer> taskIds = new ArrayList<Integer>();
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query2 = "SELECT ID from Tasks where Category_ID = '" + CategoryID + "' ";
@@ -742,7 +774,7 @@ public class DatabaseDriver {
     public int getTaskID (String task_name) {
         int task_id = 0;
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             String query2 = "SELECT ID from Tasks where task_name = '" + task_name + "' ";
@@ -768,7 +800,7 @@ public class DatabaseDriver {
     public List<Task> getTasksInPeriod(Date periodA, Date periodB) {
         List<Task> tasks = new ArrayList<Task>();
         try {
-             Connection c = DriverManager.getConnection(db, user, pw);
+            Connection c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
             s = c.createStatement();
             sdf.format(periodA);

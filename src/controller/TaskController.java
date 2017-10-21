@@ -72,9 +72,14 @@ public class TaskController extends Controller {
                             Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
                                     (driver.getTaskByName(currTask).getTotalTimeSecs());
                             //display text on goal reached
-                            if (reached == false && total >= estimatedTime) {
-                                goalReached.setText("Goal Reached WOOOOO!");
-                                driver.completedGoal(true, currTask);
+
+                            if (estimatedTime > 0) {
+                                if (reached == false && total >= estimatedTime) {
+                                    goalReached.setText("Goal Reached WOOOOO!");
+                                    driver.completedGoal(true, currTask);
+                                    reached = true;
+
+                                }
                             }
                         }
                     }
@@ -171,14 +176,7 @@ public class TaskController extends Controller {
 
         activeTime.stop();
 
-        Long total = driver.getTaskByName(currTask).getTotalTime();
-        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-        System.out.println("total time = " + total + " estiamted = " + estimatedTime);
-        if(total >= estimatedTime) {
-            goalReached.setText("Goal Reached WOO!");
-            System.out.println("goal reached");
-        }
-        active = false;
+         active = false;
 
     }
 
