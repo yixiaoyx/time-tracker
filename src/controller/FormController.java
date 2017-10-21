@@ -148,11 +148,6 @@ public class FormController extends Controller{
         // Check name
 
         String name = nameField.getText();
-        // TO DO: Sanitise text input of Name and make sure name will not conflict with other items
-        if (!isNameValid(name).equals("valid")) {
-            showWarning(isNameValid(name));
-            return;
-        }
 
         String estimatedTime = "";
         estimatedTime = estimatedTimeField.getText();
@@ -175,20 +170,28 @@ public class FormController extends Controller{
             estimatedSeconds = null;
         }
 
-
-
         // Add task/category
         // Go to relevant screen
 
         if (addType.equals("task")){
             System.out.println("estimatedTime = " + estimatedTime);
             if (editTaskMode) {
-                driver.changeTaskName(oldName, name);
-                driver.changeTaskParentCategory(name, oldParent, category);
+                if (!name.equals(oldName)) {
+                    System.out.println("Changing task name "+oldName+" to "+name);
+                    driver.changeTaskName(oldName, name);
+                }
+                if (!category.equals(oldParent)) {
+                    driver.changeTaskParentCategory(name, oldParent, category);
+                }
                 oldName = null;
                 oldParent = null;
                 editTaskMode = false;
             } else {
+                String checkName = isNameValid(name);
+                if (!checkName.equals("valid")) {
+                    showWarning(checkName);
+                    return;
+                }
                 driver.addTask(category, name);
             }
             // Check if given existing estimated time and add to task
@@ -217,12 +220,21 @@ public class FormController extends Controller{
             currScreen.goToTaskScreen(name);
         } else {
             if (editCategoryMode) {
-                driver.changeCategory(oldName, name);
-                driver.changeCategoryParentCategory(name, oldParent, category);
+                if (!name.equals(oldName)) {
+                    driver.changeCategory(oldName, name);
+                }
+                if (!category.equals(oldParent)) {
+                    driver.changeCategoryParentCategory(name, oldParent, category);
+                }
                 oldName = null;
                 oldParent = null;
                 editCategoryMode = false;
             } else {
+                String checkName = isNameValid(name);
+                if (!checkName.equals("valid")) {
+                    showWarning(checkName);
+                    return;
+                }
                 driver.addSubCategory(category, name);
             }
             currScreen.goToCategoryScreen(category);
