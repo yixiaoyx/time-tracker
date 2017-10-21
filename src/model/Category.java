@@ -36,6 +36,7 @@ public class Category {
   public void deleteTask(Task t) {
     childTasks.remove(t);
   }
+
   public List<Task> getTasks() {
     return childTasks;
   }
