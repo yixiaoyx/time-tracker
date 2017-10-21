@@ -332,7 +332,7 @@ public class InterfaceDriver {
     Category newP = getCategoryByName(newParent);
     newP.addTask(t);
     oldP.deleteTask(t);
-    // TODO: make change in db
+    db.updateTaskCategory(task, newParent);
   }
 
   public void changeCategoryParentCategory(String category, String oldParent, String newParent) {
@@ -341,8 +341,9 @@ public class InterfaceDriver {
     Category newP = getCategoryByName(newParent);
     newP.addSubCategory(c);
     oldP.removeSubCategoryReference(c);
-    // TODO make change in db
+    db.updateCategory(category, newParent);
   }
+
   // use for analysis
   public String getTaskTimeString(String taskName) {
     Task t = getTaskByName(taskName);

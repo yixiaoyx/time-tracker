@@ -2,8 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/documentation/.#design_document.tex" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/Home_1.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Add_Button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Add_Button_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AnalysisScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Back_Button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Back_Button_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Back_Button_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Category.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Category_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Category_TitlePane.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/FormScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Task.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Task_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Controller.class" afterPath="$PROJECT_DIR$/target/classes/controller/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormController.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Main.class" afterPath="$PROJECT_DIR$/target/classes/controller/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/model/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Driver.class" afterPath="$PROJECT_DIR$/target/classes/model/Driver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Duration.class" afterPath="$PROJECT_DIR$/target/classes/model/Duration.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/model/Task.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/TempDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/TempDriver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/controller/CategoryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Category.java" afterPath="$PROJECT_DIR$/src/model/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/InterfaceDriver.java" afterPath="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/TaskScreen.fxml" afterPath="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path="out/" />
@@ -34,11 +78,6 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="TrackerDB@localhost" type="e3449647:DbNodeDescriptor" />
       </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="TrackerDB@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="TrackerDB" type="e3449647:DbNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
@@ -47,193 +86,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaskScreen.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml">
+      <file leaf-file-name="FormController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database_schema.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table_changes.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/table_changes.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrackerDB_Category.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TrackerDB_Category.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskLiteController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/TaskLiteController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="116" column="33" lean-forward="false" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
               <folding>
-                <marker date="1508570335000" expanded="false" signature="2329:2340" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="2365:2371" ph=" }" />
-                <marker date="1508570335000" expanded="true" signature="2413:2780" ph="{...}" />
-                <marker date="1508570335000" expanded="true" signature="2824:3014" ph="{...}" />
-                <marker date="1508570335000" expanded="true" signature="3061:3216" ph="{...}" />
-                <marker date="1508570335000" expanded="true" signature="3260:3499" ph="{...}" />
-                <marker date="1508570335000" expanded="false" signature="3546:3557" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="3593:3599" ph=" }" />
-                <marker date="1508570335000" expanded="true" signature="3643:3782" ph="{...}" />
-                <marker date="1508570335000" expanded="true" signature="3822:4304" ph="{...}" />
-                <marker date="1508570335000" expanded="true" signature="3929:4273" ph="//..." />
+                <element signature="e#1751#1752#0" expanded="true" />
+                <element signature="e#1794#1795#0" expanded="true" />
+                <element signature="e#3510#3518#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
+      <file leaf-file-name="InterfaceDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/InterfaceDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1635">
-              <caret line="112" column="60" lean-forward="false" selection-start-line="112" selection-start-column="60" selection-end-line="112" selection-end-column="60" />
+            <state relative-caret-position="351">
+              <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
               <folding>
-                <marker date="1508570335000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="1857:2054" ph="INSERT INTO Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="2746:2883" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="3309:3395" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="3919:3999" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="4540:4559" ph="select * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="5077:5239" ph="INSERT INTO task_durations... " />
-                <marker date="1508570335000" expanded="true" signature="5853:5872" ph="select * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="7877:7896" ph="select * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="8701:8976" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="9617:9636" ph="select * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="10260:10338" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="10913:11000" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="11204:11285" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="11900:12020" ph="SELECT @left... " />
-                <marker date="1508570335000" expanded="true" signature="12470:12549" ph="DELETE FROM " />
-                <marker date="1508570335000" expanded="true" signature="12581:12666" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="13220:13284" ph="SELECT Categ... Category" />
-                <marker date="1508570335000" expanded="true" signature="13904:13968" ph="SELECT ID FR... Category" />
-                <marker date="1508570335000" expanded="true" signature="14629:14687" ph="SELECT @idCo... " />
-                <marker date="1508570335000" expanded="true" signature="14719:14781" ph="SELECT @valu... " />
-                <marker date="1508570335000" expanded="true" signature="14834:14857" ph="select * fro... Category" />
-                <marker date="1508570335000" expanded="true" signature="15731:15779" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="15811:15996" ph="INSERT INTO Category... " />
-                <marker date="1508570335000" expanded="true" signature="16791:16849" ph="SELECT @idCo... " />
-                <marker date="1508570335000" expanded="true" signature="16884:16956" ph="SELECT @Left... " />
-                <marker date="1508570335000" expanded="true" signature="17009:17054" ph="select * fro... Category" />
-                <marker date="1508570335000" expanded="true" signature="18044:18110" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="18143:18207" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="18240:18430" ph="INSERT INTO Category... " />
-                <marker date="1508570335000" expanded="true" signature="19190:19212" ph="select * fro... Category" />
-                <marker date="1508570335000" expanded="true" signature="20448:20514" ph="SELECT Categ... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="20770:20942" ph="SELECT paren... Category" />
-                <marker date="1508570335000" expanded="true" signature="21692:21800" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="22232:22320" ph="UPDATE Tasks... " />
-                <marker date="1508570335000" expanded="true" signature="22796:22916" ph="SELECT @left... " />
-                <marker date="1508570335000" expanded="true" signature="23747:23826" ph="DELETE FROM " />
-                <marker date="1508570335000" expanded="true" signature="23858:23943" ph="UPDATE Categ... " />
-                <marker date="1508570335000" expanded="true" signature="24472:24531" ph="DELETE FROM " />
-                <marker date="1508570335000" expanded="true" signature="24563:24616" ph="DELETE FROM " />
-                <marker date="1508570335000" expanded="true" signature="25124:25176" ph="SELECT * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="25826:25886" ph="SELECT ID fr... Category" />
-                <marker date="1508570335000" expanded="true" signature="26140:26192" ph="SELECT * fro... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="27436:27489" ph="SELECT ID fr... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="27719:27777" ph="SELECT * fro... task_durations" />
-                <marker date="1508570335000" expanded="true" signature="29182:29242" ph="SELECT ID fr... Category" />
-                <marker date="1508570335000" expanded="true" signature="29507:29669" ph="SELECT * fro... task_durations" />
-                <marker date="1508570335000" expanded="true" signature="30877:30938" ph="SELECT ID fr... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="31601:31659" ph="SELECT ID fr... Tasks" />
-                <marker date="1508570335000" expanded="true" signature="32440:32562" ph="SELECT * fro... Tasks" />
+                <element signature="e#846#847#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#1729#1737#0" expanded="true" />
+                <element signature="e#1785#1793#0" expanded="true" />
+                <element signature="e#6956#6964#0" expanded="true" />
+                <element signature="e#7158#7168#0" expanded="true" />
+                <marker date="1508571137530" expanded="false" signature="12590:12606" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="false" signature="13105:13113" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="false" signature="13353:13361" ph="&lt;~&gt;" />
+                <marker date="1508571137530" expanded="true" signature="13703:13800" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="13885:13987" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="14076:14527" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="14570:15446" ph="{...}" />
+                <marker date="1508571137530" expanded="true" signature="14576:14614" ph="//..." />
+                <marker date="1508571137530" expanded="true" signature="14845:14964" ph="//..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="216" column="41" lean-forward="true" selection-start-line="216" selection-start-column="41" selection-end-line="216" selection-end-column="41" />
-              <folding>
-                <marker date="1508570335000" expanded="false" signature="6047:6058" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="6073:6079" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="6113:6124" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="6185:6196" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="6211:6217" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="6388:6399" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="6413:6419" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="6518:6529" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="6549:6555" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="8304:8315" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="8342:8348" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="8388:8399" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="8429:8435" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="8576:8587" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="8607:8613" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="9437:9448" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="9479:9485" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="9524:9535" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="9562:9568" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="9607:9618" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="9638:9644" ph=" }" />
-                <marker date="1508570335000" expanded="false" signature="9691:9702" ph=" { " />
-                <marker date="1508570335000" expanded="false" signature="9727:9733" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnalysisScreen.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/AnalysisScreen.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tasks" pinned="false" current-in-tab="false">
-        <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.Tasks">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Category" pinned="false" current-in-tab="false">
-        <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.Category">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -246,11 +134,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>getDateTill</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -294,14 +177,14 @@
         <option value="$PROJECT_DIR$/src/controller/EditController.java" />
         <option value="$PROJECT_DIR$/src/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/controller/Assets.java" />
-        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
-        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
         <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/model/Category.java" />
+        <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
         <option value="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
-        <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
       </list>
     </option>
   </component>
@@ -312,7 +195,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1359" />
+    <option name="x" value="-1" />
     <option name="y" value="-11" />
     <option name="width" value="1362" />
     <option name="height" value="780" />
@@ -333,50 +216,49 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="trackattack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackattack" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="trackattack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackattack" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="trackattack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackattack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackattack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackattack" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="trackattack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackattack" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="trackattack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackattack" type="462c0819:PsiDirectoryNode" />
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -538,7 +420,7 @@
       <workItem from="1508418078022" duration="2218000" />
       <workItem from="1508451196318" duration="16839000" />
       <workItem from="1508484281062" duration="8217000" />
-      <workItem from="1508554685266" duration="13600000" />
+      <workItem from="1508554685266" duration="14441000" />
     </task>
     <task id="LOCAL-00001" summary="Can add and retrieve individual task durations">
       <created>1508288916971</created>
@@ -621,65 +503,43 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107932000" />
+    <option name="totallyTimeSpent" value="110749000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="33" width="1440" height="780" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1" y="-11" width="1362" height="780" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47033286" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46917292" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30421686" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37349397" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18311875" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23104435" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39759037" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20514706" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07720588" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39759037" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47033286" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20514706" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774192" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39759037" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774192" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,11 +552,21 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Achievements" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console.sql" />
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.task_durations" />
     <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Tasks" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console_1.sql" />
+    <entry file="file://$PROJECT_DIR$/src/view/AnalysisScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/CategoryScreen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -775,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,6 +662,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -807,16 +677,14 @@
     <entry file="file://$PROJECT_DIR$/src/table_changes.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
+        <state relative-caret-position="168">
           <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,14 +697,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.Category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.Category" />
     <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.task_durations" />
+    <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.Tasks" />
     <entry file="file://$PROJECT_DIR$/src/model/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -884,6 +747,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -900,54 +764,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/TaskLiteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="116" column="33" lean-forward="false" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
-          <folding>
-            <marker date="1508570335000" expanded="false" signature="2329:2340" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="2365:2371" ph=" }" />
-            <marker date="1508570335000" expanded="true" signature="2413:2780" ph="{...}" />
-            <marker date="1508570335000" expanded="true" signature="2824:3014" ph="{...}" />
-            <marker date="1508570335000" expanded="true" signature="3061:3216" ph="{...}" />
-            <marker date="1508570335000" expanded="true" signature="3260:3499" ph="{...}" />
-            <marker date="1508570335000" expanded="false" signature="3546:3557" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="3593:3599" ph=" }" />
-            <marker date="1508570335000" expanded="true" signature="3643:3782" ph="{...}" />
-            <marker date="1508570335000" expanded="true" signature="3822:4304" ph="{...}" />
-            <marker date="1508570335000" expanded="true" signature="3929:4273" ph="//..." />
-          </folding>
+        <state relative-caret-position="4077">
+          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/EditController.java" />
+    <entry file="file://$PROJECT_DIR$/src/controller/EditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Task.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="216" column="41" lean-forward="true" selection-start-line="216" selection-start-column="41" selection-end-line="216" selection-end-column="41" />
-          <folding>
-            <marker date="1508570335000" expanded="false" signature="6047:6058" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="6073:6079" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="6113:6124" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="6185:6196" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="6211:6217" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="6388:6399" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="6413:6419" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="6518:6529" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="6549:6555" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="8304:8315" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="8342:8348" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="8388:8399" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="8429:8435" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="8576:8587" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="8607:8613" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="9437:9448" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="9479:9485" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="9524:9535" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="9562:9568" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="9607:9618" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="9638:9644" ph=" }" />
-            <marker date="1508570335000" expanded="false" signature="9691:9702" ph=" { " />
-            <marker date="1508570335000" expanded="false" signature="9727:9733" ph=" }" />
-          </folding>
+        <state relative-caret-position="-1345">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -964,59 +799,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="112" column="60" lean-forward="false" selection-start-line="112" selection-start-column="60" selection-end-line="112" selection-end-column="60" />
+        <state relative-caret-position="324">
+          <caret line="493" column="16" lean-forward="false" selection-start-line="493" selection-start-column="16" selection-end-line="493" selection-end-column="16" />
           <folding>
-            <marker date="1508570335000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="1857:2054" ph="INSERT INTO Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="2746:2883" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="3309:3395" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="3919:3999" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="4540:4559" ph="select * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="5077:5239" ph="INSERT INTO task_durations... " />
-            <marker date="1508570335000" expanded="true" signature="5853:5872" ph="select * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="7877:7896" ph="select * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="8701:8976" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="9617:9636" ph="select * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="10260:10338" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="10913:11000" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="11204:11285" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="11900:12020" ph="SELECT @left... " />
-            <marker date="1508570335000" expanded="true" signature="12470:12549" ph="DELETE FROM " />
-            <marker date="1508570335000" expanded="true" signature="12581:12666" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="13220:13284" ph="SELECT Categ... Category" />
-            <marker date="1508570335000" expanded="true" signature="13904:13968" ph="SELECT ID FR... Category" />
-            <marker date="1508570335000" expanded="true" signature="14629:14687" ph="SELECT @idCo... " />
-            <marker date="1508570335000" expanded="true" signature="14719:14781" ph="SELECT @valu... " />
-            <marker date="1508570335000" expanded="true" signature="14834:14857" ph="select * fro... Category" />
-            <marker date="1508570335000" expanded="true" signature="15731:15779" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="15811:15996" ph="INSERT INTO Category... " />
-            <marker date="1508570335000" expanded="true" signature="16791:16849" ph="SELECT @idCo... " />
-            <marker date="1508570335000" expanded="true" signature="16884:16956" ph="SELECT @Left... " />
-            <marker date="1508570335000" expanded="true" signature="17009:17054" ph="select * fro... Category" />
-            <marker date="1508570335000" expanded="true" signature="18044:18110" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="18143:18207" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="18240:18430" ph="INSERT INTO Category... " />
-            <marker date="1508570335000" expanded="true" signature="19190:19212" ph="select * fro... Category" />
-            <marker date="1508570335000" expanded="true" signature="20448:20514" ph="SELECT Categ... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="20770:20942" ph="SELECT paren... Category" />
-            <marker date="1508570335000" expanded="true" signature="21692:21800" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="22232:22320" ph="UPDATE Tasks... " />
-            <marker date="1508570335000" expanded="true" signature="22796:22916" ph="SELECT @left... " />
-            <marker date="1508570335000" expanded="true" signature="23747:23826" ph="DELETE FROM " />
-            <marker date="1508570335000" expanded="true" signature="23858:23943" ph="UPDATE Categ... " />
-            <marker date="1508570335000" expanded="true" signature="24472:24531" ph="DELETE FROM " />
-            <marker date="1508570335000" expanded="true" signature="24563:24616" ph="DELETE FROM " />
-            <marker date="1508570335000" expanded="true" signature="25124:25176" ph="SELECT * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="25826:25886" ph="SELECT ID fr... Category" />
-            <marker date="1508570335000" expanded="true" signature="26140:26192" ph="SELECT * fro... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="27436:27489" ph="SELECT ID fr... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="27719:27777" ph="SELECT * fro... task_durations" />
-            <marker date="1508570335000" expanded="true" signature="29182:29242" ph="SELECT ID fr... Category" />
-            <marker date="1508570335000" expanded="true" signature="29507:29669" ph="SELECT * fro... task_durations" />
-            <marker date="1508570335000" expanded="true" signature="30877:30938" ph="SELECT ID fr... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="31601:31659" ph="SELECT ID fr... Tasks" />
-            <marker date="1508570335000" expanded="true" signature="32440:32562" ph="SELECT * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="1857:2054" ph="INSERT INTO Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="2746:2883" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="3309:3395" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="3919:3999" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="4540:4559" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="5077:5239" ph="INSERT INTO task_durations... " />
+            <marker date="1508569741327" expanded="true" signature="5853:5872" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="7805:7824" ph="select * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="8629:8904" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="9591:9655" ph="SELECT Categ... Category" />
+            <marker date="1508569741327" expanded="true" signature="10275:10339" ph="SELECT ID FR... Category" />
+            <marker date="1508569741327" expanded="true" signature="11000:11058" ph="SELECT @idCo... " />
+            <marker date="1508569741327" expanded="true" signature="11090:11152" ph="SELECT @valu... " />
+            <marker date="1508569741327" expanded="true" signature="11205:11228" ph="select * fro... Category" />
+            <marker date="1508569741327" expanded="true" signature="12102:12150" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="12182:12367" ph="INSERT INTO Category... " />
+            <marker date="1508569741327" expanded="true" signature="13131:13189" ph="SELECT @idCo... " />
+            <marker date="1508569741327" expanded="true" signature="13224:13296" ph="SELECT @Left... " />
+            <marker date="1508569741327" expanded="true" signature="13349:13394" ph="select * fro... Category" />
+            <marker date="1508569741327" expanded="true" signature="14384:14450" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="14483:14547" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="14580:14770" ph="INSERT INTO Category... " />
+            <marker date="1508569741327" expanded="true" signature="15530:15552" ph="select * fro... Category" />
+            <marker date="1508569741327" expanded="true" signature="16788:16854" ph="SELECT Categ... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="17110:17282" ph="SELECT paren... Category" />
+            <marker date="1508569741327" expanded="true" signature="18032:18140" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="18572:18660" ph="UPDATE Tasks... " />
+            <marker date="1508569741327" expanded="true" signature="19136:19256" ph="SELECT @left... " />
+            <marker date="1508569741327" expanded="true" signature="20087:20166" ph="DELETE FROM " />
+            <marker date="1508569741327" expanded="true" signature="20198:20283" ph="UPDATE Categ... " />
+            <marker date="1508569741327" expanded="true" signature="20812:20871" ph="DELETE FROM " />
+            <marker date="1508569741327" expanded="true" signature="20903:20956" ph="DELETE FROM " />
+            <marker date="1508569741327" expanded="true" signature="21464:21516" ph="SELECT * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="22166:22226" ph="SELECT ID fr... Category" />
+            <marker date="1508569741327" expanded="true" signature="22480:22532" ph="SELECT * fro... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="23776:23829" ph="SELECT ID fr... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="24059:24117" ph="SELECT * fro... task_durations" />
+            <marker date="1508569741327" expanded="true" signature="25522:25582" ph="SELECT ID fr... Category" />
+            <marker date="1508569741327" expanded="true" signature="25847:26009" ph="SELECT * fro... task_durations" />
+            <marker date="1508569741327" expanded="true" signature="27217:27278" ph="SELECT ID fr... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="27941:27999" ph="SELECT ID fr... Tasks" />
+            <marker date="1508569741327" expanded="true" signature="28780:28902" ph="SELECT * fro... Tasks" />
           </folding>
         </state>
       </provider>
@@ -1045,15 +873,10 @@
           <caret line="386" column="63" lean-forward="false" selection-start-line="386" selection-start-column="63" selection-end-line="386" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1508571137514" expanded="false" signature="14364:14383" ph=" { " />
+            <marker date="1508571137514" expanded="false" signature="14398:14412" ph=" }" />
+            <marker date="1508571137514" expanded="true" signature="16444:16684" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="216" column="76" lean-forward="false" selection-start-line="216" selection-start-column="76" selection-end-line="216" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,16 +885,27 @@
         <state relative-caret-position="324">
           <caret line="67" column="27" lean-forward="false" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
           <folding>
-            <element signature="e#1331#1332#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="false" />
+            <element signature="e#1364#1365#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1728">
+          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/InterfaceDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="341" column="24" lean-forward="false" selection-start-line="341" selection-start-column="24" selection-end-line="341" selection-end-column="24" />
+        <state relative-caret-position="351">
+          <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
           <folding>
             <element signature="e#846#847#0" expanded="true" />
             <element signature="e#871#872#0" expanded="true" />
@@ -1079,37 +913,37 @@
             <element signature="e#1785#1793#0" expanded="true" />
             <element signature="e#6956#6964#0" expanded="true" />
             <element signature="e#7158#7168#0" expanded="true" />
+            <marker date="1508571137530" expanded="false" signature="12590:12606" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="false" signature="13105:13113" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="false" signature="13353:13361" ph="&lt;~&gt;" />
+            <marker date="1508571137530" expanded="true" signature="13703:13800" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="13885:13987" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="14076:14527" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="14570:15446" ph="{...}" />
+            <marker date="1508571137530" expanded="true" signature="14576:14614" ph="//..." />
+            <marker date="1508571137530" expanded="true" signature="14845:14964" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/5e86848e/159e8ad2-927d-4cc8-a868-f40285f8e3f3/TrackerDB.Tasks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/AnalysisScreen.fxml">
-      <provider editor-type-id="text-editor">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml">
+    <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="270">
+          <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
+          <folding>
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#3510#3518#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
   </component>

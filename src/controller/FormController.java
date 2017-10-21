@@ -87,6 +87,10 @@ public class FormController extends Controller{
         oldName = task;
         oldParent = parent;
 
+
+        //LocalDateTime dateTime = LocalDateTime.ofEpochSecond(estimatedTime/1000, 0, ZoneOffset.UTC);
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE,MMMM d,yyyy h:mm,a", Locale.ENGLISH);
+        //String formattedDate = dateTime.format(formatter);
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date estTime = new Date(estimatedTime);
         estimatedTimeField.setText(dateFormat.format(estTime));
@@ -205,16 +209,16 @@ public class FormController extends Controller{
 
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
 
-            Date dueDate = java.util.Date.from(
-                    dueDatePicker.getValue().atStartOfDay(
-                            ZoneId.of( "America/Montreal" )
-                    ).toInstant()
-            );
-
-            if(dueDate != null) {
-                 driver.addDueDate(dueDate, name);
-             }
-
+            if (dueDatePicker.getValue() != null) {
+                Date dueDate = java.util.Date.from(
+                        dueDatePicker.getValue().atStartOfDay(
+                                ZoneId.of("America/Montreal")
+                        ).toInstant()
+                );
+                if(dueDate != null) {
+                    driver.addDueDate(dueDate, name);
+                }
+            }
 
 
             // Check if given due date and add to task
@@ -229,8 +233,8 @@ public class FormController extends Controller{
                 editCategoryMode = false;
             } else {
                 driver.addSubCategory(category, name);
-                currScreen.goToCategoryScreen(category);
             }
+            currScreen.goToCategoryScreen(category);
         }
 
     }
