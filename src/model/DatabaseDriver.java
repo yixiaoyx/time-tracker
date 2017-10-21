@@ -178,35 +178,19 @@ public class DatabaseDriver {
             while (results.next()) {
                 Task t = new Task(results.getString("task_name"));
 
-                System.out.println("1");
-
                 int cat_id = Integer.parseInt(results.getString("category_ID"));
-                System.out.println("1.1");
 
                 Category cat = new Category(getCategoryName(cat_id));
-                System.out.println("1.2");
 
                 t.setParentCategory(cat);
-                System.out.println("1.3");
-
-                String estTime = results.getString("estimated_time");
-                if(estTime == null) {
-                    System.out.println("estTime was null");
-                }
-                else {
-                    t.setEstimatedTime(Long.parseLong(estTime));
-
-                }
-
-                System.out.println("2");
-
 
                 // long total = Long.parseLong(results.getString("duration"));
                 //   t.setTotalTime(total);
-                t.setEstimatedTimeString(results.getString("estimated_time_string"));
+                long estimatedTime = Long.parseLong(results.getString("estimated_time"));
+                t.setEstimatedTime(estimatedTime);
+
                 int goal = Integer.parseInt(results.getString("completed_goal"));
 
-                System.out.println("3");
 
 
                 if(goal == 0) {
@@ -216,10 +200,11 @@ public class DatabaseDriver {
                     t.setGoalComplete(true);
                 }
 
-
-                System.out.println("4");
-
-
+                //System.out.println("due date = " +results.getString("due_date")
+                if(results.getString("due_date") != null) {
+                    Date duedate = sdf.parse(results.getString("due_date"));
+                    t.setDueDate(duedate);
+                }
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 
@@ -834,6 +819,15 @@ public class DatabaseDriver {
 
 
     public static void main(String[] args) throws Exception {
+
+
+        final String sdate = "2017-10-27 13:40:58";
+        SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        final Date date = sdf.parse( sdate ); // conversion from String
+        final java.util.Calendar cal = GregorianCalendar.getInstance();
+        cal.setTime(date);
+        cal.add(GregorianCalendar.DAY_OF_MONTH, -7); // date manipulation
+        System.out.println("result: " + sdf.format(cal.getTime())); // conversion to String
 /*
         //add tasks
         DatabaseDriver db = new DatabaseDriver();

@@ -1,8 +1,6 @@
 package model;
 
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class Task {
@@ -46,11 +44,11 @@ public class Task {
     //To make updates to the database
     private DatabaseDriver db;
 
-
-
     private long totaltime;
 
     private Category parentCategory;
+
+    private boolean dueDateApproaching;
 
     public Category getParentCategory() {
         return parentCategory;
@@ -95,6 +93,44 @@ public class Task {
     public Date getDueDate() {
         return this.dueDate;
     }
+
+    public boolean isDueDateApproaching() {
+
+        if(dueDate == null) {
+            return false;
+        }
+        Date currDate = new Date();
+
+
+        SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //final Date date = sdf.parse( ); // conversion from String
+        Calendar cal = GregorianCalendar.getInstance();
+        cal.setTime(dueDate);
+        cal.add(GregorianCalendar.DAY_OF_MONTH, -7); // date manipulation
+
+        System.out.println("due date  + 7 = " + sdf.format(cal.getTime())); // conversion to String
+        System.out.println("curr date =" + currDate); // conversion to String
+
+
+
+        Date d1 = cal.getTime();
+
+        long diff = Math.abs(d1.getTime() - currDate.getTime());
+        long diffDays = diff / (24 * 60 * 60 * 1000);
+        System.out.println("diff days = "+   diffDays);
+
+        if(diffDays <= 7) {
+            System.out.println(7 - diffDays + " days remaining till task due!");
+            return true; //due date approaching in less than 7 days!
+        }
+
+
+        return false;
+    }
+
+
+
+
     public void clockIn() {
         // we can't clock in to an already active task
         if(active) {
@@ -110,6 +146,7 @@ public class Task {
                 startTime = new Date();
             }
 
+            System.out.println("is due date approaching ? " + isDueDateApproaching());
             System.out.println("Clock-in got start time: " + activeStartTime.toString());
 
 

@@ -149,6 +149,7 @@ public class InterfaceDriver {
         System.out.println("adding tasks");
         for (Task t : getTasks) {
             Category c = t.getParentCategory();
+            System.out.println("task name + " + t.getName());
             if (c.getTaskByName(t.getName()) == null) { //find if task already exists.
                 addTaskObject(c.getName(), t);
              //  System.out.println("interface estiamted time " +  t.getEstimatedTime());

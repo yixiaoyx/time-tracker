@@ -42,6 +42,16 @@ public class TaskController extends Controller {
     private Label goalReached;
     @FXML
     private StackPane sp;
+    @FXML
+    private JFXButton badge1Button;
+    @FXML
+    private JFXButton badge2Button;
+    @FXML
+    private JFXButton badge3Button;
+    @FXML
+    private JFXButton badge4Button;
+    @FXML
+    private JFXButton badge5Button;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
@@ -54,8 +64,6 @@ public class TaskController extends Controller {
         active = false;
 
         estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-
-
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -75,19 +83,27 @@ public class TaskController extends Controller {
                             if (estimatedTime > 0) {
                                 long percentage =(long)((float)total/estimatedTime*100);
 
-                              //  System.out.println(" percentage: " + total/estimatedTime);
-                                if(percentage == 25) {
-                                    goalReached.setText("25% progress made!");
+                                //FIRST BADGE FOR STARTING A TASK
+                                badge1Button.setVisible(true);
+
+                                //  System.out.println(" percentage: " + total/estimatedTime);
+                                if(percentage >= 25) {
+                                    //goalReached.setText("25% progress made!");
+                                    badge2Button.setVisible(true);
                                 }
-                                if(percentage == 50) {
-                                    goalReached.setText("50% progress made!");
+                                if(percentage >= 50) {
+                                    //goalReached.setText("50% progress made!");
+                                    badge3Button.setVisible(true);
                                 }
-                                if(percentage == 75) {
-                                    goalReached.setText("75% progress made!");
+                                if(percentage >= 75) {
+                                    //goalReached.setText("75% progress made!");
+                                    badge4Button.setVisible(true);
                                 }
                                 if (reached == false && total >= estimatedTime) {
-                                    goalReached.setText("Goal Reached WOOOOO!");
-                                    driver.completedGoal(true, currTask);
+                                    //goalReached.setText("Goal Reached WOOOOO!");
+                                    //driver.completedGoal(true, currTask);
+
+                                    badge5Button.setVisible(true);
                                     reached = true;
 
                                 }
@@ -132,8 +148,7 @@ public class TaskController extends Controller {
             driver.clockIn(currTask);
             clockButton.setText("CLOCK OUT");
 
-            goalReached.setText("Started a Task GJ!");
-
+            //goalReached.setText("Started a Task GJ!");
 
             activeTime.play();
             active = true;
@@ -202,6 +217,68 @@ public class TaskController extends Controller {
         delButton.setGraphic(Assets.binImage);
         updateBigProgressBar();
         changeButton.setGraphic(Assets.changeImage);
+
+        // 0% boi
+        badge1Button.setGraphic(Assets.badge1Image);
+        // 25% boi
+        badge2Button.setGraphic(Assets.badge2Image);
+        // 50% boi
+        badge3Button.setGraphic(Assets.badge3Image);
+        // 75% boi
+        badge4Button.setGraphic(Assets.badge5Image);
+        // 100% boi
+        badge5Button.setGraphic(Assets.badge5Image);
+
+        Long total = (driver.getTaskByName(currTask).getTotalTime());
+
+        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
+
+
+        long percentage =(long)((float)total/estimatedTime*100);
+
+
+        System.out.println("Est Time: " + estimatedTime);
+        System.out.println("Percentage: " + percentage);
+
+
+        badge1Button.setVisible(false);
+        badge2Button.setVisible(false);
+        badge3Button.setVisible(false);
+        badge4Button.setVisible(false);
+        badge5Button.setVisible(false);
+
+
+        if(percentage > 0) {
+            badge1Button.setVisible(true);
+        }
+        //  System.out.println(" percentage: " + total/estimatedTime);
+        if(percentage >= 25) {
+            //goalReached.setText("25% progress made!");
+            badge2Button.setVisible(true);
+        }
+        if(percentage >= 50) {
+            //goalReached.setText("50% progress made!");
+            badge3Button.setVisible(true);
+        }
+        if(percentage >= 75) {
+            //goalReached.setText("75% progress made!");
+            badge4Button.setVisible(true);
+        }
+        if (percentage >= 100) {
+            //goalReached.setText("Goal Reached WOOOOO!");
+            //driver.completedGoal(true, currTask);
+            badge5Button.setVisible(true);
+            reached = true;
+
+        }
+
+
+        // check what badges we already have
+//        badge1Button.setVisible(false);
+//        badge2Button.setVisible(false);
+//        badge3Button.setVisible(false);
+//        badge4Button.setVisible(false);
+//        badge5Button.setVisible(false);
     }
 
     private void controllerClockOut() {
