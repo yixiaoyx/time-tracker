@@ -198,8 +198,11 @@ public class DatabaseDriver {
                     t.setGoalComplete(true);
                 }
 
-                Date duedate = sdf.parse(results.getString("due_date"));
-                t.setDueDate(duedate);
+                //System.out.println("due date = " +results.getString("due_date")
+                if(results.getString("due_date") != null) {
+                    Date duedate = sdf.parse(results.getString("due_date"));
+                    t.setDueDate(duedate);
+                }
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
 

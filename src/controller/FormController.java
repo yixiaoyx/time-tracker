@@ -154,6 +154,9 @@ public class FormController extends Controller{
             if (estimatedSeconds != null) {
                 driver.addEstimatedTimeToTask(estimatedTime, estimatedSeconds, name);
             }
+
+            //
+
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
           /*  if(dueDate != null) {
                 driver.addDueDate(Date);
