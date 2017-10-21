@@ -225,6 +225,8 @@ public class CategoryController extends Controller {
         Label label = new Label(categoryName);
         label.setTextFill(WHITE);
 
+
+        //if(driver.categoryDueSoon(categoryName)) {
         vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
         vbox.setAlignment(Pos.CENTER);
 
