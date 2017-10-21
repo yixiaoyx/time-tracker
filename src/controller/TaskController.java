@@ -72,7 +72,7 @@ public class TaskController extends Controller {
                             Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
                                     (driver.getTaskByName(currTask).getTotalTimeSecs());
                             //display text on goal reached
-                            if (reached == false && total >= estimatedTime) {
+                            if (reached == false && total >= estimatedTime && estimatedTime > 0) {
                                 goalReached.setText("Goal Reached WOOOOO!");
                                 driver.completedGoal(true, currTask);
                             }
@@ -151,7 +151,7 @@ public class TaskController extends Controller {
 
     @FXML
     private void handleLiteClick() {
-        currScreen.goToTaskLiteScreen(currTask);
+        //currScreen.goToTaskLiteScreen(currTask);
     }
 
     @FXML
@@ -174,7 +174,7 @@ public class TaskController extends Controller {
         Long total = driver.getTaskByName(currTask).getTotalTime();
         Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
         System.out.println("total time = " + total + " estiamted = " + estimatedTime);
-        if(total >= estimatedTime) {
+        if(total >= estimatedTime && estimatedTime > 0) {
             goalReached.setText("Goal Reached WOO!");
             System.out.println("goal reached");
         }

@@ -37,6 +37,9 @@ public class DatabaseDriver {
     //saves a task to the task table
     public void saveTasks(String task, String Category, String durationString, long duration){
 
+
+        System.out.println("saveTask category: " + Category);
+
         try {
             Connection  c = DriverManager.getConnection(db, user, pw);
             System.out.println("connected");
@@ -55,7 +58,9 @@ public class DatabaseDriver {
             }
             int CategoryID = getCategoryID(Category);
 
-            String query1 = "INSERT INTO Tasks (task_name,category_ID, duration_string, duration) VALUES ('"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "')";
+            System.out.println("CategoryID is " + CategoryID);
+
+            String query1 = "INSERT INTO Tasks (task_name,category_ID, duration_string, duration, estimated_time_string, estimated_time) VALUES ('"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "', null, 0)";
 
 
             System.out.println("Task does not exist");
@@ -172,20 +177,47 @@ public class DatabaseDriver {
             while (results.next()) {
                 Task t = new Task(results.getString("task_name"));
 
+                System.out.println("1");
+
                 int cat_id = Integer.parseInt(results.getString("category_ID"));
+                System.out.println("1.1");
+
                 Category cat = new Category(getCategoryName(cat_id));
+                System.out.println("1.2");
+
                 t.setParentCategory(cat);
-                t.setEstimatedTime(Long.parseLong(results.getString("estimated_time")));
+                System.out.println("1.3");
+
+                String estTime = results.getString("estimated_time");
+                if(estTime == null) {
+                    System.out.println("estTime was null");
+                }
+                else {
+                    t.setEstimatedTime(Long.parseLong(estTime));
+
+                }
+
+                System.out.println("2");
+
+
                 // long total = Long.parseLong(results.getString("duration"));
                 //   t.setTotalTime(total);
                 t.setEstimatedTimeString(results.getString("estimated_time_string"));
                 int goal = Integer.parseInt(results.getString("completed_goal"));
+
+                System.out.println("3");
+
+
                 if(goal == 0) {
                     t.setGoalComplete(false);
                 }
                 else {
                     t.setGoalComplete(true);
                 }
+
+
+                System.out.println("4");
+
 
                 tasks.add(t);
                 System.out.println("added task: " + t.getName() + " and set its parent Category to = " + t.getParentCategory().getName());
