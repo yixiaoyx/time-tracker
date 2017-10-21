@@ -3,23 +3,20 @@ import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.event.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
+import java.time.Duration;
+
+import static model.Duration.convertTime;
 
 
 public class FormController extends Controller{
@@ -87,13 +84,7 @@ public class FormController extends Controller{
         oldName = task;
         oldParent = parent;
 
-
-        //LocalDateTime dateTime = LocalDateTime.ofEpochSecond(estimatedTime/1000, 0, ZoneOffset.UTC);
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE,MMMM d,yyyy h:mm,a", Locale.ENGLISH);
-        //String formattedDate = dateTime.format(formatter);
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        Date estTime = new Date(estimatedTime);
-        estimatedTimeField.setText(dateFormat.format(estTime));
+        estimatedTimeField.setText(convertTime(estimatedTime));
     }
 
     public void editCategory(String category, String parent) {

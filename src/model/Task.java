@@ -3,6 +3,8 @@ package model;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
+import static model.Duration.convertTime;
+
 public class Task {
     private String name;
 
@@ -326,25 +328,6 @@ public class Task {
 
     public long durationInSeconds() {
         return durationSecs;
-    }
-
-
-    public String convertTime(long milliSecondDelta) {
-        // this snippet taken from https://stackoverflow.com/questions/43892644
-        long secondsInMilli = 1000;
-        long minutesInMilli = secondsInMilli * 60;
-        long hoursInMilli = minutesInMilli * 60;
-
-        long elapsedHours = milliSecondDelta / hoursInMilli;
-        milliSecondDelta = milliSecondDelta % hoursInMilli;
-
-        long elapsedMinutes = milliSecondDelta / minutesInMilli;
-        milliSecondDelta = milliSecondDelta % minutesInMilli;
-
-        long elapsedSeconds = milliSecondDelta / secondsInMilli;
-        return String.format("%02d", elapsedHours) + ":" +
-                String.format("%02d", elapsedMinutes) + ":" +
-                String.format("%02d", elapsedSeconds);
     }
 
 
