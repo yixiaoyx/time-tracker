@@ -188,14 +188,14 @@ public class AnalysisController extends Controller {
         tabPane.getTabs().add(tab0);
 
 
-        Tab tab1 = new Tab();
-        tab1.setText("Line Graph");
-        tab1.setContent(analysisAreaChart);
-
-        tabPane.getTabs().add(tab1);
+//        Tab tab1 = new Tab();
+//        tab1.setText("Line Graph");
+//        tab1.setContent(analysisAreaChart);
+//
+//        tabPane.getTabs().add(tab1);
 
         Tab tab2 = new Tab();
-        tab2.setText("Pie Chart");
+        tab2.setText("Task Breakdown");
         tab2.setContent(taskBreakdownChart);
 
         tabPane.getTabs().add(tab2);
