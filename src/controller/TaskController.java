@@ -24,12 +24,6 @@ public class TaskController extends Controller {
     private boolean reached;
     private final Timeline activeTime;
 
-    final File analysisFile = new File("src/assets/Graph_1.png");
-    final String analysisPath = analysisFile.toURI().toString();
-
-    final File binFile = new File("src/assets/Bin_1.png");
-    final String binPath = binFile.toURI().toString();
-
     @FXML
     private Button clockButton;
     @FXML
@@ -40,6 +34,8 @@ public class TaskController extends Controller {
     private Label taskName;
     @FXML
     private Button delButton;
+    @FXML
+    private JFXButton changeButton;
     @FXML
     private JFXProgressBar bigProgressBar;
     @FXML
@@ -55,6 +51,7 @@ public class TaskController extends Controller {
         bigProgressBar = new JFXProgressBar();
 
         active = false;
+        //duration.setText(driver.getTaskByName(currTask).getDurationString());
 
         Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
@@ -173,6 +170,11 @@ public class TaskController extends Controller {
     }
 
     @FXML
+    private void handleChange() {
+
+    }
+
+    @FXML
     private void handleLiteClick() {
         currScreen.goToTaskLiteScreen(currTask);
     }
@@ -181,11 +183,12 @@ public class TaskController extends Controller {
     protected void initialize() {
         taskName.setText(currTask);
         goalReached.setText("");
-        Image analysisImage = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(analysisImage));
-        Image binImage = new Image(binPath, false);
-        delButton.setGraphic(new ImageView(binImage));
+
+        // setting up graphics
+        analysisButton.setGraphic(Assets.analysisImage);
+        delButton.setGraphic(Assets.binImage);
         updateBigProgressBar();
+        changeButton.setGraphic(Assets.changeImage);
     }
 
     private void controllerClockOut() {

@@ -181,6 +181,14 @@ public class AnalysisController extends Controller {
 
         JFXTabPane tabPane = new JFXTabPane();
 
+
+        Tab tab3 = new Tab();
+        tab3.setText("Task Progress");
+        tab3.setContent(progressVBox);
+
+        tabPane.getTabs().add(tab3);
+
+
         Tab tab0 = new Tab();
         tab0.setText("Time Log");
         tab0.setContent(list);
@@ -188,23 +196,18 @@ public class AnalysisController extends Controller {
         tabPane.getTabs().add(tab0);
 
 
-        Tab tab1 = new Tab();
-        tab1.setText("Line Graph");
-        tab1.setContent(analysisAreaChart);
-
-        tabPane.getTabs().add(tab1);
+//        Tab tab1 = new Tab();
+//        tab1.setText("Line Graph");
+//        tab1.setContent(analysisAreaChart);
+//
+//        tabPane.getTabs().add(tab1);
 
         Tab tab2 = new Tab();
-        tab2.setText("Pie Chart");
+        tab2.setText("Task Breakdown");
         tab2.setContent(taskBreakdownChart);
 
         tabPane.getTabs().add(tab2);
 
-        Tab tab3 = new Tab();
-        tab3.setText("Task Progress");
-        tab3.setContent(progressVBox);
-
-        tabPane.getTabs().add(tab3);
 
         contentvbox.getChildren().add(tabPane);
         contentvbox.setAlignment(Pos.CENTER);

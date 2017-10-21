@@ -83,16 +83,6 @@
                             </HBox.margin>
                         </JFXButton>
 
-                        <JFXButton fx:id="searchButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleSearchClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000;" styleClass="button-small" text="S" textAlignment="CENTER" translateY="1.0">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
-
-
 
                         <JFXButton fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="31.0" style="-fx-base: #00000000" styleClass="button-small" text="+" textAlignment="CENTER" translateY="1.0">
                             <font>
