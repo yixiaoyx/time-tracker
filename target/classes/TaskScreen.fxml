@@ -32,7 +32,7 @@
                               <Font name="Arial" size="24.0" />
                           </font>
                       </JFXButton>
-                      <JFXButton fx:id="changeButton" mnemonicParsing="false" onMouseClicked="#handleChange" styleClass="button-delete" textAlignment="CENTER" translateY="1.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                      <JFXButton fx:id="changeButton" mnemonicParsing="false" onMouseClicked="#handleChange" styleClass="button-delete" textAlignment="CENTER" translateY="1.0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
                               <Font name="DejaVu Sans" size="14.0" />
                           </font>
@@ -48,7 +48,7 @@
                           </font>
                       </JFXButton>
 
-                      <JFXButton fx:id="delButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleDelete" prefHeight="30.0" prefWidth="65.0" styleClass="button-delete" textAlignment="CENTER" translateX="-43.0" translateY="61.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                      <JFXButton fx:id="delButton" mnemonicParsing="false" onMouseClicked="#handleDelete" styleClass="button-delete" textAlignment="CENTER" translateY="1.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
                               <Font name="DejaVu Sans" size="14.0" />
                           </font>

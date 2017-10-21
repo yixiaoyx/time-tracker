@@ -343,6 +343,7 @@ public class InterfaceDriver {
     oldP.removeSubCategoryReference(c);
     // TODO make change in db
   }
+
   // use for analysis
   public String getTaskTimeString(String taskName) {
     Task t = getTaskByName(taskName);
