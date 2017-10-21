@@ -4,10 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -58,6 +60,9 @@ public class CategoryController extends Controller {
     final String binPath = binFile.toURI().toString();
     final String searchPath = searchFile.toURI().toString();
     final String changePath = changeFile.toURI().toString();
+
+
+    private String initialSearchQuery;
 
     @FXML
     private StackPane sp;
@@ -119,7 +124,17 @@ public class CategoryController extends Controller {
             System.out.println(cur);
         }
 
-
+        if(initialSearchQuery != null) {
+            searchBar.setText(initialSearchQuery);
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    searchBar.requestFocus();
+                    searchBar.deselect();
+                    searchBar.positionCaret(searchBar.getText().length());
+                }
+            });
+        }
 
         // breadcrumbs
         List<String> catPath = driver.getCategoryPath(currCategory);
@@ -270,6 +285,9 @@ public class CategoryController extends Controller {
     @FXML
     private void handleSearchText() {
         System.out.println("Handling search " + searchBar.getText());
+        runSearch(searchBar.getText());
+
+
     }
 
     @FXML
@@ -286,6 +304,10 @@ public class CategoryController extends Controller {
     }
     private void handleCategoryClick(String category){
         currScreen.goToCategoryScreen(category);
+    }
+
+    private void handleCategoryClickWithSearchQuery(String category, String searchQuery) {
+        currScreen.goToCategoryScreenWithSearchQuery(category, searchQuery);
     }
 
     private void handleTaskClick(String task) {
@@ -366,6 +388,10 @@ public class CategoryController extends Controller {
         dialog.show(sp);
 
 
+    }
+
+    public void setSearchQuery(String searchQuery) {
+        initialSearchQuery = searchQuery;
     }
 
     @FXML
@@ -472,7 +498,7 @@ public class CategoryController extends Controller {
         List<String> matchingCategories = driver.searchForCategories(searchQuery, currCategory);
 
         String searchCategory = driver.makeSearchCategory(matchingTasks, matchingCategories);
-        handleCategoryClick(searchCategory);
+        handleCategoryClickWithSearchQuery(searchCategory, searchQuery);
 
 //        for(String s : matchingTasks) {
 //            System.out.println("Found task: " + s);
