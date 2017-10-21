@@ -39,6 +39,8 @@ public class TaskController extends Controller {
     @FXML
     private JFXButton analysisButton;
     @FXML
+    private JFXButton taskLiteButton;
+    @FXML
     private Label goalReached;
     @FXML
     private StackPane sp;
@@ -283,37 +285,38 @@ public class TaskController extends Controller {
         badge5Button.setVisible(false);
 
 
-        if(percentage > 0) {
-            badge1Button.setVisible(true);
-        }
-        //  System.out.println(" percentage: " + total/estimatedTime);
-        if(percentage >= 25) {
-            //goalReached.setText("25% progress made!");
-            badge2Button.setVisible(true);
-        }
-        if(percentage >= 50) {
-            //goalReached.setText("50% progress made!");
-            badge3Button.setVisible(true);
-        }
-        if(percentage >= 75) {
-            //goalReached.setText("75% progress made!");
-            badge4Button.setVisible(true);
-        }
-        if (percentage >= 100) {
-            //goalReached.setText("Goal Reached WOOOOO!");
-            //driver.completedGoal(true, currTask);
-            badge5Button.setVisible(true);
-            reached = true;
+        if(estimatedTime > 0) {
+            if (percentage > 0) {
+                badge1Button.setVisible(true);
+            }
+            //  System.out.println(" percentage: " + total/estimatedTime);
+            if (percentage >= 25) {
+                //goalReached.setText("25% progress made!");
+                badge2Button.setVisible(true);
+            }
+            if (percentage >= 50) {
+                //goalReached.setText("50% progress made!");
+                badge3Button.setVisible(true);
+            }
+            if (percentage >= 75) {
+                //goalReached.setText("75% progress made!");
+                badge4Button.setVisible(true);
+            }
+            if (percentage >= 100) {
+                //goalReached.setText("Goal Reached WOOOOO!");
+                //driver.completedGoal(true, currTask);
+                badge5Button.setVisible(true);
+                reached = true;
 
+            }
         }
 
 
-        // check what badges we already have
-//        badge1Button.setVisible(false);
-//        badge2Button.setVisible(false);
-//        badge3Button.setVisible(false);
-//        badge4Button.setVisible(false);
-//        badge5Button.setVisible(false);
+        changeButton.setTooltip(new Tooltip("Edit task properties"));
+        delButton.setTooltip(new Tooltip("Delete this task"));
+        taskLiteButton.setTooltip(new Tooltip("Tracker Lite"));
+        analysisButton.setTooltip(new Tooltip("Analyse this task"));
+
     }
 
     private void controllerClockOut() {
