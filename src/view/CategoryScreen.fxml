@@ -44,7 +44,7 @@
                                     </font>
                                 </Label>
 
-                                <JFXTextField fx:id="nameField" alignment="CENTER" focusColor="#74a5ff" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
+                                <JFXTextField fx:id="searchBar" onKeyReleased="#handleSearchText" alignment="CENTER" focusColor="#74a5ff" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
 
                             </children>
                         </VBox>

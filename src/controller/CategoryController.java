@@ -91,6 +91,9 @@ public class CategoryController extends Controller {
     @FXML
     private JFXButton searchButton;
 
+    @FXML
+    private JFXTextField searchBar;
+
 
 
     public CategoryController(InterfaceDriver driver, CategoryScreen currScreen, String category) {
@@ -114,6 +117,7 @@ public class CategoryController extends Controller {
             addTaskToTable(cur);
             System.out.println(cur);
         }
+
 
 
         // breadcrumbs
@@ -260,6 +264,11 @@ public class CategoryController extends Controller {
         }
 
         dialog.show(sp);
+    }
+
+    @FXML
+    private void handleSearchText() {
+        System.out.println("Handling search " + searchBar.getText());
     }
 
     @FXML
