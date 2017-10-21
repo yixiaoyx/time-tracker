@@ -62,7 +62,7 @@
 
 
         </JFXTextField>
-        <JFXTextField fx:id="estimatedTimeField" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="220.0" promptText="Estimated Duration  HH:MM:SS" style="-fx-background-color: #f7fbff;" translateX="40.0" unFocusColor="#6f6f6f">
+        <JFXTextField fx:id="estimatedTimeField" focusColor="#74a5ff" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="220.0" promptText="Goal Time  HH:MM:SS" style="-fx-background-color: #f7fbff;" translateX="40.0" unFocusColor="#6f6f6f">
             <effect>
                 <DropShadow blurType="ONE_PASS_BOX" color="#c6c6c6" height="32.86" offsetY="5.0" radius="15.93" spread="0.49" width="32.86" />
             </effect>
