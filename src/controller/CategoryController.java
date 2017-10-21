@@ -94,8 +94,8 @@ public class CategoryController extends Controller {
     @FXML
     private HBox categoryPathHBox;
 
-    @FXML
-    private JFXButton searchButton;
+    //@FXML
+    //private JFXButton searchButton;
 
     @FXML
     private JFXTextField searchBar;
@@ -178,9 +178,6 @@ public class CategoryController extends Controller {
 
         Image binImage = new Image(binPath, false);
         delButton.setGraphic(new ImageView(binImage));
-
-        Image searchImage = new Image(searchPath, false);
-        searchButton.setGraphic(new ImageView(searchImage));
 
         Image changeImage = new Image(changePath, false);
         changeButton.setGraphic(new ImageView(changeImage));
@@ -494,8 +491,8 @@ public class CategoryController extends Controller {
     }
 
     private void runSearch(String searchQuery) {
-        List<String> matchingTasks = driver.searchForTasks(searchQuery, currCategory);
-        List<String> matchingCategories = driver.searchForCategories(searchQuery, currCategory);
+        List<String> matchingTasks = driver.searchForTasks(searchQuery, "All");
+        List<String> matchingCategories = driver.searchForCategories(searchQuery, "All");
 
         String searchCategory = driver.makeSearchCategory(matchingTasks, matchingCategories);
         handleCategoryClickWithSearchQuery(searchCategory, searchQuery);
