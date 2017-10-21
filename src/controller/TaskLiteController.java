@@ -62,14 +62,9 @@ public class TaskLiteController extends Controller {
                             clockButton.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
                             updateBigProgressBar();
 
-                            //get the total time (current run time + other durations for task) spent on a task
-                            Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
-                                    (driver.getTaskByName(currTask).getTotalTimeSecs());
-                            //display text on goal reached
-                            if (reached == false && total >= estimatedTime) {
-//                                goalReached.setText("Goal Reached WOOOOO!");
-                                driver.completedGoal(true, currTask);
-                            }
+//                            //get the total time (current run time + other durations for task) spent on a task
+//                            Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
+//                                    (driver.getTaskByName(currTask).getTotalTimeSecs());
                         }
                     }
                 ),

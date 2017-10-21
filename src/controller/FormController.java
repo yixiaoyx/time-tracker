@@ -12,7 +12,9 @@ import model.InterfaceDriver;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -85,6 +87,10 @@ public class FormController extends Controller{
         oldName = task;
         oldParent = parent;
 
+
+        //LocalDateTime dateTime = LocalDateTime.ofEpochSecond(estimatedTime/1000, 0, ZoneOffset.UTC);
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE,MMMM d,yyyy h:mm,a", Locale.ENGLISH);
+        //String formattedDate = dateTime.format(formatter);
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date estTime = new Date(estimatedTime);
         estimatedTimeField.setText(dateFormat.format(estTime));
@@ -101,7 +107,8 @@ public class FormController extends Controller{
         oldParent = parent;
 
         estimatedTimeField.setDisable(true);
-        // TODO
+        dueDatePicker.setDisable(true);
+        dueTimePicker.setDisable(true);
     }
 
     private ArrayList<String> findSubCategories(String category){
@@ -201,18 +208,32 @@ public class FormController extends Controller{
             //
 
             System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
-          /*  if(dueDate != null) {
-                driver.addDueDate(Date);
+
+            if (dueDatePicker.getValue() != null) {
+                Date dueDate = java.util.Date.from(
+                        dueDatePicker.getValue().atStartOfDay(
+                                ZoneId.of("America/Montreal")
+                        ).toInstant()
+                );
+                if(dueDate != null) {
+                    driver.addDueDate(dueDate, name);
+                }
             }
 
-            */
 
             // Check if given due date and add to task
             // -
             currScreen.goToTaskScreen(name);
         } else {
-
-            driver.addSubCategory(category, name);
+            if (editCategoryMode) {
+                driver.changeCategory(oldName, name);
+                driver.changeCategoryParentCategory(name, oldParent, category);
+                oldName = null;
+                oldParent = null;
+                editCategoryMode = false;
+            } else {
+                driver.addSubCategory(category, name);
+            }
             currScreen.goToCategoryScreen(category);
         }
 
