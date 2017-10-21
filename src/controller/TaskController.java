@@ -54,7 +54,10 @@ public class TaskController extends Controller {
     private JFXButton badge5Button;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
+
         super(driver);
+
+
         this.currScreen = currScreen;
         currTask = task;
         parentCategory = driver.getParentCategoryOfTask(currTask);
@@ -70,7 +73,11 @@ public class TaskController extends Controller {
                     new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent actionEvent) {
-                            duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            //duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            clockButton.setText(driver.getTaskTotalAndActiveTimeString(currTask));
+                            //clockButton.setText(driver.getTaskTimeString(currTask));
+
+
                             updateBigProgressBar();
 
                             //get the total time (current run time + other durations for task) spent on a task
@@ -146,7 +153,11 @@ public class TaskController extends Controller {
 
         if (!active) {
             driver.clockIn(currTask);
-            clockButton.setText("CLOCK OUT");
+
+            //clockButton.setTooltip(new Tooltip("Clock out"));
+
+            //clockButton.setText(driver.getTaskTimeString(currTask));
+            //clockButton.setText("CLOCK OUT");
 
             //goalReached.setText("Started a Task GJ!");
 
@@ -211,6 +222,8 @@ public class TaskController extends Controller {
     protected void initialize() {
         taskName.setText(currTask);
         goalReached.setText("");
+
+        duration.setVisible(false);
 
         // setting up graphics
         analysisButton.setGraphic(Assets.analysisImage);
@@ -284,6 +297,9 @@ public class TaskController extends Controller {
     private void controllerClockOut() {
         driver.clockOut(currTask);
         clockButton.setText("CLOCK IN");
+
+        clockButton.setTooltip(new Tooltip("Clock in"));
+
 
         activeTime.stop();
 

@@ -70,7 +70,6 @@ public class AnalysisController extends Controller {
         yAxis.setLabel("Minutes on task");
 
         analysisAreaChart = new LineChart(xAxis, yAxis);
-
     }
 
 
@@ -115,7 +114,6 @@ public class AnalysisController extends Controller {
         contentvbox.getChildren().addAll(totalTimeLabel);
 
 
-
         // Simple time log
         JFXListView<Label> list = new JFXListView<Label>();
         for(Duration d : driver.getDurationsFromCategory(currCategory)) {
@@ -127,7 +125,6 @@ public class AnalysisController extends Controller {
         }
 
         list.getStyleClass().add("mylistview");
-
 
         // progress bar page
         VBox progressVBox = new VBox();
@@ -147,7 +144,6 @@ public class AnalysisController extends Controller {
 
             double progress = (double) times[0] / times[1];
 
-
             Label l1 = new Label(taskName);
             l1.setStyle("-fx-font-weight: bold");
 
@@ -157,7 +153,6 @@ public class AnalysisController extends Controller {
             JFXProgressBar jfxBar = new JFXProgressBar();
             jfxBar.setPrefHeight(10);
             jfxBar.setProgress(progress);
-
 
             Label l3 = new Label((int)(progress*100.0) +"%");
 
@@ -174,7 +169,6 @@ public class AnalysisController extends Controller {
             gridpane.getChildren().addAll(l1, l2, jfxBar, l3);
 
             currentRow++;
-
         }
 
         HBox hb = new HBox();
@@ -182,10 +176,7 @@ public class AnalysisController extends Controller {
         hb.getChildren().add(gridpane);
         progressVBox.getChildren().add(hb);
 
-
-
         JFXTabPane tabPane = new JFXTabPane();
-
 
         Tab tab3 = new Tab();
         tab3.setText("Task Progress");
