@@ -52,6 +52,8 @@ public class TaskController extends Controller {
     private JFXButton badge4Button;
     @FXML
     private JFXButton badge5Button;
+    @FXML
+    private Label DaysTillDue;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
 
@@ -243,11 +245,13 @@ public class TaskController extends Controller {
 
         duration.setVisible(false);
 
+        DaysTillDue.setText(driver.getTaskByName(currTask).getDateTillDue());
         // setting up graphics
         analysisButton.setGraphic(Assets.analysisImage);
         delButton.setGraphic(Assets.binImage);
         updateBigProgressBar();
         changeButton.setGraphic(Assets.changeImage);
+
 
         // 0% boi
         badge1Button.setGraphic(Assets.badge1Image);

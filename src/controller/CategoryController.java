@@ -20,6 +20,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
@@ -42,6 +43,11 @@ public class CategoryController extends Controller {
     private boolean active;
     private String initialSearchQuery;
     private String parentCategory;
+
+    final File homeFile = new File("src/assets/Home_1.png");
+    final File home2File = new File ("src/assets/Home_2.png");
+    final String homePath = homeFile.toURI().toString();
+    final String home2Path = home2File.toURI().toString();
 
     @FXML
     private StackPane sp;
@@ -78,6 +84,8 @@ public class CategoryController extends Controller {
 
     @FXML
     private JFXTextField searchBar;
+    @FXML
+    private Button homeButton;
 
 
 
@@ -120,7 +128,10 @@ public class CategoryController extends Controller {
         for(String s : catPath) {
             JFXButton b;
             if(s == "All") {
-                b = new JFXButton("Home");
+                b = new JFXButton();
+                b.setPrefHeight(25);
+                Image home2Image = new Image(home2Path, false);
+                b.setGraphic(new ImageView(home2Image));
             }
             else {
                 b = new JFXButton(s);
@@ -144,9 +155,13 @@ public class CategoryController extends Controller {
 
 
         if(currCategory == "All") {
-            categoryName.setText("Home");
+            categoryName.setText("");
+            Image homeImage = new Image(homePath, false);
+            homeButton.setGraphic(new ImageView(homeImage));
         }
         else {
+            homeButton.setVisible(false);
+            categoryName.setPrefHeight(45);
             categoryName.setText(currCategory);
         }
 
@@ -186,7 +201,17 @@ public class CategoryController extends Controller {
         Label label = new Label(taskName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
+        if(driver.taskDueSoon(taskName)) {
+            System.out.println("DUE SOON");
+            vbox.getChildren().addAll(new ImageView(Assets.taskAlertImage), label);
+        }
+        else {
+            System.out.println("NOT DUE SOON");
+            vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
+        }
+
+
+
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
@@ -215,7 +240,14 @@ public class CategoryController extends Controller {
         Label label = new Label(categoryName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
+
+        if(driver.categoryDueSoon(categoryName)) {
+            vbox.getChildren().addAll(new ImageView(Assets.categoryAlertImage), label);
+        }
+        else {
+            vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
+        }
+
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
