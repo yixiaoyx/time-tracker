@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <StackPane fx:id="sp" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
@@ -38,7 +39,7 @@
                                     <!--<Label fx:id="smallCategoryPath" alignment="CENTER" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">-->
                                 </HBox>
 
-                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="427.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
+                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="444.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
                                     <font>
                                         <Font name="Calibri" size="30.0" />
                                     </font>
@@ -94,5 +95,6 @@
 
             </bottom>
         </BorderPane>
+      <Rectangle fx:id="homeShape" arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="33.0" stroke="#d9d9d9" strokeType="INSIDE" translateY="-234.0" width="72.0" />
     </children>
 </StackPane>

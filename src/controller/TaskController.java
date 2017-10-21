@@ -237,6 +237,7 @@ public class TaskController extends Controller {
         updateBigProgressBar();
         changeButton.setGraphic(Assets.changeImage);
 
+
         badge1Button.setVisible(false);
         badge2Button.setVisible(false);
         badge3Button.setVisible(false);

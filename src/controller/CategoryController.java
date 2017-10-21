@@ -143,7 +143,8 @@ public class CategoryController extends Controller {
 
 
         if(currCategory == "All") {
-            categoryName.setText("Home");
+            categoryName.setText("likasombodi");
+
         }
         else {
             categoryName.setText(currCategory);
