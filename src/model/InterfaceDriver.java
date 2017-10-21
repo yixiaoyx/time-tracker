@@ -456,7 +456,7 @@ public class InterfaceDriver {
 
   public boolean categoryDueSoon(String currCategory ) {
     Category c = getCategoryByName(currCategory);
-    return true;
+    return c.isDueSoon();
   }
 
   public List<String> searchForTasks(String searchQuery, String currCategory) {

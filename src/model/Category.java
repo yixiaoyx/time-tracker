@@ -95,6 +95,16 @@ public class Category {
   }
 
 
+  public boolean isDueSoon() {
+    for(Task t : recursiveGetTasks()) {
+      if(t.isDueDateApproaching()) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
 
   public Category getSubCategoryByName(String uniqueName) {
     for(Category c : subCategories) {
