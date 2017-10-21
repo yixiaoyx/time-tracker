@@ -14,9 +14,12 @@ public class InterfaceDriver {
   private List<Category> topLevelCategories;
   DatabaseDriver db;
 
+  private boolean isActive;
+
   public InterfaceDriver() {
     topLevelCategories = new ArrayList<Category>();
     db = new DatabaseDriver();
+    isActive = false;
   }
 
   // make sure this name is unique, otherwise will cause
@@ -24,6 +27,10 @@ public class InterfaceDriver {
   public void addCategory(String uniqueName) {
     System.out.println("InterfaceDriver: added category " + uniqueName);
     topLevelCategories.add(new Category(uniqueName));
+  }
+
+  public boolean isActive() {
+    return isActive;
   }
 
 
@@ -163,6 +170,7 @@ public class InterfaceDriver {
     if(t != null) {
       System.out.println("InterfaceDriver: clocked in to " + taskName);
       t.clockIn();
+      isActive = true;
     }
     else {
       System.out.println("InterfaceDriver: clock in ERROR couldn't find " + taskName);
@@ -174,6 +182,7 @@ public class InterfaceDriver {
     if(t != null) {
       System.out.println("InterfaceDriver: clocked out of " + taskName);
       t.clockOut();
+      isActive = false;
     }
     else {
       System.out.println("InterfaceDriver: clock out ERROR couldn't find " + taskName);
@@ -343,6 +352,12 @@ public class InterfaceDriver {
   public List<Duration> getDurationsFromCategory(String categoryName) {
     Category c = getCategoryByName(categoryName);
     return c.getDurations();
+  }
+
+
+  public String getTaskTotalAndActiveTimeString(String taskName) {
+    Task t = getTaskByName(taskName);
+    return t.getTotalAndActiveTimeString();
   }
 
   // this function makes a category containing only the given task, named the same as the given task.
