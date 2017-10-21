@@ -250,8 +250,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1359" />
-    <option name="y" value="-11" />
+    <option name="x" value="-1" />
+    <option name="y" value="-779" />
     <option name="width" value="1362" />
     <option name="height" value="780" />
   </component>
@@ -609,7 +609,7 @@
       <workItem from="1508418078022" duration="2218000" />
       <workItem from="1508451196318" duration="16839000" />
       <workItem from="1508484281062" duration="8217000" />
-      <workItem from="1508554685266" duration="2488000" />
+      <workItem from="1508554685266" duration="2582000" />
     </task>
     <task id="LOCAL-00001" summary="Can add and retrieve individual task durations">
       <created>1508288916971</created>
@@ -692,10 +692,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96701000" />
+    <option name="totallyTimeSpent" value="96795000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
+    <frame x="-1" y="-779" width="1362" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
