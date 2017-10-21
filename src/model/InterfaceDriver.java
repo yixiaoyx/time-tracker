@@ -1,5 +1,6 @@
 package model;
 
+import javax.print.DocFlavor;
 import java.util.*;
 
 // SEE MAIN METHOD AT BOTTOM OF FILE FOR EXAMPLE OF HOW TO USE
@@ -82,12 +83,26 @@ public class InterfaceDriver {
 
     if(c != null) {
       c.addTask(new Task(uniqueName));
-      db.saveTasks(uniqueName,categoryName, null, 0, null, null);
+      db.saveTasks(uniqueName,categoryName, null, 0, null,0, false, null);
     }
     else {
       System.out.println("Couldn't find category " + categoryName);
     }
   }
+
+    public void addTaskObject(String categoryName, Task task) {
+        System.out.println("InterfaceDriver: added task " + task.getName() + " to category " + categoryName);
+
+        Category c = getCategoryByName(categoryName);
+
+        if(c != null) {
+            c.addTask(task);
+            db.saveTasks(task.getName(),categoryName, null, 0, null,0, false, null);
+        }
+        else {
+            System.out.println("Couldn't find category " + categoryName);
+        }
+    }
 
   public void deleteTask(String uniqueName) {
 
@@ -117,19 +132,28 @@ public class InterfaceDriver {
 
 
   }
+    public void retrieveAllTasks() {
+        List<Task> getTasks = db.restoreTasks();
 
-  public void retrieveAllTasks() {
-    List<Task> getTasks = db.restoreTasks();
-
-    for(Task t: getTasks) {
-      Category c = t.getParentCategory();
-      if(c.getTaskByName(t.getName()) == null) { //find if task already exists.
-        addTask(c.getName(), t.getName());
-      }
-
+        int i = 0;
+        System.out.println("adding task durations ");
+        for (Task t : getTasks) {
+            List<Task> taskDurations = db.getAllTaskDurations(t.getName());
+            if (taskDurations.size() != 0) {
+                for (Duration d : taskDurations.get(0).getTimings()) {
+                    t.addTiming(d);
+                    System.out.println("added timing to task " + t.getName() + " = " + d.time());
+                }
+            }
+        }
+        System.out.println("adding tasks");
+        for (Task t : getTasks) {
+            Category c = t.getParentCategory();
+            if (c.getTaskByName(t.getName()) == null) { //find if task already exists.
+                addTaskObject(c.getName(), t);
+            }
+        }
     }
-
-  }
 
 
   public void clockIn(String taskName) {
@@ -255,8 +279,15 @@ public class InterfaceDriver {
     return t.getParentCategory().getName();
   }
 
+
+
+
   public void addTimingToTask(String taskName, Duration d) {
     Task t = getTaskByName(taskName);
+
+
+
+
     t.addTiming(d);
   }
 
@@ -343,6 +374,68 @@ public class InterfaceDriver {
     }
 
     return m;
+  }
+
+  public Long[] getTaskTimeAndEstimatedTime(String taskName) {
+    Task t = getTaskByName(taskName);
+    Long[] l = {t.getTotalTime(), t.getEstimatedTime()};
+    return l;
+  }
+
+
+  public List<String> getCategoryPath(String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    Stack<String> parentCategoryNames = new Stack<String>();
+
+    //parentCategoryNames.push(currCategory);
+
+    while(c.getParentCategory() != null) {
+      parentCategoryNames.push(c.getParentCategory().getName());
+      c = c.getParentCategory();
+    }
+
+    List<String> parents = new ArrayList<String>();
+    while(!parentCategoryNames.empty()) {
+      parents.add(parentCategoryNames.pop());
+    }
+
+    return parents;
+  }
+
+
+  public List<String> searchForTasks(String searchQuery, String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    return c.searchForTasks(searchQuery);
+  }
+
+  public List<String> searchForCategories(String searchQuery, String currCategory) {
+    Category c = getCategoryByName(currCategory);
+    return c.searchForCategories(searchQuery);
+  }
+
+  public String makeSearchCategory(List<String> taskNames, List<String> categoryNames) {
+
+
+    Category c = getCategoryByName("Search Results");
+
+    if(c == null) {
+      c = new Category("Search Results");
+    }
+    else {
+      c.clearTasksAndCategories();
+    }
+
+    for(String t : taskNames) {
+      c.addTask(new Task(t));
+    }
+    for(String cat : categoryNames) {
+      c.addSubCategory(new Category(cat));
+    }
+    c.setParentCategory(getCategoryByName("All"));
+
+    topLevelCategories.add(c);
+
+    return "Search Results";
   }
 
   public static void main(String[] args) {

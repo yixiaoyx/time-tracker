@@ -19,15 +19,4 @@ public class TaskScreen extends Screen {
         return controller;
     }
 
-    public void goToCategoryScreen() {
-        String category = driver.getParentCategoryOfTask(task);
-        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
-        System.out.println("I am going to the category screen");
-        try {
-            currScreen.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
-    }
 }

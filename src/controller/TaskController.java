@@ -1,12 +1,20 @@
 package controller;
 
 import javafx.fxml.FXML;
+import com.jfoenix.controls.JFXProgressBar;
+import com.jfoenix.controls.JFXButton;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.*;
 import javafx.animation.*;
 import javafx.event.*;
 import model.InterfaceDriver;
+
+import java.util.Map;
+import java.io.File;
 
 public class TaskController extends Controller {
 
@@ -14,6 +22,9 @@ public class TaskController extends Controller {
     private String currTask;
     private boolean active;
     private final Timeline activeTime;
+
+    final File analysisFile = new File("src/assets/Graph_1.png");
+    final String analysisPath = analysisFile.toURI().toString();
 
     @FXML
     private Button clockButton;
@@ -25,14 +36,21 @@ public class TaskController extends Controller {
     private Label taskName;
     @FXML
     private Button delButton;
+    @FXML
+    private JFXProgressBar bigProgressBar;
+        @FXML
+    private JFXButton analysisButton;
 
     public TaskController(InterfaceDriver driver, TaskScreen currScreen, String task) {
         super(driver);
         this.currScreen = currScreen;
         currTask = task;
 
+        bigProgressBar = new JFXProgressBar();
+
         active = false;
         //duration.setText(driver.getTaskByName(currTask).getDurationString());
+
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -40,18 +58,37 @@ public class TaskController extends Controller {
                         @Override
                         public void handle(ActionEvent actionEvent) {
                             duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                            updateBigProgressBar();
                         }
                     }
                 ),
-                new KeyFrame(Duration.seconds(1))
+                new KeyFrame(Duration.seconds(0.01))
         );
 
         activeTime.setCycleCount(Animation.INDEFINITE);
+
+        updateBigProgressBar();
+
     }
 
     public void setCurrTask(String currTask) {
         this.currTask = currTask;
     }
+
+    private void updateBigProgressBar() {
+        Long[] l = driver.getTaskTimeAndEstimatedTime(currTask);
+
+        double timeAlreadyLogged = l[0] + driver.getTaskByName(currTask).getActiveRunTime();
+        double goal = l[1];
+
+        //System.out.println(timeAlreadyLogged + " " + goal);
+
+        double progress = (double) (timeAlreadyLogged/goal);
+        bigProgressBar.setProgress(progress);
+
+
+    }
+
 
     @FXML
     private void handleClick() {
@@ -76,7 +113,7 @@ public class TaskController extends Controller {
         if (active) {
             controllerClockOut();
         }
-        currScreen.goToCategoryScreen();
+        currScreen.goToCategoryScreen(driver.getParentCategoryOfTask(currTask));
     }
 
     @FXML
@@ -95,18 +132,22 @@ public class TaskController extends Controller {
     }
 
     @FXML
+    private void handleChangeCat() {
+
+    }
+
+    @FXML
     protected void initialize() {
         taskName.setText(currTask);
 
+        Image analysisImage = new Image(analysisPath, false);
+        analysisButton.setGraphic(new ImageView(analysisImage));
+        updateBigProgressBar();
     }
 
     private void controllerClockOut() {
         driver.clockOut(currTask);
         clockButton.setText("CLOCK IN");
-
-        System.out.println("ANALYSIS BOIIII");
-        System.out.println("Total Task Time: " + driver.getTaskTimeString(currTask));
-        System.out.println("ALL Category Time: " + driver.getCategoryTimeString("All"));
 
         activeTime.stop();
         active = false;

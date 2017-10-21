@@ -6,17 +6,23 @@ import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import model.Driver;
 import model.Duration;
 import model.InterfaceDriver;
 
 
+import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -89,9 +95,9 @@ public class AnalysisController extends Controller {
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-
         Map<String, Double> taskBreakdown = driver.getTaskBreakdown(currCategory);
         for(String taskName : taskBreakdown.keySet()) {
+            System.out.println("Task name: " + taskBreakdown.get(taskName));
             pieChartData.add(new PieChart.Data(taskName, taskBreakdown.get(taskName)));
         }
 
@@ -120,28 +126,56 @@ public class AnalysisController extends Controller {
 
         // progress bar page
         VBox progressVBox = new VBox();
+        progressVBox.setSpacing(10);
+        progressVBox.setPadding(new Insets(20, 0, 0, 0));
+
+        //progressVBox.setAlignment(Pos.CENTER);
 
         Map<String, Long[]> m = driver.getCategoryTaskProgress(currCategory);
 
+        GridPane gridpane = new GridPane();
+        gridpane.setHgap(30);
+        int currentRow = 0;
+
         for(String taskName : m.keySet()) {
-            HBox h = new HBox();
             Long[] times = m.get(taskName);
 
             double progress = (double) times[0] / times[1];
 
 
-            h.getChildren().add(new Label(taskName + " " + times[0] + " " + times[1] + " " + progress));
+            Label l1 = new Label(taskName);
+            l1.setStyle("-fx-font-weight: bold");
+
+            Label l2 = new Label("(" + driver.getTaskTimeString(taskName) + ")");
+            l2.setStyle("-fx-text-fill: #AAAAAA");
 
             JFXProgressBar jfxBar = new JFXProgressBar();
-            jfxBar.setPrefHeight(100);
-            //jfxBar.setPrefWidth(500);
-
-
+            jfxBar.setPrefHeight(10);
             jfxBar.setProgress(progress);
-            h.getChildren().add(jfxBar);
 
-            progressVBox.getChildren().add(h);
+
+            Label l3 = new Label((int)(progress*100.0) +"%");
+
+            GridPane.setRowIndex(l1, currentRow);
+            GridPane.setRowIndex(l2, currentRow);
+            GridPane.setRowIndex(jfxBar, currentRow);
+            GridPane.setRowIndex(l3, currentRow);
+
+            GridPane.setColumnIndex(l1, 0);
+            GridPane.setColumnIndex(l2, 1);
+            GridPane.setColumnIndex(jfxBar, 2);
+            GridPane.setColumnIndex(l3, 3);
+
+            gridpane.getChildren().addAll(l1, l2, jfxBar, l3);
+
+            currentRow++;
+
         }
+
+        HBox hb = new HBox();
+        hb.setAlignment(Pos.CENTER);
+        hb.getChildren().add(gridpane);
+        progressVBox.getChildren().add(hb);
 
 
 
@@ -171,7 +205,6 @@ public class AnalysisController extends Controller {
         tab3.setContent(progressVBox);
 
         tabPane.getTabs().add(tab3);
-
 
         contentvbox.getChildren().add(tabPane);
         contentvbox.setAlignment(Pos.CENTER);

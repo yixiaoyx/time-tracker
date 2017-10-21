@@ -2,22 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/model/DatabaseDriver.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/Add_Button_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/845d6a25-c616-450e-90cd-95a1e7a58b66.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/AnalysisScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Controller.class" afterPath="$PROJECT_DIR$/target/classes/controller/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormController.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Main.class" afterPath="$PROJECT_DIR$/target/classes/controller/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/model/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Driver.class" afterPath="$PROJECT_DIR$/target/classes/model/Driver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Duration.class" afterPath="$PROJECT_DIR$/target/classes/model/Duration.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/InterfaceDriver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/model/Task.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/TempDriver.class" afterPath="$PROJECT_DIR$/target/classes/model/TempDriver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/845d6a25-c616-450e-90cd-95a1e7a58b66.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/845d6a25-c616-450e-90cd-95a1e7a58b66.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TrackerDB_Tasks.sql" afterPath="$PROJECT_DIR$/src/TrackerDB_Tasks.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AnalysisController.java" afterPath="$PROJECT_DIR$/src/controller/AnalysisController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/controller/CategoryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/FormController.java" afterPath="$PROJECT_DIR$/src/controller/FormController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/FormScreen.java" afterPath="$PROJECT_DIR$/src/controller/FormScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskScreen.java" afterPath="$PROJECT_DIR$/src/controller/TaskScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database_schema.sql" afterPath="$PROJECT_DIR$/src/database_schema.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Category.java" afterPath="$PROJECT_DIR$/src/model/Category.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseDriver.java" afterPath="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/InterfaceDriver.java" afterPath="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Task.java" afterPath="$PROJECT_DIR$/src/model/Task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CategoryScreen.css" afterPath="$PROJECT_DIR$/src/view/CategoryScreen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FormScreen.fxml" afterPath="$PROJECT_DIR$/src/view/FormScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/TaskScreen.fxml" afterPath="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.css" afterPath="$PROJECT_DIR$/target/classes/CategoryScreen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FormScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/FormScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,6 +59,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/trackattack$Main.coverage" NAME="Main Coverage Results" MODIFIED="1508290953141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -50,18 +85,6 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="TrackerDB@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="TrackerDB" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="TrackerDB@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="TrackerDB" type="e3449647:DbNodeDescriptor" />
-        <item name="Category" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="TrackerDB@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="TrackerDB" type="e3449647:DbNodeDescriptor" />
-        <item name="Tasks" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
     <select />
@@ -109,22 +132,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="34" column="10" lean-forward="false" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+            <state relative-caret-position="143">
+              <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Driver.java">
+      <file leaf-file-name="Task.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="-3070">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,7 +171,29 @@
       <find>parentTask</find>
       <find>duration</find>
       <find>totalTime</find>
+      <find>timings</find>
+      <find>timing</find>
+      <find>getAll</find>
+      <find>retrieveAll</find>
+      <find>addTiming</find>
+      <find>formattedTimings</find>
+      <find>formatted</find>
+      <find>gettin</find>
+      <find>addTask</find>
+      <find>df</find>
+      <find>retrieve</find>
+      <find>category</find>
+      <find>estimated</find>
+      <find>deleteTask</find>
+      <find>deleteCa</find>
+      <find>saveT</find>
+      <find>saveTas</find>
+      <find>estimatedTime</find>
       <find>update</find>
+      <find>deleteCate</find>
+      <find>updateT</find>
+      <find>saveTask</find>
+      <find>updateTask</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -192,15 +239,19 @@
         <option value="$PROJECT_DIR$/src/view/CategoryScreen.css" />
         <option value="$PROJECT_DIR$/src/controller/Screen.java" />
         <option value="$PROJECT_DIR$/src/controller/Main.java" />
-        <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
         <option value="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
         <option value="$PROJECT_DIR$/src/controller/FormController.java" />
         <option value="$PROJECT_DIR$/src/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/model/Category.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/845d6a25-c616-450e-90cd-95a1e7a58b66/console_1.sql" />
+        <option value="$PROJECT_DIR$/src/TrackerDB_Tasks.sql" />
         <option value="$PROJECT_DIR$/src/model/InterfaceDriver.java" />
-        <option value="$PROJECT_DIR$/src/database_schema.sql" />
         <option value="$PROJECT_DIR$/src/model/Task.java" />
         <option value="$PROJECT_DIR$/src/model/DatabaseDriver.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console_2.sql" />
+        <option value="$PROJECT_DIR$/src/database_schema.sql" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/view/TaskScreen.fxml" />
         <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
       </list>
     </option>
@@ -213,10 +264,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1360" />
-    <option name="y" value="-4" />
-    <option name="width" value="1360" />
-    <option name="height" value="772" />
+    <option name="x" value="1919" />
+    <option name="y" value="-11" />
+    <option name="width" value="1922" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -237,6 +288,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,16 +308,24 @@
               <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
               <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tracker_working" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tracker_working" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -523,16 +586,46 @@
       <workItem from="1507988358773" duration="13574000" />
       <workItem from="1508109887050" duration="4860000" />
       <workItem from="1508135026116" duration="8376000" />
-      <workItem from="1508288338224" duration="561000" />
       <workItem from="1508290850258" duration="7385000" />
+      <workItem from="1508288338224" duration="2319000" />
+      <workItem from="1508290728116" duration="1890000" />
+      <workItem from="1508388732898" duration="24000" />
+      <workItem from="1508408436591" duration="7780000" />
+      <workItem from="1508418078022" duration="2140000" />
+      <workItem from="1508464184080" duration="2000" />
+      <workItem from="1508465142508" duration="11000" />
+      <workItem from="1508465337875" duration="3105000" />
+      <workItem from="1508553516763" duration="323000" />
     </task>
+    <task id="LOCAL-00001" summary="Can add and retrieve individual task durations">
+      <created>1508288916971</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508288916971</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixed adding durations to tasks on start up">
+      <created>1508324813403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1508324813404</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added columns for achievements &amp; fixed delete on categories">
+      <created>1508416566714</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1508416566714</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58781000" />
+    <option name="totallyTimeSpent" value="67082000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1360" y="-4" width="1360" height="772" extended-state="6" />
+    <frame x="1919" y="-11" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -543,13 +636,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25714287" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31422722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20514706" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13970588" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20989583" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.104166664" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -578,6 +671,12 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Can add and retrieve individual task durations" />
+    <MESSAGE value="fixed adding durations to tasks on start up" />
+    <MESSAGE value="Added columns for achievements to Task table &amp; fixed delete on categories" />
+    <MESSAGE value="Added columns for achievements to Task table &#10;+ fixed delete on categories" />
+    <MESSAGE value="Added columns for achievements &amp; fixed delete on categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added columns for achievements &amp; fixed delete on categories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,250 +689,150 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/845d6a25-c616-450e-90cd-95a1e7a58b66/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
+    <entry file="das://table:/5e86848e/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.task_durations" />
+    <entry file="das://table:/5e86848e/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.Category" />
+    <entry file="das://table:/5e86848e/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.Tasks" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/845d6a25-c616-450e-90cd-95a1e7a58b66/console_2.sql" />
+    <entry file="das://src:table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Tasks" />
+    <entry file="file://$PROJECT_DIR$/src/TrackerDB_Tasks.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
+    <entry file="file://$PROJECT_DIR$/src/TrackerDB_Tasks.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="36" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="127" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Category.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Estimated_timings" />
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Achievements" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console.sql" />
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.task_durations" />
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Tasks" />
+    <entry file="file://$PROJECT_DIR$/src/model/Duration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="13" column="53" lean-forward="false" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI.java.bak" />
-    <entry file="file://$PROJECT_DIR$/src/model/TempDriver.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console_1.sql" />
+    <entry file="file://$PROJECT_DIR$/src/view/AnalysisScreen.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/view/AnalysisScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/view/TaskAnalytics.fxml" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0f2955fa-76f4-4d6c-ae16-415c9cae1392/console.sql" />
-    <entry file="das://table:/420ac1a0/0f2955fa-76f4-4d6c-ae16-415c9cae1392/TrackerDB.Category" />
-    <entry file="das://table:/420ac1a0/0f2955fa-76f4-4d6c-ae16-415c9cae1392/TrackerDB.Tasks" />
-    <entry file="file://$PROJECT_DIR$/src/view/CategoryScreen.fxml~c89b31cadd0c72a9ce7663c5b6894b680f39dbe1" />
-    <entry file="file://$PROJECT_DIR$/src/view/FormScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1539">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/FormScreen.fxml~c89b31cadd0c72a9ce7663c5b6894b680f39dbe1" />
-    <entry file="file://$PROJECT_DIR$/trackattack.iml">
+    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="345">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AnalysisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2221">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AnalysisScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2641">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CategoryScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
           <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/jdk1.8.0_144/javafx-src.zip!/javafx/collections/MapChangeListener.java" />
-    <entry file="file://$USER_HOME$/Downloads/v3/trackattack/src/view/CategoryScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/CategoryScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/CategoryScreen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/FormScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-248">
-          <caret line="99" column="40" lean-forward="true" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
-          <folding>
-            <element signature="e#1720#1728#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-556">
+          <caret line="96" column="40" lean-forward="false" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CategoryScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/FormScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1485">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
+        <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/local/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
-    <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
+    <entry file="file://$PROJECT_DIR$/src/model/AnalysisFuncs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2880">
-          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding>
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4373#4374#0" expanded="true" />
-            <element signature="e#5273#5274#0" expanded="true" />
-            <element signature="e#5338#5339#0" expanded="true" />
-            <element signature="e#6245#6246#0" expanded="true" />
-            <element signature="e#6300#6301#0" expanded="true" />
-            <element signature="e#8688#8689#0" expanded="true" />
-            <element signature="e#8734#8735#0" expanded="true" />
-            <element signature="e#9269#9270#0" expanded="true" />
-            <element signature="e#9329#9330#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="e#907#915#0" expanded="true" />
-            <element signature="e#1094#1102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/420ac1a0/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.Category" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/845d6a25-c616-450e-90cd-95a1e7a58b66/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-751">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3105">
-          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding>
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4373#4374#0" expanded="true" />
-            <element signature="e#5273#5274#0" expanded="true" />
-            <element signature="e#5338#5339#0" expanded="true" />
-            <element signature="e#6245#6246#0" expanded="true" />
-            <element signature="e#6300#6301#0" expanded="true" />
-            <element signature="e#8688#8689#0" expanded="true" />
-            <element signature="e#8734#8735#0" expanded="true" />
-            <element signature="e#9269#9270#0" expanded="true" />
-            <element signature="e#9329#9330#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="262">
+          <caret line="99" column="23" lean-forward="false" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="289">
+          <caret line="192" column="63" lean-forward="false" selection-start-line="192" selection-start-column="63" selection-end-line="192" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -841,99 +840,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="197" column="35" lean-forward="false" selection-start-line="197" selection-start-column="35" selection-end-line="197" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="das://table:/5e86848e/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.Category" />
     <entry file="das://table:/5e86848e/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.Tasks" />
-    <entry file="file://$PROJECT_DIR$/src/model/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="59" column="9" lean-forward="false" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Duration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="13" column="53" lean-forward="false" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-          <folding>
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#444#445#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/420ac1a0/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.task_durations">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/420ac1a0/845d6a25-c616-450e-90cd-95a1e7a58b66/TrackerDB.Tasks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.task_durations" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62b86b7d-365d-4409-87ca-d7e172d0f18b/console_2.sql" />
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.Category" />
+    <entry file="das://table:/5e86848e/62b86b7d-365d-4409-87ca-d7e172d0f18b/TrackerDB.task_durations" />
     <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="e#4174#4180#0" expanded="true" />
-            <element signature="e#11683#11693#0" expanded="true" />
-            <element signature="e#12825#12833#0" expanded="true" />
-            <element signature="e#16993#16999#0" expanded="true" />
-            <element signature="e#18464#18470#0" expanded="true" />
-            <element signature="e#19898#19904#0" expanded="true" />
-            <element signature="e#21452#21461#0" expanded="true" />
-            <element signature="e#22673#22679#0" expanded="true" />
-            <marker date="1508290066606" expanded="true" signature="1292:1311" ph="select * fro... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="1809:1914" ph="INSERT INTO Tasks... " />
-            <marker date="1508290066606" expanded="true" signature="2236:2285" ph="SELECT ID fr... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="3152:3171" ph="select * fro... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="3689:3851" ph="INSERT INTO task_durations... " />
-            <marker date="1508290066606" expanded="true" signature="4328:4347" ph="select * fro... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="5234:5253" ph="select * fro... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="5877:6029" ph="UPDATE Tasks... " />
-            <marker date="1508290066606" expanded="true" signature="6459:6523" ph="SELECT Categ... Category" />
-            <marker date="1508290066606" expanded="true" signature="7005:7069" ph="SELECT ID FR... Category" />
-            <marker date="1508290066606" expanded="true" signature="7591:7649" ph="SELECT @idCo... " />
-            <marker date="1508290066606" expanded="true" signature="7681:7743" ph="SELECT @valu... " />
-            <marker date="1508290066606" expanded="true" signature="7796:7819" ph="select * fro... Category" />
-            <marker date="1508290066606" expanded="true" signature="8693:8741" ph="UPDATE Categ... " />
-            <marker date="1508290066606" expanded="true" signature="8773:8954" ph="INSERT INTO Category... " />
-            <marker date="1508290066606" expanded="true" signature="9580:9638" ph="SELECT @idCo... " />
-            <marker date="1508290066606" expanded="true" signature="9673:9745" ph="SELECT @Left... " />
-            <marker date="1508290066606" expanded="true" signature="9798:9843" ph="select * fro... Category" />
-            <marker date="1508290066606" expanded="true" signature="10833:10899" ph="UPDATE Categ... " />
-            <marker date="1508290066606" expanded="true" signature="10932:10996" ph="UPDATE Categ... " />
-            <marker date="1508290066606" expanded="true" signature="11029:11219" ph="INSERT INTO Category... " />
-            <marker date="1508290066606" expanded="true" signature="11840:11862" ph="select * fro... Category" />
-            <marker date="1508290066606" expanded="true" signature="12948:13014" ph="SELECT Categ... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="13270:13442" ph="SELECT paren... Category" />
-            <marker date="1508290066606" expanded="true" signature="14054:14162" ph="UPDATE Categ... " />
-            <marker date="1508290066606" expanded="true" signature="14455:14543" ph="UPDATE Tasks... " />
-            <marker date="1508290066606" expanded="true" signature="14881:15001" ph="SELECT @left... " />
-            <marker date="1508290066606" expanded="true" signature="15618:15697" ph="DELETE FROM " />
-            <marker date="1508290066606" expanded="true" signature="15729:15814" ph="UPDATE Categ... " />
-            <marker date="1508290066606" expanded="true" signature="16172:16225" ph="DELETE FROM " />
-            <marker date="1508290066606" expanded="true" signature="16520:16572" ph="SELECT * fro... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="17084:17144" ph="SELECT ID fr... Category" />
-            <marker date="1508290066606" expanded="true" signature="17398:17450" ph="SELECT * fro... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="18555:18608" ph="SELECT ID fr... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="18838:18896" ph="SELECT * fro... task_durations" />
-            <marker date="1508290066606" expanded="true" signature="19989:20049" ph="SELECT ID fr... Category" />
-            <marker date="1508290066606" expanded="true" signature="20314:20476" ph="SELECT * fro... task_durations" />
-            <marker date="1508290066606" expanded="true" signature="21545:21606" ph="SELECT ID fr... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="22130:22188" ph="SELECT ID fr... Tasks" />
-            <marker date="1508290066606" expanded="true" signature="22829:22957" ph="SELECT * fro... Tasks" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,15 +863,122 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/FormScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TrackerDB_Category.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources.local.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/CategoryScreen.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/CategoryScreen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database_schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/TaskScreen.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+          <folding>
+            <marker date="1508467626005" expanded="true" signature="2412:2540" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="2434:2515" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="3009:3151" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="3036:3122" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="3579:3727" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="3606:3698" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="3986:4127" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="4015:4093" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="4683:5209" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="4710:4802" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="5265:5587" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="5616:5931" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="5991:6080" ph="..." />
+            <marker date="1508467626005" expanded="true" signature="6101:6185" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TaskScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="34" column="10" lean-forward="false" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+        <state relative-caret-position="143">
+          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3070">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

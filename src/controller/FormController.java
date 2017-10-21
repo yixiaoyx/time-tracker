@@ -1,32 +1,37 @@
 package controller;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.event.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import model.InterfaceDriver;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class FormController extends Controller{
-    private FormScreen currScreen;
+    private Screen currScreen;
     private boolean active;
     private String selectedCategory;
     final String topLevelCategory = "All";
 
-
+    @FXML
+    private VBox vbox;
     @FXML
     private ToggleGroup radioGroup;
     @FXML
-    private TextField nameField;
+    private JFXTextField nameField;
     @FXML
     private JFXComboBox categoryMenu;
     @FXML
@@ -35,11 +40,13 @@ public class FormController extends Controller{
     private JFXCheckBox taskCheckBox;
     @FXML
     private JFXCheckBox categoryCheckBox;
+    @FXML
+    private JFXTextField estimatedTimeField;
 
-    public FormController(InterfaceDriver driver, FormScreen currScreen){
+    public FormController(InterfaceDriver driver, Screen currScreen, String category){
         super(driver);
         this.currScreen = currScreen;
-        setSelectedCategory(currScreen.getPrevCategory());
+        setSelectedCategory(category);
         active = false;
 
     }
@@ -68,12 +75,6 @@ public class FormController extends Controller{
         return sclist;
     }
 
-    @FXML
-    public void handleBackClick(){
-        if (!active){
-            currScreen.goBack();
-        }
-    }
 
     @FXML
     public void handleTaskCheck(){
@@ -108,12 +109,37 @@ public class FormController extends Controller{
             return;
         }
 
+        String estimatedTime = "";
+        estimatedTime = estimatedTimeField.getText();
+        System.out.println("Estimated Duration input: " + estimatedTime);
+        Long estimatedSeconds = null;
+
+        // Convert to time string
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+            Date baseRef = dateFormat.parse("00:00:00");
+            Date estTime = dateFormat.parse(estimatedTime);
+            estimatedSeconds = (estTime.getTime() - baseRef.getTime()) / 1000L;
+            System.out.println("Converted time to " + estimatedSeconds.toString() + " seconds");
+            // Convert to seconds
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
 
         // Add task/category
         // Go to relevant screen
 
         if (addType.equals("task")){
             driver.addTask(category, name);
+            // Check if given existing estimated time and add to task
+            if (estimatedSeconds != null) driver.addEstimatedTimeToTask(name, estimatedSeconds);
+            System.out.println(name + " estimated time is " + driver.getEstimatedTimeOfTask(name));
+            // Check if given due date and add to task
+            // -
             currScreen.goToTaskScreen(name);
         } else {
             driver.addSubCategory(category, name);
@@ -132,11 +158,11 @@ public class FormController extends Controller{
     private String isNameValid(String name){
         String category = categoryMenu.getValue().toString();
 
-        Pattern invalidChars = Pattern.compile(".*\\W+.*");
-        Matcher invalidMatch = invalidChars.matcher(name);
+        //Pattern invalidChars = Pattern.compile(".*\\W+.*");
+        //Matcher invalidMatch = invalidChars.matcher(name);
 
         if (name.isEmpty()) return "empty";
-        if (invalidMatch.matches()) return "illegalchar";
+        // if (invalidMatch.matches()) return "illegalchar";
         for (String c: driver.getSubCategoryNames(category)) {
             if (c.equals(name)) return "categorymatch";
         }
@@ -152,19 +178,18 @@ public class FormController extends Controller{
         String warning = "";
         if (reason.equals("empty")) {
             warning = "No input in Name field";
-        }
-
-        else if (reason.equals("illegalchar")) {
-            warning = "Illegal characters found. Only alphanumeric characters, spaces, and hyphens are allowed";
+        //} else if (reason.equals("illegalchar")) {
+        //    warning = "Illegal characters found.\nOnly alphanumeric characters, spaces, and hyphens are allowed";
         } else if (reason.equals("categorymatch")) {
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         } else if (reason.equals("taskmatch")) {
-            warning = "Duplicate task name in selected category. Please change Name or selected Category.";
+            warning = "Duplicate task name in selected category.\nPlease change Name or selected Category.";
         } else {
             warning = "I'm not sure what you did wrong.";
         }
         System.out.println(warning);
-        JFXSnackbar bar = new JFXSnackbar(borderPane);
+
+        JFXSnackbar bar = new JFXSnackbar(vbox);
         bar.setAlignment(Pos.CENTER);
         bar.enqueue(new JFXSnackbar.SnackbarEvent(warning));
     }
