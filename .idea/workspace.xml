@@ -5,18 +5,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/FormController.class" afterPath="$PROJECT_DIR$/target/classes/controller/FormController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/model/Task.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/Assets.java" afterPath="$PROJECT_DIR$/src/controller/Assets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/FormController.java" afterPath="$PROJECT_DIR$/src/controller/FormController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FormScreen.fxml" afterPath="$PROJECT_DIR$/src/view/FormScreen.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FormScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/FormScreen.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/CategoryScreen.java" afterPath="$PROJECT_DIR$/src/controller/CategoryScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/Screen.java" afterPath="$PROJECT_DIR$/src/controller/Screen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/src/view/CategoryScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/CategoryScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path="out/" />
@@ -98,10 +96,26 @@
       <file leaf-file-name="CategoryController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="183" column="68" lean-forward="false" selection-start-line="183" selection-start-column="68" selection-end-line="183" selection-end-column="68" />
+            <state relative-caret-position="270">
+              <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3323#3324#0" expanded="true" />
+                <element signature="e#3385#3386#0" expanded="true" />
+                <element signature="e#5422#5423#0" expanded="true" />
+                <element signature="e#5479#5480#0" expanded="true" />
+                <element signature="e#6340#6341#0" expanded="true" />
+                <element signature="e#6405#6406#0" expanded="true" />
+                <element signature="e#8052#8053#0" expanded="true" />
+                <element signature="e#8107#8108#0" expanded="true" />
+                <element signature="e#10192#10193#0" expanded="true" />
+                <element signature="e#10238#10239#0" expanded="true" />
+                <element signature="e#10772#10773#0" expanded="true" />
+                <element signature="e#10820#10821#0" expanded="true" />
+                <element signature="e#12775#12776#0" expanded="true" />
+                <element signature="e#12821#12822#0" expanded="true" />
+                <element signature="e#13356#13357#0" expanded="true" />
+                <element signature="e#13416#13417#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -394,7 +408,7 @@
       <workItem from="1508418078022" duration="2218000" />
       <workItem from="1508451196318" duration="16839000" />
       <workItem from="1508484281062" duration="8217000" />
-      <workItem from="1508554685266" duration="3554000" />
+      <workItem from="1508554685266" duration="3798000" />
     </task>
     <task id="LOCAL-00001" summary="Can add and retrieve individual task durations">
       <created>1508288916971</created>
@@ -477,7 +491,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97767000" />
+    <option name="totallyTimeSpent" value="98011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
@@ -843,10 +857,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="183" column="68" lean-forward="false" selection-start-line="183" selection-start-column="68" selection-end-line="183" selection-end-column="68" />
+        <state relative-caret-position="270">
+          <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3323#3324#0" expanded="true" />
+            <element signature="e#3385#3386#0" expanded="true" />
+            <element signature="e#5422#5423#0" expanded="true" />
+            <element signature="e#5479#5480#0" expanded="true" />
+            <element signature="e#6340#6341#0" expanded="true" />
+            <element signature="e#6405#6406#0" expanded="true" />
+            <element signature="e#8052#8053#0" expanded="true" />
+            <element signature="e#8107#8108#0" expanded="true" />
+            <element signature="e#10192#10193#0" expanded="true" />
+            <element signature="e#10238#10239#0" expanded="true" />
+            <element signature="e#10772#10773#0" expanded="true" />
+            <element signature="e#10820#10821#0" expanded="true" />
+            <element signature="e#12775#12776#0" expanded="true" />
+            <element signature="e#12821#12822#0" expanded="true" />
+            <element signature="e#13356#13357#0" expanded="true" />
+            <element signature="e#13416#13417#0" expanded="true" />
           </folding>
         </state>
       </provider>
