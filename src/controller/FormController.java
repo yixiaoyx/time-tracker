@@ -42,6 +42,10 @@ public class FormController extends Controller{
     private JFXCheckBox categoryCheckBox;
     @FXML
     private JFXTextField estimatedTimeField;
+    @FXML
+    private JFXDatePicker dueDatePicker;
+    @FXML
+    private JFXTimePicker dueTimePicker;
 
     public FormController(InterfaceDriver driver, Screen currScreen, String category){
         super(driver);
@@ -80,12 +84,20 @@ public class FormController extends Controller{
     public void handleTaskCheck(){
         taskCheckBox.setSelected(true);
         categoryCheckBox.setSelected(false);
+
+        estimatedTimeField.setDisable(false);
+        dueDatePicker.setDisable(false);
+        dueTimePicker.setDisable(false);
     }
 
     @FXML
     public void handleCategoryCheck(){
         taskCheckBox.setSelected(false);
         categoryCheckBox.setSelected(true);
+
+        estimatedTimeField.setDisable(true);
+        dueDatePicker.setDisable(true);
+        dueTimePicker.setDisable(true);
     }
 
     @FXML

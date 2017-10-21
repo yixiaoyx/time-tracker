@@ -95,6 +95,20 @@ public abstract class Screen {
     }
 
 
+    public void goToCategoryScreenWithSearchQuery(String category, String searchQuery) {
+        //setWindowLarge();
+        stage.setResizable(true);
+        Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
+        stage.sizeToScene();
+        try {
+            ((CategoryScreen) currScreen).setSearchQuery(searchQuery);
+            currScreen.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void goToCategoryScreen(String category) {
         //setWindowLarge();
         stage.setResizable(true);

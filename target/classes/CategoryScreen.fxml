@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -13,15 +14,18 @@
 
 <StackPane fx:id="sp" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
+
         <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" stylesheets="@CategoryScreen.css">
             <center>
-                <ScrollPane fx:id="scroll" hbarPolicy="NEVER" style="-fx-background-color: #D9D9D9;">
-                    <TilePane fx:id="categoryTable" prefHeight="419.0" prefWidth="499.0" style="-fx-background-color: #D9D9D9;" BorderPane.alignment="CENTER">
-                        <BorderPane.margin>
-                            <Insets />
-                        </BorderPane.margin>
 
-                    </TilePane>
+                <ScrollPane fx:id="scroll" hbarPolicy="NEVER" style="-fx-background-color: #D9D9D9;">
+
+                        <TilePane fx:id="categoryTable" prefHeight="419.0" prefWidth="499.0" style="-fx-background-color: #D9D9D9;" BorderPane.alignment="CENTER">
+                            <BorderPane.margin>
+                                <Insets />
+                            </BorderPane.margin>
+
+                        </TilePane>
                 </ScrollPane>
             </center>
             <top>
@@ -39,6 +43,9 @@
                                         <Font name="Calibri" size="30.0" />
                                     </font>
                                 </Label>
+
+                                <JFXTextField fx:id="searchBar" onKeyReleased="#handleSearchText" alignment="CENTER" focusColor="#74a5ff" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
+
                             </children>
                         </VBox>
                     </children>
@@ -75,16 +82,6 @@
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </JFXButton>
-
-                        <JFXButton fx:id="searchButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleSearchClick" prefHeight="18.0" prefWidth="75.0" style="-fx-base: #00000000;" styleClass="button-small" text="S" textAlignment="CENTER" translateY="1.0">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
-
 
 
                         <JFXButton fx:id="addButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAddClick" prefHeight="31.0" style="-fx-base: #00000000" styleClass="button-small" text="+" textAlignment="CENTER" translateY="1.0">

@@ -24,12 +24,6 @@ public class TaskLiteController extends Controller {
     private boolean reached;
     private final Timeline activeTime;
 
-    final File analysisFile = new File("src/assets/Graph_1.png");
-    final String analysisPath = analysisFile.toURI().toString();
-
-    final File binFile = new File("src/assets/Bin_1.png");
-    final String binPath = binFile.toURI().toString();
-
     @FXML
     private Button clockButton;
     @FXML

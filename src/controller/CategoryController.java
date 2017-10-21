@@ -4,10 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -38,26 +40,7 @@ public class CategoryController extends Controller {
     private CategoryScreen currScreen;
     private String currCategory;
     private boolean active;
-
-    // FILEPATHS FOR BUTTON GRAPHICS
-    final File categoryFile= new File("src/assets/Category_2.png");
-    final File taskFile= new File("src/assets/Task.png");
-    final File backFile = new File("src/assets/Back_Button_3.png");
-    final File analysisFile = new File("src/assets/Graph_1.png");
-    final File addFile = new File("src/assets/Add_Button_3.png");
-    final File binFile = new File("src/assets/Bin_1.png");
-    final File searchFile = new File("src/assets/Search_1.png");
-    final File changeFile = new File("src/assets/Edit_1.png");
-    
-
-    final String categoryPath = categoryFile.toURI().toString();
-    final String taskPath = taskFile.toURI().toString();
-    final String backPath = backFile.toURI().toString();
-    final String analysisPath = analysisFile.toURI().toString();
-    final String addPath = addFile.toURI().toString();
-    final String binPath = binFile.toURI().toString();
-    final String searchPath = searchFile.toURI().toString();
-    final String changePath = changeFile.toURI().toString();
+    private String initialSearchQuery;
 
     @FXML
     private StackPane sp;
@@ -89,8 +72,11 @@ public class CategoryController extends Controller {
     @FXML
     private HBox categoryPathHBox;
 
+    //@FXML
+    //private JFXButton searchButton;
+
     @FXML
-    private JFXButton searchButton;
+    private JFXTextField searchBar;
 
 
 
@@ -116,11 +102,28 @@ public class CategoryController extends Controller {
             System.out.println(cur);
         }
 
+        if(initialSearchQuery != null) {
+            searchBar.setText(initialSearchQuery);
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    searchBar.requestFocus();
+                    searchBar.deselect();
+                    searchBar.positionCaret(searchBar.getText().length());
+                }
+            });
+        }
 
         // breadcrumbs
         List<String> catPath = driver.getCategoryPath(currCategory);
         for(String s : catPath) {
-            JFXButton b = new JFXButton(s);
+            JFXButton b;
+            if(s == "All") {
+                b = new JFXButton("Home");
+            }
+            else {
+                b = new JFXButton(s);
+            }
             b.getStyleClass().add("button-breadcrumb");
             b.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
@@ -133,8 +136,18 @@ public class CategoryController extends Controller {
         }
 
 
+//        // search bar
+//        JFXTextField searchBar = new JFXTextField("Search");
+//        categoryPathHBox.getChildren().add(searchBar);
+//
 
-        categoryName.setText(currCategory);
+
+        if(currCategory == "All") {
+            categoryName.setText("Home");
+        }
+        else {
+            categoryName.setText(currCategory);
+        }
 
         String parentCategory = driver.getParentCategoryName(currCategory);
         if (parentCategory.equals("")) {
@@ -147,20 +160,11 @@ public class CategoryController extends Controller {
         scroll.setFitToHeight(true);
 
         //SETTING GRAPHICS
-        Image analysisImage = new Image(analysisPath, false);
-        analysisButton.setGraphic(new ImageView(analysisImage));
-
-        Image addImage = new Image(addPath, false);
-        addButton.setGraphic(new ImageView(addImage));
-
-        Image binImage = new Image(binPath, false);
-        delButton.setGraphic(new ImageView(binImage));
-
-        Image searchImage = new Image(searchPath, false);
-        searchButton.setGraphic(new ImageView(searchImage));
-
-        Image changeImage = new Image(changePath, false);
-        changeButton.setGraphic(new ImageView(changeImage));
+        analysisButton.setGraphic(Assets.analysisImage);
+        addButton.setGraphic(Assets.addImage);
+        delButton.setGraphic(Assets.binImage);
+        //searchButton.setGraphic(Assets.searchImage);
+        changeButton.setGraphic(Assets.changeImage);
     }
 
     public void setCurrCategory(String category) {
@@ -176,13 +180,12 @@ public class CategoryController extends Controller {
         METHODS FOR DISPLAYING TASKS AND CATEGORIES IN A TABLE
      */
     private Button addTaskToTable(String taskName) {
-        Image image = new Image(taskPath, false);
 
         VBox vbox = new VBox();
         Label label = new Label(taskName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(image), label);
+        vbox.getChildren().addAll(new ImageView(Assets.taskImage), label);
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
@@ -206,13 +209,12 @@ public class CategoryController extends Controller {
     }
 
     private Button addCategoryToTable(String categoryName) {
-        Image image = new Image(categoryPath, false);
 
         VBox vbox = new VBox();
         Label label = new Label(categoryName);
         label.setTextFill(WHITE);
 
-        vbox.getChildren().addAll(new ImageView(image), label);
+        vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
@@ -260,6 +262,14 @@ public class CategoryController extends Controller {
     }
 
     @FXML
+    private void handleSearchText() {
+        System.out.println("Handling search " + searchBar.getText());
+        runSearch(searchBar.getText());
+
+
+    }
+
+    @FXML
     private void handleAnalysisClick() {
         System.out.println("Go to analysis screen now");
         currScreen.goToAnalysisScreen(this.currCategory);
@@ -273,6 +283,10 @@ public class CategoryController extends Controller {
     }
     private void handleCategoryClick(String category){
         currScreen.goToCategoryScreen(category);
+    }
+
+    private void handleCategoryClickWithSearchQuery(String category, String searchQuery) {
+        currScreen.goToCategoryScreenWithSearchQuery(category, searchQuery);
     }
 
     private void handleTaskClick(String task) {
@@ -353,6 +367,10 @@ public class CategoryController extends Controller {
         dialog.show(sp);
 
 
+    }
+
+    public void setSearchQuery(String searchQuery) {
+        initialSearchQuery = searchQuery;
     }
 
     @FXML
@@ -455,11 +473,11 @@ public class CategoryController extends Controller {
     }
 
     private void runSearch(String searchQuery) {
-        List<String> matchingTasks = driver.searchForTasks(searchQuery, currCategory);
-        List<String> matchingCategories = driver.searchForCategories(searchQuery, currCategory);
+        List<String> matchingTasks = driver.searchForTasks(searchQuery, "All");
+        List<String> matchingCategories = driver.searchForCategories(searchQuery, "All");
 
         String searchCategory = driver.makeSearchCategory(matchingTasks, matchingCategories);
-        handleCategoryClick(searchCategory);
+        handleCategoryClickWithSearchQuery(searchCategory, searchQuery);
 
 //        for(String s : matchingTasks) {
 //            System.out.println("Found task: " + s);
