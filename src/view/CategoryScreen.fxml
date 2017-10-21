@@ -51,7 +51,10 @@
                            </VBox.margin>
                                 </Label>
 
-                                <JFXTextField fx:id="searchBar" alignment="CENTER" focusColor="#74a5ff" onKeyReleased="#handleSearchText" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="21.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
+                                <JFXTextField fx:id="searchBar" alignment="CENTER" focusColor="#74a5ff" onKeyReleased="#handleSearchText" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="21.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></JFXTextField>
 
                             </children>
                         </VBox>
