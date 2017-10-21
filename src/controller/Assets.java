@@ -14,6 +14,12 @@ public class Assets {
     final static File searchFile = new File("src/assets/Search_1.png");
     final static File changeFile = new File("src/assets/Edit_1.png");
 
+    final static File badge1File = new File("src/assets/Badge_1.png");
+    final static File badge2File = new File("src/assets/Badge_2.png");
+    final static File badge3File = new File("src/assets/Badge_3.png");
+    final static File badge4File = new File("src/assets/Badge_4.png");
+    final static File badge5File = new File("src/assets/Badge_5.png");
+
     final static String categoryPath = categoryFile.toURI().toString();
     final static String taskPath = taskFile.toURI().toString();
     final static String backPath = backFile.toURI().toString();
@@ -22,6 +28,12 @@ public class Assets {
     final static String binPath = binFile.toURI().toString();
     final static String searchPath = searchFile.toURI().toString();
     final static String changePath = changeFile.toURI().toString();
+
+    final static String badge1Path = badge1File.toURI().toString();
+    final static String badge2Path = badge2File.toURI().toString();
+    final static String badge3Path = badge3File.toURI().toString();
+    final static String badge4Path = badge4File.toURI().toString();
+    final static String badge5Path = badge5File.toURI().toString();
 
     final static Image categoryImage = new Image(categoryPath, false);
     final static Image taskImage = new Image(taskPath, false);
@@ -32,4 +44,10 @@ public class Assets {
     final static ImageView binImage = new ImageView(new Image(binPath, false));
     final static ImageView searchImage = new ImageView(new Image(searchPath, false));
     final static ImageView changeImage = new ImageView(new Image(changePath, false));
+
+    final static ImageView badge1Image = new ImageView(new Image(badge1Path, false));
+    final static ImageView badge2Image = new ImageView(new Image(badge2Path, false));
+    final static ImageView badge3Image = new ImageView(new Image(badge3Path, false));
+    final static ImageView badge4Image = new ImageView(new Image(badge4Path, false));
+    final static ImageView badge5Image = new ImageView(new Image(badge5Path, false));
 }

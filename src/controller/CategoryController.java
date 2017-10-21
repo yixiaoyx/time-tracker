@@ -41,6 +41,7 @@ public class CategoryController extends Controller {
     private String currCategory;
     private boolean active;
     private String initialSearchQuery;
+    private String parentCategory;
 
     @FXML
     private StackPane sp;
@@ -84,7 +85,7 @@ public class CategoryController extends Controller {
         super(driver);
         this.currScreen = currScreen;
         currCategory = category;
-
+        parentCategory = driver.getParentCategoryName(category);
         active = false;
     }
 
@@ -375,6 +376,24 @@ public class CategoryController extends Controller {
 
     @FXML
     private void handleChange() {
+        // new version: change name and parent
+
+        JFXDialog dialog = new JFXDialog();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../FormScreen.fxml"));
+            FormController controller = new FormController(driver, currScreen, parentCategory);
+            fxmlLoader.setController(controller);
+            dialog.setContent(fxmlLoader.load());
+            controller.editCategory(currCategory, parentCategory);
+
+        } catch (/*IO*/Exception e) {
+            e.printStackTrace();
+        }
+
+        dialog.show(sp);
+
+/*
+        // old version: change name only
         JFXDialog dialog = new JFXDialog();
         Insets insets = new Insets(10, 10, 10, 10);
         // Create contents of Dialog Box
@@ -438,6 +457,7 @@ public class CategoryController extends Controller {
         // Insert contents into dialog box
         dialog.setContent(changebox);
         dialog.show(sp);
+*/
     }
 
     @FXML
