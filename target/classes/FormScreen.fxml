@@ -77,11 +77,11 @@
             </VBox.margin>
 
         </JFXTextField>
-        <JFXDatePicker translateX="92.0">
+        <JFXDatePicker fx:id="dueDatePicker" translateX="92.0">
             <VBox.margin>
                 <Insets bottom="10.0" />
             </VBox.margin></JFXDatePicker>
-        <JFXTimePicker translateX="92.0">
+        <JFXTimePicker fx:id="dueTimePicker" translateX="92.0">
 
         </JFXTimePicker>
         <JFXButton fx:id="goButton" alignment="CENTER" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleOkClick" prefHeight="35.0" prefWidth="72.0" ripplerFill="#bedaff" style="-fx-background-color: #94d69e;" text="OK" textAlignment="CENTER" textFill="#f8f8f8" translateX="190.0" translateY="20.0">
