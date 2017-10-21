@@ -226,8 +226,13 @@ public class CategoryController extends Controller {
         label.setTextFill(WHITE);
 
 
-        //if(driver.categoryDueSoon(categoryName)) {
-        vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
+        if(driver.categoryDueSoon(categoryName)) {
+            vbox.getChildren().addAll(new ImageView(Assets.categoryAlertImage), label);
+        }
+        else {
+            vbox.getChildren().addAll(new ImageView(Assets.categoryImage), label);
+        }
+
         vbox.setAlignment(Pos.CENTER);
 
         // JFX Components from http://www.jfoenix.com/documentation.html
