@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,10 +11,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="sp" xmlns="http://javafx.com/javafx/8.0.121" style="-fx-background-color: #D9D9D9" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="sp" style="-fx-background-color: #D9D9D9" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
 
         <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" stylesheets="@CategoryScreen.css">
@@ -39,10 +39,16 @@
                                     <!--<Label fx:id="smallCategoryPath" alignment="CENTER" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">-->
                                 </HBox>
 
-                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="444.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
+                                <Label fx:id="categoryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="444.0" text="CATEGORYNAME" textAlignment="CENTER" textFill="#454c65" translateX="27.0" wrapText="true" BorderPane.alignment="CENTER">
                                     <font>
                                         <Font name="Calibri" size="30.0" />
                                     </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                                 </Label>
 
                                 <JFXTextField fx:id="searchBar" alignment="CENTER" focusColor="#74a5ff" onKeyReleased="#handleSearchText" opacity="0.6" prefHeight="28.0" prefWidth="427.0" promptText="Search" style="-fx-background-color: #f7fbff;" translateX="27.0" unFocusColor="#6f6f6f" BorderPane.alignment="CENTER" />
@@ -95,6 +101,6 @@
 
             </bottom>
         </BorderPane>
-      <Rectangle fx:id="homeShape" arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="33.0" stroke="#d9d9d9" strokeType="INSIDE" translateY="-234.0" width="72.0" />
+      <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #D9D9D9;" translateY="-228.0" />
     </children>
 </StackPane>

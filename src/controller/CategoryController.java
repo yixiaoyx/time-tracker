@@ -20,6 +20,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import model.InterfaceDriver;
@@ -41,6 +42,9 @@ public class CategoryController extends Controller {
     private String currCategory;
     private boolean active;
     private String initialSearchQuery;
+
+    final File badge1File = new File("src/assets/Badge_1.png");
+    final String badge1Path = badge1File.toURI().toString();
 
     @FXML
     private StackPane sp;
@@ -77,6 +81,8 @@ public class CategoryController extends Controller {
 
     @FXML
     private JFXTextField searchBar;
+    @FXML
+    private Button homeButton;
 
 
 
@@ -120,6 +126,8 @@ public class CategoryController extends Controller {
             JFXButton b;
             if(s == "All") {
                 b = new JFXButton("Home");
+                Image badge1Image = new Image(badge1Path, false);
+                b.setGraphic(new ImageView(badge1Image));
             }
             else {
                 b = new JFXButton(s);
@@ -144,7 +152,8 @@ public class CategoryController extends Controller {
 
         if(currCategory == "All") {
             categoryName.setText("likasombodi");
-
+            Image badge1Image = new Image(badge1Path, false);
+            homeButton.setGraphic(new ImageView(badge1Image));
         }
         else {
             categoryName.setText(currCategory);
