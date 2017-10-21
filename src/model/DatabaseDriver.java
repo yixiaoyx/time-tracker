@@ -186,7 +186,9 @@ public class DatabaseDriver {
 
                 // long total = Long.parseLong(results.getString("duration"));
                 //   t.setTotalTime(total);
-                t.setEstimatedTimeString(results.getString("estimated_time_string"));
+                long estimatedTime = Long.parseLong(results.getString("estimated_time"));
+                t.setEstimatedTime(estimatedTime);
+
                 int goal = Integer.parseInt(results.getString("completed_goal"));
 
 
