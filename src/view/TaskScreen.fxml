@@ -11,7 +11,7 @@
 
 <GridPane alignment="CENTER" hgap="10.0" prefHeight="500.0" prefWidth="500.0" stylesheets="CategoryScreen.css" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <GridPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <GridPane style="-fx-background-color: #D9D9D9;" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <children>
                 <Label fx:id="taskName" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="337.0" text="TASK" textFill="GREY" translateX="-1.0" translateY="30.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                     <font>
