@@ -152,10 +152,10 @@ public abstract class Screen {
     }
 
     private void setWindowSmall(){
-        stage.setMinWidth(300);
+        stage.setMinWidth(350);
         stage.setMinHeight(135);
 
-        stage.setMaxWidth(300);
+        stage.setMaxWidth(350);
         stage.setMaxHeight(135);
     }
 
