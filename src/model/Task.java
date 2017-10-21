@@ -135,11 +135,11 @@ public class Task {
             //save task to the database after clocking out.
             getTotalTime();
             db.updateTask(getName(), getParentCategory().getName(), getTotalTimeString(),
-                    getTotalTimeSecs(),getEstimatedTimeString(),getEstimatedTime(), getGoalComplete(), getDueDate());// activeEndTime, activeEndTime);
+                    getTotalTime(),getEstimatedTimeString(),getEstimatedTime(), getGoalComplete(), getDueDate());// activeEndTime, activeEndTime);
 
-            System.out.println("total time " + getTotalTimeSecs() + " as string = " + getTotalTimeString());
+
             String getDuration = getLengthOfLastClockInOut();
-            db.addTaskDuration(getName(),durationSecs, getDuration, activeStartTime, activeEndTime);
+            db.addTaskDuration(getName(),duration.time(), getDuration, activeStartTime, activeEndTime);
 
             // clear the active variables
             active = false;

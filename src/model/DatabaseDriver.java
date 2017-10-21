@@ -60,6 +60,7 @@ public class DatabaseDriver {
 
             System.out.println("CategoryID is " + CategoryID);
 
+            System.out.println("duration time " + duration);
             String query1 = "INSERT INTO Tasks (task_name,category_ID, duration_string, duration, estimated_time_string, estimated_time) VALUES ('"+task +"', '"+CategoryID+"', '"+durationString+"', '" + duration + "', null, 0)";
 
 

@@ -44,7 +44,6 @@ public class TaskController extends Controller {
     private JFXProgressBar bigProgressBar;
     @FXML
     private JFXButton analysisButton;
-
     @FXML
     private Label goalReached;
 
@@ -120,8 +119,6 @@ public class TaskController extends Controller {
             clockButton.setText("CLOCK OUT");
             activeTime.play();
             active = true;
-
-
 
 
         } else {
