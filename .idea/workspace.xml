@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Main.class" afterPath="$PROJECT_DIR$/target/classes/controller/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/Screen.class" afterPath="$PROJECT_DIR$/target/classes/controller/Screen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskController.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" afterPath="$PROJECT_DIR$/target/classes/controller/TaskScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" afterPath="$PROJECT_DIR$/target/classes/TaskScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,9 +114,11 @@
       <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="247">
               <caret line="178" column="8" lean-forward="false" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
-              <folding />
+              <folding>
+                <marker date="1508548816000" expanded="true" signature="5013:5020" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,7 +208,7 @@
         <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="609">
-              <caret line="857" column="0" lean-forward="true" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
+              <caret line="857" column="0" lean-forward="false" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
               <folding>
                 <element signature="e#5523#5529#0" expanded="true" />
                 <element signature="e#15454#15464#0" expanded="true" />
@@ -220,49 +218,49 @@
                 <element signature="e#25512#25518#0" expanded="true" />
                 <element signature="e#27205#27214#0" expanded="true" />
                 <element signature="e#28705#28711#0" expanded="true" />
-                <marker date="1508548517000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="1796:1993" ph="INSERT INTO Tasks... " />
-                <marker date="1508548517000" expanded="true" signature="2685:2822" ph="UPDATE Tasks... " />
-                <marker date="1508548517000" expanded="true" signature="3248:3334" ph="UPDATE Tasks... " />
-                <marker date="1508548517000" expanded="true" signature="3858:3938" ph="UPDATE Tasks... " />
-                <marker date="1508548517000" expanded="true" signature="4479:4498" ph="select * fro... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="5016:5178" ph="INSERT INTO task_durations... " />
-                <marker date="1508548517000" expanded="true" signature="5792:5811" ph="select * fro... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="8001:8020" ph="select * fro... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="8825:9100" ph="UPDATE Tasks... " />
-                <marker date="1508548517000" expanded="true" signature="9787:9851" ph="SELECT Categ... Category" />
-                <marker date="1508548517000" expanded="true" signature="10471:10535" ph="SELECT ID FR... Category" />
-                <marker date="1508548517000" expanded="true" signature="11196:11254" ph="SELECT @idCo... " />
-                <marker date="1508548517000" expanded="true" signature="11286:11348" ph="SELECT @valu... " />
-                <marker date="1508548517000" expanded="true" signature="11401:11424" ph="select * fro... Category" />
-                <marker date="1508548517000" expanded="true" signature="12298:12346" ph="UPDATE Categ... " />
-                <marker date="1508548517000" expanded="true" signature="12378:12563" ph="INSERT INTO Category... " />
-                <marker date="1508548517000" expanded="true" signature="13327:13385" ph="SELECT @idCo... " />
-                <marker date="1508548517000" expanded="true" signature="13420:13492" ph="SELECT @Left... " />
-                <marker date="1508548517000" expanded="true" signature="13545:13590" ph="select * fro... Category" />
-                <marker date="1508548517000" expanded="true" signature="14580:14646" ph="UPDATE Categ... " />
-                <marker date="1508548517000" expanded="true" signature="14679:14743" ph="UPDATE Categ... " />
-                <marker date="1508548517000" expanded="true" signature="14776:14966" ph="INSERT INTO Category... " />
-                <marker date="1508548517000" expanded="true" signature="15726:15748" ph="select * fro... Category" />
-                <marker date="1508548517000" expanded="true" signature="16984:17050" ph="SELECT Categ... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="17306:17478" ph="SELECT paren... Category" />
-                <marker date="1508548517000" expanded="true" signature="18228:18336" ph="UPDATE Categ... " />
-                <marker date="1508548517000" expanded="true" signature="18768:18856" ph="UPDATE Tasks... " />
-                <marker date="1508548517000" expanded="true" signature="19332:19452" ph="SELECT @left... " />
-                <marker date="1508548517000" expanded="true" signature="20283:20362" ph="DELETE FROM " />
-                <marker date="1508548517000" expanded="true" signature="20394:20479" ph="UPDATE Categ... " />
-                <marker date="1508548517000" expanded="true" signature="21008:21067" ph="DELETE FROM " />
-                <marker date="1508548517000" expanded="true" signature="21099:21152" ph="DELETE FROM " />
-                <marker date="1508548517000" expanded="true" signature="21660:21712" ph="SELECT * fro... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="22362:22422" ph="SELECT ID fr... Category" />
-                <marker date="1508548517000" expanded="true" signature="22676:22728" ph="SELECT * fro... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="23972:24025" ph="SELECT ID fr... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="24255:24313" ph="SELECT * fro... task_durations" />
-                <marker date="1508548517000" expanded="true" signature="25718:25778" ph="SELECT ID fr... Category" />
-                <marker date="1508548517000" expanded="true" signature="26043:26205" ph="SELECT * fro... task_durations" />
-                <marker date="1508548517000" expanded="true" signature="27413:27474" ph="SELECT ID fr... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="28137:28195" ph="SELECT ID fr... Tasks" />
-                <marker date="1508548517000" expanded="true" signature="28976:29098" ph="SELECT * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="1796:1993" ph="INSERT INTO Tasks... " />
+                <marker date="1508548811000" expanded="true" signature="2685:2822" ph="UPDATE Tasks... " />
+                <marker date="1508548811000" expanded="true" signature="3248:3334" ph="UPDATE Tasks... " />
+                <marker date="1508548811000" expanded="true" signature="3858:3938" ph="UPDATE Tasks... " />
+                <marker date="1508548811000" expanded="true" signature="4479:4498" ph="select * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="5016:5178" ph="INSERT INTO task_durations... " />
+                <marker date="1508548811000" expanded="true" signature="5792:5811" ph="select * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="8001:8020" ph="select * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="8825:9100" ph="UPDATE Tasks... " />
+                <marker date="1508548811000" expanded="true" signature="9787:9851" ph="SELECT Categ... Category" />
+                <marker date="1508548811000" expanded="true" signature="10471:10535" ph="SELECT ID FR... Category" />
+                <marker date="1508548811000" expanded="true" signature="11196:11254" ph="SELECT @idCo... " />
+                <marker date="1508548811000" expanded="true" signature="11286:11348" ph="SELECT @valu... " />
+                <marker date="1508548811000" expanded="true" signature="11401:11424" ph="select * fro... Category" />
+                <marker date="1508548811000" expanded="true" signature="12298:12346" ph="UPDATE Categ... " />
+                <marker date="1508548811000" expanded="true" signature="12378:12563" ph="INSERT INTO Category... " />
+                <marker date="1508548811000" expanded="true" signature="13327:13385" ph="SELECT @idCo... " />
+                <marker date="1508548811000" expanded="true" signature="13420:13492" ph="SELECT @Left... " />
+                <marker date="1508548811000" expanded="true" signature="13545:13590" ph="select * fro... Category" />
+                <marker date="1508548811000" expanded="true" signature="14580:14646" ph="UPDATE Categ... " />
+                <marker date="1508548811000" expanded="true" signature="14679:14743" ph="UPDATE Categ... " />
+                <marker date="1508548811000" expanded="true" signature="14776:14966" ph="INSERT INTO Category... " />
+                <marker date="1508548811000" expanded="true" signature="15726:15748" ph="select * fro... Category" />
+                <marker date="1508548811000" expanded="true" signature="16984:17050" ph="SELECT Categ... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="17306:17478" ph="SELECT paren... Category" />
+                <marker date="1508548811000" expanded="true" signature="18228:18336" ph="UPDATE Categ... " />
+                <marker date="1508548811000" expanded="true" signature="18768:18856" ph="UPDATE Tasks... " />
+                <marker date="1508548811000" expanded="true" signature="19332:19452" ph="SELECT @left... " />
+                <marker date="1508548811000" expanded="true" signature="20283:20362" ph="DELETE FROM " />
+                <marker date="1508548811000" expanded="true" signature="20394:20479" ph="UPDATE Categ... " />
+                <marker date="1508548811000" expanded="true" signature="21008:21067" ph="DELETE FROM " />
+                <marker date="1508548811000" expanded="true" signature="21099:21152" ph="DELETE FROM " />
+                <marker date="1508548811000" expanded="true" signature="21660:21712" ph="SELECT * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="22362:22422" ph="SELECT ID fr... Category" />
+                <marker date="1508548811000" expanded="true" signature="22676:22728" ph="SELECT * fro... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="23972:24025" ph="SELECT ID fr... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="24255:24313" ph="SELECT * fro... task_durations" />
+                <marker date="1508548811000" expanded="true" signature="25718:25778" ph="SELECT ID fr... Category" />
+                <marker date="1508548811000" expanded="true" signature="26043:26205" ph="SELECT * fro... task_durations" />
+                <marker date="1508548811000" expanded="true" signature="27413:27474" ph="SELECT ID fr... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="28137:28195" ph="SELECT ID fr... Tasks" />
+                <marker date="1508548811000" expanded="true" signature="28976:29098" ph="SELECT * fro... Tasks" />
               </folding>
             </state>
           </provider>
@@ -812,15 +810,21 @@
       <option name="project" value="LOCAL" />
       <updated>1508548749933</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixed database isuses">
+      <created>1508548776899</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1508548776899</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92112000" />
+    <option name="totallyTimeSpent" value="92157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="23" width="1362" height="807" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -828,10 +832,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850942" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14905934" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4196816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14905934" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4196816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1512,9 +1516,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="247">
           <caret line="178" column="8" lean-forward="false" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
-          <folding />
+          <folding>
+            <marker date="1508548816000" expanded="true" signature="5013:5020" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1537,7 +1543,7 @@
     <entry file="file://$PROJECT_DIR$/src/model/DatabaseDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
-          <caret line="857" column="0" lean-forward="true" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
+          <caret line="857" column="0" lean-forward="false" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
           <folding>
             <element signature="e#5523#5529#0" expanded="true" />
             <element signature="e#15454#15464#0" expanded="true" />
@@ -1547,49 +1553,49 @@
             <element signature="e#25512#25518#0" expanded="true" />
             <element signature="e#27205#27214#0" expanded="true" />
             <element signature="e#28705#28711#0" expanded="true" />
-            <marker date="1508548517000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="1796:1993" ph="INSERT INTO Tasks... " />
-            <marker date="1508548517000" expanded="true" signature="2685:2822" ph="UPDATE Tasks... " />
-            <marker date="1508548517000" expanded="true" signature="3248:3334" ph="UPDATE Tasks... " />
-            <marker date="1508548517000" expanded="true" signature="3858:3938" ph="UPDATE Tasks... " />
-            <marker date="1508548517000" expanded="true" signature="4479:4498" ph="select * fro... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="5016:5178" ph="INSERT INTO task_durations... " />
-            <marker date="1508548517000" expanded="true" signature="5792:5811" ph="select * fro... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="8001:8020" ph="select * fro... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="8825:9100" ph="UPDATE Tasks... " />
-            <marker date="1508548517000" expanded="true" signature="9787:9851" ph="SELECT Categ... Category" />
-            <marker date="1508548517000" expanded="true" signature="10471:10535" ph="SELECT ID FR... Category" />
-            <marker date="1508548517000" expanded="true" signature="11196:11254" ph="SELECT @idCo... " />
-            <marker date="1508548517000" expanded="true" signature="11286:11348" ph="SELECT @valu... " />
-            <marker date="1508548517000" expanded="true" signature="11401:11424" ph="select * fro... Category" />
-            <marker date="1508548517000" expanded="true" signature="12298:12346" ph="UPDATE Categ... " />
-            <marker date="1508548517000" expanded="true" signature="12378:12563" ph="INSERT INTO Category... " />
-            <marker date="1508548517000" expanded="true" signature="13327:13385" ph="SELECT @idCo... " />
-            <marker date="1508548517000" expanded="true" signature="13420:13492" ph="SELECT @Left... " />
-            <marker date="1508548517000" expanded="true" signature="13545:13590" ph="select * fro... Category" />
-            <marker date="1508548517000" expanded="true" signature="14580:14646" ph="UPDATE Categ... " />
-            <marker date="1508548517000" expanded="true" signature="14679:14743" ph="UPDATE Categ... " />
-            <marker date="1508548517000" expanded="true" signature="14776:14966" ph="INSERT INTO Category... " />
-            <marker date="1508548517000" expanded="true" signature="15726:15748" ph="select * fro... Category" />
-            <marker date="1508548517000" expanded="true" signature="16984:17050" ph="SELECT Categ... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="17306:17478" ph="SELECT paren... Category" />
-            <marker date="1508548517000" expanded="true" signature="18228:18336" ph="UPDATE Categ... " />
-            <marker date="1508548517000" expanded="true" signature="18768:18856" ph="UPDATE Tasks... " />
-            <marker date="1508548517000" expanded="true" signature="19332:19452" ph="SELECT @left... " />
-            <marker date="1508548517000" expanded="true" signature="20283:20362" ph="DELETE FROM " />
-            <marker date="1508548517000" expanded="true" signature="20394:20479" ph="UPDATE Categ... " />
-            <marker date="1508548517000" expanded="true" signature="21008:21067" ph="DELETE FROM " />
-            <marker date="1508548517000" expanded="true" signature="21099:21152" ph="DELETE FROM " />
-            <marker date="1508548517000" expanded="true" signature="21660:21712" ph="SELECT * fro... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="22362:22422" ph="SELECT ID fr... Category" />
-            <marker date="1508548517000" expanded="true" signature="22676:22728" ph="SELECT * fro... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="23972:24025" ph="SELECT ID fr... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="24255:24313" ph="SELECT * fro... task_durations" />
-            <marker date="1508548517000" expanded="true" signature="25718:25778" ph="SELECT ID fr... Category" />
-            <marker date="1508548517000" expanded="true" signature="26043:26205" ph="SELECT * fro... task_durations" />
-            <marker date="1508548517000" expanded="true" signature="27413:27474" ph="SELECT ID fr... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="28137:28195" ph="SELECT ID fr... Tasks" />
-            <marker date="1508548517000" expanded="true" signature="28976:29098" ph="SELECT * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="1277:1296" ph="select * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="1796:1993" ph="INSERT INTO Tasks... " />
+            <marker date="1508548811000" expanded="true" signature="2685:2822" ph="UPDATE Tasks... " />
+            <marker date="1508548811000" expanded="true" signature="3248:3334" ph="UPDATE Tasks... " />
+            <marker date="1508548811000" expanded="true" signature="3858:3938" ph="UPDATE Tasks... " />
+            <marker date="1508548811000" expanded="true" signature="4479:4498" ph="select * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="5016:5178" ph="INSERT INTO task_durations... " />
+            <marker date="1508548811000" expanded="true" signature="5792:5811" ph="select * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="8001:8020" ph="select * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="8825:9100" ph="UPDATE Tasks... " />
+            <marker date="1508548811000" expanded="true" signature="9787:9851" ph="SELECT Categ... Category" />
+            <marker date="1508548811000" expanded="true" signature="10471:10535" ph="SELECT ID FR... Category" />
+            <marker date="1508548811000" expanded="true" signature="11196:11254" ph="SELECT @idCo... " />
+            <marker date="1508548811000" expanded="true" signature="11286:11348" ph="SELECT @valu... " />
+            <marker date="1508548811000" expanded="true" signature="11401:11424" ph="select * fro... Category" />
+            <marker date="1508548811000" expanded="true" signature="12298:12346" ph="UPDATE Categ... " />
+            <marker date="1508548811000" expanded="true" signature="12378:12563" ph="INSERT INTO Category... " />
+            <marker date="1508548811000" expanded="true" signature="13327:13385" ph="SELECT @idCo... " />
+            <marker date="1508548811000" expanded="true" signature="13420:13492" ph="SELECT @Left... " />
+            <marker date="1508548811000" expanded="true" signature="13545:13590" ph="select * fro... Category" />
+            <marker date="1508548811000" expanded="true" signature="14580:14646" ph="UPDATE Categ... " />
+            <marker date="1508548811000" expanded="true" signature="14679:14743" ph="UPDATE Categ... " />
+            <marker date="1508548811000" expanded="true" signature="14776:14966" ph="INSERT INTO Category... " />
+            <marker date="1508548811000" expanded="true" signature="15726:15748" ph="select * fro... Category" />
+            <marker date="1508548811000" expanded="true" signature="16984:17050" ph="SELECT Categ... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="17306:17478" ph="SELECT paren... Category" />
+            <marker date="1508548811000" expanded="true" signature="18228:18336" ph="UPDATE Categ... " />
+            <marker date="1508548811000" expanded="true" signature="18768:18856" ph="UPDATE Tasks... " />
+            <marker date="1508548811000" expanded="true" signature="19332:19452" ph="SELECT @left... " />
+            <marker date="1508548811000" expanded="true" signature="20283:20362" ph="DELETE FROM " />
+            <marker date="1508548811000" expanded="true" signature="20394:20479" ph="UPDATE Categ... " />
+            <marker date="1508548811000" expanded="true" signature="21008:21067" ph="DELETE FROM " />
+            <marker date="1508548811000" expanded="true" signature="21099:21152" ph="DELETE FROM " />
+            <marker date="1508548811000" expanded="true" signature="21660:21712" ph="SELECT * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="22362:22422" ph="SELECT ID fr... Category" />
+            <marker date="1508548811000" expanded="true" signature="22676:22728" ph="SELECT * fro... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="23972:24025" ph="SELECT ID fr... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="24255:24313" ph="SELECT * fro... task_durations" />
+            <marker date="1508548811000" expanded="true" signature="25718:25778" ph="SELECT ID fr... Category" />
+            <marker date="1508548811000" expanded="true" signature="26043:26205" ph="SELECT * fro... task_durations" />
+            <marker date="1508548811000" expanded="true" signature="27413:27474" ph="SELECT ID fr... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="28137:28195" ph="SELECT ID fr... Tasks" />
+            <marker date="1508548811000" expanded="true" signature="28976:29098" ph="SELECT * fro... Tasks" />
           </folding>
         </state>
       </provider>
