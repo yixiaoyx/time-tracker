@@ -224,6 +224,11 @@ public class AnalysisController extends Controller {
 
     @FXML
     public void handleBackClick() {
-        currScreen.goToCategoryScreen(backCategory);
+        if(taskAnalysis) {
+            currScreen.goToTaskScreen(currCategory);
+        }
+        else {
+            currScreen.goToCategoryScreen(backCategory);
+        }
     }
 }
