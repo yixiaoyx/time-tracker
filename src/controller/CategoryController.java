@@ -132,6 +132,10 @@ public class CategoryController extends Controller {
         }
 
 
+        // search bar
+        JFXTextField searchBar = new JFXTextField("Search");
+        categoryPathHBox.getChildren().add(searchBar);
+
 
         categoryName.setText(currCategory);
 
