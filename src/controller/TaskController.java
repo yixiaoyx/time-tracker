@@ -64,6 +64,8 @@ public class TaskController extends Controller {
 
         bigProgressBar = new JFXProgressBar();
 
+        dontUpdate = false;
+
         active = false;
 
         estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
@@ -74,7 +76,9 @@ public class TaskController extends Controller {
                         @Override
                         public void handle(ActionEvent actionEvent) {
                             //duration.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
-                            clockButton.setText(driver.getTaskTotalAndActiveTimeString(currTask));
+                            if(!dontUpdate) {
+                                clockButton.setText(driver.getTaskTotalAndActiveTimeString(currTask));
+                            }
                             //clockButton.setText(driver.getTaskTimeString(currTask));
 
 
@@ -147,6 +151,20 @@ public class TaskController extends Controller {
 
     }
 
+
+    private boolean dontUpdate;
+    @FXML
+    private void mouseOverClockButton() {
+        if(driver.isActive()) {
+            dontUpdate = true;
+            clockButton.setText("Clock Out");
+        }
+    }
+
+    @FXML
+    private void mouseOutClockButton() {
+        dontUpdate = false;
+    }
 
     @FXML
     private void handleClick() {
@@ -296,9 +314,8 @@ public class TaskController extends Controller {
 
     private void controllerClockOut() {
         driver.clockOut(currTask);
-        clockButton.setText("CLOCK IN");
+        clockButton.setText("Clock In");
 
-        clockButton.setTooltip(new Tooltip("Clock in"));
 
 
         activeTime.stop();

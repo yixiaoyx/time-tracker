@@ -58,7 +58,7 @@
                               <Blend mode="SCREEN" />
                           </effect>
                       </JFXProgressBar>
-                      <JFXButton fx:id="clockButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" opacity="0.7" prefHeight="72.0" prefWidth="302.0" ripplerFill="#75eaff" style="-fx-background-color: #3d94e0; -fx-text-fill: #ffffff;" text="CLOCK IN" textAlignment="CENTER" translateX="-4.0" visible="true" wrapText="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                      <JFXButton fx:id="clockButton" onMouseEntered="#mouseOverClockButton" onMouseExited="#mouseOutClockButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" opacity="0.7" prefHeight="72.0" prefWidth="302.0" ripplerFill="#75eaff" style="-fx-background-color: #3d94e0; -fx-text-fill: #ffffff;" text="Clock In" textAlignment="CENTER" translateX="-4.0" visible="true" wrapText="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                           <font>
                               <Font name="System Bold" size="20.0" />
                           </font>
