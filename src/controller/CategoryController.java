@@ -45,7 +45,9 @@ public class CategoryController extends Controller {
     private String parentCategory;
 
     final File homeFile = new File("src/assets/Home_1.png");
+    final File home2File = new File ("src/assets/Home_2.png");
     final String homePath = homeFile.toURI().toString();
+    final String home2Path = home2File.toURI().toString();
 
     @FXML
     private StackPane sp;
@@ -126,9 +128,10 @@ public class CategoryController extends Controller {
         for(String s : catPath) {
             JFXButton b;
             if(s == "All") {
-                b = new JFXButton("Home");
-                Image homeImage = new Image(homePath, false);
-                b.setGraphic(new ImageView(homeImage));
+                b = new JFXButton();
+                b.setPrefHeight(25);
+                Image home2Image = new Image(home2Path, false);
+                b.setGraphic(new ImageView(home2Image));
             }
             else {
                 b = new JFXButton(s);
@@ -157,6 +160,8 @@ public class CategoryController extends Controller {
             homeButton.setGraphic(new ImageView(homeImage));
         }
         else {
+            homeButton.setVisible(false);
+            categoryName.setPrefHeight(45);
             categoryName.setText(currCategory);
         }
 

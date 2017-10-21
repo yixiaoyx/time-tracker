@@ -56,6 +56,19 @@ public class AnalysisController extends Controller {
     @FXML
     private Button analysisBackButton;
 
+    @FXML
+    private Tab tab1;
+    @FXML
+    private Tab tab2;
+    @FXML
+    private Tab tab3;
+
+    @FXML
+    private VBox tab1content;
+
+    @FXML
+    private Label totalTimeLabel;
+
 
     public AnalysisController(InterfaceDriver driver, AnalysisScreen currScreen, String currCategory, String backCategory) {
         super(driver);
@@ -79,64 +92,53 @@ public class AnalysisController extends Controller {
 
     @FXML
     protected void initialize() {
-        System.out.println("Got into initialise for analysis controller, currCat is " + currCategory);
+        categoryName.setText(currCategory);
+        tab1.setContent(getLog());
+        //tab2.setContent(getBreakdown());
+        getBreakdown();
+        getProgress(); //adds content in tab 3
+        totalTimeLabel.setText("Total time: " + driver.getCategoryTimeString(currCategory));
 
-        // xValue: days ago
-        // yValue: time put in
-        Map<Integer, Double> timings = driver.getFormattedTimingsFromCategory(currCategory);
+    }
 
-        XYChart.Series dumbSeries= new XYChart.Series();
-        dumbSeries.setName(currCategory);
-
-        for(int k : timings.keySet()) {
-            dumbSeries.getData().add(new XYChart.Data(-k, timings.get(k)));
+    @FXML
+    public void handleBackClick() {
+        if(taskAnalysis) {
+            currScreen.goToTaskScreen(currCategory);
         }
-
-        analysisAreaChart.getData().addAll(dumbSeries);
-
-
-        //contentvbox.getChildren().addAll(analysisAreaChart);
-
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-
-        Map<String, Double> taskBreakdown = driver.getTaskBreakdown(currCategory);
-        for(String taskName : taskBreakdown.keySet()) {
-            System.out.println("Task name: " + taskBreakdown.get(taskName));
-            pieChartData.add(new PieChart.Data(taskName, taskBreakdown.get(taskName)));
+        else {
+            currScreen.goToCategoryScreen(backCategory);
         }
+    }
 
-
-        taskBreakdownChart = new PieChart(pieChartData);
-        taskBreakdownChart.setTitle("Task Breakdown");
-        //contentvbox.getChildren().add(taskBreakdownChart);
-
-        Label totalTimeLabel = new Label("Total time: " + driver.getCategoryTimeString(currCategory));
-        contentvbox.getChildren().addAll(totalTimeLabel);
-
-
-        // Simple time log
+    private JFXListView<Label> getLog(){
         JFXListView<Label> list = new JFXListView<Label>();
+        list.getItems().add(new Label("HEEHEE"));
         for(Duration d : driver.getDurationsFromCategory(currCategory)) {
             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String formattedDate = formatter.format(d.getStart());
-
+            System.out.println(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate);
 
             list.getItems().add(new Label(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate));
         }
 
         list.getStyleClass().add("mylistview");
+        return list;
+    }
 
+    @FXML
+    private GridPane gridpane;
+    private void getProgress(){
+        /*
         // progress bar page
         VBox progressVBox = new VBox();
         progressVBox.setSpacing(10);
         progressVBox.setPadding(new Insets(20, 0, 0, 0));
 
         //progressVBox.setAlignment(Pos.CENTER);
-
+        */
         Map<String, Long[]> m = driver.getCategoryTaskProgress(currCategory);
 
-        GridPane gridpane = new GridPane();
-        gridpane.setHgap(30);
         int currentRow = 0;
 
         for(String taskName : m.keySet()) {
@@ -156,6 +158,10 @@ public class AnalysisController extends Controller {
 
             Label l3 = new Label((int)(progress*100.0) +"%");
 
+
+
+            gridpane.getChildren().addAll(l1, l2, jfxBar, l3);
+
             GridPane.setRowIndex(l1, currentRow);
             GridPane.setRowIndex(l2, currentRow);
             GridPane.setRowIndex(jfxBar, currentRow);
@@ -166,60 +172,23 @@ public class AnalysisController extends Controller {
             GridPane.setColumnIndex(jfxBar, 2);
             GridPane.setColumnIndex(l3, 3);
 
-            gridpane.getChildren().addAll(l1, l2, jfxBar, l3);
-
             currentRow++;
         }
-
-        HBox hb = new HBox();
-        hb.setAlignment(Pos.CENTER);
-        hb.getChildren().add(gridpane);
-        progressVBox.getChildren().add(hb);
-
-        JFXTabPane tabPane = new JFXTabPane();
-
-        Tab tab3 = new Tab();
-        tab3.setText("Task Progress");
-        tab3.setContent(progressVBox);
-
-        tabPane.getTabs().add(tab3);
-
-
-        Tab tab0 = new Tab();
-        tab0.setText("Time Log");
-        tab0.setContent(list);
-
-        tabPane.getTabs().add(tab0);
-
-
-//        Tab tab1 = new Tab();
-//        tab1.setText("Line Graph");
-//        tab1.setContent(analysisAreaChart);
-//
-//        tabPane.getTabs().add(tab1);
-
-
-        if(!taskAnalysis) {
-            Tab tab2 = new Tab();
-            tab2.setText("Task Breakdown");
-            tab2.setContent(taskBreakdownChart);
-
-            tabPane.getTabs().add(tab2);
-        }
-
-        contentvbox.getChildren().add(tabPane);
-        contentvbox.setAlignment(Pos.CENTER);
-
-        categoryName.setText(currCategory);
     }
 
     @FXML
-    public void handleBackClick() {
-        if(taskAnalysis) {
-            currScreen.goToTaskScreen(currCategory);
+    private void getBreakdown() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+
+        Map<String, Double> taskBreakdown = driver.getTaskBreakdown(currCategory);
+        for(String taskName : taskBreakdown.keySet()) {
+            System.out.println("Task name: " + taskBreakdown.get(taskName));
+            pieChartData.add(new PieChart.Data(taskName, taskBreakdown.get(taskName)));
         }
-        else {
-            currScreen.goToCategoryScreen(backCategory);
-        }
+
+        taskBreakdownChart.setData(pieChartData);
+        taskBreakdownChart.setTitle("Task Breakdown");
+        //contentvbox.getChildren().add(taskBreakdownChart);
+
     }
 }
