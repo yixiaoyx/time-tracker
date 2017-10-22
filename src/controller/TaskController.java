@@ -106,20 +106,28 @@ public class TaskController extends Controller {
 
                                 //  System.out.println(" percentage: " + total/estimatedTime);
                                 if(percentage >= 25) {
-                                    if (badge2Button.visibleProperty().equals(false)) displayAlert("25% progress made!");
+                                    if (!badge2Button.isVisible()) {
+                                        displayAlert("25% progress made!");
+                                    }
                                     badge2Button.setVisible(true);
                                 }
                                 if(percentage >= 50) {
-                                    if (badge3Button.visibleProperty().equals(false)) displayAlert("50% progress made!");
+                                    if (!badge3Button.isVisible()) {
+                                        displayAlert("50% progress made!");
+                                    }
                                     badge3Button.setVisible(true);
                                 }
                                 if(percentage >= 75) {
-                                    if (badge4Button.visibleProperty().equals(false)) displayAlert("75% progress made!");
+                                    if (!badge4Button.isVisible()) {
+                                        displayAlert("75% progress made!");
+                                    }
                                     badge4Button.setVisible(true);
                                 }
                                 if (reached == false && total >= estimatedTime) {
-                                    if (badge5Button.visibleProperty().equals(false)) displayAlert("Goal Reached WOOOOO!");
                                     //driver.completedGoal(true, currTask);
+                                    if (!badge5Button.isVisible()) {
+                                        displayAlert("GOAL REACHED WOOOOOO!");
+                                    }
 
                                     badge5Button.setVisible(true);
                                     reached = true;
@@ -172,7 +180,8 @@ public class TaskController extends Controller {
     private void displayAlert(String message){
         achievementBar = new JFXSnackbar(sp);
         achievementBar.getStyleClass().add("bar-toast");
-        achievementBar.enqueue(new JFXSnackbar.SnackbarEvent(message));
+        //achievementBar.enqueue(new JFXSnackbar.SnackbarEvent(message));
+        achievementBar.show(message, 1000);
     }
 
     @FXML
@@ -303,20 +312,29 @@ public class TaskController extends Controller {
             }
             //  System.out.println(" percentage: " + total/estimatedTime);
             if (percentage >= 25) {
-                displayAlert("25% progress made!");
+                if (percentage < 50) {
+                    displayAlert("25% progress made!");
+                }
                 badge2Button.setVisible(true);
             }
             if (percentage >= 50) {
                 //goalReached.setText("50% progress made!");
+                if (percentage < 75) {
+                    displayAlert("50% progress made!");
+                }
                 badge3Button.setVisible(true);
             }
             if (percentage >= 75) {
                 //goalReached.setText("75% progress made!");
+                if (percentage < 100) {
+                    displayAlert("75% progress made!");
+                }
                 badge4Button.setVisible(true);
             }
             if (percentage >= 100) {
                 //goalReached.setText("Goal Reached WOOOOO!");
                 //driver.completedGoal(true, currTask);
+                displayAlert("100% progress made!");
                 badge5Button.setVisible(true);
                 reached = true;
 

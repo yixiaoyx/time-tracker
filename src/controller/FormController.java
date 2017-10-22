@@ -149,6 +149,14 @@ public class FormController extends Controller{
 
         String name = nameField.getText();
 
+        if (!editTaskMode && !editCategoryMode) {
+            String checkName = isNameValid(name);
+            if (!checkName.equals("valid")) {
+                showWarning(checkName);
+                return;
+            }
+        }
+
         String estimatedTime = "";
         estimatedTime = estimatedTimeField.getText();
         System.out.println("Estimated Duration input: " + estimatedTime);
@@ -187,11 +195,6 @@ public class FormController extends Controller{
                 oldParent = null;
                 editTaskMode = false;
             } else {
-                String checkName = isNameValid(name);
-                if (!checkName.equals("valid")) {
-                    showWarning(checkName);
-                    return;
-                }
                 driver.addTask(category, name);
             }
             // Check if given existing estimated time and add to task
@@ -230,11 +233,6 @@ public class FormController extends Controller{
                 oldParent = null;
                 editCategoryMode = false;
             } else {
-                String checkName = isNameValid(name);
-                if (!checkName.equals("valid")) {
-                    showWarning(checkName);
-                    return;
-                }
                 driver.addSubCategory(category, name);
             }
             currScreen.goToCategoryScreen(category);
