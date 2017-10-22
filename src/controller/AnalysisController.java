@@ -107,7 +107,7 @@ public class AnalysisController extends Controller {
             String formattedDate = formatter.format(d.getStart());
             Text task = new Text(d.getParentTask());
             Text time = new Text(" logged " + d.timeString() + " on " + formattedDate);
-            System.out.println(task.toString()+time.toString());
+            System.out.println(task.getText()+time.getText());
             task.setStyle("-fx-font-weight: bold");
             list.getItems().add(new TextFlow(task, time));
         }
