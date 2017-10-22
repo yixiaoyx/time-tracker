@@ -1,5 +1,7 @@
 package controller;
 import com.jfoenix.controls.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -58,6 +60,7 @@ public class FormController extends Controller{
         editTaskMode = false;
         editCategoryMode = false;
 
+
     }
 
     private void setSelectedCategory(String category) {
@@ -70,7 +73,6 @@ public class FormController extends Controller{
         categoryMenu.setValue(selectedCategory);
         categoryMenu.getItems().add(topLevelCategory);
         categoryMenu.getItems().addAll(findSubCategories(topLevelCategory));
-
 
     }
 
@@ -131,6 +133,11 @@ public class FormController extends Controller{
         estimatedTimeField.setDisable(true);
         dueDatePicker.setDisable(true);
         dueTimePicker.setDisable(true);
+    }
+
+    @FXML
+    public void handleInput() {
+
     }
 
     @FXML
