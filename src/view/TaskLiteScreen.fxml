@@ -4,48 +4,50 @@
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<HBox alignment="CENTER">
-<BorderPane prefHeight="135.0" prefWidth="350.0" stylesheets="CategoryScreen.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
-    <top>
-        <Label fx:id="taskName" alignment="TOP_LEFT" BorderPane.alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="337.0" text="TASK" textFill="GREY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
-            <font>
-                <Font name="Lucida Sans Regular" size="30.0" fx:id="x1" />
-            </font>
-        </Label>
-        <JFXButton fx:id="taskLiteButton" BorderPane.alignment="TOP_RIGHT" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleLiteClick" prefHeight="18.0" prefWidth="65.0" style="-fx-base: #00000000" styleClass="button-small" text="Maximise" textAlignment="CENTER">
-            <font>
-                <Font name="Arial" size="14.0" />
-            </font>
-        </JFXButton>
-    </top>
-    <center>
-        <JFXProgressBar fx:id="bigProgressBar" BorderPane.alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="302.0" progress="0.0"  GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <effect>
-                <Blend mode="SCREEN" />
-            </effect>
-        </JFXProgressBar>
-        <JFXButton fx:id="clockButton" alignment="CENTER" BorderPane.alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" opacity="0.7" prefHeight="72.0" prefWidth="302.0" ripplerFill="#75eaff" style="-fx-background-color: #3d94e0; -fx-text-fill: #ffffff;" text="CLOCK IN" textAlignment="CENTER"  visible="true" wrapText="false">
-            <font>
-                <Font name="System Bold" size="20.0" />
-            </font>
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="370.0" style="-fx-background-color: #D9D9D9;" stylesheets="CategoryScreen.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+        <top>
+            <Label fx:id="taskName" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="350.0" text="TASK" textFill="GREY" BorderPane.alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                <font>
+                    <Font name="Lucida Sans Regular" size="30.0" fx:id="x1" />
+                </font>
+            </Label>
+            <JFXButton fx:id="taskLiteButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleLiteClick" prefHeight="72.0" prefWidth="40.0" ripplerFill="#4ce4ff" style="-fx-background-color: #62b9eb;" textAlignment="CENTER" translateX="-26.0" translateY="15.0" BorderPane.alignment="TOP_RIGHT">
+                <font>
+                    <Font name="Arial" size="14.0" />
+                </font>
+            </JFXButton>
+        </top>
+        <center>
+            <JFXProgressBar fx:id="bigProgressBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="302.0" progress="0.0" BorderPane.alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <effect>
+                    <Blend mode="SCREEN" />
+                </effect>
+            </JFXProgressBar>
+            <JFXButton fx:id="clockButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" opacity="0.7" prefHeight="72.0" prefWidth="302.0" ripplerFill="#5ae6ff" style="-fx-background-color: #3d94e0; -fx-text-fill: #ffffff;" text="CLOCK IN" textAlignment="CENTER" translateX="-34.0" translateY="-23.0" visible="true" wrapText="false" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+                <effect>
+                    <DropShadow color="#868686" />
+                </effect>
 
-        </JFXButton>
+            </JFXButton>
 
-        <!--
-        <JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="6.0" translateY="-47.0">
-            <font>
-                <Font name="Arial" size="24.0" />
-            </font>
-        </JFXButton>
-        -->
-    </center>
+            <!--
+            <JFXButton fx:id="categoryBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="45.0" prefWidth="20.0" style="-fx-base: #00000000; -fx-background-color: #e47575;" styleClass="button-back" text="&lt;" textAlignment="CENTER" translateX="6.0" translateY="-47.0">
+                <font>
+                    <Font name="Arial" size="24.0" />
+                </font>
+            </JFXButton>
+            -->
+        </center>
 
-</BorderPane>
+    </BorderPane>
 </HBox>

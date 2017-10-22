@@ -26,12 +26,15 @@ public class TaskLiteController extends Controller {
     private boolean reached;
     private final Timeline activeTime;
 
+    final File liteToggleFile = new File("src/assets/LiteToggle_2.png");
+    final String liteTogglePath = liteToggleFile.toURI().toString();
+
     @FXML
     private Button clockButton;
     @FXML
     private Label duration;
     @FXML
-    private Button taskLiteButton;
+    private JFXButton taskLiteButton;
     @FXML
     private Label taskName;
     @FXML
@@ -58,17 +61,17 @@ public class TaskLiteController extends Controller {
 
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
-                    new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent actionEvent) {
-                            clockButton.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
-                            updateBigProgressBar();
+                        new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent actionEvent) {
+                                clockButton.setText(driver.getTaskByName(currTask).getActiveRunTimeString());
+                                updateBigProgressBar();
 
 //                            //get the total time (current run time + other durations for task) spent on a task
 //                            Long total = (driver.getTaskByName(currTask).getActiveRunTime()) / 1000 +
 //                                    (driver.getTaskByName(currTask).getTotalTimeSecs());
+                            }
                         }
-                    }
                 ),
                 new KeyFrame(Duration.seconds(0.01))
         );
@@ -145,6 +148,9 @@ public class TaskLiteController extends Controller {
         //  SET ACHIEVEMENT THING HERE goalReached.setText("");
         taskLiteButton.setTooltip(new Tooltip("Return to default Tracker window"));
         updateBigProgressBar();
+
+        Image liteToggleImage = new Image(liteTogglePath, false);
+        taskLiteButton.setGraphic(new ImageView(liteToggleImage));
     }
 
     private void controllerClockOut() {
