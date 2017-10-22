@@ -14,7 +14,7 @@ public class CategoryScreen extends Screen {
 
 
     public CategoryScreen(Stage s, InterfaceDriver driver, String category) {
-        super(s, "CategoryScreen.fxml", "Category", driver);
+        super(s, "CategoryScreen.fxml", "Track Attack", driver);
         searchQuery = "";
         currCategory = category;
 

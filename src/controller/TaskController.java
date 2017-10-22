@@ -3,6 +3,7 @@ package controller;
 import javafx.fxml.*;
 import com.jfoenix.controls.*;
 import javafx.scene.control.*;
+import javafx.scene.effect.Glow;
 import javafx.scene.layout.*;
 import javafx.util.*;
 import javafx.animation.*;
@@ -39,6 +40,8 @@ public class TaskController extends Controller {
     private JFXProgressBar bigProgressBar;
     @FXML
     private JFXButton analysisButton;
+    @FXML
+    private JFXButton taskLiteButton;
     @FXML
     private Label goalReached;
     @FXML
@@ -189,10 +192,11 @@ public class TaskController extends Controller {
 
             activeTime.play();
             active = true;
-
+            clockButton.setEffect(new Glow(0.5));
 
         } else {
             controllerClockOut();
+            clockButton.setEffect(new Glow(0));
         }
 
     }
@@ -289,37 +293,40 @@ public class TaskController extends Controller {
         badge5Button.setVisible(false);
 
 
-        if(percentage > 0) {
-            badge1Button.setVisible(true);
-        }
-        //  System.out.println(" percentage: " + total/estimatedTime);
-        if(percentage >= 25) {
-            //displayAlert("25% progress made!");
-            badge2Button.setVisible(true);
-        }
-        if(percentage >= 50) {
-            //displayAlert("50% progress made!");
-            badge3Button.setVisible(true);
-        }
-        if(percentage >= 75) {
-            //displayAlert("75% progress made!");
-            badge4Button.setVisible(true);
-        }
-        if (percentage >= 100) {
-            //displayAlert("Goal Reached WOOOOO!");
-            //driver.completedGoal(true, currTask);
-            badge5Button.setVisible(true);
-            reached = true;
 
+        if(estimatedTime > 0) {
+            if (percentage > 0) {
+                badge1Button.setVisible(true);
+            }
+            //  System.out.println(" percentage: " + total/estimatedTime);
+            if (percentage >= 25) {
+                displayAlert("25% progress made!");
+                badge2Button.setVisible(true);
+            }
+            if (percentage >= 50) {
+                //goalReached.setText("50% progress made!");
+                badge3Button.setVisible(true);
+            }
+            if (percentage >= 75) {
+                //goalReached.setText("75% progress made!");
+                badge4Button.setVisible(true);
+            }
+            if (percentage >= 100) {
+                //goalReached.setText("Goal Reached WOOOOO!");
+                //driver.completedGoal(true, currTask);
+                badge5Button.setVisible(true);
+                reached = true;
+
+            }
         }
-        achievementBar = new JFXSnackbar(sp);
-        achievementBar.getStyleClass().add("bar-toast");
-        // check what badges we already have
-//        badge1Button.setVisible(false);
-//        badge2Button.setVisible(false);
-//        badge3Button.setVisible(false);
-//        badge4Button.setVisible(false);
-//        badge5Button.setVisible(false);
+
+
+        changeButton.setTooltip(new Tooltip("Edit task properties"));
+        delButton.setTooltip(new Tooltip("Delete this task"));
+        taskLiteButton.setTooltip(new Tooltip("Tracker Lite: Keeps clock button visible"));
+        analysisButton.setTooltip(new Tooltip("Analyse this task"));
+        clockButton.setTooltip(new Tooltip("Start/Stop recording task time"));
+
     }
 
     private void controllerClockOut() {

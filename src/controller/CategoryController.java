@@ -13,6 +13,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -181,6 +182,14 @@ public class CategoryController extends Controller {
         delButton.setGraphic(Assets.binImage);
         //searchButton.setGraphic(Assets.searchImage);
         changeButton.setGraphic(Assets.changeImage);
+
+
+        // set tooltips
+        analysisButton.setTooltip(new Tooltip("Analyse this category"));
+        addButton.setTooltip(new Tooltip("Add task or category"));
+        delButton.setTooltip(new Tooltip("Delete this category"));
+        changeButton.setTooltip(new Tooltip("Edit category"));
+
     }
 
     public void setCurrCategory(String category) {

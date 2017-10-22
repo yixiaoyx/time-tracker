@@ -11,7 +11,7 @@ public class AnalysisScreen extends Screen {
     private boolean isTaskAnalysis;
 
     public AnalysisScreen(Stage s, InterfaceDriver driver, String currCategory, String backCategory, boolean taskAnalysis) {
-        super(s, "AnalysisScreen.fxml", "Analysis", driver);
+        super(s, "AnalysisScreen.fxml", "Track Attack", driver);
         this.currCategory = currCategory;
         this.backCategory = backCategory;
         isTaskAnalysis = taskAnalysis;

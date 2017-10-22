@@ -34,6 +34,11 @@
                               <Font name="Arial" size="24.0" />
                           </font>
                       </JFXButton>
+                      <JFXButton fx:id="taskLiteButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleLiteClick" prefHeight="18.0" prefWidth="65.0" style="-fx-base: #00000000" styleClass="button-small" text="Tracker Lite" textAlignment="CENTER" translateX="90.0" translateY="-55.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                          <font>
+                              <Font name="Arial" size="14.0" />
+                          </font>
+                      </JFXButton>
                       <Label fx:id="DaysTillDue" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="337.0" text="TASK" textFill="GREY" translateX="-1.0" translateY="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                           <font>
                               <Font name="Lucida Sans Regular" size="15.0" fx:id="x1" />
@@ -44,11 +49,7 @@
                               <Font name="DejaVu Sans" size="14.0" />
                           </font>
                       </JFXButton>
-                      <JFXButton fx:id="taskLiteButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleLiteClick" prefHeight="18.0" prefWidth="65.0" style="-fx-base: #00000000" styleClass="button-small" text="Keep Tracker Visible" textAlignment="CENTER" translateX="0.0" translateY="61.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                          <font>
-                              <Font name="Arial" size="14.0" />
-                          </font>
-                      </JFXButton>
+
                       <JFXButton fx:id="analysisButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleAnalysisClick" prefHeight="18.0" prefWidth="65.0" style="-fx-base: #00000000" styleClass="button-small" text="A" textAlignment="CENTER" translateX="85.0" translateY="61.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                           <font>
                               <Font name="Arial" size="14.0" />
