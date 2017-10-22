@@ -53,3 +53,8 @@
     -fx-background-color: #BBBBBB;
     -fx-text-fill: #121212;
 }
+
+.bar-toast {
+    -fx-background-color: #62b9eb;
+
+}

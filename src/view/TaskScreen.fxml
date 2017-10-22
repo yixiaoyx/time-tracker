@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSnackbar?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import javafx.scene.effect.Blend?>
-<StackPane fx:id="sp" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="sp" stylesheets="CategoryScreen.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane alignment="CENTER" hgap="10.0" prefHeight="500.0" prefWidth="500.0" stylesheets="CategoryScreen.css" vgap="10.0">
           <children>

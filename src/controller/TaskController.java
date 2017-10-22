@@ -21,6 +21,7 @@ public class TaskController extends Controller {
     private final Timeline activeTime;
     private String parentCategory;
     private Long estimatedTime;
+    private JFXSnackbar achievementBar;
 
     @FXML
     private Button clockButton;
@@ -101,19 +102,19 @@ public class TaskController extends Controller {
 
                                 //  System.out.println(" percentage: " + total/estimatedTime);
                                 if(percentage >= 25) {
-                                    //goalReached.setText("25% progress made!");
+                                    if (badge2Button.visibleProperty().equals(false)) displayAlert("25% progress made!");
                                     badge2Button.setVisible(true);
                                 }
                                 if(percentage >= 50) {
-                                    //goalReached.setText("50% progress made!");
+                                    if (badge3Button.visibleProperty().equals(false)) displayAlert("50% progress made!");
                                     badge3Button.setVisible(true);
                                 }
                                 if(percentage >= 75) {
-                                    //goalReached.setText("75% progress made!");
+                                    if (badge4Button.visibleProperty().equals(false)) displayAlert("75% progress made!");
                                     badge4Button.setVisible(true);
                                 }
                                 if (reached == false && total >= estimatedTime) {
-                                    //goalReached.setText("Goal Reached WOOOOO!");
+                                    if (badge5Button.visibleProperty().equals(false)) displayAlert("Goal Reached WOOOOO!");
                                     //driver.completedGoal(true, currTask);
 
                                     badge5Button.setVisible(true);
@@ -161,6 +162,11 @@ public class TaskController extends Controller {
             dontUpdate = true;
             clockButton.setText("Clock Out");
         }
+    }
+
+    @FXML
+    private void displayAlert(String message){
+        achievementBar.enqueue(new JFXSnackbar.SnackbarEvent(message));
     }
 
     @FXML
@@ -288,26 +294,26 @@ public class TaskController extends Controller {
         }
         //  System.out.println(" percentage: " + total/estimatedTime);
         if(percentage >= 25) {
-            //goalReached.setText("25% progress made!");
+            //displayAlert("25% progress made!");
             badge2Button.setVisible(true);
         }
         if(percentage >= 50) {
-            //goalReached.setText("50% progress made!");
+            //displayAlert("50% progress made!");
             badge3Button.setVisible(true);
         }
         if(percentage >= 75) {
-            //goalReached.setText("75% progress made!");
+            //displayAlert("75% progress made!");
             badge4Button.setVisible(true);
         }
         if (percentage >= 100) {
-            //goalReached.setText("Goal Reached WOOOOO!");
+            //displayAlert("Goal Reached WOOOOO!");
             //driver.completedGoal(true, currTask);
             badge5Button.setVisible(true);
             reached = true;
 
         }
-
-
+        achievementBar = new JFXSnackbar(sp);
+        achievementBar.getStyleClass().add("bar-toast");
         // check what badges we already have
 //        badge1Button.setVisible(false);
 //        badge2Button.setVisible(false);
@@ -319,7 +325,6 @@ public class TaskController extends Controller {
     private void controllerClockOut() {
         driver.clockOut(currTask);
         clockButton.setText("Clock In");
-
 
 
         activeTime.stop();
