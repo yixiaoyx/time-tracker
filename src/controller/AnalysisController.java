@@ -6,28 +6,16 @@ import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import model.Driver;
+import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import model.Duration;
 import model.InterfaceDriver;
 
 
-import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -111,15 +99,17 @@ public class AnalysisController extends Controller {
         }
     }
 
-    private JFXListView<Label> getLog(){
-        JFXListView<Label> list = new JFXListView<Label>();
-        list.getItems().add(new Label("HEEHEE"));
+    private JFXListView<TextFlow> getLog(){
+        JFXListView<TextFlow> list = new JFXListView<TextFlow>();
+        //list.getItems().add(new Label("HEEHEE"));
         for(Duration d : driver.getDurationsFromCategory(currCategory)) {
             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String formattedDate = formatter.format(d.getStart());
-            System.out.println(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate);
-
-            list.getItems().add(new Label(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate));
+            Text task = new Text(d.getParentTask());
+            Text time = new Text(" logged " + d.timeString() + " on " + formattedDate);
+            System.out.println(task.toString()+time.toString());
+            task.setStyle("-fx-font-weight: bold");
+            list.getItems().add(new TextFlow(task, time));
         }
 
         list.getStyleClass().add("mylistview");
