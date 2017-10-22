@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/FormController.java" afterPath="$PROJECT_DIR$/src/controller/FormController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/controller/TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation/trackattack design document.pdf" afterPath="$PROJECT_DIR$/documentation/trackattack design document.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FormScreen.fxml" afterPath="$PROJECT_DIR$/src/view/FormScreen.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path="out/" />
@@ -42,19 +43,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="127" column="46" lean-forward="false" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FormController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/FormController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2709">
@@ -64,19 +53,6 @@
                 <element signature="e#3009#3017#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormScreen.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/FormScreen.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
           </provider>
         </entry>
       </file>
@@ -135,11 +111,11 @@
         <option value="$PROJECT_DIR$/src/model/Duration.java" />
         <option value="$PROJECT_DIR$/src/model/Category.java" />
         <option value="$PROJECT_DIR$/src/controller/AnalysisController.java" />
+        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
+        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/view/FormScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
-        <option value="$PROJECT_DIR$/src/controller/FormController.java" />
-        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
-        <option value="$PROJECT_DIR$/src/controller/TaskController.java" />
       </list>
     </option>
   </component>
@@ -150,8 +126,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="-779" />
+    <option name="x" value="1359" />
+    <option name="y" value="-11" />
     <option name="width" value="1362" />
     <option name="height" value="780" />
   </component>
@@ -458,10 +434,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124349000" />
+    <option name="totallyTimeSpent" value="125107000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-779" width="1362" height="780" extended-state="6" />
+    <frame x="1359" y="-11" width="1362" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -888,11 +864,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="127" column="46" lean-forward="false" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/FormScreen.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1508640450565" expanded="true" signature="1136:1394" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="1185:1265" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="1299:1380" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="1711:1791" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="1825:1906" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="2330:2617" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="2357:2423" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="2444:2594" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="2899:3377" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="2920:3085" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3111:3176" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3198:3257" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3283:3351" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3683:4160" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3704:3869" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3895:3960" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="3982:4041" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="4067:4135" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="4210:4429" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="4230:4415" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="4479:4704" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="4499:4690" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="4643:4669" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="5101:5456" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="5122:5247" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="5273:5339" ph="..." />
+            <marker date="1508640450565" expanded="true" signature="5359:5435" ph="..." />
+          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
@@ -906,16 +920,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3009#3017#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="127" column="46" lean-forward="false" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
