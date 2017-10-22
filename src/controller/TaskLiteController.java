@@ -6,6 +6,8 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.*;
@@ -29,7 +31,7 @@ public class TaskLiteController extends Controller {
     @FXML
     private Label duration;
     @FXML
-    private Button taskBackButton;
+    private Button taskLiteButton;
     @FXML
     private Label taskName;
     @FXML
@@ -103,9 +105,11 @@ public class TaskLiteController extends Controller {
             driver.clockIn(currTask);
             activeTime.play();
             active = true;
+            clockButton.setEffect(new Glow(0.5));
 
         } else {
             controllerClockOut();
+            clockButton.setEffect(new Glow(0));
         }
 
     }
@@ -139,6 +143,7 @@ public class TaskLiteController extends Controller {
     protected void initialize() {
         taskName.setText(currTask);
         //  SET ACHIEVEMENT THING HERE goalReached.setText("");
+        taskLiteButton.setTooltip(new Tooltip("Return to default Tracker window"));
         updateBigProgressBar();
     }
 
@@ -148,13 +153,7 @@ public class TaskLiteController extends Controller {
 
         activeTime.stop();
 
-//        Long total = driver.getTaskByName(currTask).getTotalTime();
-//        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-//        System.out.println("total time = " + total + " estiamted = " + estimatedTime);
-//        if(total >= estimatedTime) {
-//
-//            System.out.println("goal reached");
-//        }
+
         active = false;
 
     }

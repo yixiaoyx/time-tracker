@@ -3,6 +3,7 @@ package controller;
 import javafx.fxml.*;
 import com.jfoenix.controls.*;
 import javafx.scene.control.*;
+import javafx.scene.effect.Glow;
 import javafx.scene.layout.*;
 import javafx.util.*;
 import javafx.animation.*;
@@ -21,6 +22,7 @@ public class TaskController extends Controller {
     private final Timeline activeTime;
     private String parentCategory;
     private Long estimatedTime;
+    private JFXSnackbar achievementBar;
 
     @FXML
     private Button clockButton;
@@ -74,6 +76,7 @@ public class TaskController extends Controller {
 
         estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
+
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
                     new EventHandler<ActionEvent>() {
@@ -103,19 +106,19 @@ public class TaskController extends Controller {
 
                                 //  System.out.println(" percentage: " + total/estimatedTime);
                                 if(percentage >= 25) {
-                                    //goalReached.setText("25% progress made!");
+                                    if (badge2Button.visibleProperty().equals(false)) displayAlert("25% progress made!");
                                     badge2Button.setVisible(true);
                                 }
                                 if(percentage >= 50) {
-                                    //goalReached.setText("50% progress made!");
+                                    if (badge3Button.visibleProperty().equals(false)) displayAlert("50% progress made!");
                                     badge3Button.setVisible(true);
                                 }
                                 if(percentage >= 75) {
-                                    //goalReached.setText("75% progress made!");
+                                    if (badge4Button.visibleProperty().equals(false)) displayAlert("75% progress made!");
                                     badge4Button.setVisible(true);
                                 }
                                 if (reached == false && total >= estimatedTime) {
-                                    //goalReached.setText("Goal Reached WOOOOO!");
+                                    if (badge5Button.visibleProperty().equals(false)) displayAlert("Goal Reached WOOOOO!");
                                     //driver.completedGoal(true, currTask);
 
                                     badge5Button.setVisible(true);
@@ -166,6 +169,13 @@ public class TaskController extends Controller {
     }
 
     @FXML
+    private void displayAlert(String message){
+        achievementBar = new JFXSnackbar(sp);
+        achievementBar.getStyleClass().add("bar-toast");
+        achievementBar.enqueue(new JFXSnackbar.SnackbarEvent(message));
+    }
+
+    @FXML
     private void mouseOutClockButton() {
         dontUpdate = false;
     }
@@ -185,10 +195,11 @@ public class TaskController extends Controller {
 
             activeTime.play();
             active = true;
-
+            clockButton.setEffect(new Glow(0.5));
 
         } else {
             controllerClockOut();
+            clockButton.setEffect(new Glow(0));
         }
 
     }
@@ -285,13 +296,14 @@ public class TaskController extends Controller {
         badge5Button.setVisible(false);
 
 
+
         if(estimatedTime > 0) {
             if (percentage > 0) {
                 badge1Button.setVisible(true);
             }
             //  System.out.println(" percentage: " + total/estimatedTime);
             if (percentage >= 25) {
-                //goalReached.setText("25% progress made!");
+                displayAlert("25% progress made!");
                 badge2Button.setVisible(true);
             }
             if (percentage >= 50) {
@@ -314,15 +326,15 @@ public class TaskController extends Controller {
 
         changeButton.setTooltip(new Tooltip("Edit task properties"));
         delButton.setTooltip(new Tooltip("Delete this task"));
-        taskLiteButton.setTooltip(new Tooltip("Tracker Lite"));
+        taskLiteButton.setTooltip(new Tooltip("Tracker Lite: Keeps clock button visible"));
         analysisButton.setTooltip(new Tooltip("Analyse this task"));
+        clockButton.setTooltip(new Tooltip("Start/Stop recording task time"));
 
     }
 
     private void controllerClockOut() {
         driver.clockOut(currTask);
         clockButton.setText("Clock In");
-
 
 
         activeTime.stop();

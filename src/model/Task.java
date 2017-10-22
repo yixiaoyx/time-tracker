@@ -115,7 +115,7 @@ public class Task {
         System.out.println("diff days = "+   diffDays);
         String days = "";
         if(diffDays <= 7) {
-            long daysTillDue = 7 - diffDays;
+            long daysTillDue = 7 - diffDays-1;
             days = daysTillDue + " days till task due!";
 
         }
