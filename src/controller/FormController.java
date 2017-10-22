@@ -184,7 +184,7 @@ public class FormController extends Controller{
         boolean empty = true;
         for (String t: inputEstTime) {
             if (t!=null && !t.equals("")) {
-                emtpy = false;
+                empty = false;
                 break;
             }
         }
