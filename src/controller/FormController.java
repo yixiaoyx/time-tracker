@@ -180,19 +180,30 @@ public class FormController extends Controller{
         }
 
         String[] inputEstTime = {estHH.getText(), estMM.getText(), estSS.getText()};
+        String estimatedTime = "";
+        boolean empty = true;
         for (String t: inputEstTime) {
-            if (t==null || t.equals("")) {
-                t = "00";
+            if (t!=null && !t.equals("")) {
+                emtpy = false;
+                break;
             }
         }
+    
+        if (!empty) {
+            for (String t : inputEstTime) {
+                if (t == null || t.equals("")) {
+                    t = "00";
+                }
+            }
 
-        String checkTime = isTimeValid(inputEstTime);
-        if (!checkTime.equals("valid")) {
-            showWarning(checkTime);
-            return;
+            String checkTime = isTimeValid(inputEstTime);
+            if (!checkTime.equals("valid")) {
+                showWarning(checkTime);
+                return;
+            }
+            estimatedTime = inputEstTime[0]+":"+inputEstTime[1]+":"+inputEstTime[2];
         }
 
-        String estimatedTime = inputEstTime[0]+":"+inputEstTime[1]+":"+inputEstTime[2];
         System.out.println("Estimated Duration input: " + estimatedTime);
         Long estimatedSeconds = null;
 
