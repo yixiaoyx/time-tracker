@@ -153,13 +153,7 @@ public class TaskLiteController extends Controller {
 
         activeTime.stop();
 
-//        Long total = driver.getTaskByName(currTask).getTotalTime();
-//        Long estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
-//        System.out.println("total time = " + total + " estiamted = " + estimatedTime);
-//        if(total >= estimatedTime) {
-//
-//            System.out.println("goal reached");
-//        }
+
         active = false;
 
     }
