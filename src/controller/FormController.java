@@ -45,8 +45,13 @@ public class FormController extends Controller{
     private JFXCheckBox taskCheckBox;
     @FXML
     private JFXCheckBox categoryCheckBox;
+    //private JFXTextField estimatedTimeField;
     @FXML
-    private JFXTextField estimatedTimeField;
+    private JFXTextField estHH;
+    @FXML
+    private JFXTextField estMM;
+    @FXML
+    private JFXTextField estSS;
     @FXML
     private JFXDatePicker dueDatePicker;
     @FXML
@@ -86,7 +91,11 @@ public class FormController extends Controller{
         oldName = task;
         oldParent = parent;
 
-        estimatedTimeField.setText(convertTime(estimatedTime));
+        String estTime = convertTime(estimatedTime);
+        String[] timeString = estTime.split(":");
+        estHH.setText(timeString[0]);
+        estMM.setText(timeString[1]);
+        estSS.setText(timeString[2]);
     }
 
     public void editCategory(String category, String parent) {
@@ -99,7 +108,9 @@ public class FormController extends Controller{
         oldName = category;
         oldParent = parent;
 
-        estimatedTimeField.setDisable(true);
+        estHH.setDisable(true);
+        estMM.setDisable(true);
+        estSS.setDisable(true);
         dueDatePicker.setDisable(true);
         dueTimePicker.setDisable(true);
     }
@@ -120,7 +131,9 @@ public class FormController extends Controller{
         taskCheckBox.setSelected(true);
         categoryCheckBox.setSelected(false);
 
-        estimatedTimeField.setDisable(false);
+        estHH.setDisable(false);
+        estMM.setDisable(false);
+        estSS.setDisable(false);
         dueDatePicker.setDisable(false);
         dueTimePicker.setDisable(false);
     }
@@ -130,7 +143,9 @@ public class FormController extends Controller{
         taskCheckBox.setSelected(false);
         categoryCheckBox.setSelected(true);
 
-        estimatedTimeField.setDisable(true);
+        estHH.setDisable(true);
+        estMM.setDisable(true);
+        estSS.setDisable(true);
         dueDatePicker.setDisable(true);
         dueTimePicker.setDisable(true);
     }
@@ -164,8 +179,20 @@ public class FormController extends Controller{
             }
         }
 
-        String estimatedTime = "";
-        estimatedTime = estimatedTimeField.getText();
+        String[] inputEstTime = {estHH.getText(), estMM.getText(), estSS.getText()};
+        for (String t: inputEstTime) {
+            if (t==null || t.equals("")) {
+                t = "00";
+            }
+        }
+
+        String checkTime = isTimeValid(inputEstTime);
+        if (!checkTime.equals("valid")) {
+            showWarning(checkTime);
+            return;
+        }
+
+        String estimatedTime = inputEstTime[0]+":"+inputEstTime[1]+":"+inputEstTime[2];
         System.out.println("Estimated Duration input: " + estimatedTime);
         Long estimatedSeconds = null;
 
@@ -253,7 +280,6 @@ public class FormController extends Controller{
         - No duplicate names in given category
         - No special characters
      */
-    @FXML
     private String isNameValid(String name){
         String category = categoryMenu.getValue().toString();
 
@@ -273,6 +299,21 @@ public class FormController extends Controller{
         return "valid";
     }
 
+    private String isTimeValid(String[] time) {
+
+        if (time[0].matches("\\D+") || time[1].matches("\\D+") ||
+                time[2].matches("\\D+")) {
+            return "timeinvalid";
+        }
+        Integer mm = new Integer(time[1]);
+        Integer ss = new Integer(time[2]);
+        if (mm > 59 || mm < 0 || ss > 59 || ss < 0) {
+            return "timeoutofrange";
+        }
+
+        return "valid";
+    }
+
     private void showWarning(String reason) {
         String warning = "";
         if (reason.equals("empty")) {
@@ -283,6 +324,10 @@ public class FormController extends Controller{
             warning = "Duplicate category name in selected category\nPlease change Name or selected Category.";
         } else if (reason.equals("taskmatch")) {
             warning = "Duplicate task name in selected category.\nPlease change Name or selected Category.";
+        } else if (reason.equals("timeinvalid")) {
+            warning = "Invalid time input.\nPlease enter digits only.";
+        } else if (reason.equals("timeoutofrange")) {
+            warning = "Please enter MM and SS in the range 0-59.";
         } else {
             warning = "I'm not sure what you did wrong.";
         }
