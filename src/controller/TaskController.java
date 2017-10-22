@@ -76,6 +76,7 @@ public class TaskController extends Controller {
 
         estimatedTime = driver.getTaskByName(currTask).getEstimatedTime();
 
+
         activeTime = new Timeline(
                 new KeyFrame(Duration.seconds(0),
                     new EventHandler<ActionEvent>() {
@@ -169,6 +170,8 @@ public class TaskController extends Controller {
 
     @FXML
     private void displayAlert(String message){
+        achievementBar = new JFXSnackbar(sp);
+        achievementBar.getStyleClass().add("bar-toast");
         achievementBar.enqueue(new JFXSnackbar.SnackbarEvent(message));
     }
 
