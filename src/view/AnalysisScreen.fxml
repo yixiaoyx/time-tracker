@@ -1,67 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
-<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.chart.PieChart?>
-<AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D9D9D9;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-    <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="97.0" prefWidth="500.0">
-    <children>
-        <HBox>
-        <Button fx:id="analysisBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-base: #00000000" styleClass="button-back" stylesheets="@CategoryScreen.css" text="&lt;" textAlignment="CENTER">
-            <font>
-                <Font name="Arial" size="32.0" />
-            </font>
-        </Button>
-        <Label fx:id="categoryName" alignment="CENTER" prefHeight="62.0" prefWidth="277.0" text="CATEGORYNAME" textAlignment="CENTER" translateX="50.0" wrapText="true" BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Calibri" size="42.0" />
-            </font>
-        </Label>
-        </HBox>
-        <VBox fx:id="contentvbox" minHeight="500" alignment="TOP_CENTER">
+        <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="97.0" prefWidth="500.0">
             <children>
-                <JFXTabPane>
-                    <Tab fx:id="tab1" text="Task Log">
-                       <!-- Task Log generated in controller. Use css class "mylistview" to style -->
+                <HBox>
+                    <JFXButton fx:id="analysisBackButton" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBackClick" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: #e47575;" styleClass="button-back" stylesheets="@CategoryScreen.css" textAlignment="CENTER" translateX="5.0" translateY="5.0">
+                        <font>
+                            <Font name="Arial" size="32.0" />
+                        </font>
+                    </JFXButton>
+                    <Label fx:id="categoryName" alignment="CENTER" prefHeight="20.0" prefWidth="363.0" text="CATEGORYNAME" textAlignment="CENTER" translateX="35.0" translateY="5.0" wrapText="true" BorderPane.alignment="CENTER">
+                        <font>
+                            <Font name="Calibri" size="42.0" />
+                        </font>
+                    </Label>
+                </HBox>
+                <VBox fx:id="contentvbox" alignment="TOP_CENTER" minHeight="500">
+                    <children>
+                        <JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0">
+                            <Tab fx:id="tab1" text="Task Log">
+                                <!-- Task Log generated in controller. Use css class "mylistview" to style -->
 
-                    </Tab>
-                    <Tab fx:id="tab2" text="Task Breakdown">
-                        <PieChart fx:id="taskBreakdownChart" title="Task Breakdown">
+                            </Tab>
+                            <Tab fx:id="tab2" text="Task Breakdown">
+                                <PieChart fx:id="taskBreakdownChart" title="Task Breakdown">
 
 
-                        </PieChart>
-                    </Tab>
-                    <Tab fx:id="tab3" text="Task Progress">
-                        <VBox fx:id="progressVBox" spacing="10" alignment="TOP_CENTER">
-                            <padding>
-                                <Insets top="20" left="0" bottom="0" right="0"/>
-                            </padding>
-                            <HBox alignment="CENTER">
-                                <GridPane fx:id="gridpane" hgap="30">
-                                </GridPane>
-                            </HBox>
+                                </PieChart>
+                            </Tab>
+                            <Tab fx:id="tab3" text="Task Progress">
+                                <VBox fx:id="progressVBox" alignment="TOP_CENTER" spacing="10">
+                                    <padding>
+                                        <Insets bottom="0" left="0" right="0" top="20" />
+                                    </padding>
+                                    <HBox alignment="CENTER">
+                                        <GridPane fx:id="gridpane" hgap="30">
+                                        </GridPane>
+                                    </HBox>
 
-                        </VBox>
-                    </Tab>
-                </JFXTabPane>
-                <Label fx:id="totalTimeLabel" text="Total Time:"/>
+                                </VBox>
+                            </Tab>
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                        </JFXTabPane>
+                        <Label fx:id="totalTimeLabel" text="Total Time:" />
+                    </children>
+
+                </VBox>
             </children>
 
         </VBox>
-    </children>
-
-    </VBox>
 
 
     </children>
