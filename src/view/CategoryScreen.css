@@ -31,7 +31,8 @@
 
 .button-back {
     -jfx-button-type: FLAT;
-    -fx-background-colour: #4484CE;
+    -fx-base: #00000000;
+    -fx-background-color: #e47575;
     -fx-pref-height: 45;
     -fx-pref-width: 20;
     -fx-text-fill: WHITE;
@@ -51,4 +52,9 @@
 .button-breadcrumb {
     -fx-background-color: #BBBBBB;
     -fx-text-fill: #121212;
+}
+
+.bar-toast {
+    -fx-background-color: #62b9eb;
+
 }

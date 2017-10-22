@@ -99,17 +99,16 @@ public class AnalysisController extends Controller {
         }
     }
 
-    private JFXListView<TextFlow> getLog(){
-        JFXListView<TextFlow> list = new JFXListView<TextFlow>();
-        //list.getItems().add(new Label("HEEHEE"));
+    private JFXListView<Label> getLog(){
+        JFXListView<Label> list = new JFXListView<Label>();
         for(Duration d : driver.getDurationsFromCategory(currCategory)) {
             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String formattedDate = formatter.format(d.getStart());
-            Text task = new Text(d.getParentTask());
-            Text time = new Text(" logged " + d.timeString() + " on " + formattedDate);
-            System.out.println(task.getText()+time.getText());
-            task.setStyle("-fx-font-weight: bold");
-            list.getItems().add(new TextFlow(task, time));
+            System.out.println(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate);
+            Label taskName = new Label(d.getParentTask());
+
+            list.getItems().add(new Label(d.getParentTask() + " logged " + d.timeString() + " on " + formattedDate));
+
         }
 
         list.getStyleClass().add("mylistview");

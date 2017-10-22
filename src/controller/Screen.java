@@ -28,15 +28,14 @@ public abstract class Screen {
 
 
         fxmlLoader.setController(setUpController());
-        //System.out.println(fxmlLoader);
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root, 500, 535.5);
         Pane rootPane = new Pane();
         rootPane.setStyle("-fx-background-color: #D9D9D9");
         rootPane.setPrefSize(500,535.5);
-        rootPane.setMaxSize(500,535.5);
-        rootPane.setMinSize(500,535.5);
+        //rootPane.setMaxSize(500,535.5);
+        //rootPane.setMinSize(500,535.5);
         // ASSIGN CSS STYLE SHEET
         // scene.getStylesheets().add("CategoryScreen.css");
         rootPane.getChildren().add(root);
@@ -68,7 +67,7 @@ public abstract class Screen {
     public void goToAnalysisScreen(String currCategory) {
         setWindowLarge();
         Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), currCategory, currCategory, false);
-        System.out.println("Going to the analysis screen");
+        stage.sizeToScene();
         try {
             currScreen.start();
         } catch (Exception e) {
@@ -81,8 +80,8 @@ public abstract class Screen {
         setWindowLarge();
         Screen currScreen = new AnalysisScreen(this.getStage(), this.getDriver(), task, driver.getTaskByName(task).getParentCategory().getName(), true);
         driver.makeDummyCategory(task);
+        stage.sizeToScene();
 
-        System.out.println("Going to the analysis screen");
         try {
             currScreen.start();
 
@@ -94,7 +93,6 @@ public abstract class Screen {
 
     public void goToFormScreen(String currCategory) {
         Screen currScreen = new FormScreen(this.getStage(), this.getDriver(), currCategory);
-        System.out.println("I am going to the Form Screen");
         try {
             currScreen.start();
         } catch (Exception e) {
@@ -104,7 +102,7 @@ public abstract class Screen {
 
 
     public void goToCategoryScreenWithSearchQuery(String category, String searchQuery) {
-        setWindowLarge();
+        //setWindowLarge();
         Screen currScreen = new CategoryScreen(this.getStage(), this.getDriver(), category);
         stage.sizeToScene();
         try {
@@ -143,7 +141,7 @@ public abstract class Screen {
 
         setWindowSmall();
         Screen currScreen = new TaskLiteScreen(this.getStage(), this.getDriver(), task);
-
+        stage.sizeToScene();
         try {
             currScreen.start();
         } catch (Exception e) {
@@ -160,8 +158,8 @@ public abstract class Screen {
     }
 
     private void setWindowLarge(){
-        stage.setMaxHeight(535.5);
-        stage.setMaxWidth(500);
+        stage.setMaxHeight(550);
+        stage.setMaxWidth(510);
         stage.setMinHeight(535.5);
         stage.setMinWidth(500);
     }
