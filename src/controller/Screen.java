@@ -34,8 +34,8 @@ public abstract class Screen {
         Pane rootPane = new Pane();
         rootPane.setStyle("-fx-background-color: #D9D9D9");
         rootPane.setPrefSize(500,535.5);
-        rootPane.setMaxSize(500,535.5);
-        rootPane.setMinSize(500,535.5);
+        //rootPane.setMaxSize(500,535.5);
+        //rootPane.setMinSize(500,535.5);
         // ASSIGN CSS STYLE SHEET
         // scene.getStylesheets().add("CategoryScreen.css");
         rootPane.getChildren().add(root);
@@ -141,7 +141,7 @@ public abstract class Screen {
 
         setWindowSmall();
         Screen currScreen = new TaskLiteScreen(this.getStage(), this.getDriver(), task);
-
+        stage.sizeToScene();
         try {
             currScreen.start();
         } catch (Exception e) {
