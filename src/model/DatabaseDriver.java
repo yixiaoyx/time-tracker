@@ -19,8 +19,8 @@ public class DatabaseDriver {
     public DatabaseDriver() {
 
         db = "jdbc:mysql://localhost:3306/TrackerDB?autoReconnect=true&useSSL=false";
-        user = "root"; //default user
-        pw = "4920"; // to set password in mysql, run msql then run the query: SET PASSWORD FOR 'root'@'localhost' = PASSWORD('4920');
+        user = "trackattack";
+        pw = "4920"; // to set password in mysql, run msql then run the query: SET PASSWORD FOR 'trackattack'@'localhost' = PASSWORD('4920');
 
         try {
             Class.forName("com.mysql.jdbc.Driver");

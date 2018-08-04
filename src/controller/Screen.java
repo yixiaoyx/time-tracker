@@ -17,9 +17,9 @@ public abstract class Screen {
     public Screen(Stage s, String file, String title, InterfaceDriver d) {
         stage = s;
         driver = d;
-        fxmlFile = "../"+file;
+        fxmlFile = file;
         this.title = title;
-        fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
+        fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(fxmlFile));
 
     }
 
