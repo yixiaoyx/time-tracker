@@ -1,0 +1,54 @@
+.button-raised{
+    -fx-padding: 0.7em 0.57em;
+    -fx-font-size: 14px;
+    -jfx-button-type: RAISED;
+    -fx-background-color: #3c77bb;
+    -fx-pref-width: 200;
+    -fx-text-fill: WHITE;
+    -fx-text-alignment: CENTER;
+
+}
+
+.button-raised-task{
+    -fx-padding: 0.7em 0.57em;
+    -fx-font-size: 14px;
+    -jfx-button-type: RAISED;
+    -fx-background-color: #66b5ff;
+    -fx-pref-width: 200;
+    -fx-text-fill: WHITE;
+    -fx-text-alignment: CENTER;
+
+}
+
+.button-small{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #62b9eb;
+    -fx-pref-width: 65;
+    -fx-pref-height: 30;
+    -fx-text-fill: WHITE;
+
+}
+
+.button-back {
+    -jfx-button-type: FLAT;
+    -fx-background-colour: #e47575;
+    -fx-pref-height: 45;
+    -fx-pref-width: 20;
+    -fx-text-fill: WHITE;
+}
+.button-delete{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #F19F4D;
+    -fx-pref-width: 65;
+    -fx-text-fill: WHITE;
+}
+
+.button-invalid{
+    -fx-background-color: #888888;
+    -fx-text-fill: #121212;
+}
+
+.button-breadcrumb {
+    -fx-background-color: #BBBBBB;
+    -fx-text-fill: #121212;
+}
