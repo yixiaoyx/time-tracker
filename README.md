@@ -17,7 +17,8 @@ This is a Java desktop app for time management. It allows you to track the accum
     - Run the setup script in the root folder of this repository to setup a local database for storing your time tracking entries. You will be prompted to enter your MySQL root username and password. *DO NOT run setup more than once unless the previous run failed!*
     - Run the launcher, also in the root folder, each time you wish to open the app. 
     - Make sure the setup script and launcher have execution permission before running.
-    - On first run, the app will contain some sample categories and tasks to help you get started. It is recommended that you go through the [User Guide](https://github.com/yixiaoyx/time-tracker/blob/master/documentation/Help%20Document%20%E2%80%93%20How%20to%20use%20Trackattack.pdf) with these examples to familiarize yourself with the app. Feel free to remove them when you are confident.
+
+- On first run, the app will contain some sample categories and tasks to help you get started. It is recommended that you go through the [User Guide](https://github.com/yixiaoyx/time-tracker/blob/master/documentation/Help%20Document%20%E2%80%93%20How%20to%20use%20Trackattack.pdf) with these examples to familiarize yourself with the app. Feel free to remove them when you are confident.
 
 - **Design document:** See [Design Document](https://github.com/yixiaoyx/time-tracker/blob/master/documentation/trackattack%20design%20document.pdf) for details.
 
