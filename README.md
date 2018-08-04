@@ -1,6 +1,6 @@
 # Trackattack
 
-This is a Java desktop app for time management. It allows you to track the accumulated time you spent on individual tasks you do. Created by: Naomi Que, Luke Fitzpatrick, Yi Xiao, Winnie Zheng, Jackie Cai.
+This is a Java desktop app for time management. It allows you to track the accumulated time you spent on individual tasks you do. Created by: Yi Xiao, Naomi Que, Luke Fitzpatrick, Winnie Zheng, Jackie Cai.
 
 ## Getting started
 
